@@ -79,31 +79,6 @@
     </tr>
 @endforeach
 
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-  <label class="form-check-label" for="flexRadioDefault2">
-    Default checked radio
-  </label>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </tbody>
 </table>
 </div>

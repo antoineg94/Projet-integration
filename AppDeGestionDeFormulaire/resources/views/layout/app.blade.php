@@ -18,8 +18,6 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="{{ route('Utilisateurs.AccueilType') }}">
-
     <img src="/images/logoBl.png" alt="" style="height: 32px; widht: 32px;"></a>
     <div>
       
@@ -46,24 +44,112 @@
     </body>
 
     <!-- FOOTER -->
-    <footer class="d-flex h-25 flex-wrap justify-content-between align-items-center py-3" style="background-color: black; color: white;" style="margin-top:auto;">
-    <div class="container d-flex align-items-center" >
-    <div class="col-md-4 d-flex">
-      <span class="text-muted">© 2023 Amazscrum</span>
+    <footer style="width: 100%;">
+    <div class="footer contrast text-center">
+        <div class="footer-content">
+
+            <div class="footer-content-section first">
+                <div class="section-container">
+
+                    <div class="footer-social mobile-only">
+                        <a href="/a-propos-de-la-ville/communications/infolettre" class="infolettre contrast" alt="Abonnez-vous à l'infolettre">
+                        <i class="fa-solid fa-envelope"></i> <span></span>
+                        </a>
+                        <a href="https://www.facebook.com/villetroisrivieres" alt="Facebook" target="_blank" class="facebook contrast">
+                        <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/villedetroisrivieres" alt="Instagram" target="_blank" class="instagram contrast">
+                        <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/VilleTR" alt="Twitter" target="_blank" class="twitter contrast">
+                        <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/ville-de-trois-rivi-res" alt="LinkedIn" target="_blank" class="linkedin contrast">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC4UyW0CoFiJaFCFaOzoQQ5w" alt="YouTube" target="_blank" class="youtube contrast">
+                        <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+
+                    <h3 class="footer-title ">Ville de Trois-Rivières</h3>
+                    <div class="footer-spacer"></div>
+                    <div class="footer-text"><a href="https://www.google.ca/maps/place/H%C3%B4tel+de+ville/@46.3430042,-72.545511,17z/data=!4m12!1m6!3m5!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!2sH%C3%B4tel+de+ville!8m2!3d46.3430005!4d-72.5433223!3m4!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!8m2!3d46.3430005!4d-72.5433223" target="_blank">1325, place de l'Hôtel-de-Ville, C.P. 368<br> Trois-Rivières, QC G9A 5H3</a></div>
+                    <div class="footer-text bold">Téléphone : <a href="tel:311">311</a> ou <a href="tel:8193742002">819 374-2002</a></div>
+                    <div class="footer-text"><a href="tel:18333742002">Canada ou États-Unis : 1 833 374-2002</a></div>
+                    <div class="footer-spacer"></div>
+                    <div class="footer-text"><a href="mailto:311@v3r.net">Courriel : 311@v3r.net</a></div>
+                </div>
+            </div>
+
+            <div class="footer-content-section middle">
+                <div class="section-container">
+                                                                    <a class="footer-text with-bullet" href="/a-propos-de-la-ville/communications" target="_self">› Communications</a>
+
+                                                                        <div class="footer-spacer bigger"></div>
+                                                <a class="footer-text with-bullet" href="/faq" target="_self">› FAQ</a>
+
+                                                                        <div class="footer-spacer bigger"></div>
+                                                <a class="footer-text with-bullet" href="http://www.tourismetroisrivieres.com/fr" target="_blank">› Tourisme</a>
+
+                                    </div>
+            </div>
+
+            <div class="footer-content-section last">
+                <div class="section-container">
+
+                    <div class="footer-social no-mobile">
+                        <a href="/a-propos-de-la-ville/communications/infolettre" class="infolettre contrast">
+                            <span>Abonnez-vous à l'infolettre</span>
+                        </a>
+                        <a href="https://www.facebook.com/villetroisrivieres" target="_blank" class="facebook contrast">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/villedetroisrivieres" target="_blank" class="instagram contrast">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://twitter.com/VilleTR" target="_blank" class="twitter contrast">
+                            <span>Twitter</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/ville-de-trois-rivi-res" target="_blank" class="linkedin contrast">
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UC4UyW0CoFiJaFCFaOzoQQ5w" target="_blank" class="youtube contrast">
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+
+                    <div class="footer-social-bottom mobile-only">
+                                                                                <a href="/a-propos-de-la-ville/communications" target="_self">Communications</a>
+
+                                                                                    <div class="footer-social-bottom-spacer"></div>
+                                                        <a href="/faq" target="_self">FAQ</a>
+
+                                                                                    <div class="footer-social-bottom-spacer"></div>
+                                                        <a href="http://www.tourismetroisrivieres.com/fr" target="_blank">Tourisme</a>
+
+                                            </div>
+
+                    <div class="footer-social-bottom">
+                                                                                <a href="https://v3r.sharepoint.com/" target="_blank">Intranet</a>
+
+                                                                                    <div class="footer-social-bottom-spacer"></div>
+                                                        <a href="https://organismesv3r.net/" target="_blank">Portail d’accès aux organismes</a>
+
+                                                                                    <div class="footer-social-bottom-spacer"></div>
+                                                        <a href="https://www.v3r.net/politique-de-confidentialite" target="_self">Politique de confidentialité</a>
+
+                                                <span class="copyright contrast" style="width: 100%; margin-top: 5px;">© Ville de Trois-Rivières. Tous droits réservés.</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-<div class="col-md-4 d-flex justify-content-end align-items-right d-flex">
-    <ul class="justify-content-end  align-items-right list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/cegeptr/"><i class="fa-brands fa-facebook"></i></a></li>
-      <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/cegeptr/"><i class="fa-brands fa-instagram"></i></a></li>
-      <li class="ms-3"><a class="text-muted" href="https://cegeptr.omnivox.ca">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color: #F78C38;" fill="currentColor" class="bi bi-flower2" viewBox="0 0 16 16">
-      <path d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12c0 .073-.01.155-.03.247-.544.241-1.091.638-1.598 1.084A2.987 2.987 0 0 0 8 5c-.494 0-.96.12-1.372.331-.507-.446-1.054-.843-1.597-1.084A1.117 1.117 0 0 1 5 4a3 3 0 0 1 6 0zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-      </svg>
-      </a></li>
-    </ul>
-    </div>
-    </div>
-  </footer>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/74c890bd85.js" crossorigin="anonymous"></script>
