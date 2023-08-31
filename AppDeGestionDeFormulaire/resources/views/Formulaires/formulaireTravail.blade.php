@@ -1,3 +1,8 @@
+@extends('layout/app')
+
+@section('title', 'Accueil')
+
+@section('middleContent')
 <section>
 <form >
     <h1>Formulaire Déclaration d'accident de travail</h1>
@@ -110,3 +115,4 @@ Si témoins  = OUI
 </form>
 
 </section>
+@endsection
