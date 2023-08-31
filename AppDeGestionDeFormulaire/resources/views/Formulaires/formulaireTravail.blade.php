@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('formulaireTravails.enregistrer') }}">
+<form method="POST" action="{{ route('formulairesTravails.enregistrer') }}">
     <h1>Formulaire Déclaration d'accident de travail</h1>
     @CSRF
 
