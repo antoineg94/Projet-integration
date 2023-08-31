@@ -1,5 +1,5 @@
 <section>
-<form method="POST" action="{{ route('') }}">
+<form method="POST" action="{{ route('formulaireAudits.enregistrer') }}">
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 

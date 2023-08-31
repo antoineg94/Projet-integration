@@ -39,3 +39,16 @@ Route::get('/formulaireAudit',
 Route::get('/formulaireMecanique',
 [FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index');
 
+Route::post('/formulaireTravail',
+[FormulairesTravailsController::class, 'enregistrer'])->name('formulairesTravails.enregistrer');
+
+Route::post('/formulaireSituationDangereuse',
+[FormulaireSituationDangereusesController::class, 'enregistrer'])->name('formulaireSituationDangereuses.enregistrer');
+
+
+Route::post('/formulaireAudit',
+[FormulaireAuditsController::class, 'enregistrer'])->name('formulaireAudits.enregistrer');
+
+Route::post('/formulaireMecanique',
+[FormulaireMecaniquesController::class, 'enregistrer'])->name('formulaireMecaniques.enregistrer');
+

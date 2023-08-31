@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('') }}">
+<form method="POST" action="{{ route('formulaireMecaniques.enregistrer') }}">
     <h1>Atelier mécanique - Rapport d'accident (véhicule)</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
