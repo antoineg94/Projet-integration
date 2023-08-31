@@ -1,3 +1,8 @@
+@extends('layout/app')
+
+@section('title', 'Accueil')
+
+@section('middleContent')
 <section>
 <form method="POST" action="{{ route('') }}">
     <h1>Atelier mécanique - Rapport d'accident (véhicule)</h1>
@@ -66,3 +71,4 @@
 </form>
 
 </section>
+@endsection

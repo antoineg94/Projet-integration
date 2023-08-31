@@ -1,3 +1,8 @@
+@extends('layout/app')
+
+@section('title', 'Accueil')
+
+@section('middleContent')
 <section>
 <form method="POST" action="{{ route('') }}">
     <h1>Signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</h1>
@@ -21,3 +26,4 @@
 </form>
 
 </section>
+@endsection
