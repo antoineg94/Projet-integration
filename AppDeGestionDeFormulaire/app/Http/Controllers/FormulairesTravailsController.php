@@ -16,6 +16,7 @@ class FormulairesTravailsController extends Controller
         return view('Formulaires.formulaireTravail');
     }
 
+    
     /**
      * Show the form for creating a new resource.
      */

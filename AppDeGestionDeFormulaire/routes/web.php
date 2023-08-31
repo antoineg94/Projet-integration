@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulairesTravailsController;
+use App\Http\Controllers\FormulaireSituationDangereusesController;
+use App\Http\Controllers\FormulaireAuditsController;
+use App\Http\Controllers\FormulaireMecaniquesController;
 
 
 /*
@@ -25,5 +28,14 @@ Route::get('/login', function () {
 
 
 Route::get('/formulaireTravail',
-    [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
+[FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
+
+Route::get('/formulaireSituationDangereuse',
+[FormulaireSituationDangereusesController::class, 'index'])->name('formulaireSituationDangereuses.index');
+
+Route::get('/formulaireAudit',
+[FormulaireAuditsController::class, 'index'])->name('formulaireAudits.index');
+
+Route::get('/formulaireMecanique',
+[FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index');
 
