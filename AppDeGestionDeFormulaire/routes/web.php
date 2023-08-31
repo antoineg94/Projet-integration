@@ -21,18 +21,18 @@ Route::get('/login', function () {
     return view('Login.login');
 });
 
-Route::get('/formulaire1', function () {
-    return view('Formulaires.formulaire1');
+Route::get('/formulaireTravail', function () {
+    return Controller('FormulaireTravailsController@index');
 });
 
-Route::get('/formulaire2', function () {
-    return view('Formulaires.formulaire2');
+Route::get('/formulaireSituationDangereuse', function () {
+    return Controller('FormulaireSituationDangereusesController@index');
 });
 
-Route::get('/formulaire3', function () {
-    return view('Formulaires.formulaire3');
+Route::get('/formulaireMecanique', function () {
+    return Controller('FormulaireMecaniquesController@index');
 });
 
-Route::get('/formulaire4', function () {
-    return view('Formulaires.formulaire4');
+Route::get('/formulaireAudit', function () {
+    return Controller('FormulaireAuditsController@index');
 });
