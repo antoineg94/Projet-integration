@@ -44,14 +44,14 @@
     </body>
 
     <!-- FOOTER -->
-    <footer style="width: 100%;">
+    <footer style="width: 100%;" >
     <div class="footer contrast text-center">
-        <div class="footer-content">
+        <div class="footer-content" >
 
-            <div class="footer-content-section first">
-                <div class="section-container">
+            <div class="footer-content-section first" >
+                <div class="section-container" >
 
-                    <div class="footer-social mobile-only">
+                    <div class="footer-social mobile-only" >
                         <a href="/a-propos-de-la-ville/communications/infolettre" class="infolettre contrast" alt="Abonnez-vous à l'infolettre">
                         <i class="fa-solid fa-envelope"></i> <span></span>
                         </a>
@@ -74,74 +74,64 @@
 
                     <h3 class="footer-title ">Ville de Trois-Rivières</h3>
                     <div class="footer-spacer"></div>
-                    <div class="footer-text"><a href="https://www.google.ca/maps/place/H%C3%B4tel+de+ville/@46.3430042,-72.545511,17z/data=!4m12!1m6!3m5!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!2sH%C3%B4tel+de+ville!8m2!3d46.3430005!4d-72.5433223!3m4!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!8m2!3d46.3430005!4d-72.5433223" target="_blank">1325, place de l'Hôtel-de-Ville, C.P. 368<br> Trois-Rivières, QC G9A 5H3</a></div>
-                    <div class="footer-text bold">Téléphone : <a href="tel:311">311</a> ou <a href="tel:8193742002">819 374-2002</a></div>
-                    <div class="footer-text"><a href="tel:18333742002">Canada ou États-Unis : 1 833 374-2002</a></div>
+                    <div class="card">
+                      <div class="footer-text"><a href="https://www.google.ca/maps/place/H%C3%B4tel+de+ville/@46.3430042,-72.545511,17z/data=!4m12!1m6!3m5!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!2sH%C3%B4tel+de+ville!8m2!3d46.3430005!4d-72.5433223!3m4!1s0x41aa0c6a9ae1712b:0xc5f7bf52c7282858!8m2!3d46.3430005!4d-72.5433223" target="_blank">1325, place de l'Hôtel-de-Ville, C.P. 368<br> Trois-Rivières, QC G9A 5H3</a></div>
+                    </div>
+                    <div class="card">
+                      <div class="footer-text bold">Téléphone : <a href="tel:311">311</a> ou <a href="tel:8193742002">819 374-2002</a></div>
+                    </div>
+                    <div class="card">
+                      <div class="footer-text"><a href="tel:18333742002">Canada ou États-Unis : 1 833 374-2002</a></div>
+                    </div>
+                    <div class="card">
+                    <div class="footer-text"><a href="mailto:311@v3r.net">Courriel : 311@v3r.net</a>
+                    </div>
                     <div class="footer-spacer"></div>
-                    <div class="footer-text"><a href="mailto:311@v3r.net">Courriel : 311@v3r.net</a></div>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-content-section middle">
                 <div class="section-container">
-                                                                    <a class="footer-text with-bullet" href="/a-propos-de-la-ville/communications" target="_self">› Communications</a>
+              <a class="footer-text with-bullet" href="/a-propos-de-la-ville/communications" target="_self">> Communications</a>
 
-                                                                        <div class="footer-spacer bigger"></div>
-                                                <a class="footer-text with-bullet" href="/faq" target="_self">› FAQ</a>
+              <div class="footer-spacer bigger"></div>
+              <a class="footer-text with-bullet" href="/faq" target="_self">> FAQ</a>
 
-                                                                        <div class="footer-spacer bigger"></div>
-                                                <a class="footer-text with-bullet" href="http://www.tourismetroisrivieres.com/fr" target="_blank">› Tourisme</a>
+              <div class="footer-spacer bigger"></div>
+              <a class="footer-text with-bullet" href="http://www.tourismetroisrivieres.com/fr" target="_blank">> Tourisme</a>
 
-                                    </div>
+              </div>
             </div>
 
             <div class="footer-content-section last">
                 <div class="section-container">
 
-                    <div class="footer-social no-mobile">
-                        <a href="/a-propos-de-la-ville/communications/infolettre" class="infolettre contrast">
-                            <span>Abonnez-vous à l'infolettre</span>
-                        </a>
-                        <a href="https://www.facebook.com/villetroisrivieres" target="_blank" class="facebook contrast">
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://www.instagram.com/villedetroisrivieres" target="_blank" class="instagram contrast">
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://twitter.com/VilleTR" target="_blank" class="twitter contrast">
-                            <span>Twitter</span>
-                        </a>
-
-                        <a href="https://www.linkedin.com/company/ville-de-trois-rivi-res" target="_blank" class="linkedin contrast">
-                            <span>LinkedIn</span>
-                        </a>
-
-                        <a href="https://www.youtube.com/channel/UC4UyW0CoFiJaFCFaOzoQQ5w" target="_blank" class="youtube contrast">
-                            <span>YouTube</span>
-                        </a>
-                    </div>
+          
 
                     <div class="footer-social-bottom mobile-only">
-                                                                                <a href="/a-propos-de-la-ville/communications" target="_self">Communications</a>
+                      <a href="/a-propos-de-la-ville/communications" target="_self">Communications</a>
 
-                                                                                    <div class="footer-social-bottom-spacer"></div>
-                                                        <a href="/faq" target="_self">FAQ</a>
+                    <div class="footer-social-bottom-spacer">
 
-                                                                                    <div class="footer-social-bottom-spacer"></div>
-                                                        <a href="http://www.tourismetroisrivieres.com/fr" target="_blank">Tourisme</a>
+                    </div>
+                      <a href="/faq" target="_self">FAQ</a>
 
-                                            </div>
+                    <div class="footer-social-bottom-spacer">
+                      
+                    </div>
+                      <a href="http://www.tourismetroisrivieres.com/fr" target="_blank">Tourisme</a>
+                    </div>
 
                     <div class="footer-social-bottom">
-                                                                                <a href="https://v3r.sharepoint.com/" target="_blank">Intranet</a>
+                      <a href="https://v3r.sharepoint.com/" target="_blank">Intranet</a>
+                      <div class="footer-social-bottom-spacer"></div>
+                      <a href="https://organismesv3r.net/" target="_blank">Portail d’accès aux organismes</a>
 
-                                                                                    <div class="footer-social-bottom-spacer"></div>
-                                                        <a href="https://organismesv3r.net/" target="_blank">Portail d’accès aux organismes</a>
+                      <div class="footer-social-bottom-spacer"></div>
+                      <a href="https://www.v3r.net/politique-de-confidentialite" target="_self">Politique de confidentialité</a>
 
-                                                                                    <div class="footer-social-bottom-spacer"></div>
-                                                        <a href="https://www.v3r.net/politique-de-confidentialite" target="_self">Politique de confidentialité</a>
-
-                                                <span class="copyright contrast" style="width: 100%; margin-top: 5px;">© Ville de Trois-Rivières. Tous droits réservés.</span>
+                      <span class="copyright contrast" style="width: 100%; margin-top: 5px;"><small> © Ville de Trois-Rivières. Tous droits réservés.</small></span>
                     </div>
 
                 </div>
