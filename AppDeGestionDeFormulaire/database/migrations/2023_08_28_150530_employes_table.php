@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('employes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('matricule', 10)->unique();
+            $table->string('nom', 255);
+            $table->string('prenom', 255);
+            $table->foreignId('departement_id')->constrained();
         });
     }
 
