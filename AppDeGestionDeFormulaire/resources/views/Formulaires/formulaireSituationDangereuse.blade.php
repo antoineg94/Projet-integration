@@ -4,11 +4,16 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('') }}">
+<form method="POST" action="{{ route('formulaireSituationDangereuses.enregistrer') }}">
     <h1>Signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
-        
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                
+            <strong>Génial!</strong> {{ Session::get('message') }}
+            </div>
+        @endif
     </div>
 
     <div class="form-outline mb-4">
@@ -21,7 +26,7 @@
 
 
     <div>
-        <a href="#" class="btn w-100">Envoyer</a>
+        <button class="button" type="submit" class="btn w-100">Envoyer</button>
     </div>               
 </form>
 

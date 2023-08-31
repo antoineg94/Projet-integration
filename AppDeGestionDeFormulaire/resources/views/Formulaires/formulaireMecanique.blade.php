@@ -4,11 +4,16 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('') }}">
+<form method="POST" action="{{ route('formulaireMecaniques.enregistrer') }}">
     <h1>Atelier mécanique - Rapport d'accident (véhicule)</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
-        
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                
+            <strong>Génial!</strong> {{ Session::get('message') }}
+            </div>
+        @endif
     </div>
 
     <div class="form-outline mb-4">

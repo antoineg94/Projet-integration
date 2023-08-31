@@ -1,9 +1,14 @@
 <section>
-<form method="POST" action="{{ route('') }}">
+<form method="POST" action="{{ route('formulaireAudits.enregistrer') }}">
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
-        
+      @if(Session::has('success'))
+          <div class="alert alert-success">
+              
+          <strong>Génial!</strong> {{ Session::get('message') }}
+          </div>
+      @endif
     </div>
 
     <div class="form-outline mb-4">
