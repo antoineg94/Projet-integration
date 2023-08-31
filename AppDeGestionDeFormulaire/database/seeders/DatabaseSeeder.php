@@ -15,8 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DepartementsSeeder::class);
         $this->call(EmployesSeeder::class);
+        
         $this->call(FormulairesSeeder::class);
+        $this->call(InformationsSeeder::class);
+        $this->call(InfoFormSeeder::class);
+
         $this->call(EmployeFormSeeder::class);
+        $this->call(InfoFormEmployeSeeder::class);
 
     }
 }
