@@ -19,7 +19,7 @@ class FormulairesTravailsController extends Controller
 
     public function enregistrer(Request $request)
     {
-        return View('accueil')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
     }
     
     /**

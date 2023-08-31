@@ -8,7 +8,12 @@
     <h1>Signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
-        
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                
+            <strong>Génial!</strong> {{ Session::get('message') }}
+            </div>
+        @endif
     </div>
 
     <div class="form-outline mb-4">
