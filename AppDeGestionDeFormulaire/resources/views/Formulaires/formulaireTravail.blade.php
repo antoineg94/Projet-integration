@@ -1,5 +1,5 @@
 <section>
-<form method="POST" action="{{ route('') }}">
+<form >
     <h1>Formulaire Déclaration d'accident de travail</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
