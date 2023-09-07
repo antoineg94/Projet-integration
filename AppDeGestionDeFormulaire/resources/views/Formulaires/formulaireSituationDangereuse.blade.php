@@ -32,7 +32,7 @@
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
-    
+
     <div class="form-outline mb-4">
     <label class="form-label" for="">Secteur d'activité</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
@@ -103,9 +103,9 @@ Si témoins  = OUI
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
 
-    <div>
-    <a class="btn btn-primary d-grid gap-2" type="button" href="">Envoyer</a>
-    </div>                     
+<div>
+    <a class="btn d-grid gap-2 text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    </div>                  
 </form>
 
 </section>

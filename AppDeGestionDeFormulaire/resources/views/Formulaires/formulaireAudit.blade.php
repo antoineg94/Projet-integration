@@ -41,7 +41,7 @@
     </div>
     </div>
     <div>
-    <table class="demo">
+    <table class="table table-striped">
 	<thead>
 	<tr style="text-orientation: sideways-right;">
 		<th><br></th>
@@ -268,7 +268,7 @@
       </td>
 	</tr>
 	<tr>
-		<td>&nbsp;<b>COVID-19</b></td> 
+		<td colspan="4" style="text-align: center;">&nbsp;<b>COVID-19</b></td> 
 	</tr>
 	<tr>
 		<td>&nbsp;Respect de la distance</td>
@@ -346,9 +346,9 @@
 </table>
 </div>
 
-    <div>
-    <a class="btn btn-primary d-grid gap-2" type="button" href="">Envoyer</a>
-    </div>               
+<div>
+    <a class="btn d-grid gap-2 text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    </div>            
 </form>
 
 </section>

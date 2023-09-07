@@ -244,9 +244,9 @@ nom du secouriste
 
 signature superviseur / signature du travailleur/travailleuse
 (no de poste + date)
-    <div>
-    <button type="button" class="btn btn-primary btn-lg">Envoyer</button>
-    </div>               
+<div>
+    <a class="btn d-grid gap-2 text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    </div>                   
 </form>
 
 </section>
