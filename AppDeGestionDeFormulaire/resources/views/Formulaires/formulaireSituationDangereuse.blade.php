@@ -103,9 +103,9 @@ Si témoins  = OUI
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
 
-<div>
-    <a class="btn d-grid gap-2 text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
-    </div>                  
+<div class="col-11 mx-auto">
+    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    </div>                   
 </form>
 
 </section>

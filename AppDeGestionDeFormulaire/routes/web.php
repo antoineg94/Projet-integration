@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenusController;
 use App\Http\Controllers\FormulairesTravailsController;
 use App\Http\Controllers\FormulaireSituationDangereusesController;
 use App\Http\Controllers\FormulaireAuditsController;
@@ -26,6 +27,8 @@ Route::get('/login', function () {
     return view('Login.login');
 });
 
+Route::get('/Accueil',
+[MenusController::class, 'index'])->name('Menus.index');
 
 Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');

@@ -8,7 +8,7 @@
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
 
-    <div class="form-outline mb-4">
+    <div class="form-outline mb-4 col-11 mx-auto">
     <label class="form-label" for="">Nom de l'employé</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
@@ -16,15 +16,15 @@
                 @enderror
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="form-outline mb-4 col-11 mx-auto">
     <label class="form-label" for="">Lieu(x) des travaux</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
-<div class="d-flex">
-    <div class="form-outline mb-4">
+<div class="d-flex col-11 mx-auto gap-3">
+    <div class="form-outline mb-4" >
     <label class="form-label" for="">Date</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
@@ -32,7 +32,7 @@
                 @enderror
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="form-outline mb-4" >
     <label class="form-label" for="">Heure</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
@@ -43,11 +43,11 @@
     <div>
     <table class="table table-striped">
 	<thead>
-	<tr style="text-orientation: sideways-right;">
+	<tr>
 		<th><br></th>
-		<th style="text-orientation: sideways-right;">Conforme</th>
-		<th style="text-orientation: sideways-right;">Non conforme</th>
-		<th style="text-orientation: sideways-right;">N/A</th>
+		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Conforme</th>
+		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Non conforme</th>
+		<th style="writing-mode: vertical-rl; text-orientation: mixed;">N/A</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -346,8 +346,8 @@
 </table>
 </div>
 
-<div>
-    <a class="btn d-grid gap-2 text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+<div class="col-11 mx-auto">
+    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
     </div>            
 </form>
 

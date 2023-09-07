@@ -18,7 +18,8 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
-    <img src="/images/logoBl.png" alt="" style="height: 32px; widht: 32px;"></a>
+  <a href="{{ route('Menus.index') }}"><img src="/images/logoBl.png" alt="" style="height: 32px; widht: 32px;"></a>
+    
     <div>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
