@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('consulte', 255)->nullable();
             $table->string('consultant', 255)->nullable();
             $table->date('date_consulte')->nullable();
+            $table->string('statut', 255)->nullable();
         });
     }
 
