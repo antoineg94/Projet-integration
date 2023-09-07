@@ -71,8 +71,8 @@
 
 
     <div>
-        <a href="#" class="btn w-100">Envoyer</a>
-    </div>               
+    <a class="btn btn-primary d-grid gap-2" type="button" href="">Envoyer</a>
+    </div>                 
 </form>
 
 </section>
