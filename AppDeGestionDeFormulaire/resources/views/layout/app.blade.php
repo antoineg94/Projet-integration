@@ -17,7 +17,7 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
-  <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 32px; widht: 32px;"></a>
+  <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;"></a>
   
       <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
