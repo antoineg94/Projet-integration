@@ -109,80 +109,80 @@ AJOUTER FONCTION JS ICI
         <label class="form-label" for="natureBlessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="typeNlessure" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="typeNlessure" id="blessure0">
+        <label class="form-check-label" for="natureBlessure">
         Tête, visage, nez, yeux, oreille
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Torse" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Torse" id="blessure1" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Torse
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Poumons" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Poumons" id="blessure2" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Poumons
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Bras, épaule, coude" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Bras, épaule, coude" id="blessure3" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Bras, épaule, coude
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Poignet, main, doigt" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Poignet, main, doigt" id="blessure4" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Poignet, main, doigt
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Dos" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Dos" id="blessure5" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Dos
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Hanche" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Hanche" id="blessure6" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Hanche
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Jambe, genou" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Jambe, genou" id="blessure7" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Jambe, genou
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Pied, orteil, cheville" id="flexCheckDefault" name="typeNlessure">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Pied, orteil, cheville" id="blessure8" name="typeNlessure">
+        <label class="form-check-label" for="natureBlessure">
         Pied, orteil, cheville
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Autre" id="flexCheckDefault" name="typeNlessure" style="-webkit-appearance: checkbox;"> 
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Autre" id="blessure9" name="typeNlessure" style="-webkit-appearance: checkbox;"> 
+        <label class="form-check-label" for="natureBlessure">
         Autre
         </label>
         </div>
@@ -192,7 +192,7 @@ AJOUTER FONCTION JS ICI
         <label class="form-label" for="typeViolence" >Violence <small>(à cocher)</small></label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Physique" name="typeViolence" id="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="Physique" name="typeViolence" id="vPhysique">
         <label class="form-check-label" for="flexCheckDefault">
         Physique
         </label>
@@ -200,7 +200,7 @@ AJOUTER FONCTION JS ICI
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Verbale" id="flexCheckDefault" name="typeViolence">
+        <input class="form-check-input" type="radio" value="Verbale" id="vVerbale" name="typeViolence">
         <label class="form-check-label" for="flexCheckDefault">
         Verbale
         </label>
@@ -220,40 +220,22 @@ nom du secouriste
         <label class="form-label" for="dureeAbscence" >Durée de l'abscence </label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="aucune abscence" name="typeAbscence" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="aucune abscence" name="typeAbscence" id="aucuneAbscence">
+        <label class="form-check-label" for="typeAbscence">
         1- Accident ne nécessitant <b>aucune abscence</b>
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="consultation médicale" id="flexCheckDefault" name="typeAbscence">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="radio" value="consultation médicale" id="consultationMedicale" name="typeAbscence">
+        <label class="form-check-label" for="typeAbscence">
         2- Accident nécéssitant une <b>consultation médicale</b>
         </label>
         </div>
     </div>
 
-    <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    J'ai avisé mon supérieur immédiat
-  </label>
-</div>
-<p>si OUI:</p>
-<div class="form-check">
-<label for="dateAvisSuperviseur">Date:</label>
-<input type="date" id="dateAvisSuperviseur" name="dateAvisSuperviseur">
-</div>
-<div class="form-check">
-<label for="nomSuperieur">Nom du supérieur:</label>
-<input type="text" id="nomSuperieur" name="nomSuperieur">
-</div>
-<p>--------------</p>
 
-signature superviseur / signature du travailleur/travailleuse
-(no de poste + date)
 <div class="col-11 mx-auto">
     <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
     </div>                    
