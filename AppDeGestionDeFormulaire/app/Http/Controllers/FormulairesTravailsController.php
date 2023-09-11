@@ -35,10 +35,26 @@ class FormulairesTravailsController extends Controller
      */
     public function store(Request $request)
     {
-        // stocker un nouveau formulaire dans la base de données
+        // Session::put('campagneNom', $nomCampagne->nomCampagne);
+
+
+        try{
+            // $link = new Employeform($request->all());
+            // $link->panier_id = $paniers->id;
+            // $link->article_id = $request->article_id;
+            // $link->save();
+
+
+            return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('')->withErrors(['Informations invalide']);
+        }
         
 
-        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
     }
 
     /**
