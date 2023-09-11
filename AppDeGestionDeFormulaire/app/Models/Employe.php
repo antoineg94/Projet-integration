@@ -13,8 +13,7 @@ class Employe extends Model
         'id',
         'matricule',
         'nom',
-        'fonction',
-        'matricule',
+        'prenom',   
         'departement_id',
     ];
 }
