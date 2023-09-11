@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('formulaireAudits.enregistrer') }}">
+<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireAudits.enregistrer') }}">
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
 
@@ -40,6 +40,11 @@
                 @enderror
     </div>
     </div>
+
+    <br>
+<hr  class="d-grid col-10 mx-auto">
+<br>
+
     <div>
     <table class="table table-striped">
 	<thead>

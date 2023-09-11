@@ -51,21 +51,14 @@
 
 
 <div class="form-outline mb-4">
-<label class="form-label" for="">Témoins</label>
-<select class="form-select" aria-label="Default select example" id="radioTemoins">
-  <option value="0"selected>Non</option>
+<label class="form-label" for="temoins">Témoins</label>
+<select class="form-select" aria-label="Default select example" id="selectTemoins">
+  <option value="0" selected >Non</option>
   <option value="1">Oui</option>
 </select>
 </div>
-<p>
-Si témoins  = OUI
-AJOUTER FONCTION JS ICI
-</p>
 
-
-
-
-<div class="form-outline mb-4" id="divTemoins1">
+<div class="form-outline mb-4" id="divTemoins1" style="display: none;">
     <label class="form-label" for="nomTemoins1">Nom témoins</label>
         <input type="text" id="nomTemoins1" name="nomTemoins1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
@@ -73,20 +66,13 @@ AJOUTER FONCTION JS ICI
                 @enderror
     </div>
 
-<div class=" d-flex justify-content-end">
-    <button id="btnTemoins" type="button">+</button>
-    </div>
-
-    <div class="form-outline mb-4" id="divTemoins2">
+    <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
     <label class="form-label" for="nomTemoins2">Nom témoins</label>
         <input type="text" id="nomTemoins2" name="nomTemoins2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
-    <p>
-    ----------------
-    </p>
 
     <div class="form-outline mb-4">
     <label class="form-label" for="endroitAccident">Endroit de l'accident</label>
@@ -242,4 +228,5 @@ nom du secouriste
 </form>
 
 </section>
+
 @endsection

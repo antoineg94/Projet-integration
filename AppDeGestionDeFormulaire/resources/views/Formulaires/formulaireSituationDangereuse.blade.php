@@ -41,6 +41,10 @@
                 @enderror
     </div>
 
+    <br>
+<hr  class="d-grid col-10 mx-auto">
+<br>
+
     <h3>Description de la situation dangeureurse ou du "passé proche"</h3>
     <div class="form-outline mb-4">
     <label class="form-label" for="">Date de l'accident</label>
