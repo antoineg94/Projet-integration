@@ -10,40 +10,40 @@
 
 <h3>Identification</h3>
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Nom de l'employé</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nomEmploye">Nom de l'employé</label>
+        <input type="text" id="nomEmploye" name="nomEmploye" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Fonction au moment de l'évènement</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="fonctionsEvenement">Fonction au moment de l'évènement</label>
+        <input type="text" id="fonctionsEvenement" name="fonctionsEvenement" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Matricule</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="matricule">Matricule</label>
+        <input type="text" id="matricule" name="matricule" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 <h3>Description de l'évènement</h3>
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Date de l'accident</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="dateAccident">Date de l'accident</label>
+        <input type="text" id="dateAccident" name="dateAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Heure de l'accident</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="heureAccident">Heure de l'accident</label>
+        <input type="text" id="heureAccident" name="heureAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -66,8 +66,8 @@ AJOUTER FONCTION JS ICI
 
 
 <div class="form-outline mb-4" id="divTemoins1">
-    <label class="form-label" for="">Nom témoins</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nomTemoins1">Nom témoins</label>
+        <input type="text" id="nomTemoins1" name="nomTemoins1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -78,8 +78,8 @@ AJOUTER FONCTION JS ICI
     </div>
 
     <div class="form-outline mb-4" id="divTemoins2">
-    <label class="form-label" for="">Nom témoins</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nomTemoins2">Nom témoins</label>
+        <input type="text" id="nomTemoins2" name="nomTemoins2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -89,8 +89,8 @@ AJOUTER FONCTION JS ICI
     </p>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Endroit de l'accident</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="endroitAccident">Endroit de l'accident</label>
+        <input type="text" id="endroitAccident" name="endroitAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -98,15 +98,15 @@ AJOUTER FONCTION JS ICI
 
 
     <div class="form-outline mb-4">
-        <label class="form-label" for="password" >Secteur d'activité</label>
-        <input type="password" id="password" name="password" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
+        <label class="form-label" for="secteurActivite" >Secteur d'activité</label>
+        <input type="text" id="secteurActivite" name="secteurActivite" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
         @error('password')
             <span class="text-danger">{{ $message }} </span>
         @enderror
     </div>
 <u></u>
     <div class="form-outline mb-4">
-        <label class="form-label" for="password" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
+        <label class="form-label" for="natureBlessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
         <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="typeNlessure" id="flexCheckDefault">
@@ -189,7 +189,7 @@ AJOUTER FONCTION JS ICI
             
     </div>
     <div class="form-outline mb-4">
-        <label class="form-label" for="password" >Violence <small>(à cocher)</small></label> 
+        <label class="form-label" for="typeViolence" >Violence <small>(à cocher)</small></label> 
 
         <div class="form-check">
         <input class="form-check-input" type="radio" value="Physique" name="typeViolence" id="flexCheckDefault">
@@ -217,7 +217,7 @@ nom du secouriste
 
 <h3>Détails sur la durée de l'absence</h3>
 <div class="form-outline mb-4">
-        <label class="form-label" for="password" >Durée de l'abscence </label> 
+        <label class="form-label" for="dureeAbscence" >Durée de l'abscence </label> 
 
         <div class="form-check">
         <input class="form-check-input" type="radio" value="aucune abscence" name="typeAbscence" id="flexCheckDefault">
