@@ -10,8 +10,8 @@ class Temoinform extends Model
     use HasFactory;
 
     protected $fillable = [
-        'employe_id',
-        'formulaire_id',
-        'temoin_id'
+        'temoin_id',
+        'form1_id',
+        'form2_id'
     ];
 }
