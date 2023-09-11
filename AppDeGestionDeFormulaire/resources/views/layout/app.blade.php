@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
   <script src="main.js"></script>
 
   <link rel="icon" type="image" href="/images/logoNr.png">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
+  <link rel="stylesheet" href="{{ asset('js/app.js') }}"> 
+  <link rel="stylesheet" href="{{ asset('js/ajouterTemoins.js') }}"> 
 </head>
 
   <div class="wrapper">
@@ -18,27 +21,17 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
-  <a href="{{ route('Menus.index') }}"><img src="/images/logoBl.png" alt="" style="height: 32px; widht: 32px;"></a>
-    
-    <div>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-      
-    <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+  <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 32px; widht: 32px;"></a>
+  
+      <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:white;">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5>
-       
-        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="color:white;"></button>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:white;">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
       </div>
     </div>
   </div>
 </nav>
     <!-- END OF HEADER -->
-<body class="mt-5 pt-3 style="display:flex; flex-direction:column;" >
+<body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
   
 
     @yield('middleContent')
@@ -124,5 +117,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/74c890bd85.js" crossorigin="anonymous"></script>
 
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/ajoutermoins.js') }}"></script>
 
 </html>

@@ -52,23 +52,30 @@
 
 <div class="form-outline mb-4">
 <label class="form-label" for="">Témoins</label>
-<select class="form-select" aria-label="Default select example">
+<select class="form-select" aria-label="Default select example" id="radioTemoins">
   <option value="0"selected>Non</option>
   <option value="1">Oui</option>
 </select>
 </div>
 <p>
 Si témoins  = OUI
+AJOUTER FONCTION JS ICI
 </p>
-<div class="form-outline mb-4">
-    <label class="form-label" for="">Nom témoins 1</label>
+@yield('ajouterTemoins')
+<div class="form-outline mb-4" id="divTemoins1">
+    <label class="form-label" for="">Nom témoins</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
-    <div class="form-outline mb-4">
-    <label class="form-label" for="">Nom témoins 2</label>
+
+<div class=" d-flex justify-content-end">
+    <button id="btnTemoins" type="button">+</button>
+    </div>
+
+    <div class="form-outline mb-4" id="divTemoins2">
+    <label class="form-label" for="">Nom témoins</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>

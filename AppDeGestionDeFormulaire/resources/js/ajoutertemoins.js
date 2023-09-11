@@ -1,19 +1,29 @@
-//Su le clic d'un bouton onClick() Ajouter un label et un input en utilisant une focntion javascript
 
-function addElement() {
-    // create a new div element
-    const newDiv = document.createElement("div");
-    newDiv.className = "form-group";
-    // and give it some content
-    const newContent = document.createTextNode("Hi there and greetings!");
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
+// if radio button is checked, display div with input and label
+function displayTemoins1() {
+    const radioTemoins = document.getElementById("radioTemoins");
+    const btnTemoins = document.getElementById("btnTemoins");
+    const divT1 = document.getElementById("divTemoins1");
+    if (radioTemoins.checked) {
+        divT1.style.display = "block";
+        btnTemoins.style.display = "block";
+    } else {
+        divT1.style.display = "none";
+        btnTemoins.style.display = "none";
+    }
 }
 
-const el = document.createElement("input");
-el.className = "integr_elements";
-el.placeholder = "name";
-el.id = "name";
 
-const form = document.getElementById("my-form");
-form.appendChild(el);
+// if radio button is checked, display div with input and label
+function displayTemoins2() {
+    const btnTemoins = document.getElementById("btnTemoins");
+    const divT2 = document.getElementById("divTemoins2");
+    if (btnTemoins.checked) {
+        divT2.style.display = "block";
+        btnTemoins.style.display = "none";
+    } else {
+        divT2.style.display = "none";
+        btnTemoins.style.display = "block";
+    }
+}
+
