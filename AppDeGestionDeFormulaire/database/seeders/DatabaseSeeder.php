@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartementsSeeder::class);
         $this->call(EmployesSeeder::class);
         $this->call(FormulairesSeeder::class);
-        
+
         $this->call(EmployeFormsSeeder::class);
 
         $this->call(Form1Seeder::class);
@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(Form3Seeder::class);
         $this->call(Form4Seeder::class);
 
+        $this->call(TemoinsSeeder::class);
+        $this->call(TemoinFormsSeeder::class);
 
     }
 }
