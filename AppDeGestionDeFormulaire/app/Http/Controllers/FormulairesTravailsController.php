@@ -35,7 +35,10 @@ class FormulairesTravailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // stocker un nouveau formulaire dans la base de données
+        
+
+        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
     }
 
     /**
