@@ -114,5 +114,6 @@
   <script src="https://kit.fontawesome.com/74c890bd85.js" crossorigin="anonymous"></script>
 
   <script src="js/ajoutertemoins.js"></script>
+  <script src="js/coteBlessure.js"></script>
 
 </html>
