@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class InfoFormEmployeSeeder extends Seeder
+class Form2Seeder extends Seeder
 {
     /**
      * Run the database seeds.

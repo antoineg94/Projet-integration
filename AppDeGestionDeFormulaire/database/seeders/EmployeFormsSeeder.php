@@ -6,14 +6,14 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class EmployeFormSeeder extends Seeder
+class EmployeFormsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('employeform')->insert([
+        DB::table('employeforms')->insert([
             [
                 'employe_id' => 2,
                 'formulaire_id' => 4
