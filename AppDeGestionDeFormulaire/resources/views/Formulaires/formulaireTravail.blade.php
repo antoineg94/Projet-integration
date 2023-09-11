@@ -61,7 +61,10 @@
 Si témoins  = OUI
 AJOUTER FONCTION JS ICI
 </p>
-@yield('ajouterTemoins')
+
+
+
+
 <div class="form-outline mb-4" id="divTemoins1">
     <label class="form-label" for="">Nom témoins</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
