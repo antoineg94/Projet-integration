@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Formulaire extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'nom',
+    ];
 }
