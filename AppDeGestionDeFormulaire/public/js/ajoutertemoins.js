@@ -1,11 +1,12 @@
 
 // if radio button is checked, display div with input and label
 function displayTemoins1() {
-    alert();
+    console.log('displayTemoins1');
+    alert('displayTemoins1');
     const radioTemoins = document.getElementById("radioTemoins");
     const btnTemoins = document.getElementById("btnTemoins");
     const divT1 = document.getElementById("divTemoins1");
-    if (radioTemoins.checked) {
+    if (radioTemoins.getvalue() == "1") {
         divT1.style.display = "block";
         btnTemoins.style.display = "block";
     } else {
@@ -17,7 +18,7 @@ function displayTemoins1() {
 
 // if radio button is checked, display div with input and label
 function displayTemoins2() {
-    alert();
+    alert('displayTemoins2');
     const btnTemoins = document.getElementById("btnTemoins");
     const divT2 = document.getElementById("divTemoins2");
     if (btnTemoins.checked) {
