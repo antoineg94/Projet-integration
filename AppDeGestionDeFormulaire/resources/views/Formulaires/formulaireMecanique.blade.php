@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('formulaireMecaniques.enregistrer') }}">
+<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireMecaniques.enregistrer') }}">
     <h1>Atelier mécanique - Rapport d'accident (véhicule)</h1>
     @CSRF
     <div class=" mb-3 pb-1" > 
@@ -16,7 +16,7 @@
         @endif
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="form-outline mb-4" >
     <label class="form-label" for="">Nom de l'employé</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')

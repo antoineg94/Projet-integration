@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('formulaireSituationDangereuses.enregistrer') }}">
+<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireSituationDangereuses.enregistrer') }}">
     <h1>Signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</h1>
     @CSRF
 
