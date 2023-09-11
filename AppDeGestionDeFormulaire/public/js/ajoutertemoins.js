@@ -1,5 +1,3 @@
-// if radio button is checked, display div with input and label
-
     const selectTemoins = document.getElementById("selectTemoins");
     const divT1 = document.getElementById("divTemoins1");
     const divT2 = document.getElementById("divTemoins2");

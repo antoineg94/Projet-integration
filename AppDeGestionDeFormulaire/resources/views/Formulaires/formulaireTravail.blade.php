@@ -193,8 +193,8 @@
         </div>
     </div>
     <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label for="description" class="form-label">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
+  <textarea class="form-control" id="description" name="description" rows="3"></textarea>
 </div>
 
 premiers soins (oui/non)

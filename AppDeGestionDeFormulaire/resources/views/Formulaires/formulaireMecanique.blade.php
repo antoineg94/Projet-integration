@@ -16,7 +16,7 @@
         @endif
     </div>
 
-    <div class="form-outline mb-4" >
+    <div class="form-outline mb-4" id="divT1">
     <label class="form-label" for="">Nom de l'employé</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
@@ -24,7 +24,7 @@
                 @enderror
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="form-outline mb-4" id="divT1">
     <label class="form-label" for="">Numéro(s) d'unité(s) impliqué(s)</label>
         <input type="number" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
