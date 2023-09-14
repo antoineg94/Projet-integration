@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginsController;
 use App\Http\Controllers\MenusController;
 use App\Http\Controllers\FormulairesTravailsController;
 use App\Http\Controllers\FormulaireSituationDangereusesController;
@@ -20,12 +21,11 @@ use App\Http\Controllers\FormulaireMecaniquesController;
 */
 
 Route::get('/', function () {
-    return view('accueil');
-});
-
-Route::get('/login', function () {
     return view('Login.login');
 });
+
+Route::post('/login',
+[LoginsController::class, 'login'])->name('Logins.login');
 
 Route::get('/Accueil',
 [MenusController::class, 'index'])->name('Menus.index');
