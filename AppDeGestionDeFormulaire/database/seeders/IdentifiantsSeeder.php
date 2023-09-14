@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class IdentifiantsSeeder extends Seeder
 {
@@ -16,19 +17,19 @@ class IdentifiantsSeeder extends Seeder
         DB::table('identifiants')->insert([
             [
                 'employe_id' => 1,
-                'password' => '123'
+                'password' => Hash::make('123')
             ],
             [
                 'employe_id' => 2,
-                'password' => '123'            
+                'password' => Hash::make('123')
             ],
             [
                 'employe_id' => 3,
-                'password' => '123'            
+                'password' => Hash::make('123')
             ],
             [
                 'employe_id' => 4,
-                'password' => '123'            
+                'password' => Hash::make('123')
             ]
         ]);
     }
