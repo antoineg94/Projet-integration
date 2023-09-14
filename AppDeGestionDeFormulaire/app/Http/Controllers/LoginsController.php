@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use App\Models\Identifiant;
 use Session;
+use App\http\Requests\IdentifiantRequest;
+use Auth;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class LoginsController extends Controller
 {
@@ -16,28 +20,35 @@ class LoginsController extends Controller
         return view ('Login.login');
     }
 
-    public function login(Request $request)
+    public function login(IdentifiantRequest $request)
     {
+        // $employe = Identifiant::join('employes', 'employe_id', '=', 'employes.id')
+        // ->select('employes.*', 'identifiants.*')
+        // ->get();
+
         try{
+            
             $reussi = Auth::attempt(['employe_id' => $request->employe_id, 'password' => $request->password]);
-        
+
             if($reussi)
             {
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
                 
 
-                $nom = $identifiant->employe->nom;
-                $prenom = $identifiant->employe->prenom;
+                // Session::put('id', $identifiant->employe_id);
 
-                Session::set('nom', $nom);
-                Session::set('prenom', $prenom);
+                Log::Debug($identifiant->employe_id);
+
+       
 
                 return view('accueil')->with('success', true)->with('message','Vous êtes connecté');
             }
-            return view('accueil')->with('success', true)->with('message','Vous êtes connecté');
+
         }
         catch(\Throwable $e)
         {
+            Log::Debug('banane');
+
             log::debug($e);
             return view('Login.login')->withErrors(['Informations invalide']);
         }

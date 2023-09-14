@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('identifiants', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('employe_id')->constrained()->unique();
             $table->string('password', 255);
         });
