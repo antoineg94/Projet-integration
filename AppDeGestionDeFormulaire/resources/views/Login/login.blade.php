@@ -13,7 +13,7 @@
     <div class="form-outline mb-4">
         <label class="form-label" for="matricule">Matricule</label>
         <input type="text" id="matricule" name="matricule" class="form-control form-control-lg  @error('matricule') is-invalid @enderror" />
-        @error('email')
+        @error('matricule')
         <span class="text-danger">{{ $message }} </span>
         @enderror
     </div>
