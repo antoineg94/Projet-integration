@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TemoinsSeeder::class);
         $this->call(TemoinFormsSeeder::class);
 
+        $this->call(IdentifiantsSeeder::class);
+
     }
 }
