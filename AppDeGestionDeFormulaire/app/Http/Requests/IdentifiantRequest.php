@@ -22,7 +22,20 @@ class IdentifiantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'employe_id' => 'required',
+            'password' => 'required'
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     */
+
+    public function messages()
+    {
+        return [
+            'employe_id.required' => 'Veuillez entrer votre identifiant',
+            'password.required' => 'Veuillez entrer votre mot de passe'
         ];
     }
 }

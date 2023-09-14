@@ -16,8 +16,8 @@ class EmployesSeeder extends Seeder
         DB::table('employes')->insert([
             [
                 'matricule' => 2726920160,
-                'nom' => 'Chooter',
-                'prenom' => 'Willis',
+                'nom' => 'L\'Éponge',
+                'prenom' => 'Bob',
                 'departement_id' => 14
             ],
             [

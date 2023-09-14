@@ -16,4 +16,9 @@ class Identifiant extends Authenticatable
         'employe_id',
         'password'
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 }
