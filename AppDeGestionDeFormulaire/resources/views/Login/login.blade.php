@@ -11,18 +11,18 @@
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="matricule">Matricule</label>
+        <label class="form-label" for="matricule">Matricule</label>
         <input type="text" id="matricule" name="matricule" class="form-control form-control-lg  @error('matricule') is-invalid @enderror" />
         @error('email')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+        <span class="text-danger">{{ $message }} </span>
+        @enderror
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="password" >Mot de passe</label>
         <input type="password" id="password" name="password" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
         @error('password')
-            <span class="text-danger">{{ $message }} </span>
+        <span class="text-danger">{{ $message }} </span>
         @enderror
     </div>
 
