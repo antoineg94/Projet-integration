@@ -26,6 +26,9 @@ class LoginsController extends Controller
         // ->select('employes.*', 'identifiants.*')
         // ->get();
 
+        // Log::Debug($employe);
+
+
         try{
             
             $reussi = Auth::attempt(['employe_id' => $request->employe_id, 'password' => $request->password]);
@@ -35,9 +38,8 @@ class LoginsController extends Controller
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
                 
 
-                // Session::put('id', $identifiant->employe_id);
+                Session::put('id', $identifiant->employe_id);
 
-                Log::Debug($identifiant->employe_id);
 
        
 
