@@ -19,7 +19,7 @@
 
   <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;"></a>
 
-  <a class="btn d-grid text-white" type="button" href="">Déconnexion</a>
+  <a class="btn d-grid text-white" type="button" href="{{route('Logins.logout')}} ">Déconnexion</a>
 
       <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">

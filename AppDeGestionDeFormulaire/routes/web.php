@@ -30,6 +30,9 @@ Route::post('/login',
 Route::get('/Accueil',
 [MenusController::class, 'index'])->name('Menus.index');
 
+Route::get('/logout',
+[LoginsController::class, 'logout'])->name('Logins.logout');
+
 Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
 

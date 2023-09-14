@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 use Illuminate\Support\Facades\Log;
 
 class LoginsController extends Controller
@@ -39,15 +40,6 @@ class LoginsController extends Controller
 
     public function logout()
     {
-        $panierDestruction = Panier::where('id', '=', Session::get('idPanier'))
-        ->get()->first();
-
-        if($panierDestruction != null)
-        {
-            $panierDestruction->delete();
-        }
-
-
 
                 // Mettre à null toutes les variables de sessions
                 Session::put('nom', null);

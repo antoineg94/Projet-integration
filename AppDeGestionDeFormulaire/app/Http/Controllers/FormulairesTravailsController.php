@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-
+use Session;
 use Illuminate\Http\Request;
 
 class FormulairesTravailsController extends Controller
