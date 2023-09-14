@@ -24,6 +24,13 @@ class LoginsController extends Controller
             if($reussi)
             {
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
+                
+
+                $nom = $identifiant->employe->nom;
+                $prenom = $identifiant->employe->prenom;
+
+                Session::set('nom', $nom);
+                Session::set('prenom', $prenom);
 
                 return view('accueil')->with('success', true)->with('message','Vous êtes connecté');
             }

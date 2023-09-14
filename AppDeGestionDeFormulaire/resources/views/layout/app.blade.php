@@ -23,7 +23,7 @@
 
       <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:white;">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
       </div>
      
         
