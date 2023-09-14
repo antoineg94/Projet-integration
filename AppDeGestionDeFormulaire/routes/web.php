@@ -30,6 +30,7 @@ Route::post('/login',
 Route::get('/Accueil',
 [MenusController::class, 'index'])->name('Menus.index');
 
+
 Route::get('/logout',
 [LoginsController::class, 'logout'])->name('Logins.logout');
 
@@ -58,3 +59,6 @@ Route::post('/formulaireAudit',
 Route::post('/formulaireMecanique',
 [FormulaireMecaniquesController::class, 'enregistrer'])->name('formulaireMecaniques.enregistrer');
 
+
+Route::get('/listeFormulaire',
+[MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire');

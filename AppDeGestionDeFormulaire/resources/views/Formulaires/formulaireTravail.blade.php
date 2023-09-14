@@ -91,7 +91,7 @@
         @enderror
     </div>
 <u></u>
-    <div class="form-outline mb-4">
+    <div id="" class="form-outline mb-4">
         <label class="form-label" for="natureBlessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">

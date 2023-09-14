@@ -4,10 +4,10 @@
 
 @section('middleContent')
 <section>
-<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Logins.login') }}">
+<form method="GET" class="mb-4 col-11 mx-auto" action="{{ route('Menus.listeFormulaire') }}">
     @CSRF
     <div class=" mb-3 pb-1" > 
-        <h5 class="" style="letter-spacing: 1px;">Connexion:</h5>
+        <h5 class="fw-normal" style="letter-spacing: 1px;">Connexion:</h5>
     </div>
 
     <div class="form-outline mb-4">

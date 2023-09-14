@@ -14,6 +14,11 @@ class MenusController extends Controller
         return view('accueil');
     }
 
+    public function listeFormulaire()
+    {
+        return view('Utilisateur.ListeFormulaire');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
