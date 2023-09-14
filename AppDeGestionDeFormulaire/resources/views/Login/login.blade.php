@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" action="{{ route('Usagers.login') }}">
+<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Usagers.login') }}">
     @CSRF
     <div class=" mb-3 pb-1" > 
         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Connexion:</h5>
