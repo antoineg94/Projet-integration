@@ -18,11 +18,17 @@
   <div class="container-fluid">
 
   <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;"></a>
-  
+
+  <a class="btn d-grid text-white" type="button" href="">Déconnexion</a>
+
       <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:white;">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
       </div>
+     
+        
+
+
     </div>
   </div>
 </nav>
@@ -114,5 +120,6 @@
   <script src="https://kit.fontawesome.com/74c890bd85.js" crossorigin="anonymous"></script>
 
   <script src="js/ajoutertemoins.js"></script>
+  <script src="js/coteBlessure.js"></script>
 
 </html>

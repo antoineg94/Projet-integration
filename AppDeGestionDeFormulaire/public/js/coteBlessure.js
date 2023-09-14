@@ -1,5 +1,6 @@
 // create a function that adds two radio buttons
 function addRadioButtons(divName) {
+    alert("test");
     const selectBlessure = document.getElementById("blessure");
     selectBlessure.addEventListener("change", function () {
     var newdiv = document.createElement('div');
