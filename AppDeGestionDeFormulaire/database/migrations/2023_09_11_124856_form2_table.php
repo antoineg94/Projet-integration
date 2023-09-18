@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('date_observ')->nullable();
             $table->time('heure_observ')->nullable();
             $table->string('lieu', 255)->nullable();
+            $table->string('description', 255)->nullable();
+            $table->string('proposition', 255)->nullable();
 
             $table->timestamps();
 
