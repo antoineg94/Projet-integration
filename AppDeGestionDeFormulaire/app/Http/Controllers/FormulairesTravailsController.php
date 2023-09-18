@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Session;
 use Illuminate\Http\Request;
+use App\Models\Employeform;
+use App\Models\Form1;
+use Illuminate\Support\Facades\Log;
 
 class FormulairesTravailsController extends Controller
 {
@@ -20,7 +23,43 @@ class FormulairesTravailsController extends Controller
 
     public function enregistrer(Request $request)
     {
-        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+
+         Log::Debug($request);
+
+         try{
+ 
+                 $date = date('Y-m-d');
+ 
+                 $employeform = new Employeform();
+                 $employeform->employe_id = Session::get('employe_id');
+                 $employeform->formulaire_id = Session::get('form_id');
+                 $employeform->date_formulaire = $date;
+                 $employeform->save();
+ 
+                 // date du jour
+               
+ 
+                 $Form1 = new Form1();
+                 $Form1->employeform_id = $employeform->id;
+                 $Form1->date_incident = $request->date_incident;
+                 $Form1->heure_incident = $request->heure_incident;
+                 $Form1->nature_blessure = $request->nature_blessure;
+                 $Form1->type_violence = $request->type_violence;
+                 $Form1->type_absence = $request->type_absence;
+                 $Form1->save();
+ 
+ 
+                 Session::forget('form_id');
+                 return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+             
+         }
+         catch(\Throwable $e)
+         {
+             Log::debug($e);
+             return redirect()->route('formulairesTravails.index')->withErrors(['Informations invalide']);
+         }
+         
+ 
     }
     
     /**
@@ -36,43 +75,7 @@ class FormulairesTravailsController extends Controller
      */
     public function store(Request $request)
     {
-        // Session::put('campagneNom', $nomCampagne->nomCampagne);
-
-
-        try{
-
-                $date = date('Y-m-d');
-
-                $employeform = new Employeform();
-                $employeform->employe_id = Session::get('employe_id');
-                $employeform->form_id = Session::get('form_id');
-                $employeform->date_formulaire = $date;
-                $employeform->save();
-
-                // date du jour
-              
-
-                $Form1 = new Form1();
-                $Form1->employeform_id = $employeform->id;
-                $Form1->date_incident = $request->date_incident;
-                $Form1->heure_incident = $request->heure_incident;
-                $Form1->blessure = $request->blessure;
-                $Form1->type_violence = $request->type_violence;
-                $Form1->type_absence = $request->type_absence;
-
-
-
-                Session::forget('form_id');
-                return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
-            
-        }
-        catch(\Throwable $e)
-        {
-            Log::debug($e);
-            return redirect()->route('')->withErrors(['Informations invalide']);
-        }
-        
-
+       
     }
 
     /**
