@@ -13,7 +13,6 @@ class Form1 extends Model
         'employeform_id',          
         'date_incident',
         'heure_incident',
-        'temoin',
         'blessure',
         'type_violence',
         'type_absence'
