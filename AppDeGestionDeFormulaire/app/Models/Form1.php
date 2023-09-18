@@ -13,7 +13,13 @@ class Form1 extends Model
         'employeform_id',          
         'date_incident',
         'heure_incident',
-        'blessure',
+        'lieu',
+        'secteur',
+        'premiers_soins',
+        'nom_secouriste',
+        'nature_blessure',
+        'description_blessure',
+        'description_tache',
         'type_violence',
         'type_absence'
     ];

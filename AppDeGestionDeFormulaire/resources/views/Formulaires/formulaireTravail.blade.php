@@ -61,18 +61,18 @@
                 @enderror
     </div>
 
+
     <div class="form-outline mb-4">
-    <label class="form-label" for="endroitAccident">Endroit de l'accident</label>
-        <input type="text" id="endroitAccident" name="endroitAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+        <label class="form-label" for="lieu" >Lieu de l'incident</label>
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
+        @error('password')
+            <span class="text-danger">{{ $message }} </span>
+        @enderror
     </div>
 
-
     <div class="form-outline mb-4">
-        <label class="form-label" for="secteurActivite" >Secteur d'activité</label>
-        <input type="text" id="secteurActivite" name="secteurActivite" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
+        <label class="form-label" for="secteur" >Secteur d'activité</label>
+        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
         @error('password')
             <span class="text-danger">{{ $message }} </span>
         @enderror
@@ -154,18 +154,110 @@
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Autre" id="blessure9" name="typeNlessure" style="-webkit-appearance: checkbox;"> 
+        <input class="form-check-input" type="radio" value="Autre" id="blessure9" name="nature_blessure" style="-webkit-appearance: checkbox;"> 
         <label class="form-check-label" for="nature_blessure">
         Autre
         </label>
         </div>
             
     </div>
-    <div class="form-outline mb-4">
-        <label class="form-label" for="typeViolence" >Violence <small>(à cocher)</small></label> 
+
+    <div id="" class="form-outline mb-4">
+        <label class="form-label" for="description_blessure" >Description de la blessure </label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Physique" name="typeViolence" id="vPhysique">
+        <input class="form-check-input" type="radio" value="Brûlure, engelure" name="description_blessure" id="1">
+        <label class="form-check-label" for="description_blessure">
+        Brûlure, engelure
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Commotion cérébrale" id="2" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Commotion cérébrale
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Corps étranger" id="3" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Corps étranger
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Coupure, lacération, déchirure" id="3" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Coupure, lacération, déchirure
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Douleur au dos" id="4" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Douleur au dos
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Égratignure, éraflure, piqûre, écharde" id="5" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Égratignure, éraflure, piqûre, écharde
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Entorse, élongation, foulure, luxation, contusion" id="6" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Entorse, élongation, foulure, luxation, contusion
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Fracture, amputation" id="7" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Fracture, amputation
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Irritation, infection" id="8" name="description_blessure">
+        <label class="form-check-label" for="description_blessure">
+        Irritation, infection
+        </label>
+        </div>
+
+        
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Inhalation" id="9" name="description_blessure" style="-webkit-appearance: checkbox;"> 
+        <label class="form-check-label" for="description_blessure">
+        Inhalation
+        </label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Autre" id="10" name="description_blessure" style="-webkit-appearance: checkbox;"> 
+        <label class="form-check-label" for="description_blessure">
+        Autre
+        </label>
+        </div>
+            
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="type_violence" >Violence <small>(à cocher)</small></label> 
+
+        <div class="form-check">
+        <input class="form-check-input" type="radio" value="Physique" name="type_violence" id="vPhysique">
         <label class="form-check-label" for="flexCheckDefault">
         Physique
         </label>
@@ -173,16 +265,16 @@
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Verbale" id="vVerbale" name="typeViolence">
+        <input class="form-check-input" type="radio" value="Verbale" id="vVerbale" name="type_violence">
         <label class="form-check-label" for="flexCheckDefault">
         Verbale
         </label>
         </div>
     </div>
     <div class="mb-3">
-  <label for="description" class="form-label">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
-  <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-</div>
+        <label for="description_tache" class="form-label">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
+        <textarea class="form-control" id="description_tache" name="description_tache" rows="3"></textarea>
+    </div>
 
 premiers soins (oui/non)
 
@@ -190,19 +282,19 @@ nom du secouriste
 
 <h3>Détails sur la durée de l'absence</h3>
 <div class="form-outline mb-4">
-        <label class="form-label" for="dureeAbscence" >Durée de l'abscence </label> 
+        <label class="form-label" for="type_absence" >Durée de l'abscence </label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="aucune abscence" name="typeAbscence" id="aucuneAbscence">
-        <label class="form-check-label" for="typeAbscence">
+        <input class="form-check-input" type="radio" value="aucune abscence" name="type_absence" id="aucuneAbscence">
+        <label class="form-check-label" for="type_absence">
         1- Accident ne nécessitant <b>aucune abscence</b>
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="consultation médicale" id="consultationMedicale" name="typeAbscence">
-        <label class="form-check-label" for="typeAbscence">
+        <input class="form-check-input" type="radio" value="consultation médicale" id="consultationMedicale" name="type_absence">
+        <label class="form-check-label" for="type_absence">
         2- Accident nécéssitant une <b>consultation médicale</b>
         </label>
         </div>
