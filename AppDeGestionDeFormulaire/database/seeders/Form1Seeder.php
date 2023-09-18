@@ -18,19 +18,19 @@ class Form1Seeder extends Seeder
                 'employeform_id' => 2,
                 'date_incident' => '2022-09-11',
                 'heure_incident' => '08:00:00',
-                'blessure' => 'bras gauche'
+                'nature_blessure' => 'bras gauche'
             ],
             [
                 'employeform_id' => 4,
                 'date_incident' => '2021-03-12',
                 'heure_incident' => '08:00:00',
-                'blessure' => 'jambe droite'
+                'nature_blessure' => 'jambe droite'
             ],
             [
                 'employeform_id' => 6,
                 'date_incident' => '2023-05-11',
                 'heure_incident' => '08:30:00',
-                'blessure' => 'visage'
+                'nature_blessure' => 'visage'
             ]
         ]);
     }
