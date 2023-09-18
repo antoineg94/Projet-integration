@@ -9,13 +9,6 @@
     @CSRF
 
 <h3>Identification</h3>
-    <div class="form-outline mb-4">
-    <label class="form-label" for="nomEmploye">Nom de l'employé</label>
-        <input type="text" id="nomEmploye" name="nomEmploye" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
 
     <div class="form-outline mb-4">
     <label class="form-label" for="fonctionsEvenement">Fonction au moment de l'évènement</label>
@@ -25,25 +18,19 @@
                 @enderror
     </div>
 
-    <div class="form-outline mb-4">
-    <label class="form-label" for="matricule">Matricule</label>
-        <input type="text" id="matricule" name="matricule" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
+    
 <h3>Description de l'évènement</h3>
     <div class="form-outline mb-4">
-    <label class="form-label" for="dateAccident">Date de l'accident</label>
-        <input type="text" id="dateAccident" name="dateAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="date_incident">Date de l'accident</label>
+        <input type="text" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="heureAccident">Heure de l'accident</label>
-        <input type="text" id="heureAccident" name="heureAccident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="heure_incident">Heure de l'accident</label>
+        <input type="text" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -92,75 +79,75 @@
     </div>
 <u></u>
     <div id="" class="form-outline mb-4">
-        <label class="form-label" for="natureBlessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
+        <label class="form-label" for="nature_blessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="typeNlessure" id="blessure0">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0">
+        <label class="form-check-label" for="nature_blessure">
         Tête, visage, nez, yeux, oreille
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Torse" id="blessure1" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Torse" id="blessure1" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Torse
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Poumons" id="blessure2" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Poumons" id="blessure2" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Poumons
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Bras, épaule, coude" id="blessure3" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Bras, épaule, coude" id="blessure3" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Bras, épaule, coude
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Poignet, main, doigt" id="blessure4" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Poignet, main, doigt" id="blessure4" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Poignet, main, doigt
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Dos" id="blessure5" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Dos" id="blessure5" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Dos
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Hanche" id="blessure6" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Hanche" id="blessure6" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Hanche
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Jambe, genou" id="blessure7" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Jambe, genou" id="blessure7" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Jambe, genou
         </label>
         </div>
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Pied, orteil, cheville" id="blessure8" name="typeNlessure">
-        <label class="form-check-label" for="natureBlessure">
+        <input class="form-check-input" type="radio" value="Pied, orteil, cheville" id="blessure8" name="nature_blessure">
+        <label class="form-check-label" for="nature_blessure">
         Pied, orteil, cheville
         </label>
         </div>
@@ -168,7 +155,7 @@
         
         <div class="form-check">
         <input class="form-check-input" type="radio" value="Autre" id="blessure9" name="typeNlessure" style="-webkit-appearance: checkbox;"> 
-        <label class="form-check-label" for="natureBlessure">
+        <label class="form-check-label" for="nature_blessure">
         Autre
         </label>
         </div>
@@ -223,7 +210,7 @@ nom du secouriste
 
 
 <div class="col-11 mx-auto">
-    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                    
 </form>
 

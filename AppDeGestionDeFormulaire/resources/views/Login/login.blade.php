@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="GET" class="mb-4 col-11 mx-auto" action="{{ route('Menus.listeFormulaire') }}">
+<form method="GET" class="mb-4 col-11 mx-auto" action="{{ route('Logins.login') }}">
     @CSRF
     <div class=" mb-3 pb-1" > 
         <h5 class="fw-normal" style="letter-spacing: 1px;">Connexion:</h5>
