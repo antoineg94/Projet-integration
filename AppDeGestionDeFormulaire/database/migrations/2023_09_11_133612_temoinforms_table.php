@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('temoinforms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('temoin_id')->constrained();
-            $table->float('form1_id')->nullable();
-            $table->float('form2_id')->nullable();
+            $table->foreignId('employeform_id')->constrained();
         });
     }
 

@@ -11,7 +11,6 @@ class Temoinform extends Model
 
     protected $fillable = [
         'temoin_id',
-        'form1_id',
-        'form2_id'
+        'employeform_id'
     ];
 }
