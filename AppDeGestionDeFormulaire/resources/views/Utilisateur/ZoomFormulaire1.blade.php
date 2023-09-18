@@ -54,11 +54,11 @@
   </tr>
   <tr>
     <td>Nature de la blessure</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->nature_blessure }}</td>
   </tr>
   <tr>
     <td>Description de la blessure</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->description_blessure }}</td>
   </tr>
   <tr>
     <td>Type de violence</td>
@@ -70,31 +70,27 @@
   </tr>
   <tr>
     <td>Premiers soins</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->premiers_soins }}</td>
   </tr>
   <tr>
     <td>Nom du secouriste</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->nom_secouriste }}</td>
   </tr>
   <tr>
     <td>Type d'abscence</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1-> type_absence}}</td>
   </tr>
   <tr>
     <td>Durée</td>
-    <td></td>
+    <td>{{ $zoomForm1-> duree_absence}}</td>
   </tr>
   <tr>
     <td>Status de la demande</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->statut }}</td>
   </tr>
   <tr>
     <td>Nom du superviseur</td>
-    <td>{{ $zoomForm1-> }}</td>
-  </tr>
-  <tr>
-    <td>no de poste</td>
-    <td>{{ $zoomForm1-> }}</td>
+    <td>{{ $zoomForm1->superviseur }}</td>
   </tr>
 </tbody>
 </table>

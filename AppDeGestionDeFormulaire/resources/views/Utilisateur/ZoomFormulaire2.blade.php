@@ -12,89 +12,57 @@
   </h5>
   <div class="card-body">
     
-<table>
+  <table>
 <thead>
   <tr>
-    <th>Nom de l'employé</th>
-    <th></th>
+    <th>Nom</th>
+    <th>{{ $zoomForm2->nom }}, {{ $zoomForm2->prenom }}</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Fonctions </td>
-    <td></td>
-  </tr>
-  <tr>
     <td>Matricule</td>
-    <td></td>
+    <td>{{ $zoomForm2->matricule }}</td>
   </tr>
   <tr>
-    <td>Date de l'accident</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Heure</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Témoins 1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Témoins 2</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Endroit</td>
-    <td></td>
+    <td>Fonctions</td>
+    <td>{{ $zoomForm2->position }}</td>
   </tr>
   <tr>
     <td>Secteur d'activité</td>
-    <td></td>
+    <td>{{ $zoomForm2-> }}</td>
   </tr>
   <tr>
-    <td>Nature de la blessure</td>
-    <td></td>
+    <td>Date de l'observation</td>
+    <td>{{ $zoomForm2->date_observ }}</td>
   </tr>
   <tr>
-    <td>Description de la blessure</td>
-    <td></td>
+    <td>Heure de l'observation</td>
+    <td>{{ $zoomForm2->heure_observ }}</td>
   </tr>
   <tr>
-    <td>Type de violence</td>
-    <td></td>
+    <td>Lieu</td>
+    <td>{{ $zoomForm2->lieu }}</td>
   </tr>
   <tr>
-    <td>Description de l'évenement</td>
-    <td></td>
+    <td>Témoins 1</td>
+    <td>{{ $zoomForm2->temoins1.nom }}</td>
   </tr>
   <tr>
-    <td>Premiers soins</td>
-    <td></td>
+    <td>Témoins 2</td>
+    <td>{{ $zoomForm2->temoins2.nom }}</td>
   </tr>
   <tr>
-    <td>Nom du secouriste</td>
-    <td></td>
+    <td>Description de la situation</td>
+    <td>{{ $zoomForm2-> }}</td>
   </tr>
   <tr>
-    <td>Type d'abscence</td>
-    <td></td>
+    <td>Correction/améliorations</td>
+    <td>{{ $zoomForm2-> }}</td>
   </tr>
   <tr>
-    <td>Durée</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Status de la demande</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Nom du superviseur</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>no de poste</td>
-    <td></td>
+    <td>nom superviseur</td>
+    <td>{{ $zoomForm2->superviseur }}</td>
   </tr>
 </tbody>
 </table>
