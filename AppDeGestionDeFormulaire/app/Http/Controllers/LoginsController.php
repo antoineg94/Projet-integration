@@ -38,7 +38,7 @@ class LoginsController extends Controller
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
                 
 
-                Session::put('id', $identifiant->employe_id);
+                Session::put('employe_id', $identifiant->employe_id);
 
 
        

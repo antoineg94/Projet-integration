@@ -23,7 +23,7 @@ use App\Http\Controllers\FormulaireMecaniquesController;
 Route::get('/',
 [LoginsController::class, 'index'])->name('Logins.index');
 
-Route::post('/login',
+Route::get('/login',
 [LoginsController::class, 'login'])->name('Logins.login');
 
 Route::get('/Accueil',
