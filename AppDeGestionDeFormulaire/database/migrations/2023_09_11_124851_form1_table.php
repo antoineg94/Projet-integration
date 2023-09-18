@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('employeform_id')->constrained();            
             $table->date('date_incident');
             $table->time('heure_incident');
-            $table->string('temoin', 255)->nullable();
             $table->string('blessure', 255)->nullable();
             $table->string('type_violence', 255)->nullable();
             $table->string('type_absence', 255)->nullable();
