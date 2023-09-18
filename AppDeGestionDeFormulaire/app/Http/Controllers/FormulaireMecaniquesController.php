@@ -27,6 +27,11 @@ class FormulaireMecaniquesController extends Controller
         //
     }
 
+    public function zoomForm4()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      */

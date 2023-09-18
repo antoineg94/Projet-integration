@@ -16,29 +16,29 @@
 <thead>
   <tr>
     <th>Numéro(s) d'unité(s) impliqué(s)</th>
-    <th></th>
+    <th>{{ $zoomForm4->no_unite }}</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>Département</td>
-    <td></td>
+    <td>{{ $zoomForm4->departement }}</td>
   </tr>
   <tr>
     <td>Nom de l'employé impliqué</td>
-    <td></td>
+    <td>{{ $zoomForm4->nom }}, {{ $zoomForm4->prenom }}</td>
   </tr>
   <tr>
     <td>Nom du supérieur immédiat</td>
-    <td></td>
+    <td>{{ $zoomForm4->superviseur }}</td>
   </tr>
   <tr>
     <td>Permis de conduire de l'employé</td>
-    <td></td>
+    <td>{{ $zoomForm4->permis_conduire }}</td>
   </tr>
   <tr>
     <td>Autre véhicules impliqués? (citoyen)</td>
-    <td></td>
+    <td>{{ $zoomForm4->vehicule_citoyen }}</td>
   </tr>
 </tbody>
 </table>

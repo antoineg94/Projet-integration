@@ -70,6 +70,11 @@ class FormulairesTravailsController extends Controller
         //
     }
 
+    public function zoomForm1()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      */

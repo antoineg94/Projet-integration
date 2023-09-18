@@ -28,6 +28,10 @@ class FormulaireSituationDangereusesController extends Controller
         //
     }
 
+    public function zoomForm2()
+    {
+        //
+    }
     /**
      * Store a newly created resource in storage.
      */
