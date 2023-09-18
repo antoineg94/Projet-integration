@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Form4Seeder::class);
 
         $this->call(TemoinsSeeder::class);
-        $this->call(TemoinFormsSeeder::class);
 
         $this->call(IdentifiantsSeeder::class);
 
