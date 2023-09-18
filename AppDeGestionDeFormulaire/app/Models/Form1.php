@@ -16,7 +16,6 @@ class Form1 extends Model
         'temoin',
         'blessure',
         'type_violence',
-        'type_absence',
-        'date_formulaire'
+        'type_absence'
     ];
 }

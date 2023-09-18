@@ -13,7 +13,6 @@ class Form4 extends Model
         'employeform_id',
         'no_unite',
         'departement',
-        'vehicule_citoyen',
-        'date_formulaire'
+        'vehicule_citoyen'
     ];
 }
