@@ -7,6 +7,8 @@ use Session;
 use Illuminate\Http\Request;
 use App\Models\Employeform;
 use App\Models\Form1;
+use App\Models\Temoin;
+use App\Models\Temoinform;
 use Illuminate\Support\Facades\Log;
 
 class FormulairesTravailsController extends Controller
@@ -43,11 +45,19 @@ class FormulairesTravailsController extends Controller
                  $Form1->employeform_id = $employeform->id;
                  $Form1->date_incident = $request->date_incident;
                  $Form1->heure_incident = $request->heure_incident;
+                 $Form1->lieu = $request->lieu;
+                 $Form1->secteur = $request->secteur;
                  $Form1->nature_blessure = $request->nature_blessure;
+                 $Form1->description_blessure = $request->description_blessure;
+                 $Form1->description_tache = $request->description_tache;
                  $Form1->type_violence = $request->type_violence;
                  $Form1->type_absence = $request->type_absence;
+          
                  $Form1->save();
  
+                 $temoin = new Temoin();
+                 $temoin->nom = $request->nom_temoin;
+                    $temoin->save();
  
                  Session::forget('form_id');
                  return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');

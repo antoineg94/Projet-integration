@@ -10,6 +10,7 @@ class Temoin extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom'
+        'nom',
+        'employeform_id'
     ];
 }

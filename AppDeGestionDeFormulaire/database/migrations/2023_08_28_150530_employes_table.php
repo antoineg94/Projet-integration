@@ -16,6 +16,7 @@ return new class extends Migration
             $table->float('matricule', 20);
             $table->string('nom', 255);
             $table->string('prenom', 255);
+            $table->string('permis_conduire', 255)->nullable();
             $table->string('position', 255)->nullable();
             $table->string('superieur_id', 255)->default('N/A');
             $table->string('superviseur', 255)->default('non');
