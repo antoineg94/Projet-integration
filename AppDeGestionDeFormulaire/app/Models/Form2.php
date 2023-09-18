@@ -11,7 +11,6 @@ class Form2 extends Model
 
     protected $fillable = [
         'employeform_id',        
-        'temoin',
         'secteur',
         'date_observ',
         'heure_observ',

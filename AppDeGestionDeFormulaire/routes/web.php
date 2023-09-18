@@ -20,9 +20,8 @@ use App\Http\Controllers\FormulaireMecaniquesController;
 |
 */
 
-Route::get('/', function () {
-    return view('Login.login');
-});
+Route::get('/',
+[LoginsController::class, 'index'])->name('Logins.index');
 
 Route::post('/login',
 [LoginsController::class, 'login'])->name('Logins.login');
