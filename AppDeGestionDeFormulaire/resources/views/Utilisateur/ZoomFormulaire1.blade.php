@@ -94,7 +94,9 @@
   </tr>
 </tbody>
 </table>
-   
+@else
+<p>Une erreur s'est produite, veuillez réessayer plus tard</p>
+@endif
    </div>
 @endsection
 </div>

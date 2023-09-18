@@ -29,6 +29,18 @@ class FormulaireAuditsController extends Controller
         //
     }
 
+    public function zoomForm3()
+    {
+        $zoomForm1s = Form3::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
+        ->join('Employe')
+        ->join('TemoinsForm')
+        ->join('Temoins')
+        ->join('Identifiant')
+        ->select('')
+        ->where('employeform_id', '=',  1)
+        ->get();
+    }
+
     /**
      * Store a newly created resource in storage.
      */
