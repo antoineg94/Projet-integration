@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Form1', function (Blueprint $table) {
+        Schema::create('Form1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();            
             $table->date('date_incident');
@@ -25,8 +25,12 @@ return new class extends Migration
             $table->string('nature_blessure', 255)->nullable();
             $table->string('description_blessure', 255)->nullable();
 
+            $table->string('description_tache', 255)->nullable();
             $table->string('type_violence', 255)->nullable();
             $table->string('type_absence', 255)->nullable();
+
+            $table->timestamps();
+
         });
     }
 
@@ -35,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Form1');
+        Schema::dropIfExists('Form1s');
     }
 };

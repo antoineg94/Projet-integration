@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('date_consulte')->nullable();
             $table->string('statut', 255)->nullable();
             $table->date('date_formulaire')->nullable();
+            $table->timestamps();
+
         });
     }
 

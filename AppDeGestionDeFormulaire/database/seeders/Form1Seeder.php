@@ -13,7 +13,7 @@ class Form1Seeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('form1')->insert([
+        DB::table('form1s')->insert([
             [
                 'employeform_id' => 2,
                 'date_incident' => '2022-09-11',

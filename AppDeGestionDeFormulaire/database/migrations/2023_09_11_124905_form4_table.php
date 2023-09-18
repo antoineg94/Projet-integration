@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Form4', function (Blueprint $table) {
+        Schema::create('Form4s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();          
             $table->float('no_unite')->nullable();
             $table->string('departement', 255)->nullable();
             $table->date('vehicule_citoyen')->nullable();
+
+            $table->timestamps();
+
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Form4');
+        Schema::dropIfExists('Form4s');
     }
 };

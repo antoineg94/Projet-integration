@@ -13,7 +13,7 @@ class Form2Seeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('form2')->insert([
+        DB::table('form2s')->insert([
             [
                 'employeform_id' => 1,
                 'secteur' => 5,
