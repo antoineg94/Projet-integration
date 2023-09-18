@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Form3', function (Blueprint $table) {
+        Schema::create('Form3s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();   
             $table->string('lieu', 255)->nullable();
@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('respect_distance', 255)->nullable();
             $table->string('port_epi', 255)->nullable();
             $table->string('respect_proced', 255)->nullable();
+
+            $table->timestamps();
+
         });
     }
 
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Form3');
+        Schema::dropIfExists('Form3s');
     }
 };
