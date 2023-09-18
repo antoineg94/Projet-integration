@@ -19,32 +19,28 @@ class Form2Seeder extends Seeder
                 'secteur' => 5,
                 'date_observ' => '2023-09-11',
                 'heure_observ' => '08:00:00',
-                'lieu' => 'Trois-Rivières',
-                'date_formulaire' => '2023-09-18'
+                'lieu' => 'Trois-Rivières'
             ],
             [
                 'employeform_id' => 3,
                 'secteur' => 2,
                 'date_observ' => '2022-03-12',
                 'heure_observ' => '08:00:00',
-                'lieu' => 'Bécancour',
-                'date_formulaire' => '2022-03-15'
+                'lieu' => 'Bécancour'
             ],
             [
                 'employeform_id' => 12,
                 'secteur' => 5,
                 'date_observ' => '2023-05-11',
                 'heure_observ' => '08:30:00',
-                'lieu' => 'Québec',
-                'date_formulaire' => '2023-05-12'
+                'lieu' => 'Québec'
             ],
             [
                 'employeform_id' => 7,
                 'secteur' => 5,
                 'date_observ' => '2023-05-11',
                 'heure_observ' => '08:30:00',
-                'lieu' => 'Québec',
-                'date_formulaire' => '2023-05-12'
+                'lieu' => 'Québec'
             ]
         ]);
     }

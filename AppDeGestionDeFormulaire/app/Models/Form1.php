@@ -15,7 +15,6 @@ class Form1 extends Model
         'heure_incident',
         'blessure',
         'type_violence',
-        'type_absence',
-        'date_formulaire'
+        'type_absence'
     ];
 }

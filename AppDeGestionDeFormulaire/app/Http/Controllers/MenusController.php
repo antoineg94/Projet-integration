@@ -25,9 +25,8 @@ class MenusController extends Controller
     public function listeFormulaire()
     {
          $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-         ->join('form1', 'form1.id', '=', 'employeforms.formulaire_id')
-         ->select('form1.date_formulaire', 'employeforms.employe_id', 'formulaires.nom', 'employeforms.statut')
-         ->where('employe_id', '=',  2)
+         ->select('date_formulaire', 'employeforms.employe_id', 'formulaires.nom', 'employeforms.statut')
+         ->where('employe_id', '=',  19)
          ->get();
 
          Log::info($listes);

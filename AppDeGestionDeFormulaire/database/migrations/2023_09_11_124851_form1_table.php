@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('blessure', 255)->nullable();
             $table->string('type_violence', 255)->nullable();
             $table->string('type_absence', 255)->nullable();
-            $table->date('date_formulaire')->nullable();
         });
     }
 

@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('respect_distance', 255)->nullable();
             $table->string('port_epi', 255)->nullable();
             $table->string('respect_proced', 255)->nullable();
-            $table->date('date_formulaire')->nullable();
         });
     }
 
