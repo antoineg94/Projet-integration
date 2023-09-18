@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use App\Models\Employeform;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
+use Illuminate\Support\Facades\Log;
 class MenusController extends Controller
 {
     /**
@@ -14,11 +19,26 @@ class MenusController extends Controller
         return view('accueil');
     }
 
+    
+
+    //Afficher les information d'un des formulaire accident de travail
     public function listeFormulaire()
     {
-        return view('Utilisateur.ListeFormulaire');
-    }
+         $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+         ->join('form1', 'form1.id', '=', 'employeforms.formulaire_id')
+         ->select('form1.date_formulaire', 'employeforms.employe_id', 'formulaires.nom', 'employeforms.statut')
+         ->where('employe_id', '=',  2)
+         ->get();
 
+         Log::info($listes);
+        return view('Utilisateur.ListeFormulaire', compact('listes'));
+        }
+
+    public function zoomFormulaire()
+    {
+        
+    }
+    
     /**
      * Show the form for creating a new resource.
      */
