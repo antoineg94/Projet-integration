@@ -17,7 +17,6 @@ return new class extends Migration
             $table->float('no_unite')->nullable();
             $table->string('departement', 255)->nullable();
             $table->date('vehicule_citoyen')->nullable();
-            $table->date('date_formulaire')->nullable();
         });
     }
 

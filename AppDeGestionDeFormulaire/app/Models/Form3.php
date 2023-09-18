@@ -23,7 +23,6 @@ class Form3 extends Model
         'autre',
         'respect_distance',
         'port_epi',
-        'respect_proced',
-        'date_formulaire'
+        'respect_proced'
     ];
 }

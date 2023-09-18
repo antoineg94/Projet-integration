@@ -18,7 +18,6 @@ return new class extends Migration
             $table->date('date_observ')->nullable();
             $table->time('heure_observ')->nullable();
             $table->string('lieu', 255)->nullable();
-            $table->date('date_formulaire')->nullable();
         });
     }
 

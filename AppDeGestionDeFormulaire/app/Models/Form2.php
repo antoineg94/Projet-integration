@@ -15,7 +15,6 @@ class Form2 extends Model
         'secteur',
         'date_observ',
         'heure_observ',
-        'lieu',
-        'date_formulaire'
+        'lieu'
     ];
 }

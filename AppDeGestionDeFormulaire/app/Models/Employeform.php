@@ -15,6 +15,7 @@ class Employeform extends Model
         'consulte',
         'consultant',
         'date_consulte',
-        'statut'
+        'statut',
+        'date_formulaire'
     ];
 }
