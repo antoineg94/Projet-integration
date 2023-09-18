@@ -42,7 +42,7 @@
   </tr>
   <tr>
     <td>Témoins 2</td>
-    <td>{{ $zoomForm1->temoins2.nom }}</td>
+    <td>{{ $zoomForm2-> }}</td>
   </tr>
   <tr>
     <td>Endroit</td>

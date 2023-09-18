@@ -54,11 +54,11 @@
   </tr>
   <tr>
     <td>Description de la situation</td>
-    <td>{{ $zoomForm2-> }}</td>
+    <td>{{ $zoomForm2->description }}</td>
   </tr>
   <tr>
     <td>Correction/améliorations</td>
-    <td>{{ $zoomForm2-> }}</td>
+    <td>{{ $zoomForm2->proposition }}</td>
   </tr>
   <tr>
     <td>nom superviseur</td>

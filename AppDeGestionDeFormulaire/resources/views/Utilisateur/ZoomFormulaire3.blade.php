@@ -12,308 +12,83 @@
   </h5>
   <div class="card-body">
 
-  <table class="table table-striped">
-	<thead>
-	<tr>
-		<th><br></th>
-		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Conforme</th>
-		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Non conforme</th>
-		<th style="writing-mode: vertical-rl; text-orientation: mixed;">N/A</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>&nbsp;EPI</td>
-		<td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI1">
-        <label class="form-check-label" for="EPI">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI2">
-        <label class="form-check-label" for="EPI">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI3">
-        <label class="form-check-label" for="EPI">
-        </label>
-      </div>
-    </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Tenue des lieux</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux1">
-        <label class="form-check-label" for="TenueLieux">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux2">
-        <label class="form-check-label" for="TenueLieux">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux3">
-        <label class="form-check-label" for="TenueLieux">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Comportement sécuritaire</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire1">
-        <label class="form-check-label" for="ComportementSecuritaire">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire2">
-        <label class="form-check-label" for="ComportementSecuritaire">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire3">
-        <label class="form-check-label" for="ComportementSecuritaire">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Signalisation</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation1">
-        <label class="form-check-label" for="Signalisation">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation2">
-        <label class="form-check-label" for="Signalisation">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation3">
-        <label class="form-check-label" for="Signalisation">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Fiche signalétique</td>
-		<td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique1">
-        <label class="form-check-label" for="FicheSignaletique">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique2">
-        <label class="form-check-label" for="FicheSignaletique">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique3">
-        <label class="form-check-label" for="FicheSignaletique">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Travaux - Excavation</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation1">
-        <label class="form-check-label" for="TravauxExcavation">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation2">
-        <label class="form-check-label" for="TravauxExcavation">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation3">
-        <label class="form-check-label" for="TravauxExcavation">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Espace clos</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos1">
-        <label class="form-check-label" for="EspaceClos">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos2">
-        <label class="form-check-label" for="EspaceClos">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos3">
-        <label class="form-check-label" for="EspaceClos">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Méthode de travail</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail1">
-        <label class="form-check-label" for="MethodeTravail">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail2">
-        <label class="form-check-label" for="MethodeTravail">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail3">
-        <label class="form-check-label" for="MethodeTravail">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Autre(s):&nbsp;</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie1">
-        <label class="form-check-label" for="AutreCategorie">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie2">
-        <label class="form-check-label" for="AutreCategorie">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie3">
-        <label class="form-check-label" for="AutreCategorie">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td colspan="4" style="text-align: center;">&nbsp;<b>COVID-19</b></td> 
-	</tr>
-	<tr>
-		<td>&nbsp;Respect de la distance</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance1">
-        <label class="form-check-label" for="RespectDistance">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance2">
-        <label class="form-check-label" for="RespectDistance">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance3">
-        <label class="form-check-label" for="RespectDistance">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Port des EPI (masque/visière)</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere1">
-        <label class="form-check-label" for="MasqueVisiere">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere2">
-        <label class="form-check-label" for="MasqueVisiere">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere3">
-        <label class="form-check-label" for="MasqueVisiere">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tr>
-		<td>&nbsp;Respect des procédures établies</td>
-    <td>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies1">
-        <label class="form-check-label" for="ProceduresEtablies">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies2">
-        <label class="form-check-label" for="ProceduresEtablies">
-        </label>
-      </div>
-    </td>
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies3">
-        <label class="form-check-label" for="ProceduresEtablies">
-        </label>
-      </div>
-      </td>
-	</tr>
-	<tbody>
+  <table>
+<thead>
+  <tr>
+    <th>Nom</th>
+    <th>{{ $zoomForm3->nom }}, {{ $zoomForm3->prenom }}</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Lieux</td>
+    <td>{{ $zoomForm3->lieu }}</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>{{ $zoomForm3->date_formulaire }}</td>
+  </tr>
+  <tr>
+    <td>Heure</td>
+    <td>{{ $zoomForm3-> }}</td>
+  </tr>
+  <tr>
+    <td>EPI</td>
+    <td>{{ $zoomForm3->epi }}</td>
+  </tr>
+  <tr>
+    <td>Tenue des lieux</td>
+    <td>{{ $zoomForm3tenue }}</td>
+  </tr>
+  <tr>
+    <td>Comportement sécuritaire</td>
+    <td>{{ $zoomForm3->comportement }}</td>
+  </tr>
+  <tr>
+    <td>Signalisation</td>
+    <td>{{ $zoomForm3->signalisation }}</td>
+  </tr>
+  <tr>
+    <td>Fiche signalétiques</td>
+    <td>{{ $zoomForm3->fiche_signal }}</td>
+  </tr>
+  <tr>
+    <td>Travaux - Excavation</td>
+    <td>{{ $zoomForm3->travaux }}</td>
+  </tr>
+  <tr>
+    <td>Espace clos</td>
+    <td>{{ $zoomForm3->espace_clos }}</td>
+  </tr>
+  <tr>
+    <td>Méthode de travail</td>
+    <td>{{ $zoomForm3->methode_travail }}</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>{{ $zoomForm3->autre }}</td>
+  </tr>
+  <tr>
+    <td>COVID</td>
+
+  </tr>
+  <tr>
+    <td>respect de la distanciation</td>
+    <td>{{ $zoomForm3->respect_distance }}</td>
+  </tr>
+  <tr>
+    <td>port des EPI (masque/visière)</td>
+    <td>{{ $zoomForm3->port_epi }}</td>
+  </tr>
+  <tr>
+    <td>Respect des procédures établies</td>
+    <td>{{ $zoomForm3->respect_proced }}</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>{{ $zoomForm3->description }}</td>
+  </tr>
+</tbody>
 </table>
 
   </div>
