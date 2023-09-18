@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('Form2', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();          
-            $table->string('temoin', 255)->nullable();
             $table->string('secteur', 255)->nullable();
             $table->date('date_observ')->nullable();
             $table->time('heure_observ')->nullable();

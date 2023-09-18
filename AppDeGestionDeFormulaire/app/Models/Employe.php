@@ -12,7 +12,11 @@ class Employe extends Model
     protected $fillable = [
         'matricule',
         'nom',
-        'prenom',   
+        'prenom', 
+        'position',
+        'superieur_id',
+        'superviseur',
+        'admin',  
         'departement_id'
     ];
 }
