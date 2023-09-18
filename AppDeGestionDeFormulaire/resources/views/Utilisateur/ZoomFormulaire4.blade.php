@@ -1,6 +1,6 @@
 @extends('layout/app')
 
-@section('title', 'Accueil')
+@section('title', 'Informations sur le formulaire d\'atelier mécanique')
 
 @section('middleContent')
 <section>

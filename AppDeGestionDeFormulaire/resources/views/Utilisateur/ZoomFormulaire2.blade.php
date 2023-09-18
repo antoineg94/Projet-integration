@@ -1,6 +1,6 @@
 @extends('layout/app')
 
-@section('title', 'Accueil')
+@section('title', 'Informations sur le signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»')
 
 @section('middleContent')
 <section>
