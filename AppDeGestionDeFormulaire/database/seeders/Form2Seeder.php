@@ -37,6 +37,14 @@ class Form2Seeder extends Seeder
                 'heure_observ' => '08:30:00',
                 'lieu' => 'Québec',
                 'date_formulaire' => '2023-05-12'
+            ],
+            [
+                'employeform_id' => 7,
+                'secteur' => 5,
+                'date_observ' => '2023-05-11',
+                'heure_observ' => '08:30:00',
+                'lieu' => 'Québec',
+                'date_formulaire' => '2023-05-12'
             ]
         ]);
     }
