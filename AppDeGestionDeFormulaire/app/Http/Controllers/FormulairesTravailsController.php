@@ -13,6 +13,7 @@ class FormulairesTravailsController extends Controller
      */
     public function index()
     {
+        Session::put('form_id', 1);
         return view('Formulaires.formulaireTravail');
     }
 
@@ -39,13 +40,30 @@ class FormulairesTravailsController extends Controller
 
 
         try{
-            // $link = new Employeform($request->all());
-            // $link->panier_id = $paniers->id;
-            // $link->article_id = $request->article_id;
-            // $link->save();
+
+                $date = date('Y-m-d');
+
+                $employeform = new Employeform();
+                $employeform->employe_id = Session::get('employe_id');
+                $employeform->form_id = Session::get('form_id');
+                $employeform->date_formulaire = $date;
+                $employeform->save();
+
+                // date du jour
+              
+
+                $Form1 = new Form1();
+                $Form1->employeform_id = $employeform->id;
+                $Form1->date_incident = $request->date_incident;
+                $Form1->heure_incident = $request->heure_incident;
+                $Form1->blessure = $request->blessure;
+                $Form1->type_violence = $request->type_violence;
+                $Form1->type_absence = $request->type_absence;
 
 
-            return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+
+                Session::forget('form_id');
+                return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
             
         }
         catch(\Throwable $e)
