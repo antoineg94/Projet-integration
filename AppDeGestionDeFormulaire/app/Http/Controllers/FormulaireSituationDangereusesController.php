@@ -30,7 +30,14 @@ class FormulaireSituationDangereusesController extends Controller
 
     public function zoomForm2()
     {
-        //
+        $zoomForm1s = Form2::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
+        ->join('Employe')
+        ->join('TemoinsForm')
+        ->join('Temoins')
+        ->join('Identifiant')
+        ->select('')
+        ->where('employeform_id', '=',  1)
+        ->get();
     }
     /**
      * Store a newly created resource in storage.

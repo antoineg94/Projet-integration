@@ -5,7 +5,7 @@
 @section('middleContent')
 <section>
 <div class="d-grid gap-3 col-11 mx-auto p-2">
-
+@if (count($zoomForm3))
 <div class="card mb-3">
   <h5 class="card-header">
     Informations sur: {{ $formulaire->nomFormulaire }}
@@ -90,7 +90,9 @@
   </tr>
 </tbody>
 </table>
-
+@else
+<p>Une erreur s'est produite, veuillez réessayer plus tard</p>
+@endif
   </div>
 </section>
 @endsection

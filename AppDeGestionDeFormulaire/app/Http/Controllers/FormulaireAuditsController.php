@@ -33,8 +33,6 @@ class FormulaireAuditsController extends Controller
     {
         $zoomForm1s = Form3::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
         ->join('Employe')
-        ->join('TemoinsForm')
-        ->join('Temoins')
         ->join('Identifiant')
         ->select('')
         ->where('employeform_id', '=',  1)
