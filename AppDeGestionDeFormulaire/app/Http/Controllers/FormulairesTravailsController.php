@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\Employeform;
 use App\Models\Form1;
 use App\Models\Temoin;
-use App\Models\Temoinform;
 use Illuminate\Support\Facades\Log;
 
 class FormulairesTravailsController extends Controller
@@ -80,19 +79,21 @@ class FormulairesTravailsController extends Controller
         //
     }
 
-    public function zoomForm1()
+    public function zoomForm1(Form1 $liste)
     {
-        //Afficher tout les informations du formulaire 1
-        $zoomForm1s = Form1::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
-        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
-        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
-        ->select('employes.*', 'employeforms.*', 'form1s.*','temoins.*')
-        ->where('employeforms.id', '=',  1)
-        ->get()->first();
+        Log::debug($liste);
 
-        Log::debug($zoomForm1s);
-        return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
+
+        //Afficher tout les informations du formulaire 1
+        // $zoomForm1s = Form1::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
+        // ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+        // ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
+        // ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
+        // ->select('employes.*', 'employeforms.*', 'form1s.*','temoins.*')
+        // ->where('employeforms.id', '=',  $liste->id)
+        // ->get()->first();
+
+        return view('Utilisateur.ZoomFormulaire1', compact('liste'));
     }
 
     /**

@@ -9,16 +9,14 @@
 @if (count($listes))
 @foreach($listes as $liste) 
   <div class="card mb-3">
-  <h5 class="card-header">
-    {{ $liste->nom }}
-  </h5>
     <div class="card-body">
-    
+
+      <div class="card-text">Id: <b>{{ $liste->id }} </b></div>
       <div class="card-text">Date: <b>{{ $liste->date_formulaire }} </b></div>
       <div class="card-text">Statut: {{ $liste->statut }}</div>
       
     <div class=" d-flex justify-content-end">
-    <a href=" {{route('formulairesTravails.zoomForm1') }}" class="btn text-white w-50" style="background-color: #63BC55;" type="button">Consulter</a>
+    <a href=" {{route('formulairesTravails.zoomForm1', [ $liste ]) }}" class="btn text-white w-50" style="background-color: #63BC55;" >Consulter</a>
     </div>
    </div>
    </div>

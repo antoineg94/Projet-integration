@@ -37,8 +37,9 @@ Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
 
 
-Route::get('/zoomFormulaireTravail',
+Route::get('/zoomFormulaireTravail/{liste}/',
 [FormulairesTravailsController::class, 'zoomForm1'])->name('formulairesTravails.zoomForm1');
+
 
 
 Route::get('/formulaireSituationDangereuse',
