@@ -82,7 +82,6 @@ class FormulairesTravailsController extends Controller
 
     public function zoomForm1()
     {
-        //Afficher tout les informations du formulaire 1
         $zoomForm1s = Form1::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
         ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
         ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
