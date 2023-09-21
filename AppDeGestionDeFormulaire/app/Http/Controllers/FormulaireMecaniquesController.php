@@ -17,7 +17,33 @@ class FormulaireMecaniquesController extends Controller
 
     public function enregistrer(Request $request)
     {
-        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+        Log::Debug($request);
+        try{
+ 
+            $date = date('Y-m-d');
+
+            $employeform = new Employeform();
+            $employeform->employe_id = Session::get('employe_id');
+            $employeform->formulaire_id = Session::get('form_id');
+            $employeform->date_formulaire = $date;
+            $employeform->save();
+
+            $Form4 = new Form4();
+            $Form4->employeform_id = $employeform->id;
+            $Form4->no_unite = $request->no_unite;
+            $Form4->departement = $request->departement;
+            $Form4->vehicule_citoyen = $request->vehicule_citoyen;
+            $Form4->save();
+            
+            Session::forget('form_id');
+            return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+        
+    }
+    catch(\Throwable $e)
+    {
+        Log::debug($e);
+        return redirect()->route('formulairesMechaniques.index')->withErrors(['Informations invalide']);
+    }
     }
     /**
      * Show the form for creating a new resource.
