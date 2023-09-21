@@ -9,13 +9,7 @@
     @CSRF
 
     <h3>Identification</h3>
-    <div class="form-outline mb-4">
-    <label class="form-label" for="nomEmploye">Nom de l'employé</label>
-        <input type="text" id="nomEmploye" name="nomEmploye" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
+    
 
     <div class="form-outline mb-4">
     <label class="form-label" for="fonctionsEvenement">Fonction au moment de l'évènement</label>
@@ -25,17 +19,10 @@
                 @enderror
     </div>
 
-    <div class="form-outline mb-4">
-    <label class="form-label" for="matricule">Matricule</label>
-        <input type="text" id="matricule" name="matricule" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="secteurActivite">Secteur d'activité</label>
-        <input type="text" id="secteurActivite" name="secteurActivite" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="secteur">Secteur d'activité</label>
+        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -47,23 +34,23 @@
 
     <h3>Description de la situation dangeureurse ou du "passé proche"</h3>
     <div class="form-outline mb-4">
-    <label class="form-label" for="dateIncident">Date de l'incident</label>
-        <input type="text" id="dateIncident" name="dateIncident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="date_observ">Date de l'incident</label>
+        <input type="text" id="date_observ" name="date_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="heureIncident">Heure de l'incident</label>
-        <input type="text" id="heureIncident" name="heureIncident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="heure_observ">Heure de l'incident</label>
+        <input type="text" id="heure_observ" name="heure_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
     <div class="form-outline mb-4">
-    <label class="form-label" for="lieuIncident">Lieu</label>
-        <input type="text" id="lieuIncident" name="lieuIncident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="lieu">Lieu</label>
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -79,16 +66,16 @@
 </div>
 
 <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
-    <label class="form-label" for="nomTemoins1">Nom témoins</label>
-        <input type="text" id="nomTemoins1" name="nomTemoins1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nom_temoin1">Nom témoins</label>
+        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
-    <label class="form-label" for="nomTemoins2">Nom témoins</label>
-        <input type="text" id="nomTemoins2" name="nomTemoins2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nom_temoin2">Nom témoins</label>
+        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -101,12 +88,12 @@
 </div>
 
 <div class="form-outline mb-4">
-  <label for="corrections" class="form-label">Correction(s) ou amélioration(s) proposé(s):</label>
-  <textarea class="form-control" id="corrections" name="corrections" rows="3"></textarea>
+  <label for="proposition" class="form-label">Correction(s) ou amélioration(s) proposé(s):</label>
+  <textarea class="form-control" id="proposition" name="proposition" rows="3"></textarea>
 </div>
 
 <div class="col-11 mx-auto">
-    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                   
 </form>
 

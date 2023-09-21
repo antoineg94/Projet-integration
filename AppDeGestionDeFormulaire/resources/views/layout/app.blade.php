@@ -34,7 +34,7 @@
 </nav>
     <!-- END OF HEADER -->
 <body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
-  
+ 
 
     @yield('middleContent')
     </body>

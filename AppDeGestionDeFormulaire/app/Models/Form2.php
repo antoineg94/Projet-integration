@@ -14,6 +14,8 @@ class Form2 extends Model
         'secteur',
         'date_observ',
         'heure_observ',
-        'lieu'
+        'lieu',
+        'description',
+        'proposition'
     ];
 }
