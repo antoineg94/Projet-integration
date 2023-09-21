@@ -29,7 +29,7 @@ class MenusController extends Controller
          ->where('employe_id', '=',  19)
          ->get();
 
-         Log::info($listes);
+ 
         return view('Utilisateur.ListeFormulaire', compact('listes'));
         }
 
