@@ -17,6 +17,7 @@ class FormulaireSituationDangereusesController extends Controller
      */
     public function index()
     {
+        Session::put('form_id', 2);
         return view('Formulaires.formulaireSituationDangereuse');
     }
 
