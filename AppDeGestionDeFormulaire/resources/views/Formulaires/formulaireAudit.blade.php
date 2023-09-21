@@ -8,20 +8,13 @@
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
 
-    <div class="form-outline mb-4 col-11 mx-auto">
-    <label class="form-label" for="">Nom de l'employé</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
 
     <div class="form-outline mb-4 col-11 mx-auto">
-    <label class="form-label" for="">Lieu(x) des travaux</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="lieu">Lieu(x) des travaux</label>
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+          <span class="text-danger">{{ $message }} </span>
+        @enderror
     </div>
 <div class="d-flex col-11 mx-auto gap-3">
     <div class="form-outline mb-4" >
@@ -60,22 +53,22 @@
 		<td>&nbsp;EPI</td>
 		<td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI1">
-        <label class="form-check-label" for="EPI">
+        <input class="form-check-input" type="radio" name="epi" id="epi1" value="conforme">
+        <label class="form-check-label" for="epi">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI2">
-        <label class="form-check-label" for="EPI">
+        <input class="form-check-input" type="radio" name="epi" id="epi2" value="Non_conforme">
+        <label class="form-check-label" for="epi">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="EPI" id="EPI3">
-        <label class="form-check-label" for="EPI">
+        <input class="form-check-input" type="radio" name="epi" id="epi3" value="N/A">
+        <label class="form-check-label" for="epi">
         </label>
       </div>
     </td>
@@ -84,22 +77,22 @@
 		<td>&nbsp;Tenue des lieux</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux1">
-        <label class="form-check-label" for="TenueLieux">
+        <input class="form-check-input" type="radio" name="tenue" id="tenue1" value="conforme">
+        <label class="form-check-label" for="tenue">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux2">
-        <label class="form-check-label" for="TenueLieux">
+        <input class="form-check-input" type="radio" name="tenue" id="tenue2" value="Non_conforme">
+        <label class="form-check-label" for="tenue">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="TenueLieux" id="TenueLieux3">
-        <label class="form-check-label" for="TenueLieux">
+        <input class="form-check-input" type="radio" name="tenue" id="tenue3" value="N/A">
+        <label class="form-check-label" for="tenue">
         </label>
       </div>
       </td>
@@ -108,22 +101,22 @@
 		<td>&nbsp;Comportement sécuritaire</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire1">
-        <label class="form-check-label" for="ComportementSecuritaire">
+        <input class="form-check-input" type="radio" name="comportement" id="comportement1" value="conforme">
+        <label class="form-check-label" for="comportement">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire2">
-        <label class="form-check-label" for="ComportementSecuritaire">
+        <input class="form-check-input" type="radio" name="comportement" id="comportement2" value="Non_conforme">
+        <label class="form-check-label" for="comportement">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="ComportementSecuritaire" id="ComportementSecuritaire3">
-        <label class="form-check-label" for="ComportementSecuritaire">
+        <input class="form-check-input" type="radio" name="comportement" id="comportement3" value="N/A">
+        <label class="form-check-label" for="comportement">
         </label>
       </div>
       </td>
@@ -132,22 +125,22 @@
 		<td>&nbsp;Signalisation</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation1">
-        <label class="form-check-label" for="Signalisation">
+        <input class="form-check-input" type="radio" name="signalisation" id="Signalisation1" value="conforme">
+        <label class="form-check-label" for="signalisation">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation2">
-        <label class="form-check-label" for="Signalisation">
+        <input class="form-check-input" type="radio" name="signalisation" id="Signalisation2" value="Non_conforme">
+        <label class="form-check-label" for="signalisation">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="Signalisation" id="Signalisation3">
-        <label class="form-check-label" for="Signalisation">
+        <input class="form-check-input" type="radio" name="signalisation" id="Signalisation3" value="N/A">
+        <label class="form-check-label" for="signalisation">
         </label>
       </div>
       </td>
@@ -156,22 +149,22 @@
 		<td>&nbsp;Fiche signalétique</td>
 		<td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique1">
-        <label class="form-check-label" for="FicheSignaletique">
+        <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique1" value="conforme">
+        <label class="form-check-label" for="fiche_signal">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique2">
-        <label class="form-check-label" for="FicheSignaletique">
+        <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique2" value="Non_conforme">
+        <label class="form-check-label" for="fiche_signal">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="FicheSignaletique" id="FicheSignaletique3">
-        <label class="form-check-label" for="FicheSignaletique">
+        <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique3" value="N/A">
+        <label class="form-check-label" for="fiche_signal">
         </label>
       </div>
       </td>
@@ -180,22 +173,22 @@
 		<td>&nbsp;Travaux - Excavation</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation1">
-        <label class="form-check-label" for="TravauxExcavation">
+        <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation1" value="conforme">
+        <label class="form-check-label" for="travaux">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation2">
-        <label class="form-check-label" for="TravauxExcavation">
+        <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation2" value="Non_conforme">
+        <label class="form-check-label" for="travaux">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="TravauxExcavation" id="TravauxExcavation3">
-        <label class="form-check-label" for="TravauxExcavation">
+        <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation3" value="N/A">
+        <label class="form-check-label" for="travaux">
         </label>
       </div>
       </td>
@@ -204,22 +197,22 @@
 		<td>&nbsp;Espace clos</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos1">
-        <label class="form-check-label" for="EspaceClos">
+        <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos1" value="conforme">
+        <label class="form-check-label" for="espace_clos">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos2">
-        <label class="form-check-label" for="EspaceClos">
+        <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos2" value="Non_conforme">
+        <label class="form-check-label" for="espace_clos">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="EspaceClos" id="EspaceClos3">
-        <label class="form-check-label" for="EspaceClos">
+        <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos3" value="N/A">
+        <label class="form-check-label" for="espace_clos">
         </label>
       </div>
       </td>
@@ -228,22 +221,22 @@
 		<td>&nbsp;Méthode de travail</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail1">
-        <label class="form-check-label" for="MethodeTravail">
+        <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail1" value="conforme">
+        <label class="form-check-label" for="methode_travail">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail2">
-        <label class="form-check-label" for="MethodeTravail">
+        <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail2" value="Non_conforme">
+        <label class="form-check-label" for="methode_travail">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="MethodeTravail" id="MethodeTravail3">
-        <label class="form-check-label" for="MethodeTravail">
+        <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail3" value="N/A">
+        <label class="form-check-label" for="methode_travail">
         </label>
       </div>
       </td>
@@ -252,22 +245,22 @@
 		<td>&nbsp;Autre(s):&nbsp;</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie1">
-        <label class="form-check-label" for="AutreCategorie">
+        <input class="form-check-input" type="radio" name="autre" id="AutreCategorie1" value="conforme">
+        <label class="form-check-label" for="autre">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie2">
-        <label class="form-check-label" for="AutreCategorie">
+        <input class="form-check-input" type="radio" name="autre" id="AutreCategorie2" value="Non_conforme">
+        <label class="form-check-label" for="autre">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="AutreCategorie" id="AutreCategorie3">
-        <label class="form-check-label" for="AutreCategorie">
+        <input class="form-check-input" type="radio" name="autre" id="AutreCategorie3" value="N/A">
+        <label class="form-check-label" for="autre">
         </label>
       </div>
       </td>
@@ -279,22 +272,22 @@
 		<td>&nbsp;Respect de la distance</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance1">
-        <label class="form-check-label" for="RespectDistance">
+        <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance1" value="conforme">
+        <label class="form-check-label" for="respect_distance">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance2">
-        <label class="form-check-label" for="RespectDistance">
+        <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance2" value="Non_conforme">
+        <label class="form-check-label" for="respect_distance">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="RespectDistance" id="RespectDistance3">
-        <label class="form-check-label" for="RespectDistance">
+        <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance3" value="N/A">
+        <label class="form-check-label" for="respect_distance">
         </label>
       </div>
       </td>
@@ -303,22 +296,22 @@
 		<td>&nbsp;Port des EPI (masque/visière)</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere1">
-        <label class="form-check-label" for="MasqueVisiere">
+        <input class="form-check-input" type="radio" name="port_epi" id="port_epi1" value="conforme">
+        <label class="form-check-label" for="port_epi">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere2">
-        <label class="form-check-label" for="MasqueVisiere">
+        <input class="form-check-input" type="radio" name="port_epi" id="port_epi2" value="Non_conforme">
+        <label class="form-check-label" for="port_epi">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="MasqueVisiere" id="MasqueVisiere3">
-        <label class="form-check-label" for="MasqueVisiere">
+        <input class="form-check-input" type="radio" name="port_epi" id="port_epi3" value="N/A">
+        <label class="form-check-label" for="port_epi">
         </label>
       </div>
       </td>
@@ -327,22 +320,22 @@
 		<td>&nbsp;Respect des procédures établies</td>
     <td>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies1">
-        <label class="form-check-label" for="ProceduresEtablies">
+        <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced1" value="conforme">
+        <label class="form-check-label" for="respect_proced">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies2">
-        <label class="form-check-label" for="ProceduresEtablies">
+        <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced2" value="Non_conforme">
+        <label class="form-check-label" for="respect_proced">
         </label>
       </div>
     </td>
     <td>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="ProceduresEtablies" id="ProceduresEtablies3">
-        <label class="form-check-label" for="ProceduresEtablies">
+        <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced3" value="Non_conforme">
+        <label class="form-check-label" for="respect_proced">
         </label>
       </div>
       </td>
@@ -352,7 +345,7 @@
 </div>
 
 <div class="col-11 mx-auto">
-    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>            
 </form>
 
