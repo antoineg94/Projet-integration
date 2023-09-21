@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Session;
+use Illuminate\Http\Request;
+use App\Models\Form2;
+use App\Models\Employeform;
+use App\Models\Temoins;
+use Illuminate\Support\Facades\Log;
+
 class FormulaireSituationDangereusesController extends Controller
 {
     /**
@@ -17,7 +22,43 @@ class FormulaireSituationDangereusesController extends Controller
 
     public function enregistrer(Request $request)
     {
-        return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+        Log::debug($request);   
+
+        try{
+            $date = date('Y-m-d');
+ 
+            $employeform = new Employeform();
+            $employeform->employe_id = Session::get('employe_id');
+            $employeform->formulaire_id = Session::get('form_id');
+            $employeform->date_formulaire = $date;
+            $employeform->save();
+
+            $Form2 = new Form2();
+            $Form2->employeform_id = $employeform->id;
+            $Form2->secteur = $request->secteur;
+            $Form2->date_observ = $request->date_observ;
+            $Form2->heure_observ = $request->heure_observ;
+            $Form2->lieu = $request->lieu;
+            $Form2->description = $request->description;
+            $Form2->proposition = $request->proposition;
+            $Form2->save();
+
+            if($request->nom_temoin1 != null){
+                $temoin = new Temoins();
+                $temoin->nom = $request->nom_temoin1;
+                $temoin->save();
+            }
+            if($request->nom_temoin2 != null){
+                $temoin = new Temoins();
+                $temoin->nom = $request->nom_temoin2;
+                $temoin->save();
+            }
+
+            return view('Accueil')->with('message','Formulaire enregistré');
+        }
+        catch(Exception $e){
+            return redirect()->back()->with('message','Une erreur est survenue lors de l\'enregistrement du formulaire');
+        }
     }
 
     /**
