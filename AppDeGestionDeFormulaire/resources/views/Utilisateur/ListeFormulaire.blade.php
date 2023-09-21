@@ -18,7 +18,7 @@
       <div class="card-text">Statut: {{ $liste->statut }}</div>
       
     <div class=" d-flex justify-content-end">
-    <a href="#" class="btn text-white w-50" style="background-color: #63BC55;" type="button">Consulter</a>
+    <a href=" {{route('formulairesTravails.zoomForm1') }}" class="btn text-white w-50" style="background-color: #63BC55;" type="button">Consulter</a>
     </div>
    </div>
    </div>

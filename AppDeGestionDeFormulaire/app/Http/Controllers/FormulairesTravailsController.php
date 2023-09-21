@@ -80,6 +80,20 @@ class FormulairesTravailsController extends Controller
         //
     }
 
+    public function zoomForm1()
+    {
+        $zoomForm1s = Form1::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
+        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
+        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
+        ->select('employes.*', 'employeforms.*', 'form1s.*','temoins.*')
+        ->where('employeforms.id', '=',  1)
+        ->get()->first();
+
+        Log::debug($zoomForm1s);
+        return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */

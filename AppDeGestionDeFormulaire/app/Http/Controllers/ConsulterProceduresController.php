@@ -3,41 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
-use App\Models\Employeform;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
-use Illuminate\Support\Facades\Log;
-class MenusController extends Controller
+
+class ConsulterProceduresController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('accueil');
+        //
     }
 
-    
-
-    //Afficher les information d'un des formulaire accident de travail
-    public function listeFormulaire()
-    {
-         $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-         ->select('date_formulaire', 'employeforms.employe_id', 'formulaires.nom', 'employeforms.statut')
-         ->where('employe_id', '=',  19)
-         ->get();
-
- 
-        return view('Utilisateur.ListeFormulaire', compact('listes'));
-        }
-
-    public function zoomFormulaire()
-    {
-        
-    }
-    
     /**
      * Show the form for creating a new resource.
      */

@@ -29,12 +29,16 @@ class FormulaireMecaniquesController extends Controller
 
     public function zoomForm4()
     {
-        $zoomForm1s = Form4::join('employeforms', 'employeforms.id', '=', 'form1s.employeform_id')
-        ->join('Employe')
-        ->join('Identifiant')
-        ->select('')
-        ->where('employeform_id', '=',  1)
-        ->get();
+        $zoomForm1s = Form4::join('employeforms', 'employeforms.id', '=', 'form4s.employeform_id')
+        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
+        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
+        ->select('employes.*', 'employeforms.*', 'form4s.*','temoins.*')
+        ->where('employeforms.id', '=',  1)
+        ->get()->first();
+
+        Log::debug($zoomForm1s);
+        return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
     }
 
     /**
