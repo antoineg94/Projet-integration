@@ -12,7 +12,7 @@
   </h5>
   <div class="card-body">
 
-  <table>
+  <table class="table table-striped">
 <thead>
   <tr>
     <th>Nom</th>
