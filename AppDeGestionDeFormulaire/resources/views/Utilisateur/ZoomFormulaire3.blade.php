@@ -83,8 +83,8 @@
             <td>Description</td>
             <td>{{ $zoomForm3s->description }}</td>
         </tr>
-      </tbody>
-    </table>
+    </tbody>
+  </table>
 @else
 <p>Une erreur s'est produite, veuillez réessayer plus tard</p>
 @endif
