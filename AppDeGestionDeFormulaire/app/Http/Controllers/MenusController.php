@@ -26,7 +26,6 @@ class MenusController extends Controller
     public function index()
     {
         $procedures = Consulterprocedure::all();
-        Log::debug($procedures);
 
         return view('accueil', compact('procedures'));
     }
