@@ -34,28 +34,33 @@ Route::get('/Accueil',
 Route::get('/logout',
 [LoginsController::class, 'logout'])->name('Logins.logout');
 
+
+
+
+// form index
+
 Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
-
-
-Route::get('/zoomFormulaire/{liste}/',
-[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire');
-
 
 
 Route::get('/formulaireSituationDangereuse',
 [FormulaireSituationDangereusesController::class, 'index'])->name('formulaireSituationDangereuses.index');
 
+
 Route::get('/formulaireAudit',
 [FormulaireAuditsController::class, 'index'])->name('formulaireAudits.index');
 
 
-
 Route::get('/formulaireMecanique',
 [FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index');
+// Zoom
+Route::get('/zoomFormulaire/{liste}/',
+[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire');
 
-Route::get('/zoomFormulaireMecanique',
-[FormulaireMecaniquesController::class, 'zoomForm4'])->name('formulaireMecaniques.zoomForm4');
+
+
+
+// Form store
 
 Route::post('/formulaireTravail',
 [FormulairesTravailsController::class, 'enregistrer'])->name('formulairesTravails.enregistrer');
@@ -71,9 +76,15 @@ Route::post('/formulaireMecanique',
 [FormulaireMecaniquesController::class, 'enregistrer'])->name('formulaireMecaniques.enregistrer');
 
 
+
+// liste 
+
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire');
 
+
+
+// 
 Route::get('/procedures/creation',
 [ConsulterProceduresController::class,'create'])->name('procedure.create');
 
