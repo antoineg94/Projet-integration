@@ -46,16 +46,16 @@
 </div>
 
 <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
-    <label class="form-label" for="nomTemoins1">Nom témoins</label>
-        <input type="text" id="nomTemoins1" name="nomTemoins1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nom_temoin1">Nom témoins</label>
+        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
-    <label class="form-label" for="nomTemoins2">Nom témoins</label>
-        <input type="text" id="nomTemoins2" name="nomTemoins2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="nom_temoin2">Nom témoins</label>
+        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
