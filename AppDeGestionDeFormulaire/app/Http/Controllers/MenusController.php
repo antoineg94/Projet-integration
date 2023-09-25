@@ -10,6 +10,7 @@ use App\Models\Form1;
 use App\Models\Form2;
 use App\Models\Form3;
 use App\Models\Form4;
+use App\Models\Consulterprocedure;
 
 use App\Models\Temoin;
 
@@ -24,7 +25,10 @@ class MenusController extends Controller
      */
     public function index()
     {
-        return view('accueil');
+        $procedures = Consulterprocedure::all();
+        Log::debug($procedures);
+
+        return view('accueil', compact('procedures'));
     }
 
     

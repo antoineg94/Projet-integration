@@ -43,7 +43,7 @@ class LoginsController extends Controller
 
        
 
-                return view('accueil')->with('success', true)->with('message','Vous êtes connecté');
+                return redirect()->route('Menus.index')->with('success', true)->with('message','Vous êtes connecté');
             }
 
         }

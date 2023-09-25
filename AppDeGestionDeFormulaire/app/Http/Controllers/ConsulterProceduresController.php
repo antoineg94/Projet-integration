@@ -19,13 +19,7 @@ class ConsulterProceduresController extends Controller
     }
 
 //fonction qui affiche les procédure a consulter en fonction de ses accès
-    public function consulterProcedures()
-    {
-        $procedures = Procedure::all();
-        return view('accueil', ['procedures' => $procedures]);
-    }
-    
-
+ 
     /**
      * Show the form for creating a new resource.
      */
@@ -43,7 +37,7 @@ class ConsulterProceduresController extends Controller
         try {
             
                 $procedure = new ConsulterProcedures($request->all());
-                // $titre
+            // $titre
                // $lien
                // $description
                // $departement
