@@ -10,6 +10,7 @@ class Form1 extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'employeform_id',          
         'date_incident',
         'heure_incident',
@@ -23,4 +24,5 @@ class Form1 extends Model
         'type_violence',
         'type_absence'
     ];
+
 }
