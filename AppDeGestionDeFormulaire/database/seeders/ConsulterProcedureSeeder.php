@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ConsulterProcedureSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class ConsulterProcedureSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('departements')->insert([
+        DB::table('consulterprocedures')->insert([
             [
                 'titre' => 'Nouvelle information!',
                 'description' => 'Dans le lien, vous trouverez des nouvelles informations concernant les procédures de la ville de Trois-Rivières.',

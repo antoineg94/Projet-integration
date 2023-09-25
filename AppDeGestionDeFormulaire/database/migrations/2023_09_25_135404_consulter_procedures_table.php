@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titre', 255);
             $table->string('description', 255);
-            $table->string('departement', 255);
+            $table->float('departement_id');
             $table->string('lien', 255);
 
         });

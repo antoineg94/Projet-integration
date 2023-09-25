@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TemoinsSeeder::class);
 
         $this->call(IdentifiantsSeeder::class);
+        $this->call(ConsulterProcedureSeeder::class);
 
     }
 }
