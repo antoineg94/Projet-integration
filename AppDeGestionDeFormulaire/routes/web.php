@@ -77,3 +77,10 @@ Route::post('/formulaireMecanique',
 
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire');
+
+Route::get('/procedures/creation',
+[ConsulterProceduresController::class,'create'])->name('procedure.create');
+
+Route::post('/procedures',
+[ConsulterProceduresController::class,'store'])->name('procedure.store');
+

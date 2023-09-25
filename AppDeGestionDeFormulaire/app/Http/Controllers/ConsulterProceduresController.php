@@ -14,12 +14,20 @@ class ConsulterProceduresController extends Controller
         //
     }
 
+//fonction qui affiche les procédure a consulter en fonction de ses accès
+    public function consulterProcedures()
+    {
+        $procedures = Procedure::all();
+        return view('accueil', ['procedures' => $procedures]);
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('ConsulterProcedures.AjouterProcedure');
     }
 
     /**
@@ -27,7 +35,17 @@ class ConsulterProceduresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+                $procedure = new ConsulterProcedures($request->all());
+                $procedure->save();
+            }
+        
+            catch (\Throwable $e) {
+                //Gérer l'erreur
+                Log::debug($e);
+            }
+            return redirect()->route('accueil');
+            
     }
 
     /**
