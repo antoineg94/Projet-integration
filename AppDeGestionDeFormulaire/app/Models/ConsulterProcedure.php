@@ -9,10 +9,5 @@ class ConsulterProcedure extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'titre',
-        'description',
-        'lien',
-        'departement_id'
-    ];
+    protected $fillable = [ 'description', 'lien', 'departement_id' ];
 }
