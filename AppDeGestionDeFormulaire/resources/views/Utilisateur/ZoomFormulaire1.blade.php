@@ -12,7 +12,7 @@
         Informations sur: formulaire déclaration d'accident de travail
       </h5>
       <div class="card-body">
-        <table>
+        <table class="table table-striped">
           <thead>
             <tr>
               <th>Nom de l'employé</th>
