@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ConsulterProcedure;
+use App\Models\Departement;
 
 class ConsulterProceduresController extends Controller
 {
@@ -27,7 +29,8 @@ class ConsulterProceduresController extends Controller
      */
     public function create()
     {
-        return view('ConsulterProcedures.AjouterProcedure');
+        $departements = Departement::all();
+        return view('ConsulterProcedures.AjouterProcedure', compact('departements'));
     }
 
     /**

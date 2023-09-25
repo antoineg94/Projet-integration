@@ -33,9 +33,13 @@
     <label class="form-label" for="lien">Département</label>
     <small>Il est possible de sélectionner plus d'un département</small>
     <select class="form-select" aria-label="multiple select example">
+        @if(isset($departements))
         @foreach($departements as $departement)
         <option value="{{ departement->nom }}">{{ departement->nom }}</option>
         @endforeach
+        @else
+        <p>Aucun département</p>
+        @endif
     </select>
     </div>
     
