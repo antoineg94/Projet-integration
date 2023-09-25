@@ -40,7 +40,7 @@ class FormulaireMecaniquesController extends Controller
             $Form4->save();
             
             Session::forget('form_id');
-            return view('accueil')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         
     }
     catch(\Throwable $e)

@@ -55,7 +55,7 @@ class FormulaireSituationDangereusesController extends Controller
                 $temoin->save();
             }
 
-            return view('Accueil')->with('message','Formulaire enregistré');
+            return redirect()->route('Menus.index')->with('message','Formulaire enregistré');
         }
         catch(Exception $e){
             return redirect()->back()->with('message','Une erreur est survenue lors de l\'enregistrement du formulaire');
