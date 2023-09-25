@@ -55,7 +55,6 @@ class FormulaireAuditsController extends Controller
 
             $Form3->save();
 
-            Log::debug($Form3);
 
             return view('accueil')->with('message','Formulaire enregistré avec succès');
 
