@@ -10,6 +10,7 @@ use App\Models\Employeform;
 use App\Models\Temoin;
 use Illuminate\Support\Facades\Log;
 
+
 class FormulaireSituationDangereusesController extends Controller
 {
     /**
@@ -45,14 +46,16 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->save();
 
             if($request->nom_temoin1 != null){
-                $temoin = new Temoin();
-                $temoin->nom = $request->nom_temoin1;
-                $temoin->save();
+                $temoin1 = new Temoin();
+                $temoin1->nom = $request->nom_temoin1;
+                $temoin1->employeform_id = $employeform->id;
+                $temoin1->save();
             }
             if($request->nom_temoin2 != null){
-                $temoin = new Temoin();
-                $temoin->nom = $request->nom_temoin2;
-                $temoin->save();
+                $temoin2 = new Temoin();
+                $temoin2->nom = $request->nom_temoin2;
+                $temoin2->employeform_id = $employeform->id;
+                $temoin2->save();
             }
 
             return redirect()->route('Menus.index')->with('message','Formulaire enregistré');
