@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ConsulterProcedure;
 use App\Models\Departement;
+use Illuminate\Support\Facades\Log;
+
 
 class ConsulterProceduresController extends Controller
 {
@@ -47,7 +49,7 @@ class ConsulterProceduresController extends Controller
                 //Gérer l'erreur
                 Log::debug($e);
             }
-            return redirect()->route('accueil');
+            return view('accueil');
             
     }
 
