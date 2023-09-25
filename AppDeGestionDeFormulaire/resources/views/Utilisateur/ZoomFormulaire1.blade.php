@@ -6,7 +6,7 @@
 
 <section>
   <div class="d-grid gap-3 col-11 mx-auto p-2">
-    @if(isset($liste))
+    @if(isset($zoomForm1s))
     <div class="card mb-3">
       <h5 class="card-header">
         Informations sur: formulaire déclaration d'accident de travail
@@ -16,25 +16,25 @@
           <thead>
             <tr>
               <th>Nom de l'employé</th>
-              <th>{{ $liste->nom }}, {{ $liste->prenom }}</th>
+              <th>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Fonctions </td>
-              <td>{{ $liste->position }}</td>
+              <td>{{ $zoomForm1s->position }}</td>
             </tr>
             <tr>
               <td>Matricule</td>
-              <td>{{ $liste->matricule }}</td>
+              <td>{{ $zoomForm1s->matricule }}</td>
             </tr>
             <tr>
               <td>Date de l'accident</td>
-              <td>{{ $liste->date_incident }}</td>
+              <td>{{ $zoomForm1s->date_incident }}</td>
             </tr>
             <tr>
               <td>Heure</td>
-              <td>{{ $liste->heure_incident }}</td>
+              <td>{{ $zoomForm1s->heure_incident }}</td>
             </tr>
             <tr>
               <td>Témoins 1</td>
@@ -44,51 +44,51 @@
             </tr>
             <tr>
               <td>Endroit</td>
-              <td>{{ $liste->lieu }}</td>
+              <td>{{ $zoomForm1s->lieu }}</td>
             </tr>
             <tr>
               <td>Secteur d'activité</td>
-              <td>{{ $liste->secteur }}</td>
+              <td>{{ $zoomForm1s->secteur }}</td>
             </tr>
             <tr>
               <td>Nature de la blessure</td>
-              <td>{{ $liste->nature_blessure }}</td>
+              <td>{{ $zoomForm1s->nature_blessure }}</td>
             </tr>
             <tr>
               <td>Description de la blessure</td>
-              <td>{{ $liste->description_blessure }}</td>
+              <td>{{ $zoomForm1s->description_blessure }}</td>
             </tr>
             <tr>
               <td>Type de violence</td>
-              <td>{{ $liste->type_violence }}</td>
+              <td>{{ $zoomForm1s->type_violence }}</td>
             </tr>
             <tr>
               <td>Description de l'évenement</td>
-              <td>{{ $liste->description_tache }}</td>
+              <td>{{ $zoomForm1s->description_tache }}</td>
             </tr>
             <tr>
               <td>Premiers soins</td>
-              <td>{{ $liste->premiers_soins }}</td>
+              <td>{{ $zoomForm1s->premiers_soins }}</td>
             </tr>
             <tr>
               <td>Nom du secouriste</td>
-              <td>{{ $liste->nom_secouriste }}</td>
+              <td>{{ $zoomForm1s->nom_secouriste }}</td>
             </tr>
             <tr>
               <td>Type d'abscence</td>
-              <td>{{ $liste-> type_absence}}</td>
+              <td>{{ $zoomForm1s-> type_absence}}</td>
             </tr>
             <tr>
               <td>Durée</td>
-              <td>{{ $liste-> duree_absence}}</td>
+              <td>{{ $zoomForm1s-> duree_absence}}</td>
             </tr>
             <tr>
               <td>Status de la demande</td>
-              <td>{{ $liste->statut }}</td>
+              <td>{{ $zoomForm1s->statut }}</td>
             </tr>
             <tr>
               <td>Nom du superviseur</td>
-              <td>{{ $liste->superviseur }}</td>
+              <td>{{ $zoomForm1s->superviseur }}</td>
             </tr>
           </tbody>
         </table>

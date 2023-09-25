@@ -16,6 +16,7 @@ class Employeform extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'employe_id',
         'formulaire_id',
         'consulte',

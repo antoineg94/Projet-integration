@@ -37,22 +37,17 @@ Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
 
 
-Route::get('/zoomFormulaireTravail/{liste}/',
-[FormulairesTravailsController::class, 'zoomForm1'])->name('formulairesTravails.zoomForm1');
+Route::get('/zoomFormulaire/{liste}/',
+[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire');
 
 
 
 Route::get('/formulaireSituationDangereuse',
 [FormulaireSituationDangereusesController::class, 'index'])->name('formulaireSituationDangereuses.index');
 
-Route::get('/zoomFormulaireSituationDangereuse',
-[FormulaireSituationDangereusesController::class, 'zoomForm2'])->name('formulaireSituationDangereuses.zoomForm2');
-
 Route::get('/formulaireAudit',
 [FormulaireAuditsController::class, 'index'])->name('formulaireAudits.index');
 
-Route::get('/zoomFormulaireAudit',
-[FormulaireAuditsController::class, 'zoomForm3'])->name('formulaireAudits.zoomForm3');
 
 
 Route::get('/formulaireMecanique',

@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Session;
 use App\Models\Employeform;
 use App\Models\Formulaire;
+use App\Models\Form1;
+use App\Models\Form2;
+use App\Models\Form3;
+use App\Models\Form4;
+
+use App\Models\Temoin;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +40,66 @@ class MenusController extends Controller
         return view('Utilisateur.ListeFormulaire', compact('listes', 'formulaires'));
         }
 
-    public function zoomFormulaire()
-    {
+        public function zoomFormulaire(EmployeForm $liste)
+        {
+            
+            if($liste->formulaire_id = 1)
+            {
+                $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
+                ->select('form1s.*', 'form1s.id as form1s_id', 'employeforms.*', 'employes.*')
+                ->where('employeforms.id', '=', $liste->id)
+                ->get()->first();
         
-    }
+                Log::debug($zoomForm1s);
+                return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
+
+            }
+            elseif($liste->formulaire_id = 2)
+            {
+                $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
+                ->select('form2s.*', 'form2s.id as form2s_id', 'employeforms.*', 'employes.*')
+                ->where('employeforms.id', '=', $liste->id)
+                ->get()->first();
+        
+                Log::debug($zoomForm2s);
+                return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
+
+            }
+            elseif($liste->formulaire_id = 3)
+            {
+                $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
+                ->select('form3s.*', 'form3s.id as form3s_id', 'employeforms.*', 'employes.*')
+                ->where('employeforms.id', '=', $liste->id)
+                ->get()->first();
+        
+                Log::debug($zoomForm3s);
+                return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s'));
+
+            }
+            elseif($liste->formulaire_id = 4)
+            {
+                $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
+                ->select('form4s.*', 'form4s.id as form4s_id', 'employeforms.*', 'employes.*')
+                ->where('employeforms.id', '=', $liste->id)
+                ->get()->first();
+        
+                Log::debug($zoomForm4s);
+                return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
+
+            }
+            else
+            {
+                return view('Utilisateur.ListeFormulaire');
+            }
+    
+
+
+
+        }
     
     /**
      * Show the form for creating a new resource.
