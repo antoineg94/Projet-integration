@@ -39,7 +39,10 @@ class MenusController extends Controller
 
         $formulaires = Formulaire::all();
 
-        $listes = Employeform::all();
+        $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+        ->select('employeforms.*', 'formulaires.nom as nom_formulaire')
+        ->orderby('employeforms.date_formulaire', 'desc')
+        ->get();
 
         return view('Utilisateur.ListeFormulaire', compact('listes', 'formulaires'));
         }
@@ -49,10 +52,12 @@ class MenusController extends Controller
             
             if($liste->formulaire_id == 1)
             {
-                Log::debug('here 1');
+
+
                 $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
-                ->select('form1s.*', 'form1s.id as form1s_id', 'employeforms.*', 'employes.*')
+                ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                ->select('form1s.*', 'form1s.id as form1s_id', 'employeforms.*', 'employes.*', 'formulaires.nom as nom_formulaire')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
@@ -62,12 +67,13 @@ class MenusController extends Controller
             }
             else if($liste->formulaire_id == 2)
             {
-                Log::debug('here 2');
+             
 
 
                 $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
-                ->select('form2s.*', 'form2s.id as form2s_id', 'employeforms.*', 'employes.*')
+                ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                ->select('form2s.*', 'form2s.id as form2s_id', 'employeforms.*', 'employes.*', 'formulaires.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
@@ -77,10 +83,11 @@ class MenusController extends Controller
             }
             else if($liste->formulaire_id == 3)
             {
-                Log::debug('here 3');
+
                 $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
-                ->select('form3s.*', 'form3s.id as form3s_id', 'employeforms.*', 'employes.*')
+                ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                ->select('form3s.*', 'form3s.id as form3s_id', 'employeforms.*', 'employes.*', 'formulaires.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
@@ -90,10 +97,11 @@ class MenusController extends Controller
             }
             else if($liste->formulaire_id == 4)
             {
-                Log::debug('here 4');
+
                 $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
-                ->select('form4s.*', 'form4s.id as form4s_id', 'employeforms.*', 'employes.*')
+                ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                ->select('form4s.*', 'form4s.id as form4s_id', 'employeforms.*', 'employes.*', 'formulaires.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         

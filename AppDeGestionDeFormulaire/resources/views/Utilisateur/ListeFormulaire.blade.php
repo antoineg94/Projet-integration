@@ -8,9 +8,11 @@
 <div class="d-grid gap-3 col-11 mx-auto p-2">
 @if (count($listes))
 @foreach($listes as $liste) 
-  <div class="card mb-3">
+  <div class="card mb-3" >
+      <div class="card-header">
+        {{ $liste->nom_formulaire }}
+      </div>
     <div class="card-body">
-
       <div class="card-text">Id: <b>{{ $liste->id }} </b></div>
       <div class="card-text">Date: <b>{{ $liste->date_formulaire }} </b></div>
       <div class="card-text">Statut: {{ $liste->statut }}</div>
