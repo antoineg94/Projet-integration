@@ -41,7 +41,12 @@ class ConsulterProceduresController extends Controller
     public function store(Request $request)
     {
         try {
+            
                 $procedure = new ConsulterProcedures($request->all());
+                // $titre
+               // $lien
+               // $description
+               // $departement
                 $procedure->save();
             }
         
