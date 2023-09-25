@@ -56,7 +56,7 @@ class FormulaireAuditsController extends Controller
             $Form3->save();
 
 
-            return view('accueil')->with('message','Formulaire enregistré avec succès');
+            return redirect()->route('Menus.index')->with('message','Formulaire enregistré avec succès');
 
         }
         catch(Exception $e){

@@ -59,7 +59,7 @@ class FormulairesTravailsController extends Controller
                     $temoin->save();
  
                  Session::forget('form_id');
-                 return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                 return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
              
          }
          catch(\Throwable $e)
