@@ -7,6 +7,7 @@ use App\Http\Controllers\FormulairesTravailsController;
 use App\Http\Controllers\FormulaireSituationDangereusesController;
 use App\Http\Controllers\FormulaireAuditsController;
 use App\Http\Controllers\FormulaireMecaniquesController;
+use App\Http\Controllers\ConsulterProceduresController;
 
 
 /*
@@ -72,3 +73,10 @@ Route::post('/formulaireMecanique',
 
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire');
+
+Route::get('/procedures/creation',
+[ConsulterProceduresController::class,'create'])->name('procedure.create');
+
+Route::post('/procedures',
+[ConsulterProceduresController::class,'store'])->name('procedure.store');
+

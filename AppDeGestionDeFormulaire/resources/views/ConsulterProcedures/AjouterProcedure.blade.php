@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireMecaniques.enregistrer') }}">
+<form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('procedure.store') }}">
     <h1>Ajout d'une procédure a consulter</h1>
     @CSRF
 
@@ -31,18 +31,23 @@
     
     <div class="form-outline mb-4">
     <label class="form-label" for="lien">Département</label>
+    <br>
     <small>Il est possible de sélectionner plus d'un département</small>
     <select class="form-select" aria-label="multiple select example">
+        @if(isset($departements))
         @foreach($departements as $departement)
-        <option value="{{ departement->nom }}">{{ departement->nom }}</option>
+        <option value="{{ $departement->nom }}">{{ $departement->nom }}</option>
         @endforeach
+        @else
+        <p>Aucun département</p>
+        @endif
     </select>
     </div>
     
 
 
     <div class="col-11 mx-auto">
-    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Ajouter</a>
+        <button class="btn d-grid text-white w-100" style="background-color: #63BC55;" type="submit">Ajouter</button>
     </div>                     
 </form>
 

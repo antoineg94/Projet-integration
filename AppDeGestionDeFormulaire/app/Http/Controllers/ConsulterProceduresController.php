@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ConsulterProcedure;
+use App\Models\Departement;
+use Illuminate\Support\Facades\Log;
+
 
 class ConsulterProceduresController extends Controller
 {
@@ -14,12 +18,21 @@ class ConsulterProceduresController extends Controller
         //
     }
 
+//fonction qui affiche les procédure a consulter en fonction de ses accès
+    public function consulterProcedures()
+    {
+        $procedures = Procedure::all();
+        return view('accueil', ['procedures' => $procedures]);
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $departements = Departement::all();
+        return view('ConsulterProcedures.AjouterProcedure', compact('departements'));
     }
 
     /**
@@ -27,7 +40,22 @@ class ConsulterProceduresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            
+                $procedure = new ConsulterProcedures($request->all());
+                // $titre
+               // $lien
+               // $description
+               // $departement
+                $procedure->save();
+            }
+        
+            catch (\Throwable $e) {
+                //Gérer l'erreur
+                Log::debug($e);
+            }
+            return view('accueil');
+            
     }
 
     /**

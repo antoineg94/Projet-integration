@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Form4;
+use App\Models\Employeform;
+use Illuminate\Support\Facades\Log;
 use Session;
 class FormulaireMecaniquesController extends Controller
 {
@@ -12,6 +15,7 @@ class FormulaireMecaniquesController extends Controller
      */
     public function index()
     {
+        Session::put('form_id', 4);
         return view('Formulaires.formulaireMecanique');
     }
 
@@ -36,7 +40,7 @@ class FormulaireMecaniquesController extends Controller
             $Form4->save();
             
             Session::forget('form_id');
-            return redirect()->back()->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            return view('accueil')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         
     }
     catch(\Throwable $e)

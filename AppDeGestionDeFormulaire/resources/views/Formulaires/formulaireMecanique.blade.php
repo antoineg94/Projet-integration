@@ -16,25 +16,18 @@
         @endif
     </div>
 
-    <div class="form-outline mb-4" id="divT1">
-    <label class="form-label" for="">Nom de l'employé</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
-    </div>
 
     <div class="form-outline mb-4" id="divT1">
-    <label class="form-label" for="">Numéro(s) d'unité(s) impliqué(s)</label>
-        <input type="number" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="no_unite">Numéro(s) d'unité(s) impliqué(s)</label>
+        <input type="number" id="no_unite" name="no_unite" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Département</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+    <label class="form-label" for="departement">Département</label>
+        <input type="text" id="departement" name="departement" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -62,7 +55,7 @@
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Autre véhicules impliqués(vitoyen)</label>
+    <label class="form-label" for="vehicule_citoyen" >Autre véhicules impliqués(vitoyen)</label>
     <select class="form-select" aria-label="Default">
   <option value="1" selected>Non</option>
   <option value="2">Oui</option>
@@ -71,7 +64,7 @@
 
 
     <div class="col-11 mx-auto">
-    <a class="btn d-grid text-white" style="background-color: #63BC55;" type="button" href="">Envoyer</a>
+    <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                     
 </form>
 
