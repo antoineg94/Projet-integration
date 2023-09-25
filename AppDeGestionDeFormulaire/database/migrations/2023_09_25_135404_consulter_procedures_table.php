@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('ConsulterProcedures', function (Blueprint $table) {
             $table->id();
-            $table->timestamps()->nullable();
             $table->string('titre', 255);
             $table->string('description', 255);
             $table->string('departement', 255);
