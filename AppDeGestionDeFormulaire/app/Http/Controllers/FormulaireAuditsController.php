@@ -55,7 +55,7 @@ class FormulaireAuditsController extends Controller
 
             $Form3->save();
 
-
+            Session::forget('form_id');
             return redirect()->route('Menus.index')->with('message','Formulaire enregistré avec succès');
 
         }

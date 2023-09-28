@@ -57,7 +57,7 @@ class FormulaireSituationDangereusesController extends Controller
                 $temoin2->employeform_id = $employeform->id;
                 $temoin2->save();
             }
-
+            Session::forget('form_id');
             return redirect()->route('Menus.index')->with('message','Formulaire enregistré');
         }
         catch(Exception $e){

@@ -13,7 +13,6 @@
           <div class="card-body">
             <div class="card-text">Nom: <b>{{ $liste->prenom }} {{ $liste->nom }} </b></div>
             <div class="card-text">Date: <b>{{ $liste->date_formulaire }} </b></div>
-            <div class="card-text">Département: <b>{{ $liste->nom_departement }}</b></div>
             <div class="card-text">Consulté: <b>{{ $liste->consulte }}</b></div>
             <div class="card-text">Statut: <b>{{ $liste->statut }}</b></div>
 
