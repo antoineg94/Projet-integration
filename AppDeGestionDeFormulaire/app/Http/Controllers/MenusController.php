@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use App\Models\Employe;
 use App\Models\Employeform;
 use App\Models\Formulaire;
 use App\Models\Form1;
@@ -36,14 +37,18 @@ class MenusController extends Controller
     public function listeFormulaire()
     {
 
-        $formulaires = Formulaire::all();
+        
+
+
 
         $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
         ->select('employeforms.*', 'formulaires.nom as nom_formulaire')
+        ->where('superieur_id', '=', Session::get('employe_id'))
         ->orderby('employeforms.date_formulaire', 'desc')
         ->get();
 
-        return view('Utilisateur.ListeFormulaire', compact('listes', 'formulaires'));
+        return view('Utilisateur.ListeFormulaire', compact('listes'));
     }
 
         public function zoomFormulaire(EmployeForm $liste)
