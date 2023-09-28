@@ -55,7 +55,7 @@ class EmployeFormsSeeder extends Seeder
                 'date_formulaire' => '2023-05-18'             
             ],
             [
-                'employe_id' => 9,
+                'employe_id' => 3,
                 'formulaire_id' => 1,
                 'date_formulaire' => '2023-05-11'            
             ],
@@ -65,7 +65,7 @@ class EmployeFormsSeeder extends Seeder
                 'date_formulaire' => '2023-12-11'             
             ],
             [
-                'employe_id' => 7,
+                'employe_id' => 3,
                 'formulaire_id' => 1,
                 'date_formulaire' => '2023-11-12'             
             ],

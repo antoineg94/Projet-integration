@@ -36,14 +36,10 @@ class MenusController extends Controller
     //Afficher les information d'un des formulaire accident de travail
     public function listeFormulaire()
     {
-
-        
-
-
-
         $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
         ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->select('employeforms.*', 'formulaires.nom as nom_formulaire')
+        ->join('departements', 'departements.id', '=', 'employes.departement_id')
+        ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.*', 'departements.nom as nom_departement')
         ->where('superieur_id', '=', Session::get('employe_id'))
         ->orderby('employeforms.date_formulaire', 'desc')
         ->get();
@@ -61,11 +57,13 @@ class MenusController extends Controller
                 $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form1s.*', 'form1s.id as form1s_id', 'employeforms.*', 'employes.*', 'formulaires.nom as nom_formulaire')
+                ->select('form1s.*', 'form1s.id as form1s_id', 'employeforms.*', 'employes.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
                 Log::debug($zoomForm1s);
+                Log::debug('test');
+
                 return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
 
             }
