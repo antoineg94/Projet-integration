@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('Form1s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employeform_id')->constrained();            
+            $table->foreignId('employeform_id')->constrained();
+            $table->string('fonction_avant', 255)->nullable();            
             $table->date('date_incident');
             $table->time('heure_incident');
             $table->string('lieu', 255)->nullable();

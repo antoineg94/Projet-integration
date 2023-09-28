@@ -34,7 +34,7 @@ class IdentifiantRequest extends FormRequest
     public function messages()
     {
         return [
-            'employe_id.required' => 'Veuillez entrer votre identifiant',
+            'employe_id.required' => 'Veuillez entrer votre matricule',
             'password.required' => 'Veuillez entrer votre mot de passe'
         ];
     }
