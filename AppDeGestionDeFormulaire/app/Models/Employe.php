@@ -17,7 +17,8 @@ class Employe extends Model
         'position',
         'superieur_id',
         'superviseur',
-        'admin',  
+        'admin', 
+        'poste', 
         'departement_id'
     ];
 }

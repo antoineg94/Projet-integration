@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employe_id')->constrained();
             $table->foreignId('formulaire_id')->constrained();
-            $table->string('consulte', 255)->nullable();
+            $table->string('consulte', 255)->default('Non-consulté');
             $table->string('consultant', 255)->nullable();
             $table->date('date_consulte')->nullable();
-            $table->string('statut', 255)->nullable();
+            $table->string('statut', 255)->default('En attente');
             $table->date('date_formulaire')->nullable();
             $table->timestamps();
 
