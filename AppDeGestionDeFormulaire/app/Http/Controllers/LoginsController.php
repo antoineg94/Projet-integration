@@ -61,7 +61,7 @@ class LoginsController extends Controller
             }
             else
             {
-                return view('Login.login')->withErrors(['Informations invalide']);
+                return redirect()->route('Logins.index')->withErrors(['Informations invalides']);
             }
 
         }
@@ -70,7 +70,7 @@ class LoginsController extends Controller
      
 
             log::debug($e);
-            return view('Login.login')->withErrors(['Informations invalide']);
+            return redirect()->route('Logins.index')->withErrors(['Informations invalides']);
         }
     }
 

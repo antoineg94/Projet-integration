@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Session;
 use Illuminate\Http\Request;
+use App\Http\Requests\Form1Request;
+use App\Http\Requests\EmployeformRequest;
 use App\Models\Employeform;
 use App\Models\Form1;
 use App\Models\Temoin;
@@ -22,10 +24,8 @@ class FormulairesTravailsController extends Controller
     }
 
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form1Request $request)
     {
-
-         Log::Debug($request);
 
          try{
  
@@ -37,8 +37,7 @@ class FormulairesTravailsController extends Controller
                  $employeform->date_formulaire = $date;
                  $employeform->save();
  
-                 // date du jour
-               
+            
  
                  $Form1 = new Form1();
                  $Form1->employeform_id = $employeform->id;
@@ -67,12 +66,16 @@ class FormulairesTravailsController extends Controller
                 }
  
                  Session::forget('form_id');
+
                  return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
              
          }
          catch(\Throwable $e)
          {
-             Log::debug($e);
+            //delete le formulaire enregistré dans la bd
+            $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+            $employeform2->delete();
+
              return redirect()->route('formulairesTravails.index')->withErrors(['Informations invalide']);
          }
          

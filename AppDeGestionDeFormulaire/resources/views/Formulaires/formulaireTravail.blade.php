@@ -12,28 +12,22 @@
 
     <div class="form-outline mb-4">
     <label class="form-label" for="fonctionsEvenement">Fonction au moment de l'évènement</label>
-        <input type="text" id="fonctionsEvenement" name="fonctionsEvenement" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+        <input type="text" id="fonctionsEvenement" name="fonctionsEvenement" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
+        
     </div>
 
     
 <h3>Description de l'évènement</h3>
     <div class="form-outline mb-4">
     <label class="form-label" for="date_incident">Date de l'accident</label>
-        <input type="text" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+        <input type="text" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
+        
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label" for="heure_incident">Heure de l'accident</label>
-        <input type="text" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+        <input type="text" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
+       
     </div>
 
 
@@ -48,38 +42,30 @@
 <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
     <label class="form-label" for="nom_temoin1">Nom témoins</label>
         <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+       
     </div>
 
     <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
     <label class="form-label" for="nom_temoin2">Nom témoins</label>
         <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+       
     </div>
 
 
     <div class="form-outline mb-4">
         <label class="form-label" for="lieu" >Lieu de l'incident</label>
-        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
-        @error('password')
-            <span class="text-danger">{{ $message }} </span>
-        @enderror
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />
+        
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="secteur" >Secteur d'activité</label>
-        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('password') is-invalid @enderror" />
-        @error('password')
-            <span class="text-danger">{{ $message }} </span>
-        @enderror
+        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror" />
+        
     </div>
 <u></u>
     <div id="" class="form-outline mb-4">
-        <label class="form-label" for="nature_blessure" >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
+        <label class="form-label "  >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
         <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0">
@@ -272,8 +258,8 @@
         </div>
     </div>
     <div class="mb-3">
-        <label for="description_tache" class="form-label">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
-        <textarea class="form-control" id="description_tache" name="description_tache" rows="3"></textarea>
+        <label for="description_tache" class="form-label ">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
+        <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3"></textarea>
     </div>
 
 premiers soins (oui/non)

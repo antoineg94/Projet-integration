@@ -14,6 +14,19 @@
   <div class="wrapper">
     <!-- HEADER -->
 
+    @foreach($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+      {{ $error }}
+    </div>
+    @endforeach
+
+    @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+      {{ Session::get('message') }}
+    </div>
+    @endif
+
+
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
