@@ -22,7 +22,7 @@ class ConsulterProcedureSeeder extends Seeder
             ],
             [
                 'titre' => 'Nouvelle page facebook!',
-                'description' => 'Dans le lien, vous trouverez notre nouvelle page Facebook. Dans le lien, vous trouverez notre nouvelle page Facebook. Dans le lien, vous trouverez notre nouvelle page Facebook.',
+                'description' => 'Dans le lien, vous trouverez notre nouvelle page Facebook.',
                 'lien' => 'https://fr-ca.facebook.com/',
                 'departement_id' => '1'
             ],
@@ -40,7 +40,7 @@ class ConsulterProcedureSeeder extends Seeder
             ],
             [
                 'titre' => 'Nouvelle importante!',
-                'description' => 'Dans le lien, vous trouverez des informations importante.',
+                'description' => 'Dans le lien, vous trouverez des informations importantes.',
                 'lien' => 'https://www.ecosia.org/images?q=image%20chat',
                 'departement_id' => '1'
             ]

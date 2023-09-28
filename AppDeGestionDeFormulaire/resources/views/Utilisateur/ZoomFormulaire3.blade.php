@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>Heure</td>
-            <td>{{ $zoomForm3s-> }}</td>
+            <td>{{ $zoomForm3s->heure_formulaire }}</td>
         </tr>
         <tr>
             <td>EPI</td>

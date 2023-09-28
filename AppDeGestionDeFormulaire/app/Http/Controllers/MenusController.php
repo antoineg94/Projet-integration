@@ -44,7 +44,7 @@ class MenusController extends Controller
         ->get();
 
         return view('Utilisateur.ListeFormulaire', compact('listes', 'formulaires'));
-        }
+    }
 
         public function zoomFormulaire(EmployeForm $liste)
         {
