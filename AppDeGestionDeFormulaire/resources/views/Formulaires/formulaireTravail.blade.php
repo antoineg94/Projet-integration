@@ -11,8 +11,8 @@
 <h3>Identification</h3>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="fonctionsEvenement">Fonction au moment de l'évènement</label>
-        <input type="text" id="fonctionsEvenement" name="fonctionsEvenement" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
+    <label class="form-label" for="fonction_avant">Fonction au moment de l'évènement</label>
+        <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
         
     </div>
 
