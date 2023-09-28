@@ -32,7 +32,7 @@ Route::get('/Accueil',
 
 
 Route::get('/logout',
-[LoginsController::class, 'logout'])->name('Logins.logout')->middleware('auth');
+[LoginsController::class, 'logout'])->name('Logins.logout');
 
 
 

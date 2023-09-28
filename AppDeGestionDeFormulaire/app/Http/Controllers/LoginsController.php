@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Identifiant;
+use App\Models\Employe;
 use Session;
 use App\http\Requests\IdentifiantRequest;
 use Auth;
@@ -32,10 +33,27 @@ class LoginsController extends Controller
             if($reussi)
             {
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
+
+                $employe = Employe::where('id', $identifiant->employe_id)->get()->first();
                 
+                if($employe->superviseur == "oui" && $employe->admin == "oui")
+                {
+                    Session::put('admin', true);
+                    Session::put('superviseur', true);
+                }
+                else if($employe->superviseur == "oui")
+                {
+                    Session::put('superviseur', true);
+                    Session::put('admin', false);
+                }
+                else if($employe->superviseur == "non")
+                {
+                    Session::put('superviseur', false);
+                    Session::put('admin', false);
+                }
 
                 Session::put('employe_id', $identifiant->employe_id);
-
+                
 
        
 

@@ -7,12 +7,24 @@
 
 
   <div class="d-grid gap-3 col-11 mx-auto p-2">
+
+    @if(Session::get('admin') == false)
     <a class="btn text-white" style="background-color: #63BC55;" type="button" href="{{ route('formulairesTravails.index') }}">Déclaration d'accidents de travail</a>
     <a class="btn text-white" style="background-color: #63BC55;"type="button" href="{{ route('formulaireSituationDangereuses.index') }}">Formulaire situation dangereuse</a>
+    @endif
+
+    @if(Session::get('admin') == false && Session::get('superviseur') == true)
     <a class="btn text-white" type="button" style="background-color: #63BC55;" href="{{ route('formulaireAudits.index') }}">Formulaire d'audit SST</a>
     <a class="btn text-white" type="button" style="background-color: #63BC55;" href="{{ route('formulaireMecaniques.index') }}">Formulaire d'analyse mécanique</a>
+    @endif
+
+    @if(Session::get('admin') == true || Session::get('superviseur') == true)
     <a class="btn text-white" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste des formulaires</a>
+    @endif
+
+    @if(Session::get('admin') == true)
     <a class="btn text-white" type="button" style="background-color: #ff0000;" href="{{ route('procedure.create') }}">Ajouter une procédure</a>
+    @endif
   </div>
 
 <br>
