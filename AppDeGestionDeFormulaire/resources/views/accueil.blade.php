@@ -19,7 +19,7 @@
 <hr  class="d-grid col-10 mx-auto">
 <br>
 
-<h3 style="text-align: center;">Liens utile: </h3>
+<h3 style="text-align: center;">Liens utiles: </h3>
 <br>
 <div class="px-1">
 @if(count($procedures))

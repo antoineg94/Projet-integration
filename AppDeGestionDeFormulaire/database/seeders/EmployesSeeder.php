@@ -33,18 +33,19 @@ class EmployesSeeder extends Seeder
                 'superieur_id' => 1,
                 'superviseur' => 'oui',
                 'departement_id' => 1
-            ]
-        ]);
-
-        DB::table('employes')->insert([
+            ],
             [
                 'matricule' => 1135565961,
                 'nom' => 'Foucher',
                 'prenom' => 'Birk',
                 'position' => 'Chef d\'équipe',
                 'superieur_id' => 2,
+                'superviseur' => 'oui',
                 'departement_id' => 8
-            ],
+            ]
+        ]);
+
+        DB::table('employes')->insert([
             [
                 'matricule' => 7053880087,
                 'nom' => 'Copnall',
