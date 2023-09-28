@@ -22,11 +22,7 @@ class LoginsController extends Controller
 
     public function login(IdentifiantRequest $request)
     {
-        // $employe = Identifiant::join('employes', 'employe_id', '=', 'employes.id')
-        // ->select('employes.*', 'identifiants.*')
-        // ->get();
-
-        // Log::Debug($employe);
+        
 
 
         try{
@@ -45,11 +41,15 @@ class LoginsController extends Controller
 
                 return redirect()->route('Menus.index')->with('success', true)->with('message','Vous êtes connecté');
             }
+            else
+            {
+                return view('Login.login')->withErrors(['Informations invalide']);
+            }
 
         }
         catch(\Throwable $e)
         {
-            Log::Debug('banane');
+     
 
             log::debug($e);
             return view('Login.login')->withErrors(['Informations invalide']);

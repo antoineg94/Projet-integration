@@ -28,11 +28,11 @@ Route::get('/login',
 [LoginsController::class, 'login'])->name('Logins.login');
 
 Route::get('/Accueil',
-[MenusController::class, 'index'])->name('Menus.index');
+[MenusController::class, 'index'])->name('Menus.index')->middleware('auth');
 
 
 Route::get('/logout',
-[LoginsController::class, 'logout'])->name('Logins.logout');
+[LoginsController::class, 'logout'])->name('Logins.logout')->middleware('auth');
 
 
 
@@ -40,22 +40,22 @@ Route::get('/logout',
 // form index
 
 Route::get('/formulaireTravail',
-[FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index');
+[FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index')->middleware('auth');
 
 
 Route::get('/formulaireSituationDangereuse',
-[FormulaireSituationDangereusesController::class, 'index'])->name('formulaireSituationDangereuses.index');
+[FormulaireSituationDangereusesController::class, 'index'])->name('formulaireSituationDangereuses.index')->middleware('auth');
 
 
 Route::get('/formulaireAudit',
-[FormulaireAuditsController::class, 'index'])->name('formulaireAudits.index');
+[FormulaireAuditsController::class, 'index'])->name('formulaireAudits.index')->middleware('auth');
 
 
 Route::get('/formulaireMecanique',
-[FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index');
+[FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index')->middleware('auth');
 // Zoom
 Route::get('/zoomFormulaire/{liste}/',
-[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire');
+[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire')->middleware('auth');
 
 
 
@@ -63,31 +63,31 @@ Route::get('/zoomFormulaire/{liste}/',
 // Form store
 
 Route::post('/formulaireTravail',
-[FormulairesTravailsController::class, 'enregistrer'])->name('formulairesTravails.enregistrer');
+[FormulairesTravailsController::class, 'enregistrer'])->name('formulairesTravails.enregistrer')->middleware('auth');
 
 Route::post('/formulaireSituationDangereuse',
-[FormulaireSituationDangereusesController::class, 'enregistrer'])->name('formulaireSituationDangereuses.enregistrer');
+[FormulaireSituationDangereusesController::class, 'enregistrer'])->name('formulaireSituationDangereuses.enregistrer')->middleware('auth');
 
 
 Route::post('/formulaireAudit',
-[FormulaireAuditsController::class, 'enregistrer'])->name('formulaireAudits.enregistrer');
+[FormulaireAuditsController::class, 'enregistrer'])->name('formulaireAudits.enregistrer')->middleware('auth');
 
 Route::post('/formulaireMecanique',
-[FormulaireMecaniquesController::class, 'enregistrer'])->name('formulaireMecaniques.enregistrer');
+[FormulaireMecaniquesController::class, 'enregistrer'])->name('formulaireMecaniques.enregistrer')->middleware('auth');
 
 
 
 // liste 
 
 Route::get('/listeFormulaire',
-[MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire');
+[MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
 
 
 
 // 
 Route::get('/procedures/creation',
-[ConsulterProceduresController::class,'create'])->name('procedure.create');
+[ConsulterProceduresController::class,'create'])->name('procedure.create')->middleware('auth');
 
 Route::post('/procedures',
-[ConsulterProceduresController::class,'store'])->name('procedure.store');
+[ConsulterProceduresController::class,'store'])->name('procedure.store')->middleware('auth');
 
