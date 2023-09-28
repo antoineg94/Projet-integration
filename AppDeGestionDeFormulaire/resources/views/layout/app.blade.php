@@ -17,9 +17,17 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
 
-  <a href="{{ route('Menus.index') }}"><img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;"></a>
+  @if(Auth::check())
+  <a href="{{ route('Menus.index') }}">
+  @endif
+    <img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;">
+  @if(Auth::check())
+  </a>
+  @endif
 
+  @if(Auth::check())
   <a class="btn d-grid text-white" type="button" href="{{route('Logins.logout')}} ">Déconnexion</a>
+  @endif
 
       <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
