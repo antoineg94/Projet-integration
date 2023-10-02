@@ -38,7 +38,7 @@ class MenusController extends Controller
     {
         $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
         ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->select('employeforms.*', 'employeforms.id as employeform_id', 'formulaires.nom as nom_formulaire', 'employes.*')
+        ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.*')
         ->where('superieur_id', '=', Session::get('employe_id'))
         ->orderby('employeforms.date_formulaire', 'desc')
         ->get();
@@ -52,7 +52,7 @@ class MenusController extends Controller
             Log::debug($liste);
             if($liste->formulaire_id == 1)
             {
-
+                Log::debug("form1");
 
                 $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
@@ -70,7 +70,7 @@ class MenusController extends Controller
             else if($liste->formulaire_id == 2)
             {
              
-
+                Log::debug("form2");
 
                 $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
@@ -85,7 +85,7 @@ class MenusController extends Controller
             }
             else if($liste->formulaire_id == 3)
             {
-
+                Log::debug("form3");
                 $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
@@ -99,7 +99,7 @@ class MenusController extends Controller
             }
             else if($liste->formulaire_id == 4)
             {
-
+                Log::debug("form4");
                 $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
@@ -113,6 +113,7 @@ class MenusController extends Controller
             }
             else
             {
+                Log::debug("nothing");
                 return view('Utilisateur.ListeFormulaire');
             }
     
