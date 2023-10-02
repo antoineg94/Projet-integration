@@ -71,7 +71,16 @@ class MenusController extends Controller
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
-        
+        else
+        {
+            Log::Debug('Trié par date');
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
 
         
 
