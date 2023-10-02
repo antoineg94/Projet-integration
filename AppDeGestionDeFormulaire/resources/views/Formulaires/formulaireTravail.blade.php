@@ -370,14 +370,26 @@
         </label>
         </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-4">
         <label for="description_tache" class="form-label ">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
         <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3"></textarea>
     </div>
 
-premiers soins (oui/non)
+    <div class="form-outline mb-4" >
+        <label class="form-label" for="secouriste">Secouriste</label>
+        <select class="form-select" id="selectSecouriste">
+        <option value="0" selected >Non</option>
+        <option value="1">Oui</option>
+        </select>
+    </div>
 
-nom du secouriste
+<div class="form-check mb-4" id="ajoutSecouriste" style="display:none;">
+    <label for="nomSecouriste" class="form-label">Nom du secouriste</label>
+    <input type="text" class="form-control" id="nomSecouriste" name="nomSecouriste">
+  </div>
+
+
+
 
 <h3>Détails sur la durée de l'absence</h3>
 <div class="form-outline mb-4">

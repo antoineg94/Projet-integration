@@ -3,6 +3,8 @@
 @section('title', 'Accueil')
 
 @section('middleContent')
+
+
 <section>
 <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireAudits.enregistrer') }}">
     <h1>Grille audit SST - formulaire simplifié</h1>
@@ -43,21 +45,21 @@
 	<tr>
 		<td>&nbsp;EPI</td>
 		<td>
-      <div class="form-check" require>
+      <div class="form-check Audit" require>
         <input class="form-check-input" type="radio" name="epi" id="epi1" value="conforme">
         <label class="form-check-label " for="epi">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="epi" id="epi2" value="Non_conforme">
         <label class="form-check-label" for="epi">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="epi" id="epi3" value="N/A">
         <label class="form-check-label" for="epi">
         </label>
@@ -67,21 +69,21 @@
 	<tr>
 		<td>&nbsp;Tenue des lieux</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="tenue" id="tenue1" value="conforme">
         <label class="form-check-label" for="tenue">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="tenue" id="tenue2" value="Non_conforme">
         <label class="form-check-label" for="tenue">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="tenue" id="tenue3" value="N/A">
         <label class="form-check-label" for="tenue">
         </label>
@@ -91,21 +93,21 @@
 	<tr>
 		<td>&nbsp;Comportement sécuritaire</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="comportement" id="comportement1" value="conforme">
         <label class="form-check-label" for="comportement">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="comportement" id="comportement2" value="Non_conforme">
         <label class="form-check-label" for="comportement">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="comportement" id="comportement3" value="N/A">
         <label class="form-check-label" for="comportement">
         </label>
@@ -115,21 +117,21 @@
 	<tr>
 		<td>&nbsp;Signalisation</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="signalisation" id="Signalisation1" value="conforme">
         <label class="form-check-label" for="signalisation">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="signalisation" id="Signalisation2" value="Non_conforme">
         <label class="form-check-label" for="signalisation">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="signalisation" id="Signalisation3" value="N/A">
         <label class="form-check-label" for="signalisation">
         </label>
@@ -139,21 +141,21 @@
 	<tr>
 		<td>&nbsp;Fiche signalétique</td>
 		<td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique1" value="conforme">
         <label class="form-check-label" for="fiche_signal">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique2" value="Non_conforme">
         <label class="form-check-label" for="fiche_signal">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="fiche_signal" id="FicheSignaletique3" value="N/A">
         <label class="form-check-label" for="fiche_signal">
         </label>
@@ -163,21 +165,21 @@
 	<tr>
 		<td>&nbsp;Travaux - Excavation</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation1" value="conforme">
         <label class="form-check-label" for="travaux">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation2" value="Non_conforme">
         <label class="form-check-label" for="travaux">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="travaux" id="TravauxExcavation3" value="N/A">
         <label class="form-check-label" for="travaux">
         </label>
@@ -187,21 +189,21 @@
 	<tr>
 		<td>&nbsp;Espace clos</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos1" value="conforme">
         <label class="form-check-label" for="espace_clos">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos2" value="Non_conforme">
         <label class="form-check-label" for="espace_clos">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="espace_clos" id="espace_clos3" value="N/A">
         <label class="form-check-label" for="espace_clos">
         </label>
@@ -211,21 +213,21 @@
 	<tr>
 		<td>&nbsp;Méthode de travail</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail1" value="conforme">
         <label class="form-check-label" for="methode_travail">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail2" value="Non_conforme">
         <label class="form-check-label" for="methode_travail">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="methode_travail" id="methode_travail3" value="N/A">
         <label class="form-check-label" for="methode_travail">
         </label>
@@ -235,21 +237,21 @@
 	<tr>
 		<td>&nbsp;Autre(s):&nbsp;</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="autre" id="AutreCategorie1" value="conforme">
         <label class="form-check-label" for="autre">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="autre" id="AutreCategorie2" value="Non_conforme">
         <label class="form-check-label" for="autre">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="autre" id="AutreCategorie3" value="N/A">
         <label class="form-check-label" for="autre">
         </label>
@@ -262,21 +264,21 @@
 	<tr>
 		<td>&nbsp;Respect de la distance</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance1" value="conforme">
         <label class="form-check-label" for="respect_distance">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance2" value="Non_conforme">
         <label class="form-check-label" for="respect_distance">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_distance" id="respect_distance3" value="N/A">
         <label class="form-check-label" for="respect_distance">
         </label>
@@ -286,21 +288,21 @@
 	<tr>
 		<td>&nbsp;Port des EPI (masque/visière)</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="port_epi" id="port_epi1" value="conforme">
         <label class="form-check-label" for="port_epi">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="port_epi" id="port_epi2" value="Non_conforme">
         <label class="form-check-label" for="port_epi">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="port_epi" id="port_epi3" value="N/A">
         <label class="form-check-label" for="port_epi">
         </label>
@@ -310,21 +312,21 @@
 	<tr>
 		<td>&nbsp;Respect des procédures établies</td>
     <td>
-    <div class="form-check">
+    <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced1" value="conforme">
         <label class="form-check-label" for="respect_proced">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced2" value="Non_conforme">
         <label class="form-check-label" for="respect_proced">
         </label>
       </div>
     </td>
     <td>
-      <div class="form-check">
+      <div class="form-check Audit">
         <input class="form-check-input" type="radio" name="respect_proced" id="respect_proced3" value="Non_conforme">
         <label class="form-check-label" for="respect_proced">
         </label>
@@ -339,6 +341,8 @@
     <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>            
 </form>
-
 </section>
+
+
+
 @endsection

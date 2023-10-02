@@ -2,3 +2,8 @@
     background-color: #63BC55;
     color: #63BC55;
 }
+
+.Audit input[type=radio] {
+    width: 40px;
+    height: 40px;
+}
