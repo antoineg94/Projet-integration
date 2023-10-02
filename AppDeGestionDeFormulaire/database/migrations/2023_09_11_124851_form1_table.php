@@ -14,21 +14,21 @@ return new class extends Migration
         Schema::create('Form1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();
-            $table->string('fonction_avant', 255)->nullable();            
+            $table->string('fonction_avant', 255);            
             $table->date('date_incident');
             $table->time('heure_incident');
-            $table->string('lieu', 255)->nullable();
-            $table->string('secteur', 255)->nullable();
+            $table->string('lieu', 255);
+            $table->string('secteur', 255);
 
             $table->string('premiers_soins', 255)->nullable();
             $table->string('nom_secouriste', 255)->nullable();
 
-            $table->string('nature_blessure', 255)->nullable();
-            $table->string('description_blessure', 255)->nullable();
+            $table->string('nature_blessure', 255);
+            $table->string('description_blessure', 255);
 
-            $table->string('description_tache', 255)->nullable();
-            $table->string('type_violence', 255)->nullable();
-            $table->string('type_absence', 255)->nullable();
+            $table->string('description_tache', 255);
+            $table->string('type_violence', 255);
+            $table->string('type_absence', 255);
 
             $table->timestamps();
 

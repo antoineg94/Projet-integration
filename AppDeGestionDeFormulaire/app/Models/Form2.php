@@ -10,7 +10,9 @@ class Form2 extends Model
     use HasFactory;
 
     protected $fillable = [
-        'employeform_id',        
+        'id',
+        'employeform_id',
+        'fonction_avant',        
         'secteur',
         'date_observ',
         'heure_observ',

@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('Form2s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employeform_id')->constrained();          
-            $table->string('secteur', 255)->nullable();
-            $table->date('date_observ')->nullable();
-            $table->time('heure_observ')->nullable();
-            $table->string('lieu', 255)->nullable();
-            $table->string('description', 255)->nullable();
-            $table->string('proposition', 255)->nullable();
+            $table->foreignId('employeform_id')->constrained();
+            $table->string('fonction_avant', 255);             
+            $table->string('secteur', 255);
+            $table->date('date_observ');
+            $table->time('heure_observ');
+            $table->string('lieu', 255);
+            $table->string('description', 255);
+            $table->string('proposition', 255);
 
             $table->timestamps();
 
