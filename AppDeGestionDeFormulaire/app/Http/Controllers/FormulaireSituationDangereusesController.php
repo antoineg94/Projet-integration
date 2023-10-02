@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Session;
 use Illuminate\Http\Request;
+use App\Http\Requests\Form2Request;
+use App\Http\Requests\EmployeformRequest;
 use App\Models\Form2;
 use App\Models\Employeform;
 use App\Models\Temoin;
@@ -22,7 +24,7 @@ class FormulaireSituationDangereusesController extends Controller
         return view('Formulaires.formulaireSituationDangereuse');
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form2Request $request)
     {
         Log::debug($request);   
 
@@ -61,6 +63,8 @@ class FormulaireSituationDangereusesController extends Controller
             return redirect()->route('Menus.index')->with('message','Formulaire enregistré');
         }
         catch(Exception $e){
+            $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+            $employeform2->delete();
             return redirect()->back()->with('message','Une erreur est survenue lors de l\'enregistrement du formulaire');
         }
     }

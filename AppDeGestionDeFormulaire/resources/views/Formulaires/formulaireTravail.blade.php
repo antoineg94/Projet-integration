@@ -1,6 +1,6 @@
 @extends('layout/app')
 
-@section('title', 'Accueil')
+@section('title', 'Formulaire de déclaration d\'accident de travail')
 
 @section('middleContent')
 <section>
