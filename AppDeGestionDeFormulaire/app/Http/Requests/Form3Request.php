@@ -37,7 +37,7 @@ class Form3Request extends FormRequest
             'respect_distance' => 'required',
             'port_epi' => 'required',
             'respect_proced' => 'required',
-            'description' => 'required',
+
         ];
     }
 
@@ -63,7 +63,7 @@ class Form3Request extends FormRequest
             'respect_distance.required' => 'Le champ respect distance est obligatoire',
             'port_epi.required' => 'Le champ port epi est obligatoire',
             'respect_proced.required' => 'Le champ respect proced est obligatoire',
-            'description.required' => 'Le champ description est obligatoire',
+
         ];
     }
 }
