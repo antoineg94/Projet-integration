@@ -14,18 +14,15 @@
         <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />
    
     </div>
-<div class="d-flex col-11 mx-auto gap-3">
-    <div class="form-outline mb-4" >
+    <div class="form-outline mb-4 col-11 mx-auto" >
     <label class="form-label" for="date_incident">Date</label>
         <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
      
     </div>
 
-    <div class="form-outline mb-4" >
+    <div class="form-outline mb-4 col-11 mx-auto" >
     <label class="form-label" for="heure_incident">Heure</label>
         <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
-     
-    </div>
     </div>
 
     <br>
