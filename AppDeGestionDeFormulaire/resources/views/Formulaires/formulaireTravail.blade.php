@@ -73,8 +73,8 @@
         Tête, visage, nez, yeux, oreille
         </label>
 
-        <div>
-            <div class="form-check form-check-inline">
+        <div id="cote0" style="display: none;">
+            <div class="form-check form-check-inline" >
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
             </div>
@@ -93,7 +93,7 @@
         Torse
         </label>
 
-        <div>
+        <div id="cote1" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -113,7 +113,7 @@
         Poumons
         </label>
 
-        <div>
+        <div id="cote2" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -133,7 +133,7 @@
         Bras, épaule, coude
         </label>
 
-        <div>
+        <div id="cote3" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -153,7 +153,7 @@
         Poignet, main, doigt
         </label>
 
-        <div>
+        <div id="cote4" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -173,7 +173,7 @@
         Dos
         </label>
 
-        <div>
+        <div id="cote5" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Haut</label>
@@ -193,7 +193,7 @@
         Hanche
         </label>
 
-        <div>
+        <div id="cote6" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -213,7 +213,7 @@
         Jambe, genou
         </label>
 
-        <div>
+        <div id="cote7" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -233,7 +233,7 @@
         Pied, orteil, cheville
         </label>
 
-        <div>
+        <div id="cote8" style="display: none;">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
@@ -253,7 +253,7 @@
         Autre
         </label>
         
-        <div>
+        <div id="cote9" style="display: none;">
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
 
