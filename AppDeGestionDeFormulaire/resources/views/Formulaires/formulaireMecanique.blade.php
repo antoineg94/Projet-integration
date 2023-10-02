@@ -47,7 +47,7 @@
                 @enderror
     </div>
     <div class="form-outline mb-4">
-    <label class="form-label" for="">Numéro de permis de conduire de l'employe</label>
+    <label class="form-label" for="">Numéro de permis de conduire de l'employé</label>
         <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="form-outline mb-4">
-    <label class="form-label" for="vehicule_citoyen" >Autre véhicules impliqués(vitoyen)</label>
+    <label class="form-label" for="vehicule_citoyen" >Autre véhicules impliqués(citoyen)</label>
     <select class="form-select" aria-label="Default">
   <option value="1" selected>Non</option>
   <option value="2">Oui</option>
@@ -63,7 +63,7 @@
     </div>
 
 
-    <div class="col-11 mx-auto">
+    <div class="d-grid gap-3 col-11 mx-auto p-2">
     <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                     
 </form>

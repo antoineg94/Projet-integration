@@ -78,7 +78,7 @@
   <textarea class="form-control @error('proposition') is-invalid @enderror" id="proposition" name="proposition" rows="3"></textarea>
 </div>
 
-<div class="col-11 mx-auto">
+<div class="d-grid gap-3 col-11 mx-auto p-2">
     <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                   
 </form>

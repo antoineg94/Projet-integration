@@ -5,6 +5,7 @@
     if (selectTemoins.value == "1") {
         divT1.style.display = "block";
         divT2.style.display = "block";
+        
     } 
     else if(selectTemoins.value == "0"){
         divT1.style.display = "none";
