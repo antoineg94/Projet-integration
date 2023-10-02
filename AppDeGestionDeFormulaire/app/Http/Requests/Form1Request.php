@@ -44,7 +44,9 @@ class Form1Request extends FormRequest
         return [
             'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'incident',
             'date_incident.required' => 'Veuillez entrer la date de l\'incident',
+           
             'heure_incident.required' => 'Veuillez entrer l\'heure de l\'incident',
+         
             'lieu.required' => 'Veuillez entrer le lieu de l\'incident',
             'secteur.required' => 'Veuillez entrer le secteur de l\'incident',
             'nature_blessure.required' => 'Veuillez entrer la nature de la blessure',

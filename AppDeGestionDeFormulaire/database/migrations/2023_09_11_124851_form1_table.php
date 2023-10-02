@@ -25,9 +25,8 @@ return new class extends Migration
 
             $table->string('nature_blessure', 255);
             $table->string('description_blessure', 255);
-
-            $table->string('description_tache', 255);
             $table->string('type_violence', 255);
+            $table->string('description_tache', 255);
             $table->string('type_absence', 255);
 
             $table->timestamps();

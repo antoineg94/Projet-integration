@@ -35,19 +35,19 @@ class Form2Request extends FormRequest
 
 
 
-        public function messages()
-        {
-            return [
-                'employeform_id.required' => 'Veuillez entrer l\'employé',
-                'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'observation',
-                'secteur.required' => 'Veuillez entrer le secteur',
-                'date_observ.required' => 'Veuillez entrer la date de l\'observation',
-                'date_observ.date' => 'Veuillez entrer une date valide',
-                'heure_observ.required' => 'Veuillez entrer l\'heure de l\'observation',
-                'heure_observ.date_format' => 'Veuillez entrer une heure valide',
-                'lieu.required' => 'Veuillez entrer le lieu de l\'observation',
-                'description.required' => 'Veuillez entrer la description de l\'observation',
-                'proposition.required' => 'Veuillez entrer la proposition de l\'observation'
-            ];
-        }
+    public function messages()
+    {
+        return [
+            'employeform_id.required' => 'Veuillez entrer l\'employé',
+            'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'observation',
+            'secteur.required' => 'Veuillez entrer le secteur',
+            'date_observ.required' => 'Veuillez entrer la date de l\'observation',
+            'date_observ.date' => 'Veuillez entrer une date valide',
+            'heure_observ.required' => 'Veuillez entrer l\'heure de l\'observation',
+            'heure_observ.date_format' => 'Veuillez entrer une heure valide',
+            'lieu.required' => 'Veuillez entrer le lieu de l\'observation',
+            'description.required' => 'Veuillez entrer la description de l\'observation',
+            'proposition.required' => 'Veuillez entrer la proposition de l\'observation'
+        ];
+    }
 }
