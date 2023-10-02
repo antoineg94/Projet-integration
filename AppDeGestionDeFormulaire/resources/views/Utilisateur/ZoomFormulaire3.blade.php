@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>Tenue des lieux</td>
-            <td>{{ $zoomForm3stenue }}</td>
+            <td>{{ $zoomForm3s->tenue }}</td>
         </tr>
         <tr>
             <td>Comportement sécuritaire</td>
