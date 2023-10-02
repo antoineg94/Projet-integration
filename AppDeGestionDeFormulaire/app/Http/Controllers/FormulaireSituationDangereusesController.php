@@ -26,7 +26,6 @@ class FormulaireSituationDangereusesController extends Controller
 
     public function enregistrer(Form2Request $request)
     {
-        Log::debug($request);   
 
         try{
             $date = date('Y-m-d');
@@ -39,6 +38,7 @@ class FormulaireSituationDangereusesController extends Controller
 
             $Form2 = new Form2();
             $Form2->employeform_id = $employeform->id;
+            $Form2->fonction_avant = $request->fonction_avant;
             $Form2->secteur = $request->secteur;
             $Form2->date_observ = $request->date_observ;
             $Form2->heure_observ = $request->heure_observ;
@@ -60,12 +60,12 @@ class FormulaireSituationDangereusesController extends Controller
                 $temoin2->save();
             }
             Session::forget('form_id');
-            return redirect()->route('Menus.index')->with('message','Formulaire enregistré');
+            return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         }
         catch(Exception $e){
             $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
             $employeform2->delete();
-            return redirect()->back()->with('message','Une erreur est survenue lors de l\'enregistrement du formulaire');
+            return redirect()->back()->withErrors(['Informations invalide']);
         }
     }
 
