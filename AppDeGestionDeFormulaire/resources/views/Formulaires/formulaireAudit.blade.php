@@ -19,7 +19,7 @@
 <div class="d-flex col-11 mx-auto gap-3">
     <div class="form-outline mb-4" >
     <label class="form-label" for="">Date</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="date" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -27,7 +27,7 @@
 
     <div class="form-outline mb-4" >
     <label class="form-label" for="">Heure</label>
-        <input type="text" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="time" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror

@@ -20,13 +20,13 @@
 <h3>Description de l'évènement</h3>
     <div class="form-outline mb-4">
     <label class="form-label" for="date_incident">Date de l'accident</label>
-        <input type="text" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
+        <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
         
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label" for="heure_incident">Heure de l'accident</label>
-        <input type="text" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
+        <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
        
     </div>
 

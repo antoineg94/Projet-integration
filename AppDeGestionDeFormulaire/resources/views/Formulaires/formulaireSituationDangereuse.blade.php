@@ -35,7 +35,7 @@
     <h3>Description de la situation dangeureurse ou du "passé proche"</h3>
     <div class="form-outline mb-4">
     <label class="form-label" for="date_observ">Date de l'incident</label>
-        <input type="text" id="date_observ" name="date_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="date" id="date_observ" name="date_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -43,7 +43,7 @@
 
     <div class="form-outline mb-4">
     <label class="form-label" for="heure_observ">Heure de l'incident</label>
-        <input type="text" id="heure_observ" name="heure_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="time" id="heure_observ" name="heure_observ" class="form-control form-control-lg  @error('') is-invalid @enderror" />
         @error('')
                 <span class="text-danger">{{ $message }} </span>
                 @enderror
