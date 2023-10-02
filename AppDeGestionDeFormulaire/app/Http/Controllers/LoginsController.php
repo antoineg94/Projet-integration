@@ -35,6 +35,9 @@ class LoginsController extends Controller
                 $identifiant= Identifiant::where('employe_id', $request->employe_id)->get()->first();
 
                 $employe = Employe::where('id', $identifiant->employe_id)->get()->first();
+
+                Session::put('nom', $employe->nom);
+                Session::put('prenom', $employe->prenom);
                 
                 if($employe->superviseur == "oui" && $employe->admin == "oui")
                 {
