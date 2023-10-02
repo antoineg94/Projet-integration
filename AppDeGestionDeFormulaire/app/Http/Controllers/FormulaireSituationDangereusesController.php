@@ -24,7 +24,7 @@ class FormulaireSituationDangereusesController extends Controller
         return view('Formulaires.formulaireSituationDangereuse');
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form2Request $request)
     {
         Log::debug($request);   
 
