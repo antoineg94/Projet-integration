@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Form4Request;
+use App\Http\Requests\EmployeformRequest;
 use App\Models\Form4;
 use App\Models\Employeform;
 use Illuminate\Support\Facades\Log;
@@ -19,7 +21,7 @@ class FormulaireMecaniquesController extends Controller
         return view('Formulaires.formulaireMecanique');
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form4Request $request)
     {
         Log::Debug($request);
         try{
