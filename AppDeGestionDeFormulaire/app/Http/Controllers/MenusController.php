@@ -43,7 +43,7 @@ class MenusController extends Controller
         ->orderby('employeforms.date_formulaire', 'desc')
         ->get();
        
-
+        
         return view('Utilisateur.ListeFormulaire', compact('listes'));
     }
 

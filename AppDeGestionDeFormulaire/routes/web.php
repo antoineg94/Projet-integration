@@ -37,7 +37,7 @@ Route::get('/logout',
 
 
 
-// form index
+// Form index
 
 Route::get('/formulaireTravail',
 [FormulairesTravailsController::class, 'index'])->name('formulairesTravails.index')->middleware('auth');
@@ -53,9 +53,13 @@ Route::get('/formulaireAudit',
 
 Route::get('/formulaireMecanique',
 [FormulaireMecaniquesController::class, 'index'])->name('formulaireMecaniques.index')->middleware('auth');
+
+
+
+
 // Zoom
 Route::get('/zoomFormulaire/{liste}/',
-[MenusController::class, 'zoomFormulaire'])->name('formulairesTravails.zoomFormulaire')->middleware('auth');
+[MenusController::class, 'zoomFormulaire'])->name('formulaires.zoomFormulaire')->middleware('auth');
 
 
 
@@ -77,7 +81,7 @@ Route::post('/formulaireMecanique',
 
 
 
-// liste 
+// Liste 
 
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
