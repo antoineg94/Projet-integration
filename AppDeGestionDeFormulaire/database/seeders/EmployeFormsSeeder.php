@@ -76,22 +76,22 @@ class EmployeFormsSeeder extends Seeder
             ],
             [
                 'employe_id' => 16,
-                'formulaire_id' => 3,
+                'formulaire_id' => 1,
                 'date_formulaire' => '2023-11-12'             
             ],
             [
                 'employe_id' => 18,
-                'formulaire_id' => 4,
+                'formulaire_id' => 2,
                 'date_formulaire' => '2023-12-22'            
             ],
             [
                 'employe_id' => 9,
-                'formulaire_id' => 3,
+                'formulaire_id' => 1,
                 'date_formulaire' => '2023-11-12'             
             ],
             [
                 'employe_id' => 19,
-                'formulaire_id' => 4,
+                'formulaire_id' => 1,
                 'date_formulaire' => '2023-12-22'            
             ]
         ]);
