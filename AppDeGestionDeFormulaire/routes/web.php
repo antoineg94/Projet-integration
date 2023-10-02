@@ -87,6 +87,10 @@ Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
 
 
+// Trier
+
+Route::get('/trierFormulaire',
+[MenusController::class, 'trierFormulaire'])->name('Menus.trierFormulaire')->middleware('auth');
 
 // 
 Route::get('/procedures/creation',

@@ -36,12 +36,44 @@ class MenusController extends Controller
     //Afficher les information d'un des formulaire accident de travail
     public function listeFormulaire()
     {
-        $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id')
-        ->where('superieur_id', '=', Session::get('employe_id'))
-        ->orderby('employeforms.date_formulaire', 'desc')
-        ->get();
+     
+    
+
+        if(Session::get('trier') == 1)
+        {
+            Log::Debug('Trié par date');
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
+        else if(Session::get('trier') == 2)
+        {
+            Log::Debug('Trié par employé');
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->orderby('employeforms.employe_id', 'asc')
+            ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
+        else if(Session::get('trier') == 3)
+        {
+            Log::Debug('Trié par formulaire');
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->orderby('employeforms.formulaire_id', 'desc')
+            ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
+        
+
+        
 
         
         return view('Utilisateur.ListeFormulaire', compact('listes'));
@@ -113,12 +145,21 @@ class MenusController extends Controller
 
         }
     
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function trierFormulaire(Request $request)
     {
-        //
+        try{
+            Log::debug($request);
+            Session::put('trier', $request->Trier);
+
+            return redirect()->route('Menus.listeFormulaire'); 
+        }
+        catch(Exception $e){
+            return view('Utilisateur.ListeFormulaire');
+        }
+        
+
+     
     }
 
     /**
