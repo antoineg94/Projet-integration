@@ -77,19 +77,6 @@ class FormulaireSituationDangereusesController extends Controller
         //
     }
 
-    public function zoomForm2()
-    {
-        $zoomForm2s = Form2::join('employeforms', 'employeforms.id', '=', 'form2s.employeform_id')
-        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
-        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
-        ->select('employes.*', 'employeforms.*', 'form2s.*','temoins.*')
-        ->where('employeforms.id', '=',  1)
-        ->get()->first();
-
-        Log::debug($zoomForm1s);
-        return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
-    }
     /**
      * Store a newly created resource in storage.
      */

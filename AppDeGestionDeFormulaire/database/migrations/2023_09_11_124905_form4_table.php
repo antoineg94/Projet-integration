@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('Form4s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employeform_id')->constrained();          
-            $table->float('no_unite')->nullable();
-            $table->string('departement', 255)->nullable();
-            $table->string('vehicule_citoyen', 255)->nullable();
+            $table->float('no_unite');
+            $table->string('departement', 255);
+            $table->string('nom_complet_employe', 255);
+            $table->string('nom_complet_superieur', 255);
+            $table->string('vehicule_citoyen', 255);
 
             $table->timestamps();
 

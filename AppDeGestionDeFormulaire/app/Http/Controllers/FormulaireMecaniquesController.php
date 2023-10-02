@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Form4Request;
+use App\Http\Requests\EmployeformRequest;
 use App\Models\Form4;
 use App\Models\Employeform;
 use Illuminate\Support\Facades\Log;
@@ -19,9 +21,8 @@ class FormulaireMecaniquesController extends Controller
         return view('Formulaires.formulaireMecanique');
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form4Request $request)
     {
-        Log::Debug($request);
         try{
  
             $date = date('Y-m-d');
@@ -45,7 +46,6 @@ class FormulaireMecaniquesController extends Controller
     }
     catch(\Throwable $e)
     {
-        Log::debug($e);
         return redirect()->route('formulairesMechaniques.index')->withErrors(['Informations invalide']);
     }
     }
@@ -55,20 +55,6 @@ class FormulaireMecaniquesController extends Controller
     public function create()
     {
         //
-    }
-
-    public function zoomForm4()
-    {
-        $zoomForm1s = Form4::join('employeforms', 'employeforms.id', '=', 'form4s.employeform_id')
-        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
-        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
-        ->select('employes.*', 'employeforms.*', 'form4s.*','temoins.*')
-        ->where('employeforms.id', '=',  1)
-        ->get()->first();
-
-        Log::debug($zoomForm1s);
-        return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
     }
 
     /**

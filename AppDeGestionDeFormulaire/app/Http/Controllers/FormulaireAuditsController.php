@@ -26,7 +26,6 @@ class FormulaireAuditsController extends Controller
 
     public function enregistrer(Form3Request $request)
     {
-        Log::debug($request);
 
         try{
 
@@ -74,20 +73,6 @@ class FormulaireAuditsController extends Controller
     public function create()
     {
         //
-    }
-
-    public function zoomForm3()
-    {
-        $zoomForm3s = Form3::join('employeforms', 'employeforms.id', '=', 'form3s.employeform_id')
-        ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-        ->join('temoins', 'temoins.employeform_id', '=', 'employeforms.id')
-        ->join('identifiants', 'identifiants.id', '=', 'employeforms.employe_id')
-        ->select('employes.*', 'employeforms.*', 'form3s.*','temoins.*')
-        ->where('employeforms.id', '=',  1)
-        ->get()->first();
-
-        Log::debug($zoomForm3s);
-        return view('Utilisateur.ZoomFormulaire1', compact('zoomForm3s'));
     }
 
     /**
