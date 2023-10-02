@@ -154,7 +154,6 @@ class MenusController extends Controller
     public function trierFormulaire(Request $request)
     {
         try{
-            Log::debug($request);
             Session::put('trier', $request->Trier);
 
             return redirect()->route('Menus.listeFormulaire'); 

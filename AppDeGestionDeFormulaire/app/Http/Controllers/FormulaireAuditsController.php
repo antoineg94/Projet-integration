@@ -26,7 +26,6 @@ class FormulaireAuditsController extends Controller
 
     public function enregistrer(Form3Request $request)
     {
-        Log::debug($request);
 
         try{
 
@@ -86,7 +85,6 @@ class FormulaireAuditsController extends Controller
         ->where('employeforms.id', '=',  1)
         ->get()->first();
 
-        Log::debug($zoomForm3s);
         return view('Utilisateur.ZoomFormulaire1', compact('zoomForm3s'));
     }
 
