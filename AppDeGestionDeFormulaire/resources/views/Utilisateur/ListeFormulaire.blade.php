@@ -4,23 +4,23 @@
 
 @section('middleContent')
 <section>
-  <h5> Liste des formulaires remplis</h5>
+  
   <div class="d-grid gap-3 col-11 mx-auto p-2">
+  <h5> Liste des formulaires remplis</h5>
     @if (count($listes))
 
     <form method="GET" class="row" action="{{ route('Menus.trierFormulaire') }}">
       @csrf
       <div class="input-group">
-      <div class="col-9">
-        <select class="form-select" name="Trier" id="Trier">
-          <option value="1" selected="selected">Date</option>
-          <option value="2">Employé</option>
-          <option value="3">Formulaire</option>
-        </select>
-      </div>
-      
+        <div class="col-9">
+          <select class="form-select" name="Trier" id="Trier">
+            <option selected>Trier par: </option>
+            <option value="1">Date</option>
+            <option value="2"> Employe</option>
+            <option value="3">Formulaire</option>
+          </select>
+        </div>
         <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
-      
       </div>
     </form>
       
