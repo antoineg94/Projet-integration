@@ -13,6 +13,19 @@ class Form4Seeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('form4s')->insert([
+            [
+                'employeform_id' => 4,
+                'no_unite' => 2,
+                'departement' => 'info',
+                'vehicule_citoyen' => 'non'
+            ],
+            [
+                'employeform_id' => 8,
+                'no_unite' => 2,
+                'departement' => 'info',
+                'vehicule_citoyen' => 'oui'
+            ]
+        ]);
     }
 }
