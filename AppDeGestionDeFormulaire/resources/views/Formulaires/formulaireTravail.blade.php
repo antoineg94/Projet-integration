@@ -39,7 +39,8 @@
 </select>
 </div>
 
-<div class="form-outline mb-4" id="divTemoins1" style="display: none;">
+<div class="border rounded px-2">
+    <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
     <label class="form-label" for="nom_temoin1">Nom témoins</label>
         <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
        
@@ -48,9 +49,8 @@
     <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
     <label class="form-label" for="nom_temoin2">Nom témoins</label>
         <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-       
     </div>
-
+</div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="lieu" >Lieu de l'incident</label>
@@ -64,7 +64,7 @@
         
     </div>
 <u></u>
-    <div id="" class="form-outline mb-4">
+    <div class="form-outline mb-4">
         <label class="form-label "  >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
@@ -72,6 +72,18 @@
         <label class="form-check-label" for="nature_blessure">
         Tête, visage, nez, yeux, oreille
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -80,6 +92,18 @@
         <label class="form-check-label" for="nature_blessure">
         Torse
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -88,6 +112,18 @@
         <label class="form-check-label" for="nature_blessure">
         Poumons
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -96,6 +132,18 @@
         <label class="form-check-label" for="nature_blessure">
         Bras, épaule, coude
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -104,6 +152,18 @@
         <label class="form-check-label" for="nature_blessure">
         Poignet, main, doigt
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -112,6 +172,18 @@
         <label class="form-check-label" for="nature_blessure">
         Dos
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Haut</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Bas</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -120,6 +192,18 @@
         <label class="form-check-label" for="nature_blessure">
         Hanche
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -128,6 +212,18 @@
         <label class="form-check-label" for="nature_blessure">
         Jambe, genou
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -136,6 +232,18 @@
         <label class="form-check-label" for="nature_blessure">
         Pied, orteil, cheville
         </label>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Gauche</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Droite</label>
+            </div>
+        </div>
+
         </div>
 
         
@@ -144,7 +252,12 @@
         <label class="form-check-label" for="nature_blessure">
         Autre
         </label>
+        
+        <div>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
+
+    </div>
             
     </div>
 
