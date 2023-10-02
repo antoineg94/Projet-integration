@@ -10,17 +10,18 @@
 
     <form method="GET" class="row" action="{{ route('Menus.trierFormulaire') }}">
       @csrf
-      <div class="col-6 offset-1">
+      <div class="input-group">
+      <div class="col-9">
         <select class="form-select" name="Trier" id="Trier">
           <option value="1" selected="selected">Date</option>
           <option value="2">Employé</option>
           <option value="3">Formulaire</option>
         </select>
       </div>
-      <div class="col-1 offset-1">
-        <button type="submit" class="btn btn-secondary">Trier</button>
-      </div>
       
+        <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
+      
+      </div>
     </form>
       
       @foreach($listes as $liste) 
