@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Form3Request;
+use App\Http\Requests\EmployeformRequest;
 use App\Models\Form3;
 use App\Models\Employeform;
 use Session;
@@ -22,7 +24,7 @@ class FormulaireAuditsController extends Controller
     }
 
 
-    public function enregistrer(Request $request)
+    public function enregistrer(Form3Request $request)
     {
         Log::debug($request);
 
@@ -60,6 +62,8 @@ class FormulaireAuditsController extends Controller
 
         }
         catch(Exception $e){
+            $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+            $employeform2->delete();
             return redirect()->back()->with('message','Une erreur est survenue lors de l\'enregistrement du formulaire');
         }
     }
