@@ -11,26 +11,20 @@
 
     <div class="form-outline mb-4 col-11 mx-auto">
     <label class="form-label" for="lieu">Lieu(x) des travaux</label>
-        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-          <span class="text-danger">{{ $message }} </span>
-        @enderror
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />
+   
     </div>
 <div class="d-flex col-11 mx-auto gap-3">
     <div class="form-outline mb-4" >
-    <label class="form-label" for="">Date</label>
-        <input type="date" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+    <label class="form-label" for="date_incident">Date</label>
+        <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
+     
     </div>
 
     <div class="form-outline mb-4" >
-    <label class="form-label" for="">Heure</label>
-        <input type="time" id="" name="" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        @error('')
-                <span class="text-danger">{{ $message }} </span>
-                @enderror
+    <label class="form-label" for="heure_incident">Heure</label>
+        <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
+     
     </div>
     </div>
 
@@ -52,9 +46,9 @@
 	<tr>
 		<td>&nbsp;EPI</td>
 		<td>
-      <div class="form-check">
+      <div class="form-check" require>
         <input class="form-check-input" type="radio" name="epi" id="epi1" value="conforme">
-        <label class="form-check-label" for="epi">
+        <label class="form-check-label " for="epi">
         </label>
       </div>
     </td>

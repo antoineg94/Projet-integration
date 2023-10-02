@@ -22,7 +22,6 @@ class Form2Request extends FormRequest
     public function rules(): array
     {
         return [
-            'employeform_id' => 'required',
             'fonction_avant' => 'required',
             'secteur' => 'required',
             'date_observ' => 'required',
@@ -38,7 +37,6 @@ class Form2Request extends FormRequest
     public function messages()
     {
         return [
-            'employeform_id.required' => 'Veuillez entrer l\'employé',
             'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'observation',
             'secteur.required' => 'Veuillez entrer le secteur',
             'date_observ.required' => 'Veuillez entrer la date de l\'observation',

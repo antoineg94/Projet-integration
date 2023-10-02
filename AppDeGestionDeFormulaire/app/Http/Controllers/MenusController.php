@@ -41,7 +41,6 @@ class MenusController extends Controller
 
         if(Session::get('trier') == 1)
         {
-            Log::Debug('Trié par date');
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
@@ -51,7 +50,6 @@ class MenusController extends Controller
         }
         else if(Session::get('trier') == 2)
         {
-            Log::Debug('Trié par employé');
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
@@ -62,7 +60,6 @@ class MenusController extends Controller
         }
         else if(Session::get('trier') == 3)
         {
-            Log::Debug('Trié par formulaire');
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
@@ -73,7 +70,6 @@ class MenusController extends Controller
         }
         else
         {
-            Log::Debug('Trié par date');
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')

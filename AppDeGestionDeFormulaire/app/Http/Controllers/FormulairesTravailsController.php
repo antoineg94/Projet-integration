@@ -42,6 +42,7 @@ class FormulairesTravailsController extends Controller
  
                  $Form1 = new Form1();
                  $Form1->employeform_id = $employeform->id;
+                 $Form1->fonction_avant = $request->fonction_avant;
                  $Form1->date_incident = $request->date_incident;
                  $Form1->heure_incident = $request->heure_incident;
                  $Form1->lieu = $request->lieu;
