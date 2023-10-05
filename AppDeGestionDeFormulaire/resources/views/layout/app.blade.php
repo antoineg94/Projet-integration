@@ -39,6 +39,15 @@
   @endif
 
   @if(Auth::check())
+  
+
+  <button type="button" class="btn btn-dark position-relative">
+<i class="fa-regular fa-bell text-light"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  {{ session::get('notification' )}}
+  </span>
+</button>
+
   <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
