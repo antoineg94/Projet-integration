@@ -376,16 +376,16 @@
     </div>
 
     <div class="form-outline mb-4" >
-        <label class="form-label" for="secouriste">Secouriste</label>
-        <select class="form-select" id="selectSecouriste">
+        <label class="form-label" for="premiers_soins">Secouriste</label>
+        <select class="form-select" name="premiers_soins" id="premiers_soins">
         <option value="0" selected >Non</option>
         <option value="1">Oui</option>
         </select>
     </div>
 
-<div class="form-check mb-4" id="ajoutSecouriste" style="display:none;">
-    <label for="nomSecouriste" class="form-label">Nom du secouriste</label>
-    <input type="text" class="form-control" id="nomSecouriste" name="nomSecouriste">
+<div class="form-check mb-4" id="nom_secouriste" style="display:none;">
+    <label for="nom_secouriste" class="form-label">Nom du secouriste</label>
+    <input type="text" class="form-control" id="nom_secouriste" name="nom_secouriste">
   </div>
 
 
