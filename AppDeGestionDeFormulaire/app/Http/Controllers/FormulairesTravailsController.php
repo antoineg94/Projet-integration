@@ -27,7 +27,6 @@ class FormulairesTravailsController extends Controller
     public function enregistrer(Form1Request $request)
     {
 
-        Log::Debug($request->premiers_soins);
          try{
  
                  $date = date('Y-m-d');
