@@ -46,6 +46,16 @@ class FormulairesTravailsController extends Controller
                  $Form1->heure_incident = $request->heure_incident;
                  $Form1->lieu = $request->lieu;
                  $Form1->secteur = $request->secteur;
+
+                 if ($request->premiers_soins == 1){
+                    $Form1->premiers_soins = "oui";
+                    $Form1->nom_secouriste = $request->nom_secouriste;
+                 }
+                 else
+                 {
+                    $Form1->premiers_soins = "non";
+                 }
+                 
                  $Form1->nature_blessure = $request->nature_blessure;
                  $Form1->description_blessure = $request->description_blessure;
                  $Form1->description_tache = $request->description_tache;

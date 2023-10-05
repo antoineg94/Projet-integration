@@ -1,5 +1,5 @@
-const selectSecouriste = document.getElementById("selectSecouriste");
-const ajoutSecouriste = document.getElementById("ajoutSecouriste");
+const selectSecouriste = document.getElementById("premiers_soins");
+const ajoutSecouriste = document.getElementById("nom_secouriste");
 
 selectSecouriste.addEventListener("change", function () {
 

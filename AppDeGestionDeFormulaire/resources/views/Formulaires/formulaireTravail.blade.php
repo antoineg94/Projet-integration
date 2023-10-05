@@ -12,7 +12,7 @@
 
     <div class="form-outline mb-4">
     <label class="form-label" for="fonction_avant">Fonction au moment de l'évènement</label>
-        <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
+        <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" value="{{ old('fonction_avant') }}/>
         
     </div>
 
@@ -20,13 +20,13 @@
 <h3>Description de l'évènement</h3>
     <div class="form-outline mb-4">
     <label class="form-label" for="date_incident">Date de l'accident</label>
-        <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" />
+        <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror"  value="{{ old('date_incident') }}"/>
         
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label" for="heure_incident">Heure de l'accident</label>
-        <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" />
+        <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror"  value="{{ old('heure_incident') }}"/>
        
     </div>
 
@@ -42,25 +42,25 @@
 <div class="border rounded px-2">
     <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
     <label class="form-label" for="nom_temoin1">Nom témoins</label>
-        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror"  value="{{ old('nom_temoin1') }}"/>
        
     </div>
 
     <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
     <label class="form-label" for="nom_temoin2">Nom témoins</label>
-        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror"  value="{{ old('nom_temoin2') }}"/>
     </div>
 </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="lieu" >Lieu de l'incident</label>
-        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />
+        <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror"  value="{{ old('lieu') }}"/>
         
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label" for="secteur" >Secteur d'activité</label>
-        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror" />
+        <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror"  value="{{ old('secteur') }}"/>
         
     </div>
 <u></u>
@@ -68,18 +68,18 @@
         <label class="form-label "  >Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0">
+        <input class="form-check-input" type="radio" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0" >
         <label class="form-check-label" for="nature_blessure">
         Tête, visage, nez, yeux, oreille
         </label>
 
         <div id="cote0" style="display: none;">
             <div class="form-check form-check-inline" >
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" >
                 <label class="form-check-label" for="inlineRadio2">Droite</label>
             </div>
         </div>
@@ -88,18 +88,18 @@
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Torse" id="blessure1" name="nature_blessure">
+        <input class="form-check-input" type="radio" value="Torse" id="blessure1" name="nature_blessure" >
         <label class="form-check-label" for="nature_blessure">
         Torse
         </label>
 
         <div id="cote1" style="display: none;">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" >
                 <label class="form-check-label" for="inlineRadio2">Droite</label>
             </div>
         </div>
@@ -108,14 +108,14 @@
 
         
         <div class="form-check">
-        <input class="form-check-input" type="radio" value="Poumons" id="blessure2" name="nature_blessure">
+        <input class="form-check-input" type="radio" value="Poumons" id="blessure2" name="nature_blessure" >
         <label class="form-check-label" for="nature_blessure">
         Poumons
         </label>
 
         <div id="cote2" style="display: none;">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
                 <label class="form-check-label" for="inlineRadio1">Gauche</label>
             </div>
             <div class="form-check form-check-inline">
@@ -372,20 +372,20 @@
     </div>
     <div class="mb-4">
         <label for="description_tache" class="form-label ">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
-        <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3"></textarea>
+        <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3" value="{{ old('description_tache') }}"></textarea>
     </div>
 
     <div class="form-outline mb-4" >
-        <label class="form-label" for="secouriste">Secouriste</label>
-        <select class="form-select" id="selectSecouriste">
+        <label class="form-label" for="premiers_soins">Secouriste</label>
+        <select class="form-select" name="premiers_soins" id="premiers_soins">
         <option value="0" selected >Non</option>
         <option value="1">Oui</option>
         </select>
     </div>
 
-<div class="form-check mb-4" id="ajoutSecouriste" style="display:none;">
-    <label for="nomSecouriste" class="form-label">Nom du secouriste</label>
-    <input type="text" class="form-control" id="nomSecouriste" name="nomSecouriste">
+<div class="form-check mb-4" id="nom_secouriste" style="display:none;">
+    <label for="nom_secouriste" class="form-label">Nom du secouriste</label>
+    <input type="text" class="form-control" id="nom_secouriste" name="nom_secouriste" value="{{ old('nom_secouriste') }}">
   </div>
 
 
