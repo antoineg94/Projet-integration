@@ -87,6 +87,11 @@ Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
 
 
+// Valider formulaire
+
+Route::post('/valideFormulaire/{zoomForm1s}/',
+[MenusController::class, 'validerFormulaire'])->name('Menus.validerFormulaire')->middleware('auth');
+
 // Trier
 
 Route::get('/trierFormulaire',
