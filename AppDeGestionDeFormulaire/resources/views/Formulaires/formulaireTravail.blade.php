@@ -372,7 +372,7 @@
     </div>
     <div class="mb-4">
         <label for="description_tache" class="form-label ">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
-        <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3" value="{{ old('description_tache') }}"></textarea>
+        <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3" >{{ old('description_tache') }}</textarea>
     </div>
 
     <div class="form-outline mb-4" >
