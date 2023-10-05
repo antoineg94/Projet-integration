@@ -186,9 +186,19 @@ class MenusController extends Controller
             return view('Utilisateur.ListeFormulaire');
         }
         
-
-     
     }
+
+
+
+    public function validerFormulaire(float $idEmpForm)
+    {        
+        $employeform = Employeform::find($idEmpForm);
+        $employeform->update([
+            'statut' => "Validé"
+        ]);
+        return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été validé');
+    }
+
 
     /**
      * Store a newly created resource in storage.

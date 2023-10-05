@@ -96,30 +96,28 @@
     </div>   
 
     <div class="container">
+      <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
+        <h3>Validation du formulaire:</h3>
+          @CSRF
+            <p>
+              En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
+              je ({{ $zoomForm1s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.
+            </p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Valide">
+              <label class="form-check-label" for="inlineRadio1">Oui</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Invalide">
+              <label class="form-check-label" for="inlineRadio1">Non</label>
+            </div>
 
 
-    <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulaireMecaniques.enregistrer') }}">
-    <h3>Validation du formulaire:</h3>
-    @CSRF
-
-<p>En tant que superviseur de {{ $zoomForm1s->nom }} {{ $zoomForm1s->prenom }}, je ({{ $zoomForm1s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.</p>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-  <label class="form-check-label" for="inlineRadio1">Oui</label>
-</div>
-
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-  <label class="form-check-label" for="inlineRadio1">Non</label>
-</div>
-
-
-    <div class="d-grid gap-3 col-11 mx-auto p-2">
-    <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
-    </div>            
-</form>
-
-
+            <div class="d-grid gap-3 col-11 mx-auto p-2">
+              <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
+            </div>            
+      </form>
     </div>
      @endif
   </div>
