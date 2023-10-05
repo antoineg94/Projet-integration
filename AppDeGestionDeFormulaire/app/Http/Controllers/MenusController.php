@@ -97,7 +97,11 @@ class MenusController extends Controller
                 ->get()->first();
         
           
-             
+             // update the employefrom table
+                $employeform = Employeform::find($liste->id);
+                $employeform->update([
+                    'consulte' => "Consulté"
+                ]);
 
                 return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
 
@@ -113,6 +117,13 @@ class MenusController extends Controller
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+
+                // update the employefrom table
+                $employeform = Employeform::find($liste->id);
+                $employeform->update([
+                    'consulte' => "Consulté"
+                ]);
+
                 return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
 
             }
@@ -125,6 +136,13 @@ class MenusController extends Controller
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+
+                // update the employefrom table
+                $employeform = Employeform::find($liste->id);
+                $employeform->update([
+                    'consulte' => "Consulté"
+                ]);
+
                 return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s'));
 
             }
@@ -137,6 +155,12 @@ class MenusController extends Controller
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+                // update the employefrom table
+                $employeform = Employeform::find($liste->id);
+                $employeform->update([
+                    'consulte' => "Consulté"
+                ]);
+                
                 return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
 
             }
