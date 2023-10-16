@@ -14,7 +14,7 @@
       <div class="input-group">
         <div class="col-9">
           <select class="form-select" name="Trier" id="Trier">
-            <option selected>Trier par: </option>
+            <option selected>Trier par</option>
             <option value="1">Date</option>
             <option value="2"> Employe</option>
             <option value="3">Formulaire</option>
