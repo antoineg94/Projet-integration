@@ -31,6 +31,12 @@ class MenusController extends Controller
         return view('accueil', compact('procedures'));
     }
 
+    // page admin
+    public function pageAdmin()
+    {
+        return view('SA.accueil');
+    }   
+
     
 
     //Afficher les information d'un des formulaire accident de travail

@@ -60,7 +60,25 @@ class LoginsController extends Controller
 
        
 
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Vous êtes connecté');
+                if(Session::get('admin') == true || Session::get('superviseur') == true)
+                {
+                    //$notification = DB::table('')->where('employe_id', $identifiant->employe_id)->where('vu', 'non')->count();
+                    //Session::put('notification', $notification);
+                }
+                else
+                {
+                    //Session::put('notification', 0);
+                }
+
+                if (Session::get('admin') == true)
+                {
+                    return redirect()->route('Menus.pageAdmin')->with('success', true)->with('message','Vous êtes connecté');
+                }
+                else
+                {
+                    return redirect()->route('Menus.index')->with('success', true)->with('message','Vous êtes connecté');
+                }
+                
             }
             else
             {

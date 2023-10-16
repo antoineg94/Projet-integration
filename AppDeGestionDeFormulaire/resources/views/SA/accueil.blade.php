@@ -20,26 +20,8 @@
 <hr  class="d-grid col-10 mx-auto">
 <br>
 
-<h3 style="text-align: center;">Liens utiles: </h3>
-<br>
-<div class="px-1">
-@if(count($procedures))
-@foreach($procedures as $procedure)
-<div class="card mb-3">
-  <h5 class="card-header">{{$procedure->titre}}</h5>
-  <div class="card-body">
-    <p class="card-text">{{$procedure->description}}</p>
-    <div class=" d-flex justify-content-end">
-    <a href="{{ $procedure->lien }}" class="btn text-white w-50" style="background-color: #63BC55;" type="button">Consulter</a>
-    </div>
-   </div>
-</div>
-@endforeach
-@else
-<p>Aucune procédure</p>
-@endif
 
-</div>
+
 
 
 </section>

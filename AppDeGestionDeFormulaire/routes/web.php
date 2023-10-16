@@ -30,6 +30,9 @@ Route::get('/login',
 Route::get('/Accueil',
 [MenusController::class, 'index'])->name('Menus.index')->middleware('auth');
 
+Route::get('/pageAdmin',
+[MenusController::class, 'pageAdmin'])->name('Menus.pageAdmin')->middleware('auth');
+
 
 Route::get('/logout',
 [LoginsController::class, 'logout'])->name('Logins.logout');
