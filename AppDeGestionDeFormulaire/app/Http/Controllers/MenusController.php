@@ -196,13 +196,26 @@ class MenusController extends Controller
 
 
 
-    public function validerFormulaire(float $idEmpForm)
+    public function validerFormulaire(Request $request, float $idEmpForm)
     {        
         $employeform = Employeform::find($idEmpForm);
-        $employeform->update([
-            'statut' => "Validé"
-        ]);
-        return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été validé');
+        
+        if($request->statut == "Invalide")
+        {
+            $employeform->update([
+            'statut' => "Invalide"
+            ]);
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme invalide');   
+        }
+        else
+        {
+            $employeform->update([
+            'statut' => "Valide"
+            ]);
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+        }
+        
+        
     }
 
 
