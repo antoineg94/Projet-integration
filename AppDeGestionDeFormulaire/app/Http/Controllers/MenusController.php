@@ -27,7 +27,7 @@ class MenusController extends Controller
     public function index()
     {
 
-        if(Session::get('admin') == true || Session::get('superviseur') == true)
+        if(Session::get('superviseur') == true)
         {   
             $notification = 0;
             
@@ -61,6 +61,45 @@ class MenusController extends Controller
     // page admin
     public function pageAdmin()
     {
+       
+            $notification = 0;
+            
+            $employes = DB::table('employes')
+            ->get();
+
+
+            foreach($employes as $employe)
+            {
+                $nombre = DB::table('employeforms')
+                ->where('employe_id', '=', $employe->id)
+                ->count();
+
+                $notification += $nombre;
+            }
+
+            Session::put('notification', $notification);
+
+            // notif form valider
+            $notificationValider = 0;
+            
+            $employes = DB::table('employes')
+            ->get();
+
+
+            foreach($employes as $employe)
+            {
+                $nombre = DB::table('employeforms')
+                ->where('statut', '=', 'Valide', 'OR', 'statut', '=', 'Invalide')
+                ->where('employe_id', '=', $employe->id)
+                ->count();
+
+                $notificationValider += $nombre;
+            }
+
+            Session::put('notificationValider', $notificationValider);
+        
+        
+
         return view('SA.accueil');
     }   
 
