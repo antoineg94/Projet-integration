@@ -1,52 +1,45 @@
-@extends('layout/app')
+@extends('layout/app2')
 
 @section('title', 'Login SA')
 
 @section('middleContent')
 <section>
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Sidebar</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Centre de notification
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Consulter les formulaires
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Procédures de travail
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">Déconnexion</a></li>
-      </ul>
-    </div>
+
+
+  <div class="d-grid gap-3 col-11 mx-auto p-2">
+    @if(Session::get('admin') == true || Session::get('superviseur') == true)
+    <a class="btn text-white" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste des formulaires</a>
+    @endif
+
+    @if(Session::get('admin') == true)
+    <a class="btn text-white" type="button" style="background-color: #ff0000;" href="{{ route('procedure.create') }}">Ajouter une procédure</a>
+    @endif
   </div>
+
+<br>
+<hr  class="d-grid col-10 mx-auto">
+<br>
+
+<h3 style="text-align: center;">Liens utiles: </h3>
+<br>
+<div class="px-1">
+@if(count($procedures))
+@foreach($procedures as $procedure)
+<div class="card mb-3">
+  <h5 class="card-header">{{$procedure->titre}}</h5>
+  <div class="card-body">
+    <p class="card-text">{{$procedure->description}}</p>
+    <div class=" d-flex justify-content-end">
+    <a href="{{ $procedure->lien }}" class="btn text-white w-50" style="background-color: #63BC55;" type="button">Consulter</a>
+    </div>
+   </div>
+</div>
+@endforeach
+@else
+<p>Aucune procédure</p>
+@endif
+
+</div>
 
 
 </section>
