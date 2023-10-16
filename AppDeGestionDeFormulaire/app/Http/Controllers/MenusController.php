@@ -26,6 +26,17 @@ class MenusController extends Controller
      */
     public function index()
     {
+
+        if(Session::get('admin') == true || Session::get('superviseur') == true)
+        {
+            $notification = DB::table('employeforms')->where('consulte', 'Non-consulté')->count();
+            Session::put('notification', $notification);
+        }
+        else
+        {
+            Session::put('notification', 0);
+        }
+
         $procedures = Consulterprocedure::all();
 
         return view('accueil', compact('procedures'));
@@ -36,6 +47,12 @@ class MenusController extends Controller
     {
         return view('SA.accueil');
     }   
+
+    public function notif()
+    {
+        Session::put('trier', 4);
+        return redirect()->route('Menus.listeFormulaire');
+    }
 
     
 
@@ -72,6 +89,15 @@ class MenusController extends Controller
             ->where('superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.formulaire_id', 'desc')
             ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
+        else if(Session::get('trier') == 4)
+        {
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->where('consulte', '=', 'Non-consulté')
             ->get(); 
         }
         else

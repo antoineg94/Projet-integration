@@ -89,6 +89,8 @@ Route::post('/formulaireMecanique',
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
 
+Route::get('/notif',
+[MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');
 
 // Valider formulaire
 
