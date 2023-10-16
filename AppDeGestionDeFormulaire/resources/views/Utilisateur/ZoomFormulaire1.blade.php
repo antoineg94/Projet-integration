@@ -104,13 +104,13 @@
               je ({{ $zoomForm1s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.
             </p>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="oui" id="oui" value="Valide">
-              <label class="form-check-label" for="oui">Oui</label>
+              <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">
+              <label class="form-check-label" for="statut">Oui</label>
             </div>
 
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="non" id="non" value="Invalide">
-              <label class="form-check-label" for="non">Non</label>
+              <input class="form-check-input" type="radio" name="statut" id="statut" value="Invalide">
+              <label class="form-check-label" for="statut">Non</label>
             </div>
 
 
@@ -119,6 +119,9 @@
             </div>            
       </form>
     </div>
-    
+    @else
+    <p>Une erreur s'est produite, veuillez réessayer plus tard</p>
+    @endif
+  </div>
 </section>
 @endsection

@@ -60,15 +60,6 @@ class LoginsController extends Controller
 
        
 
-                if(Session::get('admin') == true || Session::get('superviseur') == true)
-                {
-                    //$notification = DB::table('')->where('employe_id', $identifiant->employe_id)->where('vu', 'non')->count();
-                    //Session::put('notification', $notification);
-                }
-                else
-                {
-                    //Session::put('notification', 0);
-                }
 
                 if (Session::get('admin') == true)
                 {
@@ -100,18 +91,28 @@ class LoginsController extends Controller
     public function logout()
     {
 
-                // Mettre à null toutes les variables de sessions
-                Session::put('nom', null);
-                Session::put('prenom', null);
+            // Mettre à null toutes les variables de sessions
+            
+            Session::put('nom', null);
+            Session::put('prenom', null);
+            Session::put('employe_id', null);
+            Session::put('trier', null);
+            Session::put('superviseur', null);
+            Session::put('admin', null);
+            
+            // delete les variables de sessions
+            
+            Session::forget('nom');
+            Session::forget('prenom');
+            Session::forget('employe_id');
+            Session::forget('trier');
+            Session::forget('superviseur');
+            Session::forget('admin');
 
-                // delete les variables de sessions
-                Session::forget('nom');
-                Session::forget('prenom');
-                // déconnecter l'utilisateur
 
-        
-        
-        Auth::logout();
+            // déconnecter l'utilisateur
+            
+            Auth::logout();
 
         return view('Login.Login');
     }

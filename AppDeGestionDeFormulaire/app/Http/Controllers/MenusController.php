@@ -26,6 +26,33 @@ class MenusController extends Controller
      */
     public function index()
     {
+
+        if(Session::get('admin') == true || Session::get('superviseur') == true)
+        {   
+            $notification = 0;
+            
+            $employes = DB::table('employes')
+            ->where('employes.superieur_id', '=', Session::get('employe_id'))
+            ->get();
+
+
+            foreach($employes as $employe)
+            {
+                $nombre = DB::table('employeforms')
+                ->where('consulte', 'Non-consulté')
+                ->where('employe_id', '=', $employe->id)
+                ->count();
+
+                $notification += $nombre;
+            }
+
+            Session::put('notification', $notification);
+        }
+        else
+        {
+            Session::put('notification', 0);
+        }
+
         $procedures = Consulterprocedure::all();
 
         return view('accueil', compact('procedures'));
@@ -36,6 +63,12 @@ class MenusController extends Controller
     {
         return view('SA.accueil');
     }   
+
+    public function notif()
+    {
+        Session::put('trier', 4);
+        return redirect()->route('Menus.listeFormulaire');
+    }
 
     
 
@@ -72,6 +105,15 @@ class MenusController extends Controller
             ->where('superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.formulaire_id', 'desc')
             ->orderby('employeforms.date_formulaire', 'desc')
+            ->get(); 
+        }
+        else if(Session::get('trier') == 4)
+        {
+            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->where('consulte', '=', 'Non-consulté')
             ->get(); 
         }
         else
@@ -196,13 +238,26 @@ class MenusController extends Controller
 
 
 
-    public function validerFormulaire(float $idEmpForm)
+    public function validerFormulaire(Request $request, float $idEmpForm)
     {        
         $employeform = Employeform::find($idEmpForm);
-        $employeform->update([
-            'statut' => "Validé"
-        ]);
-        return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été validé');
+        
+        if($request->statut == "Invalide")
+        {
+            $employeform->update([
+            'statut' => "Invalide"
+            ]);
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme invalide');   
+        }
+        else
+        {
+            $employeform->update([
+            'statut' => "Valide"
+            ]);
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+        }
+        
+        
     }
 
 

@@ -47,13 +47,13 @@
             je ({{ $zoomForm4s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.
           </p>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Valide">
-            <label class="form-check-label" for="inlineRadio1">Oui</label>
+            <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">
+            <label class="form-check-label" for="statut">Oui</label>
           </div>
 
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Invalide">
-            <label class="form-check-label" for="inlineRadio1">Non</label>
+            <input class="form-check-input" type="radio" name="statut" id="statut" value="Invalide">
+            <label class="form-check-label" for="statut">Non</label>
           </div>
 
 

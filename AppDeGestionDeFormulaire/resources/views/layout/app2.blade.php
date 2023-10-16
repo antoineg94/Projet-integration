@@ -50,6 +50,15 @@
           </li>
         </ul>
         <hr>
+        @if(Session::get('admin') == true || Session::get('superviseur') == true)
+          <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
+            <i class="fa-regular fa-bell text-light"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ session::get('notification' )}}
+            </span>
+          </button>
+        @endif
+        <hr>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -62,6 +71,31 @@
       </div>
     </sidebar>
 
+    <div class="toast-container position-static" id="liveToastContainer">
+      <div class="toast" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small class="text-muted">just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          See? Just like this.
+        </div>
+      </div>
+
+      <div class="toast" id="liveToast1" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small class="text-muted">2 seconds ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Heads up, toasts will stack automatically
+        </div>
+      </div>
+    </div>
     @yield('middleContent')
 
   </main>
@@ -151,5 +185,6 @@
 <script src="js/premierSoins.js"></script>
 <script src="js/coteBlessure.js"></script>
 <script src="js/notifToast.js"></script>
+<script src="js/notifAdminToast.js"></script>
 
 </html>
