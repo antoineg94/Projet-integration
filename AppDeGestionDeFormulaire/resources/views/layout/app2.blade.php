@@ -50,16 +50,7 @@
           </li>
         </ul>
         <hr>
-        @if(Session::get('admin') == true || Session::get('superviseur') == true)
-          <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
-            <i class="fa-regular fa-bell text-light"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ session::get('notification' )}}
-            </span>
-          </button>
-        @endif
-        <hr>
-        <div class="dropdown">
+        <div class="dropdown d-flex justify-content-between">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>mdo</strong>
@@ -67,6 +58,14 @@
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="{{route('Logins.logout')}}">Déconnexion</a></li>
           </ul>
+          @if(Session::get('admin') == true || Session::get('superviseur') == true)
+          <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
+            <i class="fa-regular fa-bell text-light"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ session::get('notification' )}}
+            </span>
+          </button>
+        @endif
         </div>
       </div>
     </sidebar>
