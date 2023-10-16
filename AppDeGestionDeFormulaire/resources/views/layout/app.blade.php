@@ -85,7 +85,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-    <a type="button" href="{{ route('Menus.notif') }}" class="btn text-primary stretched-link">Vous avez {{ Session::get('notification') }} notifications</a>
+    <a type="button" href="{{ route('Menus.notif') }}" class="btn text-primary link">Vous avez {{ Session::get('notification') }} notifications</a>
     </div>
   </div>
 </div>

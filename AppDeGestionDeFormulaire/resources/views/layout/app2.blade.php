@@ -71,27 +71,27 @@
     </sidebar>
 
     <div class="toast-container position-static" id="liveToastContainer">
-      <div class="toast" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast position-static" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-autohide="false">
         <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
-          <strong class="me-auto">Bootstrap</strong>
-          <small class="text-muted">just now</small>
+        
+          <strong class="me-auto">Notification</strong>
+          <small class="text-muted">??temps??</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          See? Just like this.
+          Vous avez {{ Session::get('notification') }} notifications
         </div>
       </div>
 
-      <div class="toast" id="liveToast1" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
-          <strong class="me-auto">Bootstrap</strong>
-          <small class="text-muted">2 seconds ago</small>
+      <div class="toast position-static" id="liveToast1" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-autohide="false">
+        <div class="toast-header ">
+       
+          <strong class="me-auto">Notification</strong>
+          <small class="text-muted">??temps??</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          Heads up, toasts will stack automatically
+          Vous avez {{ Session::get('notification') }} notifications
         </div>
       </div>
     </div>
