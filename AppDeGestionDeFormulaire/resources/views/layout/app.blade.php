@@ -40,13 +40,16 @@
 
   @if(Auth::check())
   
-
-  <button type="button" class="btn btn-dark position-relative">
+@if(Session::get('admin') == true || Session::get('superviseur') == true)
+  <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
 <i class="fa-regular fa-bell text-light"></i>
   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
   {{ session::get('notification' )}}
   </span>
 </button>
+@endif
+
+
 
   <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,7 +75,20 @@
 </nav>
     <!-- END OF HEADER -->
 <body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
- 
+
+<div class="toast-container position-static center-2 end-2 p-3" >
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+    <button type="button" class="btn btn-primary btn-sm">Take action</button>
+    </div>
+  </div>
+</div>
 
     @yield('middleContent')
     </body>
@@ -160,5 +176,6 @@
   <script src="js/ajoutertemoins.js"></script>
   <script src="js/premierSoins.js"></script>
   <script src="js/coteBlessure.js"></script>
+  <script src="js/notifToast.js"></script>
 
 </html>
