@@ -28,8 +28,24 @@ class MenusController extends Controller
     {
 
         if(Session::get('admin') == true || Session::get('superviseur') == true)
-        {
-            $notification = DB::table('employeforms')->where('consulte', 'Non-consulté')->count();
+        {   
+            $notification = 0;
+            
+            $employes = DB::table('employes')
+            ->where('employes.superieur_id', '=', Session::get('employe_id'))
+            ->get();
+
+
+            foreach($employes as $employe)
+            {
+                $nombre = DB::table('employeforms')
+                ->where('consulte', 'Non-consulté')
+                ->where('employe_id', '=', $employe->id)
+                ->count();
+
+                $notification += $nombre;
+            }
+
             Session::put('notification', $notification);
         }
         else
