@@ -8,6 +8,7 @@ use App\Http\Controllers\FormulaireSituationDangereusesController;
 use App\Http\Controllers\FormulaireAuditsController;
 use App\Http\Controllers\FormulaireMecaniquesController;
 use App\Http\Controllers\ConsulterProceduresController;
+use App\http\Controllers\AdminsController;
 
 
 /*
@@ -88,6 +89,9 @@ Route::post('/formulaireMecanique',
 
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
+
+Route::get('/MesFormulaire',
+[MenusController::class, 'ListeMesFormulaires'])->name('Menus.ListeMesFormulaires')->middleware('auth');
 
 Route::get('/notif',
 [MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');

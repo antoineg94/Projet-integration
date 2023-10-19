@@ -17,9 +17,9 @@
     <a class="btn text-white" type="button" style="background-color: #63BC55;" href="{{ route('formulaireAudits.index') }}">Formulaire d'audit SST</a>
     <a class="btn text-white" type="button" style="background-color: #63BC55;" href="{{ route('formulaireMecaniques.index') }}">Formulaire d'analyse mécanique</a>
     @endif
-
+    <a class="btn text-white" type="button" style="background-color: #0076D5;" href="{{ route('Menus.ListeMesFormulaires') }}">Liste de mes formulaires</a>
     @if(Session::get('admin') == true || Session::get('superviseur') == true)
-    <a class="btn text-white" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste des formulaires</a>
+    <a class="btn text-white" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés</a>
     @endif
 
     @if(Session::get('admin') == true)
