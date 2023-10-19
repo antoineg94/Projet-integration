@@ -121,8 +121,8 @@ class MenusController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
@@ -130,8 +130,8 @@ class MenusController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.employe_id', 'asc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -140,8 +140,8 @@ class MenusController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.formulaire_id', 'desc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -150,8 +150,8 @@ class MenusController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
             ->where('consulte', '=', 'Non-consulté')
             ->get(); 
         }
@@ -159,8 +159,8 @@ class MenusController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
