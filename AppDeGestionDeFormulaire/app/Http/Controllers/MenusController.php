@@ -171,6 +171,8 @@ class MenusController extends Controller
         return view('Utilisateur.ListeFormulaire', compact('listes'));
     }
 
+    
+
         public function zoomFormulaire(EmployeForm $liste)
         {
             if($liste->formulaire_id == 1)
