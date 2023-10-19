@@ -27,71 +27,70 @@
     @endif
 
 
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
 
-  @if(Auth::check())
-  <a href="{{ route('Menus.index') }}">
-  @endif
-    <img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;">
-  @if(Auth::check())
-  </a>
-  @endif
+        @if(Auth::check())
+        <a href="{{ route('Menus.index') }}">
+        @endif
+          <img src="/img/NOIR_renversee.png" alt="" style="height: 40px; widht: 40px;">
+        @if(Auth::check())
+        </a>
+        @endif
 
-  @if(Auth::check())
-  
-@if(Session::get('admin') == true || Session::get('superviseur') == true)
-  <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
-<i class="fa-regular fa-bell text-light"></i>
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-  {{ session::get('notification' )}}
-  </span>
-</button>
-@endif
-
-
-
-  <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <strong>{{ session::get('prenom' )}} {{ session::get('nom' )}}</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="{{route('Logins.logout')}}">Déconnexion</a></li>
-      </ul>
-    </div>
-
-  @endif
-
-      <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
-      </div>
-     
+        @if(Auth::check())
         
+          @if(Session::get('admin') == true || Session::get('superviseur') == true)
+            <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
+              <i class="fa-regular fa-bell text-light"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{ session::get('notification' )}}
+              </span>
+            </button>
+          @endif
 
 
-    </div>
-  </div>
-</nav>
+
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <strong>{{ session::get('prenom' )}} {{ session::get('nom' )}}</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="{{route('Logins.logout')}}">Déconnexion</a></li>
+            </ul>
+          </div>
+
+        @endif
+
+        <div class="offcanvas offcanvas-end navbar-dark bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bienvenue {{Session::get('prenom')}} {{Session::get('nom')}}</h5> 
+          </div>
+          
+              
+
+
+        </div>
+      </div>
+    </nav>
     <!-- END OF HEADER -->
-<body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
-
-<div class="toast-container position-static center-2 end-2 p-3" >
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-    <div class="toast-header">
-    
-      <strong class="me-auto">Notifications</strong>
-      <small>Date/Temps?</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  <body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
+    <div class="toast-container position-static center-2 end-2 p-3" >
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+        <div class="toast-header">
+        
+          <strong class="me-auto">Notifications</strong>
+          <small>Date/Temps?</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        <a type="button" href="{{ route('Menus.notif') }}" class="btn text-primary link">Vous avez {{ Session::get('notification') }} notifications</a>
+        </div>
+      </div>
     </div>
-    <div class="toast-body">
-    <a type="button" href="{{ route('Menus.notif') }}" class="btn text-primary link">Vous avez {{ Session::get('notification') }} notifications</a>
-    </div>
-  </div>
-</div>
 
-    @yield('middleContent')
-    </body>
+  @yield('middleContent')
+  </body>
 
     <!-- FOOTER -->
     <footer style="width: 100%; background-color: #EEEEF0;" >
