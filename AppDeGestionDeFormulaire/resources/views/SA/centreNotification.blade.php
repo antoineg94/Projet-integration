@@ -4,6 +4,8 @@
 
 @section('middleContent')
 <section>
+<h1>Centre de notification</h1>
+
 
 
 </section>
