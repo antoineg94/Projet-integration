@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-
+<h1>Gestion des formulaires SST</h1>
 
 
 </section>
