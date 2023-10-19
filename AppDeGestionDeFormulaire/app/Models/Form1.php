@@ -23,7 +23,8 @@ class Form1 extends Model
         'description_blessure',
         'description_tache',
         'type_violence',
-        'type_absence'
+        'type_absence',
+        'temoin'
     ];
 
 }
