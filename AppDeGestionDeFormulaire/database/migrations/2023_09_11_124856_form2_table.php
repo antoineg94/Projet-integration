@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('lieu', 255);
             $table->string('description', 255);
             $table->string('proposition', 255);
+            $table->string('temoin', 255)->nullable();
 
             $table->timestamps();
 

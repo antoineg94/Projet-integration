@@ -18,6 +18,7 @@ class Form2 extends Model
         'heure_observ',
         'lieu',
         'description',
-        'proposition'
+        'proposition',
+        'temoin'
     ];
 }

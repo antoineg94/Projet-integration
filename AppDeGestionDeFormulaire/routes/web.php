@@ -8,6 +8,7 @@ use App\Http\Controllers\FormulaireSituationDangereusesController;
 use App\Http\Controllers\FormulaireAuditsController;
 use App\Http\Controllers\FormulaireMecaniquesController;
 use App\Http\Controllers\ConsulterProceduresController;
+use App\http\Controllers\AdminsController;
 
 
 /*
@@ -64,7 +65,8 @@ Route::get('/formulaireMecanique',
 Route::get('/zoomFormulaire/{liste}/',
 [MenusController::class, 'zoomFormulaire'])->name('formulaires.zoomFormulaire')->middleware('auth');
 
-
+Route::get('/zoomMesFormulaire/{liste}/',
+[MenusController::class, 'zoomMesFormulaire'])->name('formulaires.zoomMesFormulaire')->middleware('auth');
 
 
 // Form store
@@ -89,6 +91,9 @@ Route::post('/formulaireMecanique',
 Route::get('/listeFormulaire',
 [MenusController::class, 'listeFormulaire'])->name('Menus.listeFormulaire')->middleware('auth');
 
+Route::get('/MesFormulaire',
+[MenusController::class, 'ListeMesFormulaires'])->name('Menus.ListeMesFormulaires')->middleware('auth');
+
 Route::get('/notif',
 [MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');
 
@@ -101,6 +106,9 @@ Route::post('/valideFormulaire/{zoomForm1s}/',
 
 Route::get('/trierFormulaire',
 [MenusController::class, 'trierFormulaire'])->name('Menus.trierFormulaire')->middleware('auth');
+
+Route::get('/trierMesFormulaire',
+[MenusController::class, 'trierMesFormulaire'])->name('Menus.trierMesFormulaire')->middleware('auth');
 
 // 
 Route::get('/procedures/creation',

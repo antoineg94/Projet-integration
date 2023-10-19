@@ -4,7 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Employe;
+use App\Models\Employeform;
+use App\Models\Formulaire;
+use App\Models\Form1;
+use App\Models\Form2;
+use App\Models\Form3;
+use App\Models\Form4;
+use App\Models\Consulterprocedure;
 class AdminsController extends Controller
 {
     public function listeFormulaire()
@@ -63,6 +70,6 @@ class AdminsController extends Controller
         
 
         
-        return view('Utilisateur.ListeFormulaire', compact('listes'));
+        return view('Admins.ListeFormulaire', compact('listes'));
     }
 }

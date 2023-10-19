@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('date_consulte')->nullable();
             $table->string('statut', 255)->default('En attente');
             $table->date('date_formulaire')->nullable();
+            $table->float('superieur_id', 255)->default(0);
             $table->timestamps();
 
         });
