@@ -17,7 +17,7 @@ class ConsulterProcedureSeeder extends Seeder
             [
                 'titre' => 'Nouvelle information!',
                 'description' => 'Dans le lien, vous trouverez des nouvelles informations concernant les procédures de la ville de Trois-Rivières.',
-                'lien' => 'google.ca',
+                'lien' => 'https://www.google.ca/',
                 'departement_id' => '1'
             ],
             [
