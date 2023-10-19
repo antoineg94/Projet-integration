@@ -171,63 +171,6 @@ class MenusController extends Controller
         return view('Utilisateur.ListeFormulaire', compact('listes'));
     }
 
-    public function ListeMesFormulaires()
-    {
-     
-    
-
-        if(Session::get('trier') == 1)
-        {
-            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('employes.id', '=', Session::get('employe_id'))
-            ->orderby('employeforms.date_formulaire', 'desc')
-            ->get(); 
-        }
-        else if(Session::get('trier') == 2)
-        {
-            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('employes.id', '=', Session::get('employe_id'))
-            ->orderby('employeforms.employe_id', 'asc')
-            ->orderby('employeforms.date_formulaire', 'desc')
-            ->get(); 
-        }
-        else if(Session::get('trier') == 3)
-        {
-            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('employes.id', '=', Session::get('employe_id'))
-            ->orderby('employeforms.formulaire_id', 'desc')
-            ->orderby('employeforms.date_formulaire', 'desc')
-            ->get(); 
-        }
-        else if(Session::get('trier') == 4)
-        {
-            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('employes.id', '=', Session::get('employe_id'))
-            ->get(); 
-        }
-        else
-        {
-            $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('employes.id', '=', Session::get('employe_id'))
-            ->orderby('employeforms.date_formulaire', 'desc')
-            ->get(); 
-        }
-
-        
-
-        
-        return view('Utilisateur.MesFormulaires', compact('listes'));
-    }
     
 
         public function zoomFormulaire(EmployeForm $liste)
@@ -358,5 +301,147 @@ class MenusController extends Controller
         
     }
 
+
+            // fonction pour afficher les formulaires de l'employé connecté
+            public function ListeMesFormulaires()
+            {
+             
+            
+        
+                if(Session::get('trier') == 1)
+                {
+                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+                    ->where('employes.id', '=', Session::get('employe_id'))
+                    ->orderby('employeforms.date_formulaire', 'desc')
+                    ->get(); 
+                }
+                else if(Session::get('trier') == 2)
+                {
+                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+                    ->where('employes.id', '=', Session::get('employe_id'))
+                    ->orderby('employeforms.employe_id', 'asc')
+                    ->orderby('employeforms.date_formulaire', 'desc')
+                    ->get(); 
+                }
+                else if(Session::get('trier') == 3)
+                {
+                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+                    ->where('employes.id', '=', Session::get('employe_id'))
+                    ->orderby('employeforms.formulaire_id', 'desc')
+                    ->orderby('employeforms.date_formulaire', 'desc')
+                    ->get(); 
+                }
+                else if(Session::get('trier') == 4)
+                {
+                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+                    ->where('employes.id', '=', Session::get('employe_id'))
+                    ->get(); 
+                }
+                else
+                {
+                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+                    ->where('employes.id', '=', Session::get('employe_id'))
+                    ->orderby('employeforms.date_formulaire', 'desc')
+                    ->get(); 
+                }
+        
+                
+        
+                
+                return view('Utilisateur.MesFormulaires', compact('listes'));
+            }
+        
+            public function trierMesFormulaire(Request $request)
+            {
+                try{
+                    Session::put('trier', $request->Trier);
+        
+                    return redirect()->route('Menus.ListeMesFormulaires'); 
+                }
+                catch(Exception $e){
+                    return view('Utilisateur.MesFormulaires');
+                }
+                
+            }
+    
+            public function zoomMesFormulaire(EmployeForm $liste)
+            {
+                if($liste->formulaire_id == 1)
+                {
+    
+                    $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
+                    ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->select('form1s.*', 'employeforms.*', 'employes.*')
+                    ->where('employeforms.id', '=', $liste->id)
+                    ->get()->first();
+            
+    
+    
+                    return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
+    
+                }
+                else if($liste->formulaire_id == 2)
+                {
+                 
+    
+                    $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
+                    ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->select('form2s.*', 'employeforms.*', 'employes.*')
+                    ->where('employeforms.id', '=', $liste->id)
+                    ->get()->first();
+            
+    
+    
+    
+                    return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
+    
+                }
+                else if($liste->formulaire_id == 3)
+                {
+                    $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
+                    ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->select('form3s.*', 'employeforms.*', 'employes.*')
+                    ->where('employeforms.id', '=', $liste->id)
+                    ->get()->first();
+            
+    
+                    return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s'));
+    
+                }
+                else if($liste->formulaire_id == 4)
+                {
+                    $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+                    ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
+                    ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+                    ->select('form4s.*', 'employeforms.*', 'employes.*')
+                    ->where('employeforms.id', '=', $liste->id)
+                    ->get()->first();
+    
+                    
+                    return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
+    
+                }
+                else
+                {
+                    return view('Utilisateur.ListeFormulaire');
+                }
+        
+    
+    
+    
+            }
 
 }

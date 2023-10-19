@@ -65,7 +65,8 @@ Route::get('/formulaireMecanique',
 Route::get('/zoomFormulaire/{liste}/',
 [MenusController::class, 'zoomFormulaire'])->name('formulaires.zoomFormulaire')->middleware('auth');
 
-
+Route::get('/zoomMesFormulaire/{liste}/',
+[MenusController::class, 'zoomMesFormulaire'])->name('formulaires.zoomMesFormulaire')->middleware('auth');
 
 
 // Form store
@@ -105,6 +106,9 @@ Route::post('/valideFormulaire/{zoomForm1s}/',
 
 Route::get('/trierFormulaire',
 [MenusController::class, 'trierFormulaire'])->name('Menus.trierFormulaire')->middleware('auth');
+
+Route::get('/trierMesFormulaire',
+[MenusController::class, 'trierMesFormulaire'])->name('Menus.trierMesFormulaire')->middleware('auth');
 
 // 
 Route::get('/procedures/creation',

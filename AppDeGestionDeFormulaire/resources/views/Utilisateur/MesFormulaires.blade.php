@@ -9,7 +9,7 @@
   <h5> Liste des formulaires remplis</h5>
     @if (count($listes))
 
-    <form method="GET" class="row" action="{{ route('Menus.trierFormulaire') }}">
+    <form method="GET" class="row" action="{{ route('Menus.trierMesFormulaire') }}">
       @csrf
       <div class="input-group">
         <div class="col-9">
