@@ -22,8 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Form3Seeder::class);
         $this->call(Form4Seeder::class);
 
-        $this->call(TemoinsSeeder::class);
-
         $this->call(IdentifiantsSeeder::class);
         $this->call(ConsulterProcedureSeeder::class);
 
