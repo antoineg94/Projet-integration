@@ -13,37 +13,35 @@
 
  
 <body class="d-flex flex-column" style="display:flex; flex-direction:column;" >
- 
   <main class="d-flex h-100">
-
     <sidebar>
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <svg class="bi me-2" width="40" height="32"></svg>
           <span class="fs-4">SST V3R</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link text-white" aria-current="page">
+            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white" aria-current="page">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
               Accueil
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
               Centre de notification
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
               Consulter les formulaires
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
               Procédures de travail
             </a>
