@@ -42,7 +42,7 @@
       </div>
     @endforeach 
     @else
-      <p>Vous n'avez rempli aucun formulaire(s) jusqu'à présent.</p>
+      <p>Aucun formulaire n'a été rempli.</p>
     @endif
 
   </div>
