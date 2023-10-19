@@ -63,11 +63,11 @@ class LoginsController extends Controller
 
                 if (Session::get('admin') == true)
                 {
-                    return redirect()->route('Menus.pageAdmin')->with('success', true)->with('message','Vous êtes connecté');
+                    return redirect()->route('Menus.pageAdmin');
                 }
                 else
                 {
-                    return redirect()->route('Menus.index')->with('success', true)->with('message','Vous êtes connecté');
+                    return redirect()->route('Menus.index');
                 }
                 
             }
