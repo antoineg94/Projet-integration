@@ -51,18 +51,7 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->proposition = $request->proposition;
             $Form2->save();
 
-            if($request->nom_temoin1 != null){
-                $temoin1 = new Temoin();
-                $temoin1->nom = $request->nom_temoin1;
-                $temoin1->employeform_id = $employeform->id;
-                $temoin1->save();
-            }
-            if($request->nom_temoin2 != null){
-                $temoin2 = new Temoin();
-                $temoin2->nom = $request->nom_temoin2;
-                $temoin2->employeform_id = $employeform->id;
-                $temoin2->save();
-            }
+           
             Session::forget('form_id');
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->float('no_unite');
             $table->string('departement', 255);
             $table->string('permis_conduire', 255)->nullable();
-            $table->string('vehicule_citoyen', 255)->nullable();
+            $table->string('vehicule_citoyen', 3)->nullable();
 
             $table->timestamps();
 

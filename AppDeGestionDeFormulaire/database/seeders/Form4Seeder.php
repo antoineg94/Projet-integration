@@ -18,14 +18,14 @@ class Form4Seeder extends Seeder
                 'employeform_id' => 4,
                 'no_unite' => 2,
                 'departement' => 'info',
-                'permis_conduire' => 'PANG09128374',
+                'permis_conduire' => 'A758472649475',
                 'vehicule_citoyen' => 'non'
             ],
             [
                 'employeform_id' => 8,
                 'no_unite' => 2,
                 'departement' => 'info',
-                'permis_conduire' => 'DSGF09124314',
+                'permis_conduire' => 'D957384657182',
                 'vehicule_citoyen' => 'oui'
             ]
         ]);
