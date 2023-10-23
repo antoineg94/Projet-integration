@@ -66,6 +66,7 @@ class FormulairesTravailsController extends Controller
                 $Form1->description_tache = $request->description_tache;
                 $Form1->type_violence = $request->type_violence;
                 $Form1->type_absence = $request->type_absence;
+                $Form1->temoin = $request->temoin;
                 $Form1->save();
 
                 if($request->nom_temoin1 != null){
