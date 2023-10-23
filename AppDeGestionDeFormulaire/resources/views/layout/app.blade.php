@@ -41,8 +41,10 @@
         @if(Auth::check())
         
           @if(Session::get('admin') == true || Session::get('superviseur') == true)
-            <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
-              <i class="fa-regular fa-bell text-light"></i>
+            <button type="button" class="btn btn-dark position-relative">
+              <a href="{{ route('Menus.notif') }}"> 
+                <i class="fa-regular fa-bell text-light" ></i>
+              </a>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {{ session::get('notification' )}}
               </span>
@@ -67,18 +69,7 @@
     </nav>
     <!-- END OF HEADER -->
   <body class="mt-5 pt-3" style="display:flex; flex-direction:column;" >
-    <div class="toast-container position-static center-2 end-2 p-3" >
-      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-        <div class="toast-header">
-        
-          <strong class="me-auto">Notifications</strong>
-          <small>Date/Temps?</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-        <a type="button" href="{{ route('Menus.notif') }}" class="btn text-primary link">Vous avez {{ Session::get('notification') }} notifications</a>
-        </div>
-      </div>
+    <div class="position-static center-2 end-2 p-3" >
     </div>
 
   @yield('middleContent')
