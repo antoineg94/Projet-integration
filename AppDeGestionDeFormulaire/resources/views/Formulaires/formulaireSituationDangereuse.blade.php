@@ -47,24 +47,9 @@
     </div>
 
   
-<div class="form-outline mb-4">
-<label class="form-label fw-bold" for="temoins">Témoins</label>
-<select class="form-select" aria-label="Default select example" id="selectTemoins">
-  <option value="0" selected >Non</option>
-  <option value="1">Oui</option>
-</select>
-</div>
-
-<div class="form-outline mb-4" id="divTemoins1" style="display: none;">
-    <label class="form-label fw-bold" for="nom_temoin1">Nom témoins</label>
-        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-       
-    </div>
-
-    <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
-    <label class="form-label fw-bold" for="nom_temoin2">Nom témoins</label>
-        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-        
+    <div class="form-outline mb-4" >
+        <label class="form-label fw-bold" for="temoin">Témoin(s) <small>(optionnel)</small></label>
+        <input type="text" id="temoin" name="temoin" class="form-control form-control-lg  @error('temoin') is-invalid @enderror" value="{{ old('temoin') }}"/>
     </div>
  
 

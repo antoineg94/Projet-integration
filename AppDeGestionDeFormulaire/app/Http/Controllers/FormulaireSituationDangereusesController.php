@@ -49,6 +49,7 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->lieu = $request->lieu;
             $Form2->description = $request->description;
             $Form2->proposition = $request->proposition;
+            $Form2->temoin = $request->temoin;
             $Form2->save();
 
            

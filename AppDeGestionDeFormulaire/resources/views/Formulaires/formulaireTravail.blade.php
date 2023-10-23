@@ -30,23 +30,10 @@
        
     </div>
 
-
-<div class="form-outline mb-4" >
-<label class="form-label fw-bold" for="temoins">Témoins <small>(optionnel)</small></label>
-</div>
-
-<div class="border rounded px-2">
-    <div class="form-outline mb-4" id="divTemoins1" style="display: none;">
-    <label class="form-label fw-bold" for="nom_temoin1">Nom témoins</label>
-        <input type="text" id="nom_temoin1" name="nom_temoin1" class="form-control form-control-lg  @error('') is-invalid @enderror"  value="{{ old('nom_temoin1') }}"/>
-       
+    <div class="form-outline mb-4" >
+        <label class="form-label fw-bold" for="temoin">Témoin(s) <small>(optionnel)</small></label>
+        <input type="text" id="temoin" name="temoin" class="form-control form-control-lg  @error('temoin') is-invalid @enderror" value="{{ old('temoin') }}"/>
     </div>
-
-    <div class="form-outline mb-4" id="divTemoins2"  style="display: none;">
-    <label class="form-label fw-bold" for="nom_temoin2">Nom témoins</label>
-        <input type="text" id="nom_temoin2" name="nom_temoin2" class="form-control form-control-lg  @error('') is-invalid @enderror"  value="{{ old('nom_temoin2') }}"/>
-    </div>
-</div>
 
     <div class="form-outline mb-4">
         <label class="form-label fw-bold" for="lieu" >Lieu de l'incident</label>
