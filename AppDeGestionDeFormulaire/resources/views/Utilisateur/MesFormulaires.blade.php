@@ -34,9 +34,9 @@
             <div class="card-text">Statut: <b>{{ $liste->statut }}</b></div>
 
           <div class=" d-flex justify-content-end">
-            @if (Session::get('admin') == true || Session::get('superviseur') == true && Session::get('employe_id') != $liste->employe_id)
-          <a href=" {{route('formulaires.zoomFormulaire', [ $liste ]) }}" class="btn text-white w-50" style="background-color: #63BC55;" >Consulter</a>
-            @endif
+           
+          <a href=" {{route('formulaires.zoomMesFormulaire', [ $liste ]) }}" class="btn text-white w-50" style="background-color: #63BC55;" >Consulter</a>
+        
           </div>
         </div>
       </div>
