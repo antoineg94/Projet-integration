@@ -41,6 +41,16 @@ class FormulaireMecaniquesController extends Controller
             $Form4->employeform_id = $employeform->id;
             $Form4->no_unite = $request->no_unite;
             $Form4->departement = $request->departement;
+            $Form4->permis_conduire = $request->permis_conduire;
+            
+            if ($request->vehicule_citoyen == 1){
+                $Form4->vehicule_citoyen = "Oui";
+            }
+            else
+            {
+                $Form4->vehicule_citoyen = "Non";
+            }
+
             $Form4->save();
             
             Session::forget('form_id');

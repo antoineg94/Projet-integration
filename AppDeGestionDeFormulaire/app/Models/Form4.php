@@ -13,6 +13,7 @@ class Form4 extends Model
         'employeform_id',
         'no_unite',
         'departement',
+        'permis_conduire',
         'vehicule_citoyen'
     ];
 }
