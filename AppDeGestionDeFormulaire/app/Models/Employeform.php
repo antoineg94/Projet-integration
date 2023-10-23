@@ -23,7 +23,8 @@ class Employeform extends Model
         'consultant',
         'date_consulte',
         'statut',
-        'date_formulaire'
+        'date_formulaire',
+        'superieur_id'
     ];
 
     public function employes(){
