@@ -21,12 +21,14 @@
   </tr>
   <tr>
     <td>Nom de l'employé impliqué</td>
-    <td>{{ $zoomForm4s->nom }}, {{ $zoomForm4s->prenom }}</td>
+    <td>{{ $zoomForm4s->prenom }} {{ $zoomForm4s->nom }}</td>
   </tr>
+  @if (isset($superieur_nom))
   <tr>
     <td>Nom du supérieur immédiat</td>
-    <td>{{ $zoomForm4s->superviseur }}</td>
+    <td>{{ $superieur_nom->prenom }} {{ $superieur_nom->nom }}</td>
   </tr>
+  @endif
   <tr>
     <td>Permis de conduire de l'employé</td>
     <td>{{ $zoomForm4s->permis_conduire }}</td>
