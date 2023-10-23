@@ -95,6 +95,7 @@
       </div>
     </div>   
 
+    @if (Session::get('admin') == true || Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm1s->employe_id)
     <div class="container">
       <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>
@@ -117,8 +118,9 @@
             <div class="d-grid gap-3 col-11 mx-auto p-2">
               <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
             </div>            
-      </form>
-    </div>
+        </form>
+      </div>
+    @endif
     @else
     <p>Une erreur s'est produite, veuillez réessayer plus tard</p>
     @endif
