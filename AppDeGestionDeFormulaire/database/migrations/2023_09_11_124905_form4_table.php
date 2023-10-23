@@ -16,8 +16,7 @@ return new class extends Migration
             $table->foreignId('employeform_id')->constrained();          
             $table->float('no_unite');
             $table->string('departement', 255);
-            $table->string('nom_complet_employe', 255);
-            $table->string('nom_complet_superieur', 255);
+            $table->string('permis_conduire', 255)->nullable();
             $table->string('vehicule_citoyen', 255)->nullable();
 
             $table->timestamps();

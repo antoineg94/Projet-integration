@@ -18,16 +18,14 @@ class Form4Seeder extends Seeder
                 'employeform_id' => 4,
                 'no_unite' => 2,
                 'departement' => 'info',
-                'nom_complet_employe' => 'Philippe Maurissette',
-                'nom_complet_superieur' => 'Michel Cartier',
+                'permis_conduire' => 'PANG09128374',
                 'vehicule_citoyen' => 'non'
             ],
             [
                 'employeform_id' => 8,
                 'no_unite' => 2,
                 'departement' => 'info',
-                'nom_complet_employe' => 'Philippe Maurissette',
-                'nom_complet_superieur' => 'Michel Cartier',
+                'permis_conduire' => 'DSGF09124314',
                 'vehicule_citoyen' => 'oui'
             ]
         ]);
