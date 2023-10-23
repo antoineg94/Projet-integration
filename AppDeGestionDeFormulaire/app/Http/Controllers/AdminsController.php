@@ -12,6 +12,8 @@ use App\Models\Form2;
 use App\Models\Form3;
 use App\Models\Form4;
 use App\Models\Consulterprocedure;
+
+use Session;
 class AdminsController extends Controller
 {
     public function listeFormulaire()
@@ -24,7 +26,6 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
@@ -33,7 +34,7 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+
             ->orderby('employeforms.employe_id', 'asc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -43,7 +44,7 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+
             ->orderby('employeforms.formulaire_id', 'desc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -53,8 +54,8 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
-            ->where('consulte', '=', 'Non-consulté')
+
+
             ->get(); 
         }
         else
@@ -62,7 +63,7 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->where('superieur_id', '=', Session::get('employe_id'))
+
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
@@ -70,6 +71,6 @@ class AdminsController extends Controller
         
 
         
-        return view('Admins.ListeFormulaire', compact('listes'));
+        return view('SA.listeTousFormulaires', compact('listes'));
     }
 }

@@ -97,6 +97,9 @@ Route::get('/MesFormulaire',
 Route::get('/notif',
 [MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');
 
+Route::get('/listeFormulaireA',
+[AdminsController::class, 'listeFormulaire'])->name('Admins.listeFormulaire')->middleware('auth');
+
 
 // Valider formulaire
 

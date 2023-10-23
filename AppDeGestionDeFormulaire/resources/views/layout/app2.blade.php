@@ -14,7 +14,7 @@
  
 <body class="d-flex flex-column" style="display:flex; flex-direction:column;" >
   <main class="d-flex h-100">
-    <sidebar>
+    <sidebar class="fixed-top h-100">
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32"></svg>
@@ -35,7 +35,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
+            <a href="{{ route('Admins.listeFormulaire') }}" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
               Consulter les formulaires
             </a>
@@ -92,6 +92,10 @@
           Vous avez {{ Session::get('notificationValider') }} notifications
         </div>
       </div>
+    </div>
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
+
     </div>
     @yield('middleContent')
 
