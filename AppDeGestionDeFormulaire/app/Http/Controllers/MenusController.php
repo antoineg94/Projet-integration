@@ -115,7 +115,33 @@ class MenusController extends Controller
     public function listeFormulaire()
     {
      
-        Session::put('notification', 0);
+        if(Session::get('superviseur') == true)
+        {   
+            $notification = 0;
+            
+            $employes = DB::table('employes')
+            ->where('employes.superieur_id', '=', Session::get('employe_id'))
+            ->get();
+
+
+            foreach($employes as $employe)
+            {
+                $nombre = DB::table('employeforms')
+                ->where('consulte', 'Non-consulté')
+                ->where('employe_id', '=', $employe->id)
+                ->count();
+
+                $notification += $nombre;
+            }
+
+            Session::put('notification', $notification);
+        }
+        else
+        {
+            Session::put('notification', 0);
+        }
+
+
 
         if(Session::get('trier') == 1)
         {
@@ -448,4 +474,5 @@ class MenusController extends Controller
     
             }
 
+        
 }

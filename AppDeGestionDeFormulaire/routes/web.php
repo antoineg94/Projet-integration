@@ -97,6 +97,7 @@ Route::get('/MesFormulaire',
 Route::get('/notif',
 [MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');
 
+
 // Valider formulaire
 
 Route::post('/valideFormulaire/{zoomForm1s}/',
