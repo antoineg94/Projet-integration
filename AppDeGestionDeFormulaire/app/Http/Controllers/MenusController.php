@@ -250,7 +250,11 @@ class MenusController extends Controller
                     'consulte' => "Consulté"
                 ]);
                 
-                return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s'));
+
+                $superieur_nom = Employe::where('id', '=', $zoomForm4s->superieur_id)->get()->first();
+
+
+                return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s', 'superieur_nom'));
 
             }
             else
