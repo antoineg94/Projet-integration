@@ -115,7 +115,7 @@ class MenusController extends Controller
     public function listeFormulaire()
     {
      
-    
+        Session::put('notification', 0);
 
         if(Session::get('trier') == 1)
         {
@@ -286,9 +286,9 @@ class MenusController extends Controller
         if($request->statut == "Invalide")
         {
             $employeform->update([
-            'statut' => "Invalide"
+            'statut' => "En attente"
             ]);
-            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme invalide');   
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme étant en attente');   
         }
         else
         {
