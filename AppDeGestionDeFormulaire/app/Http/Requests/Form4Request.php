@@ -24,7 +24,7 @@ class Form4Request extends FormRequest
         return [
             'no_unite' => 'required|numeric',
             'departement' => 'required|string|max:255',
-            'vehicule_citoyen' => 'required|string|max:255',
+            'vehicule_citoyen' => 'string|max:255',
         ];
     }
 
@@ -35,7 +35,6 @@ class Form4Request extends FormRequest
             'departement.required' => 'Le département est requis',
             'departement.string' => 'Le département doit être une chaîne de caractères',
             'departement.max' => 'Le département ne doit pas dépasser 255 caractères',
-            'vehicule_citoyen.required' => 'Le véhicule citoyen est requis',
             'vehicule_citoyen.string' => 'Le véhicule citoyen doit être une chaîne de caractères',
             'vehicule_citoyen.max' => 'Le véhicule citoyen ne doit pas dépasser 255 caractères',
         ];

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('departement', 255);
             $table->string('nom_complet_employe', 255);
             $table->string('nom_complet_superieur', 255);
-            $table->string('vehicule_citoyen', 255);
+            $table->string('vehicule_citoyen', 255)->nullable();
 
             $table->timestamps();
 

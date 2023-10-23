@@ -9,6 +9,7 @@ use App\Http\Requests\Form2Request;
 use App\Http\Requests\EmployeformRequest;
 use App\Models\Form2;
 use App\Models\Employeform;
+use App\Models\Employe;
 use App\Models\Temoin;
 use Illuminate\Support\Facades\Log;
 
@@ -29,11 +30,14 @@ class FormulaireSituationDangereusesController extends Controller
 
         try{
             $date = date('Y-m-d');
- 
+            $employe = Employe::where('id', '=', Session::get('employe_id'))
+            ->get()->first();
+
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
             $employeform->formulaire_id = Session::get('form_id');
             $employeform->date_formulaire = $date;
+            $employeform->superieur_id = $employe->superieur_id;
             $employeform->save();
 
             $Form2 = new Form2();

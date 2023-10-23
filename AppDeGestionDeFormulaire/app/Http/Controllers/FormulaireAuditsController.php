@@ -8,6 +8,7 @@ use App\Http\Requests\Form3Request;
 use App\Http\Requests\EmployeformRequest;
 use App\Models\Form3;
 use App\Models\Employeform;
+use App\Models\Employe;
 use Session;
 use Illuminate\Support\Facades\Log;
 
@@ -30,11 +31,14 @@ class FormulaireAuditsController extends Controller
         try{
 
             $date = date('Y-m-d');
+            $employe = Employe::where('id', '=', Session::get('employe_id'))
+            ->get()->first();
 
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
             $employeform->formulaire_id = Session::get('form_id');
             $employeform->date_formulaire = $date;
+            $employeform->superieur_id = $employe->superieur_id;
             $employeform->save();
 
             $Form3 = new Form3();

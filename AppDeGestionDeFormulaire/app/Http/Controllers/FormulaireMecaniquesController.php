@@ -8,6 +8,7 @@ use App\Http\Requests\Form4Request;
 use App\Http\Requests\EmployeformRequest;
 use App\Models\Form4;
 use App\Models\Employeform;
+use App\Models\Employe;
 use Illuminate\Support\Facades\Log;
 use Session;
 class FormulaireMecaniquesController extends Controller
@@ -26,18 +27,20 @@ class FormulaireMecaniquesController extends Controller
         try{
  
             $date = date('Y-m-d');
+            $employe = Employe::where('id', '=', Session::get('employe_id'))
+            ->get()->first();
 
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
             $employeform->formulaire_id = Session::get('form_id');
             $employeform->date_formulaire = $date;
+            $employeform->superieur_id = $employe->superieur_id;
             $employeform->save();
 
             $Form4 = new Form4();
             $Form4->employeform_id = $employeform->id;
             $Form4->no_unite = $request->no_unite;
             $Form4->departement = $request->departement;
-            $Form4->vehicule_citoyen = $request->vehicule_citoyen;
             $Form4->save();
             
             Session::forget('form_id');
@@ -46,7 +49,9 @@ class FormulaireMecaniquesController extends Controller
     }
     catch(\Throwable $e)
     {
-        return redirect()->route('formulairesMechaniques.index')->withErrors(['Informations invalide']);
+        $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+        $employeform2->delete();
+        return redirect()->route('formulaireMecaniques.index')->withErrors(['Informations invalide']);
     }
     }
     /**
