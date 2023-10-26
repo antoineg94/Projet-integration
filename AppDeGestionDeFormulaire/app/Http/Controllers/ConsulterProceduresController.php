@@ -18,8 +18,9 @@ class ConsulterProceduresController extends Controller
         $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
             ->select('consulterprocedures.*', 'departements.nom')
             ->get();
-        log::debug($procedures);
-        return view('SA.gestionProcedures', compact('procedures'));
+
+        $departements = Departement::all();
+        return view('SA.gestionProcedures', compact('procedures', 'departements'));
     }
 
 //fonction qui affiche les procédure a consulter en fonction de ses accès
