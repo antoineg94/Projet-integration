@@ -10,6 +10,7 @@ use App\Models\Form4;
 use App\Models\Employeform;
 use App\Models\Employe;
 use Illuminate\Support\Facades\Log;
+use App\Mail\contactMail;
 use Session;
 class FormulaireMecaniquesController extends Controller
 {
@@ -54,6 +55,7 @@ class FormulaireMecaniquesController extends Controller
             $Form4->save();
             
             Session::forget('form_id');
+            //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         
     }
