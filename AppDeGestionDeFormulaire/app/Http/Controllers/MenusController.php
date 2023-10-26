@@ -216,7 +216,7 @@ class MenusController extends Controller
         
           
              // update the employefrom table
-                if($zoomForm1s->consulte != "Consulté")
+                if($zoomForm1s->consulte != "Consulté" && $zoomForm1s->superieur_id == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -242,7 +242,7 @@ class MenusController extends Controller
         
 
                 // update the employefrom table
-                if($zoomForm2s->consulte != "Consulté")
+                if($zoomForm2s->consulte != "Consulté" && $zoomForm2s->superieur_id == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -266,7 +266,7 @@ class MenusController extends Controller
         
 
                 // update the employefrom table
-                if($zoomForm3s->consulte != "Consulté")
+                if($zoomForm3s->consulte != "Consulté" && $zoomForm3s->superieur_id == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -289,7 +289,7 @@ class MenusController extends Controller
                 ->get()->first();
         
                 // update the employefrom table
-                if($zoomForm4s->consulte != "Consulté")
+                if($zoomForm4s->consulte != "Consulté" && $zoomForm4s->superieur_id == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([

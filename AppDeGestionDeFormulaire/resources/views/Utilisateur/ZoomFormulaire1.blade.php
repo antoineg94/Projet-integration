@@ -95,7 +95,7 @@
       </div>
     </div>   
 
-    @if (Session::get('admin') == true || Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm1s->employe_id && $zoomForm1s->statut != 'Valide')
+    @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm1s->employe_id && $zoomForm1s->statut != 'Valide')
     <div class="container">
       <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>
