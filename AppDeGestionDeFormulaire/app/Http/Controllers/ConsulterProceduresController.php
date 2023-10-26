@@ -15,7 +15,9 @@ class ConsulterProceduresController extends Controller
      */
     public function index()
     {
-        //
+        $procedures = ConsulterProcedure::all();
+        log::debug($procedures);
+        return view('SA.gestionProcedures', compact('procedures'));
     }
 
 //fonction qui affiche les procédure a consulter en fonction de ses accès
