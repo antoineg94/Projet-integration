@@ -12,6 +12,7 @@ use App\Models\Employe;
 use App\Models\Form1;
 use App\Models\Temoin;
 use Illuminate\Support\Facades\Log;
+use App\Mail\contactMail;
 
 class FormulairesTravailsController extends Controller
 {
@@ -69,21 +70,11 @@ class FormulairesTravailsController extends Controller
                 $Form1->temoin = $request->temoin;
                 $Form1->save();
 
-                if($request->nom_temoin1 != null){
-                    $temoin1 = new Temoin();
-                    $temoin1->nom = $request->nom_temoin1;
-                    $temoin1->employeform_id = $employeform->id;
-                    $temoin1->save();
-                }
-                if($request->nom_temoin2 != null){
-                    $temoin2 = new Temoin();
-                    $temoin2->nom = $request->nom_temoin2;
-                    $temoin2->employeform_id = $employeform->id;
-                    $temoin2->save();
-                }
+                
  
                  Session::forget('form_id');
 
+                 //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
                  return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
              
          }
