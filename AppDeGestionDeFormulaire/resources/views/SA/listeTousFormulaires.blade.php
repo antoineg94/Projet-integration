@@ -11,7 +11,7 @@
 
     <form method="GET" class="row" action="{{ route('Menus.trierFormulaire') }}">
       @csrf
-      <div class="input-group col-4 offset-5">
+      <div class="input-group col-4 offset-7">
         <div class="">
           <select class="form-select" name="Trier" id="Trier">
             <option selected>Trier par</option>
