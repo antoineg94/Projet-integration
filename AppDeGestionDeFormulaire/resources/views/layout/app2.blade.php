@@ -32,7 +32,7 @@
           @if(Session::get('admin') == true || Session::get('superviseur') == true)
           <a href="{{ route('Admins.listeFormulaire') }}" class="nav-link text-white">
           Consulter les formulaires
-          <span class="badge rounded-pill bg-danger">
+          <span class="badge rounded-pill" style="background-color: #63BC55;">
             {{ session::get('notification' )}}
             </span>
             </a>
