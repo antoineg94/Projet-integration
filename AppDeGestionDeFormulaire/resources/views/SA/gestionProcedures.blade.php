@@ -74,7 +74,7 @@
     <div class="col-sm-3 p-2">
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            Titre: {{$procedure->titre}}
+           {{$procedure->titre}}
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Departement: {{$procedure->nom}}</li>

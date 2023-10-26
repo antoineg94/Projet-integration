@@ -25,7 +25,7 @@
     </form>
 
     @foreach($listes as $liste) 
-      <div class="card mb-3 col-7 offset-2 px-0" >
+      <div class="card mb-3 col-7 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-danger border-3 @endif" >
         <div class="card-header">{{ $liste->nom_formulaire }}</div>
         <div class="card-body">
           <div class="row">
