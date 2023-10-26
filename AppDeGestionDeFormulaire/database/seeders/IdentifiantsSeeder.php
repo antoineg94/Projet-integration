@@ -30,6 +30,30 @@ class IdentifiantsSeeder extends Seeder
             [
                 'employe_id' => 4,
                 'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 5,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 6,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 7,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 8,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 9,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 10,
+                'password' => Hash::make('123')
             ]
         ]);
     }
