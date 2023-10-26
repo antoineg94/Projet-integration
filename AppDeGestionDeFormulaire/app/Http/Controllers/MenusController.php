@@ -201,6 +201,9 @@ class MenusController extends Controller
 
         public function zoomFormulaire(EmployeForm $liste)
         {
+            $nomSuperieur = Employe::where('id', '=', Session::get('employe_id'))
+            ->get()->first();
+
             if($liste->formulaire_id == 1)
             {
 
@@ -213,11 +216,16 @@ class MenusController extends Controller
         
           
              // update the employefrom table
-                $employeform = Employeform::find($liste->id);
-                $employeform->update([
-                    'consulte' => "Consulté"
-                ]);
-
+                if($zoomForm1s->consulte != "Consulté")
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
+                
                 return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
 
             }
@@ -234,10 +242,15 @@ class MenusController extends Controller
         
 
                 // update the employefrom table
-                $employeform = Employeform::find($liste->id);
-                $employeform->update([
-                    'consulte' => "Consulté"
-                ]);
+                if($zoomForm2s->consulte != "Consulté")
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
 
                 return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
 
@@ -253,10 +266,15 @@ class MenusController extends Controller
         
 
                 // update the employefrom table
-                $employeform = Employeform::find($liste->id);
-                $employeform->update([
-                    'consulte' => "Consulté"
-                ]);
+                if($zoomForm3s->consulte != "Consulté")
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
 
                 return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s'));
 
@@ -271,10 +289,15 @@ class MenusController extends Controller
                 ->get()->first();
         
                 // update the employefrom table
-                $employeform = Employeform::find($liste->id);
-                $employeform->update([
-                    'consulte' => "Consulté"
-                ]);
+                if($zoomForm4s->consulte != "Consulté")
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
                 
 
                 $superieur_nom = Employe::where('id', '=', $zoomForm4s->superieur_id)->get()->first();
