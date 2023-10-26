@@ -68,31 +68,6 @@
       </div>
     </sidebar>
 
-    <div class="toast-container position-static" id="liveToastContainer">
-      <div class="toast position-static" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-autohide="false">
-        <div class="toast-header">
-        
-          <strong class="me-auto">Notification</strong>
-          <small class="text-muted">??temps??</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Vous avez {{ Session::get('notification') }} notifications
-        </div>
-      </div>
-
-      <div class="toast position-static" id="liveToast1" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-autohide="false">
-        <div class="toast-header ">
-       
-          <strong class="me-auto">Notification</strong>
-          <small class="text-muted">??temps??</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Vous avez {{ Session::get('notificationValider') }} notifications
-        </div>
-      </div>
-    </div>
 
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
 
