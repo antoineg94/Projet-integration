@@ -14,7 +14,7 @@
  
 <body class="d-flex flex-column" style="display:flex; flex-direction:column;" >
   <main class="d-flex h-100">
-    <sidebar class="fixed-top h-100">
+    <sidebar class="h-100" style="position: fixed;">
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
         <a href="{{ route('Menus.pageAdmin') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         
