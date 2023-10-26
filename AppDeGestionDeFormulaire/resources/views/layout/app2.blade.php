@@ -16,18 +16,12 @@
   <main class="d-flex h-100">
     <sidebar class="fixed-top h-100">
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <a href="{{ route('Menus.pageAdmin') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         
           <span class="fs-4">SST V3R</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white" aria-current="page">
-             
-              Accueil
-            </a>
-          </li>
           <li>
             <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
               
