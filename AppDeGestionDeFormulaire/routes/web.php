@@ -114,10 +114,12 @@ Route::get('/trierFormulaire',
 Route::get('/trierMesFormulaire',
 [MenusController::class, 'trierMesFormulaire'])->name('Menus.trierMesFormulaire')->middleware('auth');
 
-// 
+// Procedures
+Route::get('/procedures/gestion',
+[ConsulterProceduresController::class,'index'])->name('consulterProcedures.index')->middleware('auth');
+
 Route::get('/procedures/creation',
-[ConsulterProceduresController::class,'create'])->name('procedure.create')->middleware('auth');
+[ConsulterProceduresController::class,'create'])->name('consulterProcedures.create')->middleware('auth');
 
 Route::post('/procedures',
-[ConsulterProceduresController::class,'store'])->name('procedure.store')->middleware('auth');
-
+[ConsulterProceduresController::class,'store'])->name('consulterProcedures.store')->middleware('auth');

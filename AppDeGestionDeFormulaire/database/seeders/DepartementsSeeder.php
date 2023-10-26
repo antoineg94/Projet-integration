@@ -64,6 +64,9 @@ class DepartementsSeeder extends Seeder
                 ],
                 [
                     'nom' => 'Travaux publics'
+                ],
+                [
+                    'nom' => 'Général'
                 ]
             ]);
             
