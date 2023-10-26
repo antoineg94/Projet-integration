@@ -39,7 +39,7 @@
           @endif
           </li>
           <li>
-            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
+            <a href="{{route('consulterProcedures.index')}}" class="nav-link text-white">
               
               Procédures de travail
             </a>

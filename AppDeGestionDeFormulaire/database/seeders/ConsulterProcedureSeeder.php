@@ -16,31 +16,26 @@ class ConsulterProcedureSeeder extends Seeder
         DB::table('consulterprocedures')->insert([
             [
                 'titre' => 'Nouvelle information!',
-                'description' => 'Dans le lien, vous trouverez des nouvelles informations concernant les procédures de la ville de Trois-Rivières.',
                 'lien' => 'https://www.google.ca/',
                 'departement_id' => '1'
             ],
             [
                 'titre' => 'Nouvelle page facebook!',
-                'description' => 'Dans le lien, vous trouverez notre nouvelle page Facebook.',
                 'lien' => 'https://fr-ca.facebook.com/',
                 'departement_id' => '1'
             ],
             [
                 'titre' => 'Nouvelle page instagram!',
-                'description' => 'Dans le lien, vous trouverez notre nouvelle page instagram.',
                 'lien' => 'https://www.instagram.com/',
                 'departement_id' => '1'
             ],
             [
                 'titre' => 'Nouvelle page twitter!',
-                'description' => 'Dans le lien, vous trouverez notre nouvelle page twitter.',
                 'lien' => 'https://twitter.com/i/flow/login?redirect_after_login=%2FTwitterCanada%2F/',
                 'departement_id' => '1'
             ],
             [
                 'titre' => 'Nouvelle importante!',
-                'description' => 'Dans le lien, vous trouverez des informations importantes.',
                 'lien' => 'https://www.ecosia.org/images?q=image%20chat',
                 'departement_id' => '1'
             ]

@@ -13,7 +13,6 @@ class Consulterprocedure extends Model
 
     protected $fillable = [
         'titre',
-        'description',
         'departement_id',
         'lien',
     ];
