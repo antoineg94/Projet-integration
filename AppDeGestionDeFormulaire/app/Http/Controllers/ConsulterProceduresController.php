@@ -15,7 +15,9 @@ class ConsulterProceduresController extends Controller
      */
     public function index()
     {
-        $procedures = ConsulterProcedure::all();
+        $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+            ->select('consulterprocedures.*', 'departements.nom')
+            ->get();
         log::debug($procedures);
         return view('SA.gestionProcedures', compact('procedures'));
     }

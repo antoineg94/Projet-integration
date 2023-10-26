@@ -1,4 +1,4 @@
-@extends('layout/app')
+@extends('layout/app2')
 
 @section('title', 'Gestion des procédures')
 
@@ -8,7 +8,7 @@
 <p>Cette page vous permets d'ajouter, de mofidier et de supprimer des procédure pour chacun des départments.</p>
 
 <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('consulterProcedures.store') }}">
-    <h1>Ajout d'une procédure a consulter</h1>
+    <h3>Ajout d'une procédure a consulter</h3>
     @CSRF
 
     <div class="form-outline mb-4">
@@ -46,12 +46,11 @@
     </div>                     
 </form>
 
+<br>
+<hr class="col-9 mx-auto p-2">
+<br>
 
-<hr>
-
-<h1>Liste des procédures actuelles:</h1>
-
-
+<h3>Liste des procédures actuelles:</h3>
 <!-- Tri par départment -->
 <form method="GET" class="row" action="/">
       @csrf
@@ -69,20 +68,23 @@
 
 
 
-<div class="row">
+<div class="row px-2 mx-auto">
     @if(count($procedures))
     @foreach($procedures as $procedure)
-    <div class="col-sm-4">
+    <div class="col-sm-3 p-2">
     <div class="card" style="width: 18rem;">
         <div class="card-header">
             Titre: {{$procedure->titre}}
-            <div class=" d-flex justify-content-end">
-                <a href="" class="btn" type="button">Supprimer</a>
-            </div>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Departement: {{$procedure->departement}}</li>
-            <li class="list-group-item">Lien {{$procedure->lien}}</li>
+            <li class="list-group-item">Departement: {{$procedure->nom}}</li>
+            <li class="list-group-item text-truncate">Lien {{$procedure->lien}}</li>
+            <li class="list-group-item" >
+              <div d-grid gap-2 d-md-block>
+              <button class="btn text-white" style="background-color: #63BC55;" type="submit" >Modifier</button>
+              <button class="btn text-white " style="background-color: #63BC55;" type="submit" >Supprimer</button>
+              </div>
+            </li>
         </ul>
     </div>
     </div>

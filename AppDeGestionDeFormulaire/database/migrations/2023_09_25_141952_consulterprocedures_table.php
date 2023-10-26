@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('consulterprocedures', function (Blueprint $table) {
             $table->id();
             $table->string('titre', 255);
-            $table->float('departement_id');
+            $table->foreignId('departement_id')->constrained();
             $table->string('lien', 255);
 
             $table->timestamps();
