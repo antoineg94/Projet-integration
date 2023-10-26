@@ -60,7 +60,7 @@
 </tbody>
 </table>
 
-@if (Session::get('admin') == true || Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm2s->employe_id && $zoomForm2s->statut != 'Valide')
+@if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm2s->employe_id && $zoomForm2s->statut != 'Valide')
     <div class="container">
       <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm2s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>

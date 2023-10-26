@@ -28,7 +28,7 @@ class ContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '$session->nom $session->prenom a rempli un formulaire.',
+            subject: 'Un employé a rempli un formulaire.',
         );
     }
 
