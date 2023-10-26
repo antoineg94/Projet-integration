@@ -17,32 +17,36 @@
     <sidebar class="fixed-top h-100">
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"></svg>
+        
           <span class="fs-4">SST V3R</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white" aria-current="page">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+             
               Accueil
             </a>
           </li>
           <li>
             <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              
               Centre de notification
             </a>
           </li>
           <li>
-            <a href="{{ route('Admins.listeFormulaire') }}" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-              Consulter les formulaires
+          @if(Session::get('admin') == true || Session::get('superviseur') == true)
+          <a href="{{ route('Admins.listeFormulaire') }}" class="nav-link text-white">
+          Consulter les formulaires
+          <span class="badge rounded-pill bg-danger">
+            {{ session::get('notification' )}}
+            </span>
             </a>
+          @endif
           </li>
           <li>
             <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              
               Procédures de travail
             </a>
           </li>
@@ -51,19 +55,12 @@
         <div class="dropdown d-flex justify-content-between">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           
-            <strong>mdo</strong>
+            <strong>{{ session::get('prenom' )}} {{ session::get('nom' )}}</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="{{route('Logins.logout')}}">Déconnexion</a></li>
           </ul>
-          @if(Session::get('admin') == true || Session::get('superviseur') == true)
-          <button type="button" class="btn btn-dark position-relative" id="liveToastBtn">
-            <i class="fa-regular fa-bell text-light"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ session::get('notification' )}}
-            </span>
-          </button>
-        @endif
+          
         </div>
       </div>
     </sidebar>
