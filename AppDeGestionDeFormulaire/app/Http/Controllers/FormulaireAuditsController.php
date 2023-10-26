@@ -11,6 +11,7 @@ use App\Models\Employeform;
 use App\Models\Employe;
 use Session;
 use Illuminate\Support\Facades\Log;
+use App\Mail\contactMail;
 
 
 class FormulaireAuditsController extends Controller
@@ -61,6 +62,7 @@ class FormulaireAuditsController extends Controller
             $Form3->save();
 
             Session::forget('form_id');
+            //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
             return redirect()->route('Menus.index')->with('message','Formulaire enregistré avec succès');
 
         }
