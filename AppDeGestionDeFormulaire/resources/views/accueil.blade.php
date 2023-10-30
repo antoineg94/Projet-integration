@@ -20,7 +20,9 @@
         <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5;" href="{{ route('Menus.ListeMesFormulaires') }}">Liste de mes formulaires</a>
 
       @if(Session::get('admin') == true || Session::get('superviseur') == true)
-        <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés</a>
+        <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés  <span class="badge rounded-pill" style="background-color: #63BC55;">
+            {{ session::get('notification' )}}
+            </span></a>
       @endif
 
       @if(Session::get('admin') == true)
@@ -28,20 +30,29 @@
       @endif
     </div>
 
+  
+
+
 
     <div class="px-1 col-xl-2 col-12">
     <br>
     <h3 style="text-align: left;">Liens utiles: </h3>
     <br>
+
+    <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+ 
       @if(count($procedures))
         @foreach($procedures as $procedure)
-          <div class="d-grid gap-3 col-12 mx-auto py-xl-2 px-xl-0 p-2">
-            <a href="{{ $procedure->lien }}" class=""  type="button">{{$procedure->titre}}</a>
-          </div>
+        <li class="list-group-item">
+          <a href="{{ $procedure->lien }}" style="text-decoration: none; color: black;"  type="button">{{$procedure->titre}}</a>
+        </li>
         @endforeach
       @else
         <p>Aucune procédure</p>
       @endif
+      </ul>
+</div>
     </div>
   </div>
 

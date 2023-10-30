@@ -39,19 +39,6 @@
         @endif
 
         @if(Auth::check())
-        
-          @if(Session::get('admin') == true || Session::get('superviseur') == true)
-            <button type="button" class="btn btn-dark position-relative">
-              <a href="{{ route('Menus.notif') }}"> 
-                <i class="fa-regular fa-bell text-light" ></i>
-              </a>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              {{ session::get('notification' )}}
-              </span>
-            </button>
-          @endif
-
-
 
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
