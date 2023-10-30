@@ -49,23 +49,22 @@
 <br>
 <hr class="col-9 mx-auto p-2">
 <br>
-<div class="mb-4 col-11 mx-auto">
-<h3>Liste des procédures actuelles:</h3>
-<!-- Tri par départment -->
-
-<form method="GET" class="grid" action="/">
-      @csrf
-      <div class="input-group d-flex justify-content-center">
+<form method="GET" class="grid" action="consulterProcedures.trierProcedure">
+        @csrf
+        <div class="input-group d-flex justify-content-center">
         <div class="w-25 ">
-          <select class="form-select" name="Trier" id="Trier">
+            <select class="form-select" name="Trier" id="Trier">
             <option selected>Trier par</option>
             <option value="1">Date</option>
             <option value="2"> Departement</option>
-          </select>
+            </select>
         </div>
         <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
-      </div>
+        </div>
     </form>
+<div class="mb-4 col-11 mx-auto">
+<h3>Liste des procédures actuelles:</h3>
+<!-- Tri par départment -->
 
 <div class="row px-2 mx-auto">
     @if(count($procedures))
@@ -82,7 +81,7 @@
             <form method="POST" action="{{route('consulterProcedures.destroy', [$procedure->id]) }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn text-white" style="background-color: #63BC55;" type="submit" >Supprimer</button>
+                <button type="submit" class="btn text-white" style="background-color: #63BC55;">Supprimer</button>
             </form>              
             </li>
         </ul>

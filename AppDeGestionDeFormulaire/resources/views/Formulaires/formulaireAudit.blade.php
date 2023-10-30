@@ -33,9 +33,9 @@
 
     <div>
     <table class="table table-striped">
-	<thead>
-	<tr>
-		<th><br></th>
+	<thead class="sticky-top">
+	<tr >
+		<th ><br></th>
 		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Conforme</th>
 		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Non conforme</th>
 		<th style="writing-mode: vertical-rl; text-orientation: mixed;">N/A</th>

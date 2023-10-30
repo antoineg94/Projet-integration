@@ -97,6 +97,7 @@ class LoginsController extends Controller
             Session::put('prenom', null);
             Session::put('employe_id', null);
             Session::put('trier', null);
+            Session::put('trierP', null);
             Session::put('superviseur', null);
             Session::put('admin', null);
             
@@ -106,6 +107,7 @@ class LoginsController extends Controller
             Session::forget('prenom');
             Session::forget('employe_id');
             Session::forget('trier');
+            Session::forget('trierP');
             Session::forget('superviseur');
             Session::forget('admin');
 

@@ -128,8 +128,17 @@ Route::get('/procedures/creation',
 Route::post('/procedures',
 [ConsulterProceduresController::class,'store'])->name('consulterProcedures.store')->middleware('auth');
 
+// Trier procedure
+Route::get('/listeProcedure',
+[ConsulterProceduresController::class, 'listeProcedure'])->name('consulterProcedures.listeProcedure')->middleware('auth');
+
+Route::get('/trierProcedure',
+[ConsulterProceduresController::class, 'trierProcedure'])->name('consulterProcedures.trierProcedure')->middleware('auth');
+
+//Delete procedure
 Route::delete('/procedures/{id}',
 [ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
+
 
 // mail
 Route::get('envoiCourriel', function () {
