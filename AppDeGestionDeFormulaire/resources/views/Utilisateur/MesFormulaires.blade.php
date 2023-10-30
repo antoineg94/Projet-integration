@@ -9,38 +9,41 @@
   <h5> Liste des formulaires remplis</h5>
     @if (count($listes))
 
-    <form method="GET" class="row" action="{{ route('Menus.trierMesFormulaire') }}">
-      @csrf
-      <div class="input-group">
-        <div class="col-9">
-          <select class="form-select" name="Trier" id="Trier">
-            <option selected>Trier par</option>
-            <option value="1">Date</option>
-            <option value="2"> Employe</option>
-            <option value="3">Formulaire</option>
-          </select>
+      <form method="GET" class="row" action="{{ route('Menus.trierMesFormulaire') }}">
+        @csrf
+        <div class="input-group">
+          <div class="col-xl-2 offset-xl-7 col-9 ">
+            <select class="form-select" name="Trier" id="Trier">
+              <option selected>Trier par</option>
+              <option value="1">Date</option>
+              <option value="2"> Employe</option>
+              <option value="3">Formulaire</option>
+            </select>
+          </div>
+          <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
         </div>
-        <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
-      </div>
-    </form>
+      </form>
       
       @foreach($listes as $liste) 
-        <div class="card mb-3" >
+        <div class="card mb-3 col-xl-7 offset-xl-2 px-0" >
           <div class="card-header">{{ $liste->nom_formulaire }}</div>
           <div class="card-body">
-            <div class="card-text">Nom: <b>{{ $liste->prenom }} {{ $liste->nom }} </b></div>
-            <div class="card-text">Date: <b>{{ $liste->date_formulaire }} </b></div>
-            <div class="card-text">Consulté: <b>{{ $liste->consulte }}</b></div>
-            <div class="card-text">Statut: <b>{{ $liste->statut }}</b></div>
-
-          <div class=" d-flex justify-content-end">
-           
-          <a href=" {{route('formulaires.zoomMesFormulaire', [ $liste ]) }}" class="btn text-white w-50" style="background-color: #63BC55;" >Consulter</a>
-        
+            <div class="row">
+              <div class="card-text col">Nom: <b>{{ $liste->prenom }} {{ $liste->nom }} </b></div>
+              <div class="card-text col">Date: <b>{{ $liste->date_formulaire }} </b></div>
+            </div>
+            <div class="row">
+              <div class="card-text col">Consulté: <b>{{ $liste->consulte }}</b></div>
+              <div class="card-text col">Statut: <b>{{ $liste->statut }}</b></div>
+            </div>
+              <div class=" d-flex justify-content-end col">
+                @if (Session::get('admin') == true || Session::get('superviseur') == true && Session::get('employe_id') != $liste->employe_id)
+                  <a href=" {{route('formulaires.zoomFormulaire', [ $liste ]) }}" class="btn text-white px-5" style="background-color: #63BC55;" >Consulter</a>
+                @endif
+              </div>
           </div>
         </div>
-      </div>
-    @endforeach 
+      @endforeach 
     @else
       <p>Aucun formulaire n'a été rempli.</p>
     @endif
