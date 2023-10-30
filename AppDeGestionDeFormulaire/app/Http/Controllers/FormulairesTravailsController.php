@@ -12,7 +12,9 @@ use App\Models\Employe;
 use App\Models\Form1;
 use App\Models\Temoin;
 use Illuminate\Support\Facades\Log;
-use App\Mail\contactMail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
+
 
 class FormulairesTravailsController extends Controller
 {
@@ -30,7 +32,8 @@ class FormulairesTravailsController extends Controller
     {
 
          try{
- 
+           
+
                 $date = date('Y-m-d');
                 $employe = Employe::where('id', '=', Session::get('employe_id'))
                 ->get()->first();
@@ -74,7 +77,7 @@ class FormulairesTravailsController extends Controller
  
                  Session::forget('form_id');
 
-                 //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
+
                  return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
              
          }

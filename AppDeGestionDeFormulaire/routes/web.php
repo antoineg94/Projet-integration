@@ -9,6 +9,7 @@ use App\Http\Controllers\FormulaireAuditsController;
 use App\Http\Controllers\FormulaireMecaniquesController;
 use App\Http\Controllers\ConsulterProceduresController;
 use App\http\Controllers\AdminsController;
+use App\Mail\ContactMail;
 
 
 /*
@@ -126,3 +127,15 @@ Route::get('/procedures/creation',
 
 Route::post('/procedures',
 [ConsulterProceduresController::class,'store'])->name('consulterProcedures.store')->middleware('auth');
+
+Route::get('envoiCourriel', function () {
+   
+    $details = [
+        'titre' => 'Courriel de test',
+        'body' => 'Ce mail est pour tester l\'envoi de mail depuis laravel'
+    ];
+   
+    \Mail::to('nathanlaf2002@hotmail.fr')->send(new ContactMail($details));
+
+    dd("Email is Sent.");
+});
