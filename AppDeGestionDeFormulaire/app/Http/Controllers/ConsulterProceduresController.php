@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ConsulterProcedure;
 use App\Models\Departement;
+use App\Http\Requests\ConsulterProceduresRequest;
 use Illuminate\Support\Facades\Log;
 
 
@@ -31,30 +32,26 @@ class ConsulterProceduresController extends Controller
     public function create()
     {
         $departements = Departement::all();
-        return view('ConsulterProcedures.AjouterProcedure', compact('departements'));
+        return view('consulterProcedures.AjouterProcedure', compact('departements'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ConsulterProceduresRequest $request)
     {
-        try {
-            
-                $procedure = new ConsulterProcedures($request->all());
-            // $titre
-               // $lien
-               // $description
-               // $departement
-                $procedure->save();
-            }
-        
-            catch (\Throwable $e) {
-                //Gérer l'erreur
-                Log::debug($e);
-            }
-            return view('accueil');
-            
+        log::debug($request);
+
+        $departement_id = Departement::where('nom', $request->departement)->first()->id;
+
+        $ajoutProcedure = new ConsulterProcedure();
+        $ajoutProcedure->titre = $request->titre;
+        $ajoutProcedure->lien = $request->lien;
+        $ajoutProcedure->departement_id = $departement_id;
+
+        $ajoutProcedure->save();
+               
+            return redirect()->route('consulterProcedures.index');
     }
 
     /**
