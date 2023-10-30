@@ -11,8 +11,22 @@
   <link rel="stylesheet" href="css/style.css"> 
 </head>
 
+@foreach($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+      {{ $error }}
+    </div>
+    @endforeach
+
+    @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+      {{ Session::get('message') }}
+    </div>
+    @endif
  
 <body class="d-flex flex-column" style="display:flex; flex-direction:column;" >
+
+
+
   <main class="d-flex h-100">
     <sidebar class="h-100" style="position: fixed;">
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark h-100" style="width: 280px;">
