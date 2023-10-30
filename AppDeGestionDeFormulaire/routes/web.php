@@ -139,7 +139,7 @@ Route::get('envoiCourriel', function () {
         'body' => 'Ce mail est pour tester l\'envoi de mail depuis laravel'
     ];
    
-    \Mail::to('nathanlaf2002@hotmail.fr')->send(new ContactMail($details));
+    \Mail::to('someone@gmail.com')->send(new ContactMail($details));
 
     dd("Email is Sent.");
 });
