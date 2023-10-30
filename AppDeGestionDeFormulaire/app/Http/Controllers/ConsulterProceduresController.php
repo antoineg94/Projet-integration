@@ -83,6 +83,18 @@ class ConsulterProceduresController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try{
+                  $procedure = ConsulterProcedure::findOrFail($id);                 
+                        
+                  $procedure->delete();
+                  return redirect()->route('consulterProcedures.index')->with('message', "Suppression de " . $procedure->titre . " réussi!");
+                }
+                catch(\Throwable $e){
+                   //Gérer l'erreur
+                   Log::debug($e);
+                   return redirect()->route('consulterProcedures.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+                 }
+                    return redirect()->route('consulterProcedures.index');
+            
     }
 }
