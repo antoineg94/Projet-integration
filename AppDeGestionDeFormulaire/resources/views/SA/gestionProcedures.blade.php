@@ -77,7 +77,7 @@
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item text-truncate">Departement: {{$procedure->nom}}</li>
-            <li class="list-group-item text-truncate">Lien {{$procedure->lien}}</li>
+            <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>
             <li class="list-group-item" >
               <button class="btn text-white" style="background-color: #63BC55;" type="submit" >Supprimer</button>
             </li>
