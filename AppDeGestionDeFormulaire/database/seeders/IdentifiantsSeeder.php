@@ -54,6 +54,86 @@ class IdentifiantsSeeder extends Seeder
             [
                 'employe_id' => 10,
                 'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 11,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 12,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 13,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 14,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 15,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 16,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 17,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 18,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 19,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 20,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 21,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 22,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 23,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 24,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 25,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 26,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 27,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 28,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 29,
+                'password' => Hash::make('123')
+            ],
+            [
+                'employe_id' => 30,
+                'password' => Hash::make('123')
             ]
         ]);
     }
