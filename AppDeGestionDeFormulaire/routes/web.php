@@ -128,6 +128,10 @@ Route::get('/procedures/creation',
 Route::post('/procedures',
 [ConsulterProceduresController::class,'store'])->name('consulterProcedures.store')->middleware('auth');
 
+Route::delete('/procedures/{id}',
+[ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
+
+// mail
 Route::get('envoiCourriel', function () {
    
     $details = [
