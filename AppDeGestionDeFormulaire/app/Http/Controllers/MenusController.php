@@ -53,7 +53,12 @@ class MenusController extends Controller
             Session::put('notification', 0);
         }
 
-        $procedures = Consulterprocedure::all();
+        $employe = Employe::where('id', '=', Session::get('employe_id'))->get();
+
+        $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+            ->select('consulterprocedures.*', 'departements.nom')
+            ->where('departement_id', '=', 1)
+            ->get();
 
         return view('accueil', compact('procedures'));
     }
