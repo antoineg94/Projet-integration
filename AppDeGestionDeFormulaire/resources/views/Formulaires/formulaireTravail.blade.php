@@ -13,7 +13,9 @@
     <div class="form-outline mb-4">
     <label class="form-label fw-bold" for="fonction_avant">Fonction au moment de l'évènement</label>
         <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" value="{{ old('fonction_avant') }}"/>
-        
+        @error('fonction_avant')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     
@@ -21,13 +23,17 @@
     <div class="form-outline mb-4">
     <label class="form-label fw-bold" for="date_incident">Date de l'accident</label>
         <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror"  value="{{ old('date_incident') }}"/>
-        
+        @error('date_incident')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label fw-bold" for="heure_incident">Heure de l'accident</label>
         <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror"  value="{{ old('heure_incident') }}"/>
-       
+        @error('heure_incident')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     <div class="form-outline mb-4" >
@@ -38,13 +44,17 @@
     <div class="form-outline mb-4">
         <label class="form-label fw-bold" for="lieu" >Lieu de l'incident</label>
         <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror"  value="{{ old('lieu') }}"/>
-        
+        @error('lieu')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     <div class="form-outline mb-4">
         <label class="form-label fw-bold" for="secteur" >Secteur d'activité</label>
         <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror"  value="{{ old('secteur') }}"/>
-        
+        @error('secteur')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 <u></u>
     <div class="form-outline mb-4">
@@ -66,7 +76,7 @@
                 <label class="form-check-label" for="inlineRadio2">Droite</label>
             </div>
         </div>
-
+       
         </div>
 
         
@@ -241,7 +251,9 @@
         </div>
 
     </div>
-            
+    @error('nature_blessure')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     <div class="form-outline mb-4">
@@ -331,7 +343,9 @@
         Autre
         </label>
         </div>
-            
+        @error('description_blessure')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
 
     <div class="form-outline mb-4">
@@ -351,6 +365,9 @@
         Verbale
         </label>
         </div>
+        @error('type_violence')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
     </div>
     <div class="mb-4">
         <label for="description_tache" class="form-label fw-bold">Décrivez la tâche effectuée et comment s'est produit la blessure</label>
@@ -384,7 +401,10 @@
         2- Accident nécéssitant une <b>consultation médicale</b>
         </label>
         </div>
-    </div>
+        @error('type_absence')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
+</div>
 
 
 <div class="d-grid gap-3 col-11 mx-auto p-2">

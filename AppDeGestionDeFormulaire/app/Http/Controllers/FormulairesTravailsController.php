@@ -30,7 +30,7 @@ class FormulairesTravailsController extends Controller
 
     public function enregistrer(Form1Request $request)
     {
-
+        log::debug($request);
          try{
            
 
@@ -65,8 +65,22 @@ class FormulairesTravailsController extends Controller
                 $Form1->premiers_soins = "non";
                 }
                 
-                $Form1->nature_blessure = $request->nature_blessure;
-                $Form1->description_blessure = $request->description_blessure;
+                // mettre toutes les nature blesure dans une seule variable avec une boucle
+                $nature_blessure = "";
+                foreach($request->nature_blessure as $nature)
+                {
+                    $nature_blessure = $nature_blessure . $nature . ", ";
+                }
+                $Form1->nature_blessure = $nature_blessure;
+                
+                // mettre toutes les description blesure dans une seule variable avec une boucle
+                $description_blessure = "";
+                foreach($request->description_blessure as $description)
+                {
+                    $description_blessure = $description_blessure . $description . ", ";
+                }
+                $Form1->description_blessure = $description_blessure;
+                
                 $Form1->description_tache = $request->description_tache;
                 $Form1->type_violence = $request->type_violence;
                 $Form1->type_absence = $request->type_absence;
