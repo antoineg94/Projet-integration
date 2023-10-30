@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-<form method="GET" class="mb-4 col-11 mx-auto" action="{{ route('Logins.login') }}">
+<form method="GET" class="mb-4 col-xl-3 col-11 mx-auto" action="{{ route('Logins.login') }}">
     @CSRF
 
     
