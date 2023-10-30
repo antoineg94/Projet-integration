@@ -73,4 +73,19 @@ class AdminsController extends Controller
         
         return view('SA.listeTousFormulaires', compact('listes'));
     }
+
+
+    public function trierFormulaire(Request $request)
+    {
+        try{
+            Session::put('trier', $request->Trier);
+
+            return redirect()->route('Admins.listeFormulaire'); 
+        }
+        catch(Exception $e){
+            return redirect()->back();
+        }
+        
+    }
+
 }
