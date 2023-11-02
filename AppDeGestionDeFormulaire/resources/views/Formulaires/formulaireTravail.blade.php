@@ -214,9 +214,9 @@
                 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Autre" id="nature_blessure10" name="nature_blessure10"> 
-                    <label class="form-check-label" for="nature_blessure10">Autre</label>
+                    <label class="form-check-label" for="nature_blessureA"  id="nature_blessureA" name="nature_blessureA">Autre</label>
                     <div id="cote9" style="display: none;">
-                        <input type="text" class="form-control" name="autre">
+                        <input type="text" class="form-control" name="autre1">
                     </div>
                 </div>
                 @error('nature_blessure')
