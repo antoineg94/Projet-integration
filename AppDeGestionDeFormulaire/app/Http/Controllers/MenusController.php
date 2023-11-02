@@ -382,27 +382,10 @@ class MenusController extends Controller
                     ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
                     ->where('employes.id', '=', Session::get('employe_id'))
                     ->orderby('employeforms.employe_id', 'asc')
-                    ->orderby('employeforms.date_formulaire', 'desc')
+                    ->orderby('nom_formulaire', 'asc')
                     ->get(); 
                 }
-                else if(Session::get('trier') == 3)
-                {
-                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-                    ->where('employes.id', '=', Session::get('employe_id'))
-                    ->orderby('employeforms.formulaire_id', 'desc')
-                    ->orderby('employeforms.date_formulaire', 'desc')
-                    ->get(); 
-                }
-                else if(Session::get('trier') == 4)
-                {
-                    $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                    ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-                    ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-                    ->where('employes.id', '=', Session::get('employe_id'))
-                    ->get(); 
-                }
+               
                 else
                 {
                     $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
