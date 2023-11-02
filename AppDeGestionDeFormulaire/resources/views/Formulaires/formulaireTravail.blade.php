@@ -60,7 +60,7 @@
     <div class="form-outline mb-4">
         <label class="form-label fw-bold">Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
-        <div class="form-check mb-5">
+        <div class="form-check">
         <input class="form-check-input" type="checkbox" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0" >
         <label class="form-check-label" for="nature_blessure">
         Tête, visage, nez, yeux, oreille

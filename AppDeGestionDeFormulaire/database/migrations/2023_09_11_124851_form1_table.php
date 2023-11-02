@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('lieu', 255);
             $table->string('secteur', 255);
 
-            $table->string('premiers_soins', 255);
             $table->string('nom_secouriste', 255)->nullable();
 
             $table->string('nature_blessure', 255);

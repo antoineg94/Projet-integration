@@ -17,7 +17,6 @@ class Form1 extends Model
         'heure_incident',
         'lieu',
         'secteur',
-        'premiers_soins',
         'nom_secouriste',
         'nature_blessure',
         'description_blessure',

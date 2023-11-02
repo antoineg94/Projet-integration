@@ -56,15 +56,9 @@ class FormulairesTravailsController extends Controller
                 $Form1->lieu = $request->lieu;
                 $Form1->secteur = $request->secteur;
 
-                if ($request->premiers_soins == 1){
-                $Form1->premiers_soins = "oui";
+
                 $Form1->nom_secouriste = $request->nom_secouriste;
-                }
-                else
-                {
-                $Form1->premiers_soins = "non";
-                }
-                
+                 
                 // mettre toutes les nature blesure dans une seule variable avec une boucle
                 $nature_blessure = "";
                 foreach($request->nature_blessure as $nature)
