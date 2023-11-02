@@ -59,87 +59,193 @@ class FormulairesTravailsController extends Controller
             $nature_blessureList = "";
             if($request->nature_blessure1  != null)
             {
-                $nature_blessureList =   $nature_blessureList . $request->nature_blessure1;
+                if( $request->gauche1 != null && $request->droite1 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" .$request->nature_blessure1 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche1 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure1 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure1 . " à droite]";
+                }
             }
-            if($request->nature_blessure2 != null)
+            if($request->nature_blessure2  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure2;
+                if( $request->gauche2 != null && $request->droite2 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure2 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche2 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure2 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure2 . " à droite]";
+                }
             }
-            if($request->nature_blessure3 != null)
+            if($request->nature_blessure3  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure3;
+                if( $request->gauche3 != null && $request->droite3 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure3 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche3 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure3 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure3 . " à droite]";
+                }
             }
-            if($request->nature_blessure4 != null)
+            if($request->nature_blessure4  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure4;
+                if( $request->gauche4 != null && $request->droite4 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure4 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche4 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure4 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure4 . " à droite]";
+                }
             }
-            if($request->nature_blessure5 != null)
+            if($request->nature_blessure5  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure5;
+                if( $request->gauche5 != null && $request->droite5 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure5 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche5 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure5 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure5 . " à droite]";
+                }
             }
-            if($request->nature_blessure6 != null)
+            if($request->nature_blessure6  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure6;
+                if( $request->gauche6 != null && $request->droite6 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure6 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche6 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure6 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure6 . " à droite]";
+                }
             }
-            if($request->nature_blessure7 != null)
+            if($request->nature_blessure7  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure7;
+                if( $request->gauche7 != null && $request->droite7 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure7 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche7 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure7 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure7 . " à droite]";
+                }
             }
-            if($request->nature_blessure8 != null)
+            if($request->nature_blessure8  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure8;
+                if( $request->gauche8 != null && $request->droite8 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure8 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche8 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure8 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure8 . " à droite]";
+                }
             }
-            if($request->nature_blessure9 != null)
+            if($request->nature_blessure9  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure9;
+                if( $request->gauche9 != null && $request->droite9 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure9 ." à gauche et à droite]" ;
+                }
+                else if($request->gauche9 != null)
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure9 . " à gauche]";
+                }
+                else
+                {
+                    $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure9 . " à droite]";
+                }
             }
-            if($request->nature_blessure10 != null)
+            if($request->nature_blessure10  != null)
             {
-                $nature_blessureList =   $nature_blessureList . ", " . $request->nature_blessure10;
+                $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure10 . "]";
             }
+
+            
+            
             $Form1->nature_blessure = $nature_blessureList;
             
 
             $description_blessureList = "";
             if($request->description_blessure1 != null)
             {
-                $description_blessureList = $description_blessureList . $request->description_blessure1;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure1 . "]";
             }
             if($request->description_blessure2  != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure2;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure2 . "]";
             }
             if($request->description_blessure3 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure3;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure3 . "]";
             }
             if($request->description_blessure4 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure4;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure4 . "]";
             }
             if($request->description_blessure5 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure5;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure5 . "]";
             }
             if($request->description_blessure6 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure6;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure6 . "]";
             }
             if($request->description_blessure7 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure7;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure7 . "]";
             }
             if($request->description_blessure8 != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure8;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure8 . "]";
             }
             if($request->description_blessure9  != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure9;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure9 . "]";
             }
             if($request->description_blessure10  != null)
             {
-                $description_blessureList = $description_blessureList . ", " . $request->description_blessure10;
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure10 . "]";
+            }
+            if($request->description_blessure11  != null)
+            {
+                $description_blessureList = $description_blessureList . "[" . $request->description_blessure11 . "]";
             }
             $Form1->description_blessure = $description_blessureList;
 
