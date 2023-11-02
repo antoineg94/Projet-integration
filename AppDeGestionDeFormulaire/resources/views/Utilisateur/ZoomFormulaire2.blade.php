@@ -40,18 +40,16 @@
     <td>{{ $zoomForm2s->lieu }}</td>
   </tr>
   <tr>
-    <td>Témoins 1</td>
-  </tr>
-  <tr>
-    <td>Témoins 2</td>
+    <td>Témoins</td>
+    <td>{{ $zoomForm2s->temoins }}</td>
   </tr>
   <tr>
     <td>Description de la situation</td>
-    <td>{{ $zoomForm2s->description }}</td>
+    <td class="overflow-auto">{{ $zoomForm2s->description }}</td>
   </tr>
   <tr>
     <td>Correction/améliorations</td>
-    <td>{{ $zoomForm2s->proposition }}</td>
+    <td class="overflow-auto">{{ $zoomForm2s->proposition }}</td>
   </tr>
   <tr>
     <td>nom superviseur</td>
@@ -66,8 +64,8 @@
         <h3>Validation du formulaire:</h3>
           @CSRF
             <p>
-              En tant que superviseur de {{ $zoomForm2s->prenom }} {{ $zoomForm2s->nom }}, 
-              je ({{ $zoomForm2s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.
+            En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
+              je confirme que cette demande est valide.
             </p>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">
