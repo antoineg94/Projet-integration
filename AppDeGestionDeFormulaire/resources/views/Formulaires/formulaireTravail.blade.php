@@ -216,7 +216,7 @@
                     <input class="form-check-input" type="checkbox" value="Autre" id="nature_blessure10" name="nature_blessure10"> 
                     <label class="form-check-label" for="nature_blessure10">Autre</label>
                     <div id="cote9" style="display: none;">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                 </div>
                 @error('nature_blessure')
@@ -297,6 +297,9 @@
         <div class="mb-4 col-xl-6 col-12">
             <label for="description_tache" class="form-label fw-bold">Décrivez la tâche effectuée et comment s'est produit l'incident</label>
             <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3" >{{ old('description_tache') }}</textarea>
+            @error('description_tache')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12">
