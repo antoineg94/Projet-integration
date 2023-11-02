@@ -92,7 +92,7 @@
         <h3>Validation du formulaire:</h3>
           @CSRF
             <p>
-            En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
+            En tant que superviseur de {{ $zoomForm3s->prenom }} {{ $zoomForm3s->nom }}, 
               je confirme que cette demande est valide.
             </p>
             <div class="form-check form-check-inline">
