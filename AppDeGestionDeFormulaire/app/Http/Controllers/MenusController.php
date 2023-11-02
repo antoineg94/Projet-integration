@@ -206,8 +206,7 @@ class MenusController extends Controller
 
         public function zoomFormulaire(EmployeForm $liste)
         {
-            $nomSuperieur = Employe::where('id', '=', Session::get('employe_id'))
-            ->get()->first();
+            
 
             if($liste->formulaire_id == 1)
             {
@@ -215,10 +214,12 @@ class MenusController extends Controller
                 $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form1s.*', 'employeforms.*', 'employes.*')
+                ->select('form1s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
-        
+                
+                $nomSuperieur = Employe::where('id', '=', $zoomForm1s->supId)
+                ->get()->first();
           
              // update the employefrom table
                 if($zoomForm1s->consulte != "Consulté" && $zoomForm1s->superieur_id == Session::get('employe_id'))
@@ -231,7 +232,7 @@ class MenusController extends Controller
                     ]);
                 }
                 
-                return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s'));
+                return view('Utilisateur.ZoomFormulaire1', compact('zoomForm1s', 'nomSuperieur'));
 
             }
             else if($liste->formulaire_id == 2)
@@ -241,10 +242,12 @@ class MenusController extends Controller
                 $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form2s.*', 'employeforms.*', 'employes.*')
+                ->select('form2s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+                $nomSuperieur = Employe::where('id', '=', $zoomForm2s->supId)
+                ->get()->first();
 
                 // update the employefrom table
                 if($zoomForm2s->consulte != "Consulté" && $zoomForm2s->superieur_id == Session::get('employe_id'))
@@ -257,7 +260,7 @@ class MenusController extends Controller
                     ]);
                 }
 
-                return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s'));
+                return view('Utilisateur.ZoomFormulaire2', compact('zoomForm2s', 'nomSuperieur'));
 
             }
             else if($liste->formulaire_id == 3)
@@ -265,10 +268,12 @@ class MenusController extends Controller
                 $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form3s.*', 'employeforms.*', 'employes.*')
+                ->select('form3s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+                $nomSuperieur = Employe::where('id', '=', $zoomForm3s->supId)
+                ->get()->first();
 
                 // update the employefrom table
                 if($zoomForm3s->consulte != "Consulté" && $zoomForm3s->superieur_id == Session::get('employe_id'))
@@ -281,7 +286,7 @@ class MenusController extends Controller
                     ]);
                 }
 
-                return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s'));
+                return view('Utilisateur.ZoomFormulaire3', compact('zoomForm3s', 'nomSuperieur'));
 
             }
             else if($liste->formulaire_id == 4)
@@ -289,10 +294,13 @@ class MenusController extends Controller
                 $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form4s.*', 'employeforms.*', 'employes.*')
+                ->select('form4s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         
+                $nomSuperieur = Employe::where('id', '=', $zoomForm4s->supId)
+                ->get()->first();
+
                 // update the employefrom table
                 if($zoomForm4s->consulte != "Consulté" && $zoomForm4s->superieur_id == Session::get('employe_id'))
                 {
@@ -305,7 +313,7 @@ class MenusController extends Controller
                 }
                 
 
-                $superieur_nom = Employe::where('id', '=', $zoomForm4s->superieur_id)->get()->first();
+                $superieur_nom = Employe::where('id', '=', $zoomForm4s->supId)->get()->first();
 
 
                 return view('Utilisateur.ZoomFormulaire4', compact('zoomForm4s', 'superieur_nom'));
