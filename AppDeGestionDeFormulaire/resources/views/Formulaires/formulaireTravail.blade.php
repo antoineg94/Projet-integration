@@ -329,11 +329,11 @@
 
         <h3>Détails sur la durée de l'absence</h3>
         <div class="form-outline mb-4">
-            <label class="form-label fw-bold" for="type_absence" >Durée de l'abscence </label> 
+            <label class="form-label fw-bold" for="type_absence" >Durée de l'absence </label> 
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" value="aucune abscence" name="type_absence" id="aucuneAbscence">
-                <label class="form-check-label" for="type_absence">1- Accident ne nécessitant <b>aucune abscence</b></label>
+                <input class="form-check-input" type="radio" value="aucune absence" name="type_absence" id="aucuneAbscence">
+                <label class="form-check-label" for="type_absence">1- Accident ne nécessitant <b>aucune absence</b></label>
             </div>
 
             
