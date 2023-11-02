@@ -37,12 +37,6 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li>
-            <a href="{{ route('Menus.pageAdmin') }}" class="nav-link text-white">
-              
-              Centre de notification
-            </a>
-          </li>
-          <li>
           @if(Session::get('admin') == true || Session::get('superviseur') == true)
           <a href="{{ route('Admins.listeFormulaire') }}" class="nav-link text-white">
           Consulter les formulaires
