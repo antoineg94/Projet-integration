@@ -1,13 +1,13 @@
-const blessure0 = document.getElementById("blessure0");
-const blessure1 = document.getElementById("blessure1");
-const blessure2 = document.getElementById("blessure2");
-const blessure3 = document.getElementById("blessure3");
-const blessure4 = document.getElementById("blessure4");
-const blessure5 = document.getElementById("blessure5");
-const blessure6 = document.getElementById("blessure6");
-const blessure7 = document.getElementById("blessure7");
-const blessure8 = document.getElementById("blessure8");
-const blessure9 = document.getElementById("blessure9");
+const blessure0 = document.getElementById("nature_blessure1");
+const blessure1 = document.getElementById("nature_blessure2");
+const blessure2 = document.getElementById("nature_blessure3");
+const blessure3 = document.getElementById("nature_blessure4");
+const blessure4 = document.getElementById("nature_blessure5");
+const blessure5 = document.getElementById("nature_blessure6");
+const blessure6 = document.getElementById("nature_blessure7");
+const blessure7 = document.getElementById("nature_blessure8");
+const blessure8 = document.getElementById("nature_blessure9");
+const blessure9 = document.getElementById("nature_blessure10");
 
 const cote0 = document.getElementById("cote0");
 const cote1 = document.getElementById("cote1");
@@ -33,7 +33,7 @@ let valeur9 = false;
 
 blessure0.addEventListener("change", function () {
 
-if(document.getElementById('blessure0').value == "Tête, visage, nez, yeux, oreille") {
+if(document.getElementById('nature_blessure1').value == "Tête, visage, nez, yeux, oreille") {
     cote0.style.display = "block";
 
     if(valeur0 == true){
@@ -49,7 +49,7 @@ if(document.getElementById('blessure0').value == "Tête, visage, nez, yeux, orei
 });
 
 blessure1.addEventListener("change", function () {
-    if(document.getElementById('blessure1').value == "Torse") {
+    if(document.getElementById('nature_blessure2').value == "Torse") {
         cote1.style.display = "block";
     
         if(valeur1 == true){
@@ -65,7 +65,7 @@ blessure1.addEventListener("change", function () {
     });  
 
 blessure2.addEventListener("change", function () {
-    if(document.getElementById('blessure2').value == "Poumons") {
+    if(document.getElementById('nature_blessure3').value == "Poumons") {
         cote2.style.display = "block";
     
         if(valeur2 == true){
@@ -81,7 +81,7 @@ blessure2.addEventListener("change", function () {
 });  
 
 blessure3.addEventListener("change", function () {
-    if(document.getElementById('blessure3').value == "Bras, épaule, coude") {
+    if(document.getElementById('nature_blessure4').value == "Bras, épaule, coude") {
         cote3.style.display = "block";
     
         if(valeur3 == true){
@@ -97,7 +97,7 @@ blessure3.addEventListener("change", function () {
 });
 
 blessure4.addEventListener("change", function () {
-    if(document.getElementById('blessure4').value == "Poignet, main, doigt") {
+    if(document.getElementById('nature_blessure5').value == "Poignet, main, doigt") {
         cote4.style.display = "block";
     
         if(valeur4 == true){
@@ -113,7 +113,7 @@ blessure4.addEventListener("change", function () {
 });
 
 blessure5.addEventListener("change", function () {
-    if(document.getElementById('blessure5').value == "Dos") {
+    if(document.getElementById('nature_blessure6').value == "Dos") {
         cote5.style.display = "block";
     
         if(valeur5 == true){
@@ -129,7 +129,7 @@ blessure5.addEventListener("change", function () {
 });
 
 blessure6.addEventListener("change", function () {
-    if(document.getElementById('blessure6').value == "Hanche") {
+    if(document.getElementById('nature_blessure7').value == "Hanche") {
         cote6.style.display = "block";
     
         if(valeur6 == true){
@@ -145,7 +145,7 @@ blessure6.addEventListener("change", function () {
 });
 
 blessure7.addEventListener("change", function () {
-    if(document.getElementById('blessure7').value == "Jambe, genou") {
+    if(document.getElementById('nature_blessure8').value == "Jambe, genou") {
         cote7.style.display = "block";
     
         if(valeur7 == true){
@@ -161,7 +161,7 @@ blessure7.addEventListener("change", function () {
 });
 
 blessure8.addEventListener("change", function () {
-    if(document.getElementById('blessure8').value == "Pied, orteil, cheville") {
+    if(document.getElementById('nature_blessure9').value == "Pied, orteil, cheville") {
         cote8.style.display = "block";
     
         if(valeur8 == true){
@@ -177,7 +177,7 @@ blessure8.addEventListener("change", function () {
 });
 
 blessure9.addEventListener("change", function () {
-    if(document.getElementById('blessure9').value == "Autre") {
+    if(document.getElementById('nature_blessure10').value == "Autre") {
         cote9.style.display = "block";
       
 

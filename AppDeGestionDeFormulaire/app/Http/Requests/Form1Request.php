@@ -27,8 +27,7 @@ class Form1Request extends FormRequest
             'heure_incident' => 'required',
             'lieu' => 'required',
             'secteur' => 'required',
-            'nature_blessure' => 'required',
-            'description_blessure' => 'required',
+
             'description_tache' => 'required',
             'type_violence' => 'required',
             'type_absence' => 'required'
@@ -49,9 +48,8 @@ class Form1Request extends FormRequest
             'lieu.required' => 'Veuillez entrer le lieu de l\'incident',
     
             'secteur.required' => 'Veuillez entrer le secteur de l\'incident',
-    
-            'nature_blessure.required' => 'Veuillez entrer la nature de la blessure',
-            'description_blessure.required' => 'Veuillez entrer la description de la blessure',
+
+
             'description_tache.required' => 'Veuillez entrer la description de la tâche',
           
             'type_violence.required' => 'Veuillez entrer le type de violence',
