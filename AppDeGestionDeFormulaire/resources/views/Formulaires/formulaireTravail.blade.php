@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section>
-    <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('formulairesTravails.enregistrer') }}">
+    <form method="POST" class="mb-4 col-xl-7 col-11 mx-auto" action="{{ route('formulairesTravails.enregistrer') }}">
         <h1>Formulaire Déclaration d'accident de travail</h1>
         @CSRF
 
@@ -21,21 +21,24 @@
         
         <h3>Description de l'évènement</h3>
 
-        <div class="form-outline mb-4">
-            <label class="form-label fw-bold" for="date_incident">Date de l'accident</label>
-            <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror"  value="{{ old('date_incident') }}"/>
-            @error('date_incident')
-                <span class="text-danger">{{ $message }} </span>
-            @enderror
-        </div>
+        <div class = "row">
+            <div class="form-outline mb-4 col-xl-6 col-12">
+                <label class="form-label fw-bold" for="date_incident">Date de l'accident</label>
+                <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror"  value="{{ old('date_incident') }}"/>
+                @error('date_incident')
+                    <span class="text-danger">{{ $message }} </span>
+                @enderror
+            </div>
 
-        <div class="form-outline mb-4">
-            <label class="form-label fw-bold" for="heure_incident">Heure de l'accident</label>
-            <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror"  value="{{ old('heure_incident') }}"/>
-            @error('heure_incident')
-                <span class="text-danger">{{ $message }} </span>
-            @enderror
+            <div class="form-outline mb-4 col-xl-6 col-12">
+                <label class="form-label fw-bold" for="heure_incident">Heure de l'accident</label>
+                <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror"  value="{{ old('heure_incident') }}"/>
+                @error('heure_incident')
+                    <span class="text-danger">{{ $message }} </span>
+                @enderror
+            </div>
         </div>
+            
 
         <div class="form-outline mb-4" >
             <label class="form-label fw-bold" for="temoin">Témoin(s) <small>(optionnel)</small></label>
@@ -64,8 +67,8 @@
             <label class="form-label fw-bold">Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Tête, visage, nez, yeux, oreille" name="nature_blessure" id="blessure0" >
-                <label class="form-check-label" for="nature_blessure">Tête, visage, nez, yeux, oreille</label>
+                <input class="form-check-input" type="checkbox" value="Tête, visage, nez, yeux, oreille" name="nature_blessure1" id="nature_blessure1" >
+                <label class="form-check-label" for="nature_blessure1">Tête, visage, nez, yeux, oreille</label>
                 <div id="cote0" style="display: none;">
                     <div class="form-check form-check-inline" >
                         <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1" >
@@ -80,8 +83,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Torse" id="blessure1" name="nature_blessure" >
-                <label class="form-check-label" for="nature_blessure">Torse</label>
+                <input class="form-check-input" type="checkbox" value="Torse" id="nature_blessure2" name="nature_blessure2" >
+                <label class="form-check-label" for="nature_blessure2">Torse</label>
                 <div id="cote1" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1" >
@@ -97,8 +100,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Poumons" id="blessure2" name="nature_blessure" >
-                <label class="form-check-label" for="nature_blessure">Poumons</label>
+                <input class="form-check-input" type="checkbox" value="Poumons" id="nature_blessure3" name="nature_blessure3" >
+                <label class="form-check-label" for="nature_blessure3">Poumons</label>
                 <div id="cote2" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1" >
@@ -113,8 +116,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Bras, épaule, coude" id="blessure3" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Bras, épaule, coude</label>
+                <input class="form-check-input" type="checkbox" value="Bras, épaule, coude" id="nature_blessure4" name="nature_blessure4">
+                <label class="form-check-label" for="nature_blessure4">Bras, épaule, coude</label>
                 <div id="cote3" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1">
@@ -129,8 +132,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Poignet, main, doigt" id="blessure4" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Poignet, main, doigt</label>
+                <input class="form-check-input" type="checkbox" value="Poignet, main, doigt" id="nature_blessure5" name="nature_blessure5">
+                <label class="form-check-label" for="nature_blessure5">Poignet, main, doigt</label>
                 <div id="cote4" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1">
@@ -145,8 +148,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Dos" id="blessure5" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Dos</label>
+                <input class="form-check-input" type="checkbox" value="Dos" id="nature_blessure6" name="nature_blessure6">
+                <label class="form-check-label" for="nature_blessure6">Dos</label>
                 <div id="cote5" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1">
@@ -161,8 +164,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Hanche" id="blessure6" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Hanche</label>
+                <input class="form-check-input" type="checkbox" value="Hanche" id="nature_blessure7" name="nature_blessure7">
+                <label class="form-check-label" for="nature_blessure7">Hanche</label>
                 <div id="cote6" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1">
@@ -177,8 +180,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Jambe, genou" id="blessure7" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Jambe, genou</label>
+                <input class="form-check-input" type="checkbox" value="Jambe, genou" id="nature_blessure8" name="nature_blessure8">
+                <label class="form-check-label" for="nature_blessure8">Jambe, genou</label>
                 <div id="cote7" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1">
@@ -193,8 +196,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Pied, orteil, cheville" id="blessure8" name="nature_blessure">
-                <label class="form-check-label" for="nature_blessure">Pied, orteil, cheville</label>
+                <input class="form-check-input" type="checkbox" value="Pied, orteil, cheville" id="nature_blessure9" name="nature_blessure9">
+                <label class="form-check-label" for="nature_blessure9">Pied, orteil, cheville</label>
                 <div id="cote8" style="display: none;">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1">
@@ -209,8 +212,8 @@
 
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Autre" id="blessure9" name="nature_blessure"> 
-                <label class="form-check-label" for="nature_blessure">Autre</label>
+                <input class="form-check-input" type="checkbox" value="Autre" id="nature_blessure10" name="nature_blessure10"> 
+                <label class="form-check-label" for="nature_blessure10">Autre</label>
                 <div id="cote9" style="display: none;">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
