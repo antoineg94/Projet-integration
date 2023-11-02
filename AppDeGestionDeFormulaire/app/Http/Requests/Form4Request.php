@@ -29,7 +29,7 @@ class Form4Request extends FormRequest
         ];
     }
 
-    public function message(){
+    public function messages(){
         return [
             'no_unite.required' => 'Le numéro d\'unité est requis',
             'no_unite.numeric' => 'Le numéro d\'unité doit être un nombre',
