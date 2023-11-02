@@ -72,12 +72,12 @@
                     <label class="form-check-label" for="nature_blessure1">Tête, visage, nez, yeux, oreille</label>
                     <div id="cote0" style="display: none;">
                         <div class="form-check form-check-inline" >
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1" >
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche1" id="gauche1" value="option1" >
+                            <label class="form-check-label" for="gauche1">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2" >
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite1" id="droite1" value="option2" >
+                            <label class="form-check-label" for="droite1">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -88,12 +88,12 @@
                     <label class="form-check-label" for="nature_blessure2">Torse</label>
                     <div id="cote1" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1" >
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche2" id="gauche2" value="option1" >
+                            <label class="form-check-label" for="gauche2">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2" >
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite2" id="droite2" value="option2" >
+                            <label class="form-check-label" for="droite2">Droite</label>
                         </div>
                     </div>
 
@@ -105,12 +105,12 @@
                     <label class="form-check-label" for="nature_blessure3">Poumons</label>
                     <div id="cote2" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1" >
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche3" id="gauche3" value="option1" >
+                            <label class="form-check-label" for="gauche3">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite3" id="droite3" value="option2">
+                            <label class="form-check-label" for="droite3">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -121,12 +121,12 @@
                     <label class="form-check-label" for="nature_blessure4">Bras, épaule, coude</label>
                     <div id="cote3" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche4" id="gauche4" value="option1">
+                            <label class="form-check-label" for="gauche4">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite4" id="droite4" value="option2">
+                            <label class="form-check-label" for="droite4">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -137,12 +137,12 @@
                     <label class="form-check-label" for="nature_blessure5">Poignet, main, doigt</label>
                     <div id="cote4" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche5" id="gauche5" value="option1">
+                            <label class="form-check-label" for="gauche5">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite5" id="droite5" value="option2">
+                            <label class="form-check-label" for="droite5">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -153,12 +153,12 @@
                     <label class="form-check-label" for="nature_blessure6">Dos</label>
                     <div id="cote5" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Haut</label>
+                            <input class="form-check-input" type="checkbox" name="gauche6" id="gauche6" value="option1">
+                            <label class="form-check-label" for="gauche6">Haut</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Bas</label>
+                            <input class="form-check-input" type="checkbox" name="droite6" id="droite6" value="option2">
+                            <label class="form-check-label" for="droite6">Bas</label>
                         </div>
                     </div>
                 </div>
@@ -169,12 +169,12 @@
                     <label class="form-check-label" for="nature_blessure7">Hanche</label>
                     <div id="cote6" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche7" id="gauche7" value="option1">
+                            <label class="form-check-label" for="gauche7">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite7" id="droite7" value="option2">
+                            <label class="form-check-label" for="droite7">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -185,12 +185,12 @@
                     <label class="form-check-label" for="nature_blessure8">Jambe, genou</label>
                     <div id="cote7" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche8" id="gauche8" value="option1">
+                            <label class="form-check-label" for="gauche8">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite8" id="droite8" value="option2">
+                            <label class="form-check-label" for="droite8">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -201,12 +201,12 @@
                     <label class="form-check-label" for="nature_blessure9">Pied, orteil, cheville</label>
                     <div id="cote8" style="display: none;">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Gauche</label>
+                            <input class="form-check-input" type="checkbox" name="gauche9" id="gauche9" value="option1">
+                            <label class="form-check-label" for="gauche9">Gauche</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Droite</label>
+                            <input class="form-check-input" type="checkbox" name="droite9" id="droite9" value="option2">
+                            <label class="form-check-label" for="droite9">Droite</label>
                         </div>
                     </div>
                 </div>
@@ -304,7 +304,7 @@
             <input type="text" class="form-control" id="nom_secouriste" name="nom_secouriste" value="{{ old('nom_secouriste') }}">
         </div>
         
-        <div class="form-outline mb-4  col-xl-6 col-12">
+        <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="type_violence" >Violence <small>(à cocher)</small></label> 
             <div class="form-check">
                 <input class="form-check-input" type="radio" value="Physique" name="type_violence" id="vPhysique">
