@@ -37,7 +37,7 @@ class Form2Request extends FormRequest
     public function messages()
     {
         return [
-            'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'observation',
+            'fonction_avant.required' => 'Veuillez entrer la fonction',
             'secteur.required' => 'Veuillez entrer le secteur',
             'date_observ.required' => 'Veuillez entrer la date de l\'observation',
             'date_observ.date' => 'Veuillez entrer une date valide',

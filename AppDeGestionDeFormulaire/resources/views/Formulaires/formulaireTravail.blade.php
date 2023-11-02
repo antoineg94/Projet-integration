@@ -297,6 +297,9 @@
         <div class="mb-4 col-xl-6 col-12">
             <label for="description_tache" class="form-label fw-bold">Décrivez la tâche effectuée et comment s'est produit l'incident</label>
             <textarea class="form-control @error('description_tache') is-invalid @enderror" id="description_tache" name="description_tache" rows="3" >{{ old('description_tache') }}</textarea>
+            @error('description_tache')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12">
