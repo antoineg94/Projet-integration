@@ -105,7 +105,7 @@ class MenusController extends Controller
         
         
 
-        return view('SA.accueil');
+        return redirect()->route('Admins.listeFormulaire');
     }   
 
     public function notif()

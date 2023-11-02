@@ -194,7 +194,7 @@ class FormulairesTravailsController extends Controller
             }
             if($request->nature_blessure10  != null)
             {
-                $nature_blessureList = $nature_blessureList . "[" . $request->nature_blessure10 . "]";
+                $nature_blessureList = $nature_blessureList . "[" . $request->autre . "]";
             }
 
             
@@ -248,7 +248,7 @@ class FormulairesTravailsController extends Controller
                 $description_blessureList = $description_blessureList . "[" . $request->description_blessure11 . "]";
             }
             $Form1->description_blessure = $description_blessureList;
-
+            
 
             
             $Form1->description_tache = $request->description_tache;
