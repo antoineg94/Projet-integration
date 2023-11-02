@@ -216,7 +216,7 @@
                     <input class="form-check-input" type="checkbox" value="Autre" id="nature_blessure10" name="nature_blessure10"> 
                     <label class="form-check-label" for="nature_blessure10">Autre</label>
                     <div id="cote9" style="display: none;">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                 </div>
                 @error('nature_blessure')
