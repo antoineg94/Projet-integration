@@ -27,7 +27,7 @@
     @endif
 
 
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar  navbar-dark bg-dark">
       <div class="container-fluid">
 
         @if(Auth::check())

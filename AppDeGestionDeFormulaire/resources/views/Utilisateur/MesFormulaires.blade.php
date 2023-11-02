@@ -16,8 +16,7 @@
             <select class="form-select" name="Trier" id="Trier">
               <option selected>Trier par</option>
               <option value="1">Date</option>
-              <option value="2"> Employe</option>
-              <option value="3">Formulaire</option>
+              <option value="2">Formulaire</option>
             </select>
           </div>
           <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>

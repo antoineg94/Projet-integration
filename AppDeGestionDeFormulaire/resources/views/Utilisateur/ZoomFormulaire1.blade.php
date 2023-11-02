@@ -37,10 +37,8 @@
               <td>{{ $zoomForm1s->heure_incident }}</td>
             </tr>
             <tr>
-              <td>Témoins 1</td>
-            </tr>
-            <tr>
-              <td>Témoins 2</td>
+              <td>Témoins</td>
+              <td>{{ $zoomForm1s->temoins }}</td>
             </tr>
             <tr>
               <td>Endroit</td>
@@ -52,11 +50,11 @@
             </tr>
             <tr>
               <td>Nature de la blessure</td>
-              <td>{{ $zoomForm1s->nature_blessure }}</td>
+              <td class="overflow-auto">{{ $zoomForm1s->nature_blessure }}</td>
             </tr>
             <tr>
               <td>Description de la blessure</td>
-              <td>{{ $zoomForm1s->description_blessure }}</td>
+              <td class="overflow-auto">{{ $zoomForm1s->description_blessure }}</td>
             </tr>
             <tr>
               <td>Type de violence</td>
@@ -64,16 +62,13 @@
             </tr>
             <tr>
               <td>Description de l'évenement</td>
-              <td>{{ $zoomForm1s->description_tache }}</td>
+              <td class="overflow-auto">{{ $zoomForm1s->description_tache }}</td>
             </tr>
             <tr>
               <td>Premiers soins</td>
               <td>{{ $zoomForm1s->premiers_soins }}</td>
             </tr>
-            <tr>
-              <td>Nom du secouriste</td>
-              <td>{{ $zoomForm1s->nom_secouriste }}</td>
-            </tr>
+        
             <tr>
               <td>Type d'abscence</td>
               <td>{{ $zoomForm1s-> type_absence}}</td>
@@ -102,7 +97,7 @@
           @CSRF
             <p>
               En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
-              je ({{ $zoomForm1s->superviseur }}) confirme que cette demande est valide en date du {{ now() }}.
+              je confirme que cette demande est valide.
             </p>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">

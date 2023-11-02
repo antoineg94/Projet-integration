@@ -34,7 +34,7 @@
     <div>
     <table class="table table-striped">
 	<thead class="sticky-top">
-	<tr >
+	<tr style="background-color: #63BC55;" >
 		<th ><br></th>
 		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Conforme</th>
 		<th style="writing-mode: vertical-rl; text-orientation: mixed;">Non conforme</th>
