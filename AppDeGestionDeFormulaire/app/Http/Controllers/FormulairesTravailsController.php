@@ -194,10 +194,10 @@ class FormulairesTravailsController extends Controller
             }
             if($request->nature_blessure10  != null)
             {
-                $nature_blessureList = $nature_blessureList . "[" . $request->autre . "]";
+                $nature_blessureList = $nature_blessureList . "[Autre: " . $request->autre1 . "]";
             }
 
-            
+            Log::debug($request);
             
             $Form1->nature_blessure = $nature_blessureList;
             
@@ -245,7 +245,7 @@ class FormulairesTravailsController extends Controller
             }
             if($request->description_blessure11  != null)
             {
-                $description_blessureList = $description_blessureList . "[" . $request->description_blessure11 . "]";
+                $description_blessureList = $description_blessureList . "[Autre: " . $request->autre2 . "]";
             }
             $Form1->description_blessure = $description_blessureList;
             
