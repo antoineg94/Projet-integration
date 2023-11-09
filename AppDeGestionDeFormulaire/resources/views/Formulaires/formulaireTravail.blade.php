@@ -287,6 +287,9 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Autre" id="description_blessure11" name="description_blessure11"> 
                     <label class="form-check-label" for="description_blessure11">Autre</label>
+                    <div id="autreD" style="display: none;">
+                        <input type="text" class="form-control" name="autre2">
+                    </div>
                 </div>
                 @error('description_blessure')
                     <span class="text-danger">{{ $message }} </span>

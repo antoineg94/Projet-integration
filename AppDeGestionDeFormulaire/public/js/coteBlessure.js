@@ -195,3 +195,27 @@ blessure9.addEventListener("change", function () {
 });
 
 
+
+const description_blessure11 = document.getElementById("description_blessure11");
+
+const autreD = document.getElementById("autreD");
+
+let valeur11 = false;
+
+description_blessure11.addEventListener("change", function () {
+    if(document.getElementById('description_blessure11').value == "Autre") {
+        autreD.style.display = "block";
+      
+
+         if(valeur11 == true){
+            valeur11 = false;
+            autreD.style.display = "none";        
+    
+        }
+        else{
+            valeur11 = true;
+        }
+        
+    }
+    
+});
