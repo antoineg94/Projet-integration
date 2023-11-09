@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>test </title>
+    <title>test</title>
 </head>
 <body>
     <h1> {{ $contenu['titre'] }} </h1>
