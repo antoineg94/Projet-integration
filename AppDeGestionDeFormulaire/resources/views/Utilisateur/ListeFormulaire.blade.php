@@ -10,8 +10,8 @@
 
   <fieldset class="border p-1 w-25 offset-2">
     <legend>Légende: </legend>
-    <p><span class="badge text-bg-success"> </span> Nouvelle demande</p>
-    <p><span class="badge text-bg-dark"> </span> Demande déja consulté</p>
+    <p><span class="badge text-bg-success"> </span> Nouvelle(s) demande(s)</p>
+    <p><span class="badge text-bg-dark"> </span> Demande(s) déjà consultée(s)</p>
   </fieldset>
 
     @if (count($listes))
