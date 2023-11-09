@@ -40,7 +40,7 @@
     <br>
     <h3 style="text-align: left;">Procédures de travail: </h3>
     <br>
-<div class="d-grid gap-3 mx-auto p-2 col-xl-4 col-11">
+<div class="d-grid gap-3 mx-auto p-2 col-xl-11 col-11">
     <div class="card">
   <ul class="list-group list-group-flush">
  
