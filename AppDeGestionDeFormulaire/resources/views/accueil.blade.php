@@ -22,10 +22,17 @@
 
         @if(Session::get('admin') == true || Session::get('superviseur') == true)
         
-          <a class="btn text-white text-start py-3 position-relative" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés  
-            <span class="position-absolute top-70 start-90 badge rounded-pill bg-danger" style="background-color: #63BC55;">
-              {{ session::get('notification' )}}
-            </span>
+          <a class="btn text-white position-relative" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">
+            <div class="row">
+              <div class="text-start pt-2 col-10">
+                <p>Liste de formulaires des employés</p>
+              </div>
+              <div class="col-2">
+                <span class="position-absolute top-0 start-90 badge rounded-pill bg-danger" style="background-color: #63BC55;">
+                  {{ session::get('notification' )}}
+                </span>
+              </div>
+            </div>
           </a>
             
         @endif
