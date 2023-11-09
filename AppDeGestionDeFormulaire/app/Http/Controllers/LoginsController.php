@@ -91,30 +91,30 @@ class LoginsController extends Controller
     public function logout()
     {
 
-            // Mettre à null toutes les variables de sessions
-            
-            Session::put('nom', null);
-            Session::put('prenom', null);
-            Session::put('employe_id', null);
-            Session::put('trier', null);
-            Session::put('trierP', null);
-            Session::put('superviseur', null);
-            Session::put('admin', null);
-            
-            // delete les variables de sessions
-            
-            Session::forget('nom');
-            Session::forget('prenom');
-            Session::forget('employe_id');
-            Session::forget('trier');
-            Session::forget('trierP');
-            Session::forget('superviseur');
-            Session::forget('admin');
+        // Mettre à null toutes les variables de sessions
+        
+        Session::put('nom', null);
+        Session::put('prenom', null);
+        Session::put('employe_id', null);
+        Session::put('trier', null);
+        Session::put('trierP', null);
+        Session::put('superviseur', null);
+        Session::put('admin', null);
+        
+        // delete les variables de sessions
+        
+        Session::forget('nom');
+        Session::forget('prenom');
+        Session::forget('employe_id');
+        Session::forget('trier');
+        Session::forget('trierP');
+        Session::forget('superviseur');
+        Session::forget('admin');
 
 
-            // déconnecter l'utilisateur
-            
-            Auth::logout();
+        // déconnecter l'utilisateur
+        
+        Auth::logout();
 
         return view('Login.Login');
     }

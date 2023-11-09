@@ -58,59 +58,14 @@ class FormulaireMecaniquesController extends Controller
             //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         
-    }
-    catch(\Throwable $e)
-    {
-        $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
-        $employeform2->delete();
-        return redirect()->route('formulaireMecaniques.index')->withErrors(['Informations invalide']);
-    }
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        }
+        catch(\Throwable $e)
+        {
+                $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+                $employeform2->delete();
+                return redirect()->route('formulaireMecaniques.index')->withErrors(['Informations invalide']);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
