@@ -10,6 +10,18 @@
     <h1>Grille audit SST - formulaire simplifié</h1>
     @CSRF
 
+    <div class="row">
+        <div class="form-outline mb-4 col-xl-6 col-12" id="divT1">
+            <label class="form-label fw-bold" for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" class="form-control form-control-lg" value="{{ Session::get('prenom') }}" disabled/>
+        </div>
+
+        <div class="form-outline mb-4 col-xl-6 col-12">
+            <label class="form-label fw-bold" for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" class="form-control form-control-lg" value="{{ Session::get('nom') }}" disabled/>
+        </div>
+    </div>
+    
     <div class="form-outline mb-4 col-12 mx-auto">
       <label class="form-label fw-bold" for="lieu">Lieu(x) des travaux</label>
       <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />

@@ -11,6 +11,18 @@
         <h3>Identification</h3>
 
         <div class="row">
+            <div class="form-outline mb-4 col-xl-6 col-12" id="divT1">
+                <label class="form-label fw-bold" for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" class="form-control form-control-lg" value="{{ Session::get('prenom') }}" disabled/>
+            </div>
+
+            <div class="form-outline mb-4 col-xl-6 col-12">
+                <label class="form-label fw-bold" for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control form-control-lg" value="{{ Session::get('nom') }}" disabled/>
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="fonction_avant">Fonction au moment de l'évènement</label>
                 <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
