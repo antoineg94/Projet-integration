@@ -36,10 +36,10 @@
 
     <div class="px-1 col-xl-2 col-12">
     <br>
-    <h3 style="text-align: left;">Liens utiles: </h3>
+    <h3 style="text-align: left;">Procédures de travail: </h3>
     <br>
-
-    <div class="card" style="width: 18rem;">
+<div class="d-grid gap-3 mx-auto p-2 col-xl-4 col-11">
+    <div class="card">
   <ul class="list-group list-group-flush">
  
       @if(count($procedures))
@@ -52,6 +52,7 @@
         <p>Aucune procédure</p>
       @endif
       </ul>
+</div>
 </div>
     </div>
   </div>
