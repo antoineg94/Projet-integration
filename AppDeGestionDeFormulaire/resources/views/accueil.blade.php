@@ -20,9 +20,11 @@
         <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5;" href="{{ route('Menus.ListeMesFormulaires') }}">Liste de mes formulaires</a>
 
       @if(Session::get('admin') == true || Session::get('superviseur') == true)
-        <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés  <span class="badge rounded-pill" style="background-color: #63BC55;">
+      
+        <a class="btn text-white text-start py-3 position-relative" type="button" style="background-color: #0076D5;" href="{{ route('Menus.listeFormulaire') }}">Liste de formulaires des employés  <span class="position-absolute top-0 start-100 badge rounded-pill bg-danger" style="background-color: #63BC55;">
             {{ session::get('notification' )}}
             </span></a>
+           
       @endif
 
       @if(Session::get('admin') == true)
