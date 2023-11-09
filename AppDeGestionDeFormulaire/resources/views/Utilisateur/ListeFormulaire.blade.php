@@ -7,6 +7,13 @@
   
   <div class="d-grid gap-3 col-11 mx-auto p-2">
   <h5> Liste des formulaires remplis</h5>
+
+  <fieldset class="border p-1 w-25 offset-2">
+    <legend>Légende: </legend>
+    <p><span class="badge text-bg-success"> </span> Nouvelle(s) demande(s)</p>
+    <p><span class="badge text-bg-dark"> </span> Demande(s) déjà consultée(s)</p>
+  </fieldset>
+
     @if (count($listes))
 
     <form method="GET" class="row" action="{{ route('Menus.trierFormulaire') }}">
