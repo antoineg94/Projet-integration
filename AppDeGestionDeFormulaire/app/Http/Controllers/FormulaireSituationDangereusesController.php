@@ -13,6 +13,7 @@ use App\Models\Employe;
 use App\Models\Temoin;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
+use Illuminate\Support\Facades\Mail;
 
 
 class FormulaireSituationDangereusesController extends Controller
@@ -53,9 +54,17 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->temoin = $request->temoin;
             $Form2->save();
 
-           
+
+            // envoi email
+            /*
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de signalement d'une situation dangereuse d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
             Session::forget('form_id');
-            //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
+            Mail::to('someone@hotmail.com')->send(new contactMail($details));
+            */
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         }
         catch(Exception $e){

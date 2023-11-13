@@ -29,7 +29,19 @@
     </div>
 
     <div class="row">
-        <div class="form-outline mb-4 col-xl-6 col-12" id="divT1">
+        <div class="form-outline mb-4 col-xl-6 col-12">
+            <label class="form-label fw-bold" for="prenom">Date</label>
+            <input type="date" id="date" name="date" class="form-control form-control-lg" value="{{ Session::get('date') }}"/>
+        </div>
+
+        <div class="form-outline mb-4 col-xl-6 col-12">
+            <label class="form-label fw-bold" for="prenom">Heure</label>
+            <input type="time" id="heure" name="heure" class="form-control form-control-lg" value="{{ Session::get('heure') }}"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="no_unite">Numéro(s) d'unité(s) impliqué(s)</label>
             <input type="number" id="no_unite" name="no_unite" class="form-control form-control-lg  @error('no_unite') is-invalid @enderror" value="{{ old('no_unite') }}"/>
             @error('no_unite')
@@ -58,7 +70,8 @@
         <div class="form-outline mb-4 col-xl-6 col-12 ">
             <label class="form-label fw-bold" for="vehicule_citoyen" >Autre véhicules impliqués(citoyen)</label>
             <select class="form-select  @error('vehicule_citoyen') is-invalid @enderror" id="vehicule_citoyen" name="vehicule_citoyen" aria-label="Default">
-                <option value="0" selected>Non</option>
+                <option selected></option>
+                <option value="0">Non</option>
                 <option value="1">Oui</option>
             </select>
         </div>

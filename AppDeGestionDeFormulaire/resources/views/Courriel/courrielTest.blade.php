@@ -4,7 +4,7 @@
     <title>test</title>
 </head>
 <body>
-    <h1> {{ $contenu['titre'] }} </h1>
+    <h3> {{ $contenu['titre'] }} </h3>
     <p> {{ $contenu['body'] }} </p>
 
     <p> Merci !</p>

@@ -40,6 +40,8 @@ class FormulaireMecaniquesController extends Controller
 
             $Form4 = new Form4();
             $Form4->employeform_id = $employeform->id;
+            $Form4->date = $request->date;
+            $Form4->heure = $request->heure;
             $Form4->no_unite = $request->no_unite;
             $Form4->departement = $request->departement;
             $Form4->permis_conduire = $request->permis_conduire;
@@ -55,7 +57,16 @@ class FormulaireMecaniquesController extends Controller
             $Form4->save();
             
             Session::forget('form_id');
-            //Mail::to('nathan.lafreniere.01@edu.cegeptr.qc.ca')->send(new contactMail());
+            
+            // envoi email
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau rapport d\'accident(véhicule) d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
+            Session::forget('form_id');
+            Mail::to('someone@hotmail.com')->send(new contactMail($details));
+            
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         
         }

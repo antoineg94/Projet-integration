@@ -23,7 +23,7 @@ class Form3Request extends FormRequest
     {
         return [
             'lieu' => 'required',
-            'date_incident' => 'required|date',
+            'date_incident' => 'required| before_or_equal:today',
             'heure_incident' => 'required',
             'epi' => 'required',
             'tenue' => 'required',
@@ -50,6 +50,7 @@ class Form3Request extends FormRequest
             'lieu.required' => 'Le champ lieu est obligatoire',
             'date_incident.required' => 'Le champ date incident est obligatoire',
             'date_incident.date' => 'Le champ date incident doit être une date',
+            'date_incident.before_or_equal' => 'La date de l\'incident ne peut pas être dans le futur',
             'heure_incident.required' => 'Le champ heure incident est obligatoire',
             'epi.required' => 'Le champ epi est obligatoire',
             'tenue.required' => 'Le champ tenue est obligatoire',

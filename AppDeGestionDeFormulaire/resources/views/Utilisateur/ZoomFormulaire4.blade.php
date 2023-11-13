@@ -28,6 +28,14 @@
     <td>{{ $zoomForm4s->departement }}</td>
   </tr>
   <tr>
+    <td>Date</td>
+    <td>{{ $zoomForm4s->date }}</td>
+  </tr>
+  <tr>
+    <td>Heure</td>
+    <td>{{ $zoomForm4s->heure }}</td>
+  </tr>
+  <tr>
     <td>Nom de l'employé impliqué</td>
     <td>{{ $zoomForm4s->prenom }} {{ $zoomForm4s->nom }}</td>
   </tr>

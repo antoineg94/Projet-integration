@@ -51,7 +51,15 @@ class FormulairesTravailsController extends Controller
             $Form1 = new Form1();
             $Form1->employeform_id = $employeform->id;
             $Form1->fonction_avant = $request->fonction_avant;
-            $Form1->date_incident = $request->date_incident;
+
+            if($request->date_incident > now())
+            {
+                $Form1->date_incident = $request->date_incident;
+            }
+            else
+            {
+                
+            }
             $Form1->heure_incident = $request->heure_incident;
             $Form1->lieu = $request->lieu;
             $Form1->secteur = $request->secteur;
@@ -262,7 +270,16 @@ class FormulairesTravailsController extends Controller
 
             Session::forget('form_id');
 
+            // envoi email
+            /*
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de déclaration d\'accidents de travail d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
 
+            Session::forget('form_id');
+            Mail::to('someone@hotmail.com')->send(new contactMail($details));
+            */
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         }
         catch(\Throwable $e)

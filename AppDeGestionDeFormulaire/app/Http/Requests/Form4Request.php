@@ -23,6 +23,8 @@ class Form4Request extends FormRequest
     {
         return [
             'no_unite' => 'required|numeric',
+            'date=>' => 'required | before_or_equal:today',
+            'heure' => 'required',
             'departement' => 'required|string|max:255',
             'permis_conduire' => 'required|max:255', 
             'vehicule_citoyen' => 'string|max:255',
@@ -33,6 +35,9 @@ class Form4Request extends FormRequest
         return [
             'no_unite.required' => 'Le numéro d\'unité est requis',
             'no_unite.numeric' => 'Le numéro d\'unité doit être un nombre',
+            'date.required' => 'La date est requise',
+            'date.before_or_equal' => 'La date ne peut pas être dans le futur',
+            'heure.required' => 'L\'heure est requise',
             'departement.required' => 'Le département est requis',
             'departement.string' => 'Le département doit être une chaîne de caractères',
             'departement.max' => 'Le département ne doit pas dépasser 255 caractères',

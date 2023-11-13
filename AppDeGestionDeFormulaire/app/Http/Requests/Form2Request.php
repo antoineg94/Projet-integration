@@ -24,7 +24,7 @@ class Form2Request extends FormRequest
         return [
             'fonction_avant' => 'required',
             'secteur' => 'required',
-            'date_observ' => 'required',
+            'date_observ' => 'required | before_or_equal:today',
             'heure_observ' => 'required',
             'lieu' => 'required',
             'description' => 'required',
@@ -40,9 +40,9 @@ class Form2Request extends FormRequest
             'fonction_avant.required' => 'Veuillez entrer la fonction',
             'secteur.required' => 'Veuillez entrer le secteur',
             'date_observ.required' => 'Veuillez entrer la date de l\'observation',
+            'date_observ.before_or_equal' => 'La date de l\'observation ne peut pas être dans le futur',
             'date_observ.date' => 'Veuillez entrer une date valide',
             'heure_observ.required' => 'Veuillez entrer l\'heure de l\'observation',
-            'heure_observ.date_format' => 'Veuillez entrer une heure valide',
             'lieu.required' => 'Veuillez entrer le lieu de l\'observation',
             'description.required' => 'Veuillez entrer la description de l\'observation',
             'proposition.required' => 'Veuillez entrer la proposition de l\'observation'

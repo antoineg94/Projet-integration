@@ -11,6 +11,8 @@ class Form4 extends Model
 
     protected $fillable = [
         'employeform_id',
+        'date',
+        'heure',
         'no_unite',
         'departement',
         'permis_conduire',
