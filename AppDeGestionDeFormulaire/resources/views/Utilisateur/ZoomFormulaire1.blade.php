@@ -5,7 +5,15 @@
 @section('middleContent')
 
 <section>
-  <div class="d-grid gap-3 col-11 mx-auto p-2">
+  <div class="my-xl-2 mb-4">
+      <a href="{{ route('Menus.listeFormulaire') }}" class="text-white py-2 px-2 m-2" style="background-color: #63BC55; text-decoration: none; border-radius:5px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+          Retour
+      </a>
+  </div>
+  <div class="d-grid gap-3 col-xl-8 col-11 mx-auto p-2">
     @if(isset($zoomForm1s))
     <div class="card mb-3">
       <h5 class="card-header">
@@ -29,16 +37,12 @@
               <td>{{ $zoomForm1s->matricule }}</td>
             </tr>
             <tr>
-              <td>Date de l'accident</td>
-              <td>{{ $zoomForm1s->date_incident }}</td>
+              <td>Date/Heure de l'accident</td>
+              <td>{{ $zoomForm1s->date_incident }} {{ $zoomForm1s->heure_incident }}</td>
             </tr>
             <tr>
-              <td>Heure</td>
-              <td>{{ $zoomForm1s->heure_incident }}</td>
-            </tr>
-            <tr>
-              <td>Témoins</td>
-              <td>{{ $zoomForm1s->temoins }}</td>
+              <td>Témoin(s)</td>
+              <td>{{ $zoomForm1s->temoin }}</td>
             </tr>
             <tr>
               <td>Endroit</td>
@@ -61,16 +65,16 @@
               <td>{{ $zoomForm1s->type_violence }}</td>
             </tr>
             <tr>
-              <td>Description de l'évenement</td>
+              <td>Description de l'évènement</td>
               <td class="overflow-auto">{{ $zoomForm1s->description_tache }}</td>
             </tr>
             <tr>
-              <td>Premiers soins</td>
-              <td>{{ $zoomForm1s->premiers_soins }}</td>
+              <td>Nom secouriste</td>
+              <td>{{ $zoomForm1s->nom_secouriste }}</td>
             </tr>
         
             <tr>
-              <td>Type d'abscence</td>
+              <td>Type d'absence</td>
               <td>{{ $zoomForm1s-> type_absence}}</td>
             </tr>
             <tr>
@@ -83,7 +87,7 @@
             </tr>
             <tr>
               <td>Nom du superviseur</td>
-              <td>{{ $zoomForm1s->superviseur }}</td>
+              <td>{{ $nomSuperieur->prenom }} {{ $nomSuperieur->nom }}</td>
             </tr>
           </tbody>
         </table>

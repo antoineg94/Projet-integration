@@ -144,11 +144,9 @@ Route::delete('/procedures/{id}',
 Route::get('envoiCourriel', function () {
    
     $details = [
-        'titre' => 'Courriel de test',
-        'body' => 'Ce mail est pour tester l\'envoi de mail depuis laravel'
+        'titre' => 'Vous avez reçu un nouveau formulaire d\'un employé',
+        'body' => 'Connecté vous pour le consulter.'
     ];
-   
-    \Mail::to('someone@gmail.com')->send(new ContactMail($details));
 
     dd("Email is Sent.");
-});
+})->middleware('auth');

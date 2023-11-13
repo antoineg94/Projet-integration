@@ -24,7 +24,6 @@
 
     <nav class="navbar  navbar-dark bg-dark position-absolute top-0 start-0 w-100">
       <div class="container-fluid">
-
         @if(Auth::check())
         <a href="{{ route('Menus.index') }}">
         @endif
@@ -34,7 +33,6 @@
         @endif
 
         @if(Auth::check())
-
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
               <strong>{{ session::get('prenom' )}} {{ session::get('nom' )}}</strong>
@@ -43,10 +41,7 @@
               <li><a class="dropdown-item" href="{{route('Logins.logout')}}">Déconnexion</a></li>
             </ul>
           </div>
-
         @endif
-
-        
       </div>
     </nav>
     <!-- END OF HEADER -->

@@ -19,13 +19,15 @@ class Form1Seeder extends Seeder
                 'fonction_avant' => 'Opérateur',
                 'date_incident' => '2022-09-11',
                 'heure_incident' => '08:00:00',
-                'lieu' => 'Québec',
+                'lieu' => 'Sherbrooke',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'bras gauche',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre mon bras dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 5,
@@ -34,11 +36,13 @@ class Form1Seeder extends Seeder
                 'heure_incident' => '08:00:00',
                 'lieu' => 'Québec',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'jambe droite',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre ma jambe dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 9,
@@ -47,37 +51,43 @@ class Form1Seeder extends Seeder
                 'heure_incident' => '08:00:00',
                 'lieu' => 'Québec',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'bras gauche',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre mon bras dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 11,
                 'fonction_avant' => 'Opérateur',
                 'date_incident' => '2021-03-12',
                 'heure_incident' => '08:00:00',
-                'lieu' => 'Québec',
+                'lieu' => 'Sherbrooke',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'jambe droite',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre ma jambe dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 13,
                 'fonction_avant' => 'Opérateur',
                 'date_incident' => '2022-09-11',
                 'heure_incident' => '08:00:00',
-                'lieu' => 'Québec',
+                'lieu' => 'Sept-Iles',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'bras gauche',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre mon bras dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 15,
@@ -86,24 +96,28 @@ class Form1Seeder extends Seeder
                 'heure_incident' => '08:00:00',
                 'lieu' => 'Québec',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'jambe droite',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre ma jambe dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ],
             [
                 'employeform_id' => 16,
                 'fonction_avant' => 'Opérateur',
                 'date_incident' => '2023-05-11',
                 'heure_incident' => '08:30:00',
-                'lieu' => 'Québec',
+                'lieu' => 'Trois-Rivières',
                 'secteur' => 3,
+                'nom_secouriste' => 'Jacques',
                 'nature_blessure' => 'visage',
                 'description_blessure' => 'Brûlure',
                 'description_tache' => 'Mettre ma face dans le feu',
                 'type_violence' => 'Physique',
-                'type_absence' => 'avec consultation'
+                'type_absence' => 'avec consultation',
+                'temoin' => 'Rick'
             ]
         ]);
     }

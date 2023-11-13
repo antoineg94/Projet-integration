@@ -4,11 +4,31 @@
 
 @section('middleContent')
 <section>
+    <div class="my-xl-2 mb-4">
+        <a href="{{ route('Menus.index') }}" class="text-white py-2 px-2 m-2" style="background-color: #63BC55; text-decoration: none; border-radius:5px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+            Retour
+        </a>
+    </div>
     <form method="POST" class="mb-4 col-xl-7 col-11 mx-auto" action="{{ route('formulairesTravails.enregistrer') }}">
         <h1>Formulaire Déclaration d'accident de travail</h1>
         @CSRF
 
         <h3>Identification</h3>
+
+        <div class="row">
+            <div class="form-outline mb-4 col-xl-6 col-12" id="divT1">
+                <label class="form-label fw-bold" for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" class="form-control form-control-lg" value="{{ Session::get('prenom') }}" disabled/>
+            </div>
+
+            <div class="form-outline mb-4 col-xl-6 col-12">
+                <label class="form-label fw-bold" for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control form-control-lg" value="{{ Session::get('nom') }}" disabled/>
+            </div>
+        </div>
 
         <div class="form-outline mb-4">
             <label class="form-label fw-bold" for="fonction_avant">Fonction au moment de l'évènement</label>
@@ -287,6 +307,9 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Autre" id="description_blessure11" name="description_blessure11"> 
                     <label class="form-check-label" for="description_blessure11">Autre</label>
+                    <div id="autreD" style="display: none;">
+                        <input type="text" class="form-control" name="autre2">
+                    </div>
                 </div>
                 @error('description_blessure')
                     <span class="text-danger">{{ $message }} </span>
@@ -346,7 +369,7 @@
             @enderror
         </div>
 
-        <div class="d-grid gap-3 col-11 mx-auto p-2">
+        <div class="d-grid gap-3 col-xl-3 offset-xl-9 col-12 p-2">
             <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
         </div>  
                         

@@ -51,7 +51,15 @@ class FormulairesTravailsController extends Controller
             $Form1 = new Form1();
             $Form1->employeform_id = $employeform->id;
             $Form1->fonction_avant = $request->fonction_avant;
-            $Form1->date_incident = $request->date_incident;
+
+            if($request->date_incident > now())
+            {
+                $Form1->date_incident = $request->date_incident;
+            }
+            else
+            {
+                
+            }
             $Form1->heure_incident = $request->heure_incident;
             $Form1->lieu = $request->lieu;
             $Form1->secteur = $request->secteur;
@@ -194,10 +202,10 @@ class FormulairesTravailsController extends Controller
             }
             if($request->nature_blessure10  != null)
             {
-                $nature_blessureList = $nature_blessureList . "[" . $request->autre . "]";
+                $nature_blessureList = $nature_blessureList . "[Autre: " . $request->autre1 . "]";
             }
 
-            
+            Log::debug($request);
             
             $Form1->nature_blessure = $nature_blessureList;
             
@@ -245,7 +253,7 @@ class FormulairesTravailsController extends Controller
             }
             if($request->description_blessure11  != null)
             {
-                $description_blessureList = $description_blessureList . "[" . $request->description_blessure11 . "]";
+                $description_blessureList = $description_blessureList . "[Autre: " . $request->autre2 . "]";
             }
             $Form1->description_blessure = $description_blessureList;
             
@@ -262,7 +270,16 @@ class FormulairesTravailsController extends Controller
 
             Session::forget('form_id');
 
+            // envoi email
+            /*
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de déclaration d\'accidents de travail d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
 
+            Session::forget('form_id');
+            Mail::to('someone@hotmail.com')->send(new contactMail($details));
+            */
             return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
         }
         catch(\Throwable $e)
@@ -275,57 +292,5 @@ class FormulairesTravailsController extends Controller
             return redirect()->route('formulairesTravails.index')->withErrors(['Informations invalide']);
         }
     }
-         
-         
- 
-    
-    
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-       
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

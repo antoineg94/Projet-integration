@@ -18,8 +18,8 @@ class AdminsController extends Controller
 {
     public function listeFormulaire()
     {
-     
-    
+        
+
 
         if(Session::get('trier') == 1)
         {

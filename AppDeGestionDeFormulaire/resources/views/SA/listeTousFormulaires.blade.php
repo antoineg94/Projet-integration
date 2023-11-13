@@ -7,8 +7,14 @@
   
   <div class="d-grid gap-3 col-11 mx-auto p-2">
   <h5> Liste des formulaires remplis</h5>
-    @if (count($listes))
 
+  <fieldset class="border p-1 w-25 offset-2">
+    <legend>Légende: </legend>
+    <p><span class="badge text-bg-success"> </span> Nouvelle demande</p>
+    <p><span class="badge text-bg-dark"> </span> Demande déja consulté</p>
+  </fieldset>
+
+    @if (count($listes))
     <form method="GET" class="row" action="{{ route('Admins.trierFormulaire') }}">
       @csrf
       <div class="input-group col-4 offset-7">
@@ -25,7 +31,7 @@
     </form>
 
     @foreach($listes as $liste) 
-      <div class="card mb-3 col-7 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-danger border-3 @endif" >
+      <div class="card mb-3 col-7 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-success border-3 @endif" >
         <div class="card-header">{{ $liste->nom_formulaire }}</div>
         <div class="card-body">
           <div class="row">
