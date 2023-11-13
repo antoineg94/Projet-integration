@@ -70,6 +70,8 @@ Route::get('/zoomFormulaire/{liste}/',
 Route::get('/zoomMesFormulaire/{liste}/',
 [MenusController::class, 'zoomMesFormulaire'])->name('formulaires.zoomMesFormulaire')->middleware('auth');
 
+Route::get('/adminZoomFormulaire/{liste}/',
+[AdminsController::class, 'adminZoomFormulaire'])->name('SA.adminZoomFormulaire')->middleware('auth');
 
 // Form store
 
