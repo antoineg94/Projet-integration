@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <div class="d-grid gap-3 col-4 mx-auto p-2">
+    <div class="d-grid gap-3 col-xl-3 offset-xl-9 col-12 p-2">
         <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
     </div>                     
 </form>
