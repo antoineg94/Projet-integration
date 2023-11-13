@@ -147,8 +147,6 @@ Route::get('envoiCourriel', function () {
         'titre' => 'Vous avez reçu un nouveau formulaire d\'un employé',
         'body' => 'Connecté vous pour le consulter.'
     ];
-   
-    \Mail::to('someone@hotmail.com')->send(new ContactMail($details));
 
     dd("Email is Sent.");
 })->middleware('auth');

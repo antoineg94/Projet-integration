@@ -23,7 +23,7 @@ class Form1Request extends FormRequest
     {
         return [
             'fonction_avant' => 'required',
-            'date_incident' => 'required',
+            'date_incident' => 'required | before_or_equal:today',
             'heure_incident' => 'required',
             'lieu' => 'required',
             'secteur' => 'required',
@@ -44,6 +44,7 @@ class Form1Request extends FormRequest
             'fonction_avant.required' => 'Veuillez entrer la fonction avant l\'incident',
            
             'date_incident.required' => 'Veuillez entrer la date de l\'incident',
+            'date_incident.before_or_equal' => 'La date de l\'incident ne peut pas être dans le futur',
             'heure_incident.required' => 'Veuillez entrer l\'heure de l\'incident',
             'lieu.required' => 'Veuillez entrer le lieu de l\'incident',
     
