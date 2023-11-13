@@ -95,9 +95,6 @@ Route::get('/listeFormulaire',
 Route::get('/MesFormulaire',
 [MenusController::class, 'ListeMesFormulaires'])->name('Menus.ListeMesFormulaires')->middleware('auth');
 
-Route::get('/notif',
-[MenusController::class, 'notif'])->name('Menus.notif')->middleware('auth');
-
 Route::get('/listeFormulaireA',
 [AdminsController::class, 'listeFormulaire'])->name('Admins.listeFormulaire')->middleware('auth');
 

@@ -30,21 +30,14 @@ class MenusController extends Controller
         if(Session::get('superviseur') == true)
         {   
             $notification = 0;
+
+            $nombre = DB::table('employeforms')
+            ->where('consulte', 'Non-consulté')
+            ->where('superieur_id', '=', Session::get('employe_id'))
+            ->count();
+
+            $notification += $nombre;
             
-            $employes = DB::table('employes')
-            ->where('employes.superieur_id', '=', Session::get('employe_id'))
-            ->get();
-
-
-            foreach($employes as $employe)
-            {
-                $nombre = DB::table('employeforms')
-                ->where('consulte', 'Non-consulté')
-                ->where('employe_id', '=', $employe->id)
-                ->count();
-
-                $notification += $nombre;
-            }
 
             Session::put('notification', $notification);
         }
@@ -62,6 +55,7 @@ class MenusController extends Controller
 
         return view('accueil', compact('procedures'));
     }
+
 
     // page admin
     public function pageAdmin()
@@ -108,46 +102,10 @@ class MenusController extends Controller
         return redirect()->route('Admins.listeFormulaire');
     }   
 
-    public function notif()
-    {
-        Session::put('trier', 4);
-        return redirect()->route('Menus.listeFormulaire');
-    }
-
-    
 
     //Afficher les information d'un des formulaire accident de travail
     public function listeFormulaire()
-    {
-     
-        if(Session::get('superviseur') == true)
-        {   
-            $notification = 0;
-            
-            $employes = DB::table('employes')
-            ->where('employes.superieur_id', '=', Session::get('employe_id'))
-            ->get();
-
-
-            foreach($employes as $employe)
-            {
-                $nombre = DB::table('employeforms')
-                ->where('consulte', 'Non-consulté')
-                ->where('employe_id', '=', $employe->id)
-                ->count();
-
-                $notification += $nombre;
-            }
-
-            Session::put('notification', $notification);
-        }
-        else
-        {
-            Session::put('notification', 0);
-        }
-
-
-
+    {    
         if(Session::get('trier') == 1)
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
