@@ -12,6 +12,7 @@ use App\Models\Employe;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
 use Session;
+
 class FormulaireMecaniquesController extends Controller
 {
     /**
@@ -27,6 +28,7 @@ class FormulaireMecaniquesController extends Controller
     {
         try{
  
+
             $date = date('Y-m-d');
             $employe = Employe::where('id', '=', Session::get('employe_id'))
             ->get()->first();
@@ -54,20 +56,39 @@ class FormulaireMecaniquesController extends Controller
                 $Form4->vehicule_citoyen = "Non";
             }
 
-            $Form4->save();
-            
-            Session::forget('form_id');
-            
-            // envoi email
-            $details = [
-                'titre' => 'Vous avez reçu un nouveau rapport d\'accident(véhicule) d\'un employé',
-                'body' => 'Connectez vous pour le consulter.'
-            ];
+            // on vérifie si un formulaire identique existe déjà
+            $form = Form4::where('date', '=', $Form4->date)
+            ->where('heure', '=', $Form4->heure)
+            ->where('no_unite', '=', $Form4->no_unite)
+            ->where('departement', '=', $Form4->departement)
+            ->where('permis_conduire', '=', $Form4->permis_conduire)
+            ->where('vehicule_citoyen', '=', $Form4->vehicule_citoyen)
+            ->get()->first();
 
-            Session::forget('form_id');
-            Mail::to('someone@hotmail.com')->send(new contactMail($details));
-            
-            return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            log::debug($form);
+            if ($form != null)
+            {
+               //redirect sur la même page avec message d'erreur
+                $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+                $employeform2->delete();
+                return redirect()->route('formulaireMecaniques.index')->with('message', true)->with('msg','Informations déjà enregistrées');
+            }
+            else
+            {
+                $Form4->save();
+                Session::forget('form_id');
+                /*
+                    // envoi email
+                    $details = [
+                        'titre' => 'Vous avez reçu un nouveau rapport d\'accident(véhicule) d\'un employé',
+                        'body' => 'Connectez vous pour le consulter.'
+                    ];
+
+                    Session::forget('form_id');
+                    Mail::to('someone@hotmail.com')->send(new contactMail($details));
+                */
+                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            }
         
         }
         catch(\Throwable $e)

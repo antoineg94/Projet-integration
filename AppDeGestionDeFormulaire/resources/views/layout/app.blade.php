@@ -21,6 +21,12 @@
       </div>
     @endif
 
+    @if(Session::has('message'))
+      <div class="alert alert-danger" role="alert">
+        {{ Session::get('msg') }}
+      </div>
+    @endif
+
     <nav class="navbar  navbar-dark bg-dark position-absolute top-0 start-0 w-100">
       <div class="container-fluid">
         @if(Auth::check())

@@ -12,6 +12,7 @@ use App\http\Controllers\AdminsController;
 use App\Mail\ContactMail;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

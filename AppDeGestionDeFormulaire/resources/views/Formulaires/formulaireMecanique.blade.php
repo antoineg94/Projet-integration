@@ -1,6 +1,6 @@
 @extends('layout/app')
 
-@section('title', 'Accueil')
+@section('title', 'form4')
 
 @section('middleContent')
 <section>

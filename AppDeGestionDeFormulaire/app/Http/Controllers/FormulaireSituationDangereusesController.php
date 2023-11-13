@@ -52,8 +52,17 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->description = $request->description;
             $Form2->proposition = $request->proposition;
             $Form2->temoin = $request->temoin;
-            $Form2->save();
 
+            // on verifie si un formulaire identique existe déjà
+            $form = Form2::where('fonction_avant', '=', $Form2->fonction_avant)
+            ->where('secteur', '=', $Form2->secteur)
+            ->where('date_observ', '=', $Form2->date_observ)
+            ->where('heure_observ', '=', $Form2->heure_observ)
+            ->where('lieu', '=', $Form2->lieu)
+            ->where('description', '=', $Form2->description)
+            ->where('proposition', '=', $Form2->proposition)
+            ->where('temoin', '=', $Form2->temoin)
+            ->get()->first();
 
             // envoi email
             /*
@@ -65,7 +74,17 @@ class FormulaireSituationDangereusesController extends Controller
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
             */
-            return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+
+            if($form != null){
+                $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+                $employeform2->delete();
+                return redirect()->back()->with('message', true)->with('msg','Informations déjà enregistrées');
+            }
+            else{
+                $Form2->save();
+                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            }
+         
         }
         catch(Exception $e){
             $employeform2 = Employeform::where('id', $employeform->id)->get()->first();

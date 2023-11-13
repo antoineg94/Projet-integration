@@ -59,10 +59,29 @@ class FormulaireAuditsController extends Controller
             $Form3->respect_proced = $request->respect_proced;
             $Form3->description = $request->description;
 
-            $Form3->save();
+            // on verifie si un formulaire identique existe déjà
+            $form = Form3::where('lieu', '=', $Form3->lieu)
+            ->where('epi', '=', $Form3->epi)
+            ->where('tenue', '=', $Form3->tenue)
+            ->where('comportement', '=', $Form3->comportement)
+            ->where('signalisation', '=', $Form3->signalisation)
+            ->where('fiche_signal', '=', $Form3->fiche_signal)
+            ->where('travaux', '=', $Form3->travaux)
+            ->where('espace_clos', '=', $Form3->espace_clos)
+            ->where('methode_travail', '=', $Form3->methode_travail)
+            ->where('autre', '=', $Form3->autre)
+            ->where('respect_distance', '=', $Form3->respect_distance)
+            ->where('port_epi', '=', $Form3->port_epi)
+            ->where('respect_proced', '=', $Form3->respect_proced)
+            ->where('description', '=', $Form3->description)
+            ->get()->first();
 
-            Session::forget('form_id');
-            
+            if($form != null){
+                $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+                $employeform2->delete();
+                return redirect()->back()->with('message', true)->with('msg','Informations déjà enregistrées');
+            }
+            else{
             /*
             // envoi email
             $details = [
@@ -73,9 +92,11 @@ class FormulaireAuditsController extends Controller
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
             */
+                $Form3->save();
+                Session::forget('form_id');
+                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            }
             
-            return redirect()->route('Menus.index')->with('message','Formulaire enregistré avec succès');
-
         }
         catch(Exception $e){
             $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
