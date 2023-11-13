@@ -44,7 +44,7 @@
           </div>
             <div class=" d-flex justify-content-end col">
               @if (Session::get('admin') == true || Session::get('superviseur') == true)
-                <a href=" {{route('formulaires.zoomFormulaire', [ $liste ]) }}" class="btn text-white px-5" style="background-color: #63BC55;" >Consulter</a>
+                <a href=" {{route('SA.adminZoomFormulaire', [ $liste ]) }}" class="btn text-white px-5" style="background-color: #63BC55;" >Consulter</a>
               @endif
             </div>
         </div>

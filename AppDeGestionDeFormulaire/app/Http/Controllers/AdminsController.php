@@ -88,4 +88,74 @@ class AdminsController extends Controller
         
     }
 
+    public function adminZoomFormulaire(EmployeForm $liste)
+    {
+        if($liste->formulaire_id == 1)
+        {
+
+            $adminZoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
+            ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->select('form1s.*', 'employeforms.*', 'employes.*')
+            ->where('employeforms.id', '=', $liste->id)
+            ->get()->first();
+    
+
+
+            return view('SA.AdminZoomFormulaire1', compact('adminZoomForm1s'));
+
+        }
+        else if($liste->formulaire_id == 2)
+        {
+            
+
+            $adminZoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
+            ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->select('form2s.*', 'employeforms.*', 'employes.*')
+            ->where('employeforms.id', '=', $liste->id)
+            ->get()->first();
+    
+
+
+
+            return view('SA.AdminZoomFormulaire2', compact('adminZoomForm2s'));
+
+        }
+        else if($liste->formulaire_id == 3)
+        {
+            $adminZoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
+            ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->select('form3s.*', 'employeforms.*', 'employes.*')
+            ->where('employeforms.id', '=', $liste->id)
+            ->get()->first();
+    
+
+            return view('SA.AdminZoomFormulaire3', compact('adminZoomForm3s'));
+
+        }
+        else if($liste->formulaire_id == 4)
+        {
+            $adminZoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
+            ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
+            ->select('form4s.*', 'employeforms.*', 'employes.*')
+            ->where('employeforms.id', '=', $liste->id)
+            ->get()->first();
+
+            
+            return view('SA.AdminZoomFormulaire4', compact('adminZoomForm4s'));
+
+        }
+        else
+        {
+            return view('SA.listeTousFormulaires');
+        }
+
+
+
+
+    }
+
 }
