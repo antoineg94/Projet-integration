@@ -319,7 +319,15 @@ class MenusController extends Controller
             $employeform->update([
             'statut' => "Valide"
             ]);
-            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+            if(Session::get('admin') == true)
+            {
+                return redirect()->route('Menus.listeTousFormulaire')->with('success', true);   
+            }
+            else
+            {
+                return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+            }   
+            
         }
         
         

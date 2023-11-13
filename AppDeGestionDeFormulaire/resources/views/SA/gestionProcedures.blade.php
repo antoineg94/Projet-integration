@@ -5,7 +5,6 @@
 @section('middleContent')
 <section>
 <h1>Gestion des procédures</h1>
-<p>Cette page vous permets d'ajouter, de mofidier et de supprimer des procédure pour chacun des départments.</p>
 
 <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('consulterProcedures.store') }}">
     <h3>Ajout d'une procédure a consulter</h3>
@@ -56,7 +55,7 @@
             <select class="form-select" name="Trier" id="Trier">
             <option selected>Trier par</option>
             <option value="1">Date</option>
-            <option value="2"> Departement</option>
+            <option value="2">Departement</option>
             </select>
         </div>
         <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>

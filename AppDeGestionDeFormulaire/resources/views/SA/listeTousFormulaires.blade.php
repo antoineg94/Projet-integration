@@ -22,7 +22,7 @@
           <select class="form-select" name="Trier" id="Trier">
             <option selected>Trier par</option>
             <option value="1">Date</option>
-            <option value="2"> Employe</option>
+            <option value="2">Employé</option>
             <option value="3">Formulaire</option>
           </select>
         </div>

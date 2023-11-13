@@ -32,7 +32,7 @@
         
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
-                <label class="form-label fw-bold" for="fonction_avant">Fonction au moment de l'évènement</label>
+                <label class="form-label fw-bold" for="fonction_avant">Fonctions au moment de l'évènement</label>
                 <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
                 @error('fonction_avant')
                     <span class="text-danger">{{ $message }} </span>
