@@ -40,7 +40,7 @@ class FormulairesTravailsController extends Controller
 
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
-            $employeform->formulaire_id = Session::get('form_id');
+            $employeform->formulaire_id = 1;
             $employeform->date_formulaire = $date;
             $employeform->superieur_id = $employe->superieur_id;
             $employeform->save();
@@ -52,14 +52,9 @@ class FormulairesTravailsController extends Controller
             $Form1->employeform_id = $employeform->id;
             $Form1->fonction_avant = $request->fonction_avant;
 
-            if($request->date_incident > now())
-            {
-                $Form1->date_incident = $request->date_incident;
-            }
-            else
-            {
-                
-            }
+            
+            $Form1->date_incident = $request->date_incident;
+            
             $Form1->heure_incident = $request->heure_incident;
             $Form1->lieu = $request->lieu;
             $Form1->secteur = $request->secteur;
@@ -289,7 +284,7 @@ class FormulairesTravailsController extends Controller
             $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
             $employeform2->delete();
 
-            return redirect()->route('formulairesTravails.index')->withErrors(['Informations invalide']);
+            return redirect()->route('formulairesTravails.index')->withErrors(['Une erreur s\'est produite, veuillez réessayer']);
         }
     }
 

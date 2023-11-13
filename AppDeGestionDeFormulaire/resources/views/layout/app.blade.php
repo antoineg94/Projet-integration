@@ -16,11 +16,10 @@
 
 
     @if(Session::has('success'))
-    <div class="alert alert-success" role="alert">
-      {{ Session::get('message') }}
-    </div>
+      <div class="alert alert-success" role="alert">
+        {{ Session::get('message') }}
+      </div>
     @endif
-
 
     <nav class="navbar  navbar-dark bg-dark position-absolute top-0 start-0 w-100">
       <div class="container-fluid">

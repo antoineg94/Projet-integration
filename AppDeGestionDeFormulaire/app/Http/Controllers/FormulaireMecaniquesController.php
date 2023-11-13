@@ -33,7 +33,7 @@ class FormulaireMecaniquesController extends Controller
 
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
-            $employeform->formulaire_id = Session::get('form_id');
+            $employeform->formulaire_id = 4;
             $employeform->date_formulaire = $date;
             $employeform->superieur_id = $employe->superieur_id;
             $employeform->save();
