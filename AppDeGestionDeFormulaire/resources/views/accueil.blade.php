@@ -52,7 +52,7 @@
               @if(count($procedures))
                 @foreach($procedures as $procedure)
                   <li class="list-group-item">
-                    <a href="{{ $procedure->lien }}" style="text-decoration: none; color: black;"  type="button">{{$procedure->titre}}</a>
+                    <a href="{{ $procedure->lien }}" target="_blank" style="text-decoration: none; color: black;"  type="button">{{$procedure->titre}}</a>
                   </li>
                 @endforeach
               @else
