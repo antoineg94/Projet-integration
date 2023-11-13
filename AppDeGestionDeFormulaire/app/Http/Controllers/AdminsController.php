@@ -93,7 +93,7 @@ class AdminsController extends Controller
         if($liste->formulaire_id == 1)
         {
 
-            $adminZoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->select('form1s.*', 'employeforms.*', 'employes.*')
@@ -102,14 +102,14 @@ class AdminsController extends Controller
     
 
 
-            return view('SA.AdminZoomFormulaire1', compact('adminZoomForm1s'));
+            return view('SA.AdminZoomFormulaire1', compact('zoomForm1s'));
 
         }
         else if($liste->formulaire_id == 2)
         {
             
 
-            $adminZoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->select('form2s.*', 'employeforms.*', 'employes.*')
@@ -119,12 +119,12 @@ class AdminsController extends Controller
 
 
 
-            return view('SA.AdminZoomFormulaire2', compact('adminZoomForm2s'));
+            return view('SA.AdminZoomFormulaire2', compact('zoomForm2s'));
 
         }
         else if($liste->formulaire_id == 3)
         {
-            $adminZoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->select('form3s.*', 'employeforms.*', 'employes.*')
@@ -132,12 +132,12 @@ class AdminsController extends Controller
             ->get()->first();
     
 
-            return view('SA.AdminZoomFormulaire3', compact('adminZoomForm3s'));
+            return view('SA.AdminZoomFormulaire3', compact('zoomForm3s'));
 
         }
         else if($liste->formulaire_id == 4)
         {
-            $adminZoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
+            $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->select('form4s.*', 'employeforms.*', 'employes.*')
@@ -145,7 +145,7 @@ class AdminsController extends Controller
             ->get()->first();
 
             
-            return view('SA.AdminZoomFormulaire4', compact('adminZoomForm4s'));
+            return view('SA.AdminZoomFormulaire4', compact('zoomForm4s'));
 
         }
         else
