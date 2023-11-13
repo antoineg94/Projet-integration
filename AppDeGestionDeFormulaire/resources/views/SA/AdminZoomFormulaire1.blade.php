@@ -1,8 +1,4 @@
-@if (Session::get('admin') == "oui")
-  @extends('layout/app2')
-@else
-  @extends('layout/app')
-  @endif
+@extends('layout/app2')
 
 @section('title', 'Informations sur le formulaire déclaration d\'accident de travail ')
 
