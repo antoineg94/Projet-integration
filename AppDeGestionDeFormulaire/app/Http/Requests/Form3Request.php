@@ -23,7 +23,7 @@ class Form3Request extends FormRequest
     {
         return [
             'lieu' => 'required',
-            'date_incident' => 'required|date| before_or_equal:today',
+            'date_incident' => 'required| before_or_equal:today',
             'heure_incident' => 'required',
             'epi' => 'required',
             'tenue' => 'required',
