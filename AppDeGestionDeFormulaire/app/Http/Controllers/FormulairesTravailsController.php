@@ -259,11 +259,22 @@ class FormulairesTravailsController extends Controller
             $Form1->type_absence = $request->type_absence;
             $Form1->temoin = $request->temoin;
             $Form1->nom_secouriste = $request->nom_secouriste;
-            $Form1->save();
 
-            
 
-            Session::forget('form_id');
+            // on verifie si il y a un formulaire identique dans la bd
+            $form = Form1::where('fonction_avant', '=', $Form1->fonction_avant)
+            ->where('date_incident', '=', $Form1->date_incident)
+            ->where('heure_incident', '=', $Form1->heure_incident)
+            ->where('lieu', '=', $Form1->lieu)
+            ->where('secteur', '=', $Form1->secteur)
+            ->where('nature_blessure', '=', $Form1->nature_blessure)
+            ->where('description_blessure', '=', $Form1->description_blessure)
+            ->where('description_tache', '=', $Form1->description_tache)
+            ->where('type_violence', '=', $Form1->type_violence)
+            ->where('type_absence', '=', $Form1->type_absence)
+            ->where('temoin', '=', $Form1->temoin)
+            ->where('nom_secouriste', '=', $Form1->nom_secouriste)
+            ->get()->first();
 
             // envoi email
             /*
@@ -275,7 +286,21 @@ class FormulairesTravailsController extends Controller
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
             */
-            return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+
+            if($form != null)
+            {
+                //redirect sur la même page avec message d'erreur
+                $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
+                $employeform2->delete();
+                return redirect()->route('formulairesTravails.index')->with('message', true)->with('msg','Informations déjà enregistrées');
+            }
+            else
+            {
+                $Form1->save();
+                Session::forget('form_id');
+                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+            }
+            
         }
         catch(\Throwable $e)
         {

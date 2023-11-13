@@ -23,7 +23,7 @@ class Form4Request extends FormRequest
     {
         return [
             'no_unite' => 'required|numeric',
-            'date=>' => 'required | before_or_equal:today',
+            'date' => 'required|before_or_equal:today',
             'heure' => 'required',
             'departement' => 'required|string|max:255',
             'permis_conduire' => 'required|max:255', 
