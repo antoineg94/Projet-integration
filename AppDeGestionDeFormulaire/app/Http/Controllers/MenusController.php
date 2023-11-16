@@ -320,23 +320,29 @@ class MenusController extends Controller
         else
         {
             $employeform->update([
-            'statut' => "Valide"
-            ]);
-            /*
-            # Courriel de l'admin
-            $admin = Employe::where('admin', 'oui')->get()->first();
-            $adminCourriel = $admin->courriel;
-
-            $details = [
-                'titre' => 'Un superviseur a confirmé avoir pris connaissance d\'un formulaire',
-                'body' => 'Connectez vous pour le consulter.'
-            ];
-
-            Session::forget('form_id');
-            Mail::to($adminCourriel)->send(new contactMail($details));
-           */
-            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
-           
+                'statut' => "Valide"
+                ]);
+            
+          if(Session::get('admin') == true){
+            return redirect()->route('Admins.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');
+          }
+          else{
+            
+                /*
+                # Courriel de l'admin
+                $admin = Employe::where('admin', 'oui')->get()->first();
+                $adminCourriel = $admin->courriel;
+    
+                $details = [
+                    'titre' => 'Un superviseur a confirmé avoir pris connaissance d\'un formulaire',
+                    'body' => 'Connectez vous pour le consulter.'
+                ];
+    
+                Session::forget('form_id');
+                Mail::to($adminCourriel)->send(new contactMail($details));
+               */
+                return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+          }
             
         }
         

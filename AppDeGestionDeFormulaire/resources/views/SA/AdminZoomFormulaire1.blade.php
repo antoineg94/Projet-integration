@@ -87,29 +87,30 @@
           </tbody>
         </table>
 
-
+      @if($zoomForm1s->supId ==  1)
         <h3>Validation du formulaire:</h3>
-      <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
-          @CSRF
-            <p>
-              En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
-              je confirme que cette demande est valide.
-            </p>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">
-              <label class="form-check-label" for="statut">Oui</label>
-            </div>
+        <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
+            @CSRF
+              <p>
+                En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
+                je confirme que cette demande est valide.
+              </p>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="statut" id="statut" value="Valide">
+                <label class="form-check-label" for="statut">Oui</label>
+              </div>
 
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="statut" id="statut" value="Invalide">
-              <label class="form-check-label" for="statut">Non</label>
-            </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="statut" id="statut" value="Invalide">
+                <label class="form-check-label" for="statut">Non</label>
+              </div>
 
 
-            <div class="d-grid gap-3 col-11 mx-auto p-2">
-              <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
-            </div>            
+              <div class="d-grid gap-3 col-11 mx-auto p-2">
+                <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
+              </div>            
         </form>
+      @endif
  
   
     @else
