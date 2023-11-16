@@ -54,7 +54,8 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->temoin = $request->temoin;
 
             // on verifie si un formulaire identique existe déjà
-            $form = Form2::where('fonction_avant', '=', $Form2->fonction_avant)
+            $form = Form2::join('employeforms', 'employeform_id', '=', 'employeforms.id')
+            ->where('fonction_avant', '=', $Form2->fonction_avant)
             ->where('secteur', '=', $Form2->secteur)
             ->where('date_observ', '=', $Form2->date_observ)
             ->where('heure_observ', '=', $Form2->heure_observ)
@@ -62,6 +63,7 @@ class FormulaireSituationDangereusesController extends Controller
             ->where('description', '=', $Form2->description)
             ->where('proposition', '=', $Form2->proposition)
             ->where('temoin', '=', $Form2->temoin)
+            ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
 
             // envoi email
@@ -73,6 +75,19 @@ class FormulaireSituationDangereusesController extends Controller
 
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+            # Courriel de l'admin
+            $admin = Employe::where('admin', 'oui')->get()->first();
+            $adminCourriel = $admin->courriel;
+
+            // envoi email
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de signalement d'une situation dangereuse d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
+            Session::forget('form_id');
+            Mail::to($adminCourriel)->send(new contactMail($details));
             */
 
             if($form != null){
@@ -82,7 +97,7 @@ class FormulaireSituationDangereusesController extends Controller
             }
             else{
                 $Form2->save();
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }
          
         }

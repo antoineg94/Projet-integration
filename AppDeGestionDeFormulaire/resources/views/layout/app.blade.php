@@ -17,7 +17,7 @@
 
     @if(Session::has('success'))
       <div class="alert alert-success" role="alert">
-        {{ Session::get('message') }}
+        {{ Session::get('bon') }}
       </div>
     @endif
 

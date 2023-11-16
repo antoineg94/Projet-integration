@@ -60,7 +60,8 @@ class FormulaireAuditsController extends Controller
             $Form3->description = $request->description;
 
             // on verifie si un formulaire identique existe déjà
-            $form = Form3::where('lieu', '=', $Form3->lieu)
+            $form = Form3::join('employeforms', 'employeform_id', '=', 'employeforms.id')
+            ->where('lieu', '=', $Form3->lieu)
             ->where('epi', '=', $Form3->epi)
             ->where('tenue', '=', $Form3->tenue)
             ->where('comportement', '=', $Form3->comportement)
@@ -74,7 +75,9 @@ class FormulaireAuditsController extends Controller
             ->where('port_epi', '=', $Form3->port_epi)
             ->where('respect_proced', '=', $Form3->respect_proced)
             ->where('description', '=', $Form3->description)
+            ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
+
 
             if($form != null){
                 $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
@@ -91,10 +94,23 @@ class FormulaireAuditsController extends Controller
 
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+                # Courriel de l'admin
+                $admin = Employe::where('admin', 'oui')->get()->first();
+                $adminCourriel = $admin->courriel;
+
+            // envoi email
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire d\'un audit de la SST d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
+            Session::forget('form_id');
+            Mail::to($adminCourriel)->send(new contactMail($details));
             */
                 $Form3->save();
                 Session::forget('form_id');
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }
             
         }

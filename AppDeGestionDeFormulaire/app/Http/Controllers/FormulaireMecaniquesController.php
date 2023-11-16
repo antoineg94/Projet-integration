@@ -57,12 +57,14 @@ class FormulaireMecaniquesController extends Controller
             }
 
             // on vérifie si un formulaire identique existe déjà
-            $form = Form4::where('date', '=', $Form4->date)
+            $form = Form4::join('employeforms', 'employeform_id', '=', 'employeforms.id')
+            ->where('date', '=', $Form4->date)
             ->where('heure', '=', $Form4->heure)
             ->where('no_unite', '=', $Form4->no_unite)
             ->where('departement', '=', $Form4->departement)
             ->where('permis_conduire', '=', $Form4->permis_conduire)
             ->where('vehicule_citoyen', '=', $Form4->vehicule_citoyen)
+            ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
 
             log::debug($form);
@@ -86,8 +88,20 @@ class FormulaireMecaniquesController extends Controller
 
                     Session::forget('form_id');
                     Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+                    # Courriel de l'admin
+                    $admin = Employe::where('admin', 'oui')->get()->first();
+                    $adminCourriel = $admin->courriel;
+
+                    $details = [
+                        'titre' => 'Vous avez reçu un nouveau rapport d\'accident(véhicule) d\'un employé',
+                        'body' => 'Connectez vous pour le consulter.'
+                    ];
+
+                    Session::forget('form_id');
+                    Mail::to($adminCourriel)->send(new contactMail($details));
                 */
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }
         
         }

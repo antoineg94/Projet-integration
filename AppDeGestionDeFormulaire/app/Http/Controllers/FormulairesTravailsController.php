@@ -262,7 +262,8 @@ class FormulairesTravailsController extends Controller
 
 
             // on verifie si il y a un formulaire identique dans la bd
-            $form = Form1::where('fonction_avant', '=', $Form1->fonction_avant)
+            $form = Form1::join('employeforms', 'employeform_id', '=', 'employeforms.id')
+            ->where('fonction_avant', '=', $Form1->fonction_avant)
             ->where('date_incident', '=', $Form1->date_incident)
             ->where('heure_incident', '=', $Form1->heure_incident)
             ->where('lieu', '=', $Form1->lieu)
@@ -274,6 +275,7 @@ class FormulairesTravailsController extends Controller
             ->where('type_absence', '=', $Form1->type_absence)
             ->where('temoin', '=', $Form1->temoin)
             ->where('nom_secouriste', '=', $Form1->nom_secouriste)
+            ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
 
             // envoi email
@@ -285,6 +287,19 @@ class FormulairesTravailsController extends Controller
 
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+            # Courriel de l'admin
+            $admin = Employe::where('admin', 'oui')->get()->first();
+            $adminCourriel = $admin->courriel;
+
+            // envoi email
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de déclaration d\'accidents de travail d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
+            Session::forget('form_id');
+            Mail::to($adminCourriel)->send(new contactMail($details));
             */
 
             if($form != null)
@@ -298,7 +313,7 @@ class FormulairesTravailsController extends Controller
             {
                 $Form1->save();
                 Session::forget('form_id');
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }
             
         }
