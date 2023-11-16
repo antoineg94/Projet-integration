@@ -31,12 +31,18 @@
     <div class="row">
         <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="prenom">Date</label>
-            <input type="date" id="date" name="date" class="form-control form-control-lg" value="{{ Session::get('date') }}"/>
+            <input type="date" id="date" name="date" class="form-control form-control-lg @error('date') is-invalid @enderror" value="{{ Session::get('date') }}"/>
+            @error('date')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="prenom">Heure</label>
-            <input type="time" id="heure" name="heure" class="form-control form-control-lg" value="{{ Session::get('heure') }}"/>
+            <input type="time" id="heure" name="heure" class="form-control form-control-lg @error('heure') is-invalid @enderror" value="{{ Session::get('heure') }}"/>
+            @error('heure')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
     </div>
 
