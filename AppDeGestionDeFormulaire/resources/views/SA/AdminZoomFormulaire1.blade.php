@@ -13,7 +13,7 @@
         <table class="table table-striped table-hover">
         <tbody>
             <tr>
-              <td>Nom de l'employé</td>
+              <td class="w-25">Nom de l'employé</td>
               <td>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</td>
             </tr>
             <tr>
@@ -28,10 +28,17 @@
               <td>Date/Heure de l'accident</td>
               <td>{{ $zoomForm1s->date_incident }} {{ $zoomForm1s->heure_incident }}</td>
             </tr>
+            @if(isset($zoomForm1s->temoin))
             <tr>
               <td>Témoin(s)</td>
               <td>{{ $zoomForm1s->temoin }}</td>
             </tr>
+            @else
+            <tr>
+              <td>Témoin(s)</td>
+              <td>Aucun témoins</td>
+            </tr>
+            @endif
             <tr>
               <td>Endroit</td>
               <td>{{ $zoomForm1s->lieu }}</td>

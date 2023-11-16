@@ -12,7 +12,7 @@
   <table class="table table-striped table-hover">
   <tbody>
         <tr>
-            <td>Nom</td>
+            <td class="w-25">Nom</td>
             <td>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</td>
         </tr>
         <tr>

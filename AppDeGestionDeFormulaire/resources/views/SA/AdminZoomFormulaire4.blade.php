@@ -17,7 +17,7 @@
   <table class="table table-striped table-hover">
   <tbody>
   <tr>
-    <td>Numéro(s) d'unité(s) impliqué(s)</td>
+    <td class="w-25">Numéro(s) d'unité(s) impliqué(s)</td>
     <td>{{ $zoomForm4s->no_unite }}</td>
   </tr>
   <tr>
