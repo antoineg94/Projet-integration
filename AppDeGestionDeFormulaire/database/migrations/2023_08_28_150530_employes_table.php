@@ -21,9 +21,8 @@ return new class extends Migration
             $table->string('superieur_id', 255)->default('N/A');
             $table->string('superviseur', 255)->default('non');
             $table->string('admin', 255)->default('non');
-            $table->float('poste')->nullable();
-
             $table->foreignId('departement_id')->constrained();
+            $table->string('etat');
         });
     }
 

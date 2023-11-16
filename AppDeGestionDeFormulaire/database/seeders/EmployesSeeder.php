@@ -22,7 +22,8 @@ class EmployesSeeder extends Seeder
                 'position' => 'Directeur TP',
                 'superviseur' => 'oui',
                 'admin' => 'oui',
-                'departement_id' => 14
+                'departement_id' => 14,
+                'etat' => 'actif'
             ]
         ]);    
         DB::table('employes')->insert([
@@ -34,7 +35,8 @@ class EmployesSeeder extends Seeder
                 'position' => 'Chef de service TP',
                 'superieur_id' => 1,
                 'superviseur' => 'oui',
-                'departement_id' => 1
+                'departement_id' => 1,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 1135565961,
@@ -44,7 +46,8 @@ class EmployesSeeder extends Seeder
                 'position' => 'Chef d\'équipe',
                 'superieur_id' => 2,
                 'superviseur' => 'oui',
-                'departement_id' => 8
+                'departement_id' => 8,
+                'etat' => 'vacances'
             ]
         ]);
 
@@ -56,7 +59,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Aidan',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 14
+                'departement_id' => 14,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 6752789673,
@@ -65,7 +69,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Gladi',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 9
+                'departement_id' => 9,
+                'etat' => 'arret'
             ],
             [
                 'matricule' => 6631096510,
@@ -74,7 +79,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Olenka',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 15
+                'departement_id' => 15,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 1653034661,
@@ -83,7 +89,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Dorri',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 14
+                'departement_id' => 14,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 1491398914,
@@ -92,7 +99,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Marsha',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 9
+                'departement_id' => 9,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 0642710317,
@@ -101,7 +109,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Teirtza',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 16
+                'departement_id' => 16,
+                'etat' => 'vacances'
             ],
             [
                 'matricule' => 2344098453,
@@ -110,7 +119,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Jerrold',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 4
+                'departement_id' => 4,
+                'etat' => 'arret'
             ],
             [   
                 'matricule' => 1610313720,
@@ -119,7 +129,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Nikoletta',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 9
+                'departement_id' => 9,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 4310184685,
@@ -128,7 +139,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Flory',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 3
+                'departement_id' => 3,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 1915895626,
@@ -137,7 +149,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Ealasaid',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 13
+                'departement_id' => 13,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 9080108758,
@@ -146,7 +159,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Park',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 2
+                'departement_id' => 2,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 9470086163,
@@ -155,7 +169,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Hershel',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 14
+                'departement_id' => 14,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 7547893260,
@@ -164,7 +179,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Duff',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 16
+                'departement_id' => 16,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 9549907023,
@@ -173,7 +189,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Timothy',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 11
+                'departement_id' => 11,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 2531628886,
@@ -182,7 +199,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Emmit',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 10
+                'departement_id' => 10,
+                'etat' => 'vacances'
             ],
             [
                 'matricule' => 1604346914,
@@ -191,7 +209,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Ada',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 4
+                'departement_id' => 4,
+                'etat' => 'vacances'
             ],
             [
                 'matricule' => 4623536521,
@@ -200,7 +219,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Patton',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 7
+                'departement_id' => 7,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 3461827053,
@@ -209,7 +229,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Benito',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 2
+                'departement_id' => 2,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 6981337495,
@@ -218,7 +239,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Charissa',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 3
+                'departement_id' => 3,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 4849641504,
@@ -227,7 +249,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Guillermo',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 15
+                'departement_id' => 15,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 3405197953,
@@ -236,7 +259,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Northrop',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 4
+                'departement_id' => 4,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 6444303133,
@@ -245,7 +269,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Kristoffer',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 15
+                'departement_id' => 15,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 4895352617,
@@ -254,7 +279,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Estelle',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 3
+                'departement_id' => 3,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 5592102844,
@@ -263,7 +289,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Ginger',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 1
+                'departement_id' => 1,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 9106652867,
@@ -272,16 +299,18 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Norbie',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 9
+                'departement_id' => 9,
+                'etat' => 'arret'
             ],
             [
                 'matricule' => 1270619926,
-                'courriel' => 'patrice.anctil.01@edu.cegeptr.qc.ca',
+                'courriel' => 'nathan.lafreniere.01@edu.cegeptr.qc.ca',
                 'nom' => 'Hansana',
                 'prenom' => 'Heddi',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 15
+                'departement_id' => 15,
+                'etat' => 'actif'
             ],
             [
                 'matricule' => 6865135490,
@@ -290,7 +319,8 @@ class EmployesSeeder extends Seeder
                 'prenom' => 'Ardelia',
                 'position' => 'Journalier TP',
                 'superieur_id' => 3,
-                'departement_id' => 9
+                'departement_id' => 9,
+                'etat' => 'actif'
             ]
         ]);
     }
