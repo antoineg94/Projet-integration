@@ -15,11 +15,9 @@
   </div>
   <div class="d-grid gap-3 col-xl-8 col-11 mx-auto p-2">
     @if(isset($zoomForm1s))
-    <div class="card mb-3">
-      <h5 class="card-header">
+      <h5>
         Informations sur: formulaire déclaration d'accident de travail
       </h5>
-      <div class="card-body">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -91,8 +89,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>   
+  
 
     @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm1s->employe_id && $zoomForm1s->statut != 'Valide')
     <div class="container">
