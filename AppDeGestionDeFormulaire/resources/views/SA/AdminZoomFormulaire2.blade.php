@@ -65,7 +65,7 @@
 </tbody>
 </table>
 
-@if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm2s->employe_id && $zoomForm2s->statut != 'Valide')
+@if($zoomForm2s->supId ==  1)
     <div class="container">
       <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm2s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>

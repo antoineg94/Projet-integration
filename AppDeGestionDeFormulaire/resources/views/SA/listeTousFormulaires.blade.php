@@ -6,7 +6,7 @@
 <section class="col-10">
   
   <div class="d-grid gap-3 col-11 mx-auto p-2">
-  <h5> Liste des formulaires remplis</h5>
+  <h3 class="offset-2"> Liste des formulaires remplis</h3>
 
   <fieldset class="border p-1 w-25 offset-2">
     <legend>Légende: </legend>

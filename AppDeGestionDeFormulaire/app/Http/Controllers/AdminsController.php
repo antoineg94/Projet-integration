@@ -96,7 +96,7 @@ class AdminsController extends Controller
             $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->select('form1s.*', 'employeforms.*', 'employes.*')
+            ->select('form1s.*', 'employeforms.*', 'employes.*', 'employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
     
@@ -112,7 +112,7 @@ class AdminsController extends Controller
             $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->select('form2s.*', 'employeforms.*', 'employes.*')
+            ->select('form2s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
     
@@ -127,7 +127,7 @@ class AdminsController extends Controller
             $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->select('form3s.*', 'employeforms.*', 'employes.*')
+            ->select('form3s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
     
@@ -140,7 +140,7 @@ class AdminsController extends Controller
             $zoomForm4s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form4s', 'form4s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-            ->select('form4s.*', 'employeforms.*', 'employes.*')
+            ->select('form4s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
 
