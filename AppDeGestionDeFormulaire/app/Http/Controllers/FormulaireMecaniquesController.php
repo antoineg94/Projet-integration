@@ -38,11 +38,23 @@ class FormulaireMecaniquesController extends Controller
             $employe = Employe::where('id', '=', Session::get('employe_id'))
             ->get()->first();
 
+            $superieur = Employe::where('id', '=', $employe->superieur_id)
+            ->get()->first();
+
             $employeform = new Employeform();
             $employeform->employe_id = Session::get('employe_id');
             $employeform->formulaire_id = 4;
             $employeform->date_formulaire = $date;
-            $employeform->superieur_id = $employe->superieur_id;
+
+            if($superieur->etat == 'actif')
+            {
+                $employeform->superieur_id = $employe->superieur_id;
+            }
+            else
+            {
+                $employeform->superieur_id = $superieur->superieur_id;
+            }
+
             $employeform->save();
 
             $Form4 = new Form4();
