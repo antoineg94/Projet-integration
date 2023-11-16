@@ -285,7 +285,7 @@ class FormulairesTravailsController extends Controller
                 'body' => 'Connectez vous pour le consulter.'
             ];
 
-            Session::forget('form_id');
+        
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
 
             # Courriel de l'admin
@@ -298,7 +298,7 @@ class FormulairesTravailsController extends Controller
                 'body' => 'Connectez vous pour le consulter.'
             ];
 
-            Session::forget('form_id');
+        
             Mail::to($adminCourriel)->send(new contactMail($details));
             */
 

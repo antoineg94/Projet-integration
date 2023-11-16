@@ -9,6 +9,7 @@ use App\Http\Requests\EmployeformRequest;
 use App\Models\Form4;
 use App\Models\Employeform;
 use App\Models\Employe;
+use App\Models\Departement;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
 use Session;
@@ -20,8 +21,12 @@ class FormulaireMecaniquesController extends Controller
      */
     public function index()
     {
+
+        $departements = Departement::orderby('nom', 'ASC')
+        ->get();
+
         Session::put('form_id', 4);
-        return view('Formulaires.formulaireMecanique');
+        return view('Formulaires.formulaireMecanique', compact('departements'));
     }
 
     public function enregistrer(Form4Request $request)
@@ -86,7 +91,7 @@ class FormulaireMecaniquesController extends Controller
                         'body' => 'Connectez vous pour le consulter.'
                     ];
 
-                    Session::forget('form_id');
+             
                     Mail::to('someone@hotmail.com')->send(new contactMail($details));
 
                     # Courriel de l'admin
@@ -98,7 +103,7 @@ class FormulaireMecaniquesController extends Controller
                         'body' => 'Connectez vous pour le consulter.'
                     ];
 
-                    Session::forget('form_id');
+              
                     Mail::to($adminCourriel)->send(new contactMail($details));
                 */
                 return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');

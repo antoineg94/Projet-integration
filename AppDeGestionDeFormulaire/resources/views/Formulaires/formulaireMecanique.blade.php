@@ -31,12 +31,18 @@
     <div class="row">
         <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="prenom">Date</label>
-            <input type="date" id="date" name="date" class="form-control form-control-lg" value="{{ Session::get('date') }}"/>
+            <input type="date" id="date" name="date" class="form-control form-control-lg @error('date') is-invalid @enderror" value="{{ Session::get('date') }}"/>
+            @error('date')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12">
             <label class="form-label fw-bold" for="prenom">Heure</label>
-            <input type="time" id="heure" name="heure" class="form-control form-control-lg" value="{{ Session::get('heure') }}"/>
+            <input type="time" id="heure" name="heure" class="form-control form-control-lg @error('heure') is-invalid @enderror" value="{{ Session::get('heure') }}"/>
+            @error('heure')
+                <span class="text-danger">{{ $message }} </span>
+            @enderror
         </div>
     </div>
 
@@ -49,22 +55,33 @@
             @enderror
         </div>
 
-        <div class="form-outline mb-4 col-xl-6 col-12">
-            <label class="form-label fw-bold" for="departement">Département</label>
-            <input type="text" id="departement" name="departement" class="form-control form-control-lg  @error('departement') is-invalid @enderror" value="{{ old('departement') }}"/>
-            @error('departement')
-                <span class="text-danger">{{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-    <div class="row">
         <div class="form-outline mb-4 col-xl-6 col-12 ">
             <label class="form-label fw-bold" for="permis_conduire">Numéro de permis de conduire de l'employé</label>
             <input type="text" id="permis_conduire" name="permis_conduire" class="form-control form-control-lg  @error('permis_conduire') is-invalid @enderror" value="{{ old('permis_conduire') }}"/>
             @error('permis_conduire')
                 <span class="text-danger">{{ $message }} </span>
             @enderror
+        </div>
+        
+    </div>
+
+    <div class="row">
+        
+
+        <div class="form-outline mb-4 col-xl-6 col-12">
+            <label class="form-label fw-bold" for="departement">Département</label>
+            @if (count($departements))
+                <select class="form-select @error('departement') is-invalid @enderror" size="8" multiple aria-label="Multiple select example" id="departement" name="departement" value="{{ old('departement') }}">
+                    @foreach($departements as $departement)
+                        <option value="{{$departement->nom}}">{{$departement->nom}}</option>
+                        <hr class="p-0 m-3">
+                    @endforeach
+                </select>
+
+                @error('departement')
+                <span class="text-danger">{{ $message }} </span>
+                @enderror
+            @endif
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12 ">
