@@ -93,6 +93,18 @@ class FormulaireMecaniquesController extends Controller
 
                     Session::forget('form_id');
                     Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+                    # Courriel de l'admin
+                    $admin = Employe::where('admin', 'oui')->get()->first();
+                    $adminCourriel = $admin->courriel;
+
+                    $details = [
+                        'titre' => 'Vous avez reçu un nouveau rapport d\'accident(véhicule) d\'un employé',
+                        'body' => 'Connectez vous pour le consulter.'
+                    ];
+
+                    Session::forget('form_id');
+                    Mail::to($adminCourriel)->send(new contactMail($details));
                 */
                 return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }

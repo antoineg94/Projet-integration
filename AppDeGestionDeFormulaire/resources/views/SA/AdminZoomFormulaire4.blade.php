@@ -3,20 +3,23 @@
 @section('title', 'Informations sur le formulaire d\'atelier mécanique')
 
 @section('middleContent')
-<section>
+<section class="col-10">
 <div class="d-grid gap-3 col-11 mx-auto p-2">
 @if (isset($zoomForm4s))
-    <h5>
+<div class="container">
+  <div class="mb-4 col-11 mx-auto">
+    <h3 class=>
         Informations sur: formulaire d'atelier mécanique
-    </h5>  
-  <table class="table table-striped">
-<thead>
+    </h3>  
+  </div>
+</div>
+
+  <table class="table table-striped table-hover">
+  <tbody>
   <tr>
-    <td>Numéro(s) d'unité(s) impliqué(s)</td>
+    <td class="w-25">Numéro(s) d'unité(s) impliqué(s)</td>
     <td>{{ $zoomForm4s->no_unite }}</td>
   </tr>
-</thead>
-<tbody>
   <tr>
     <td>Département</td>
     <td>{{ $zoomForm4s->departement }}</td>
@@ -50,9 +53,10 @@
 </tbody>
 </table>
 
+
 @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm4s->employe_id && $zoomForm4s->statut != 'Valide')
   <div class="container">
-    <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm4s->employeform_id]) }}">
+    <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm4s->employeform_id]) }}">
       <h3>Validation du formulaire:</h3>
         @CSRF
           <p>

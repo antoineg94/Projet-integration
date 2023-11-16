@@ -38,10 +38,17 @@
               <td>Date/Heure de l'accident</td>
               <td>{{ $zoomForm1s->date_incident }} {{ $zoomForm1s->heure_incident }}</td>
             </tr>
+            @if(isset($zoomForm1s->temoin))
             <tr>
               <td>Témoin(s)</td>
               <td>{{ $zoomForm1s->temoin }}</td>
             </tr>
+            @else
+            <tr>
+              <td>Témoin(s)</td>
+              <td>Aucun témoins</td>
+            </tr>
+            @endif
             <tr>
               <td>Endroit</td>
               <td>{{ $zoomForm1s->lieu }}</td>

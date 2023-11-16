@@ -56,8 +56,7 @@ class LoginsController extends Controller
                 }
 
                 Session::put('employe_id', $identifiant->employe_id);
-                
-
+            
        
 
 

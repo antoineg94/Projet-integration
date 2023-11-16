@@ -3,20 +3,18 @@
 @section('title', 'Informations sur le formulaire d\'audit SST')
 
 @section('middleContent')
-<section>
+<section class="col-10">
 <div class="d-grid gap-3 col-11 mx-auto p-2">
 @if (isset($zoomForm3s))
-    <h5>
+    <h3>
         Informations sur: formulaire d'audit SST
-    </h5>     
-  <table class="table table-striped">
-    <thead>
+    </h3>     
+  <table class="table table-striped table-hover">
+  <tbody>
         <tr>
-            <td>Nom</td>
+            <td class="w-25">Nom</td>
             <td>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</td>
         </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>Lieux</td>
             <td>{{ $zoomForm3s->lieu }}</td>
@@ -90,7 +88,7 @@
 
   @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm3s->employe_id && $zoomForm3s->statut != 'Valide')  
     <div class="container">
-      <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm3s->employeform_id]) }}">
+      <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm3s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>
           @CSRF
             <p>
