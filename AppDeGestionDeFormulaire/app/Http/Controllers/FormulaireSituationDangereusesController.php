@@ -54,7 +54,8 @@ class FormulaireSituationDangereusesController extends Controller
             $Form2->temoin = $request->temoin;
 
             // on verifie si un formulaire identique existe déjà
-            $form = Form2::where('fonction_avant', '=', $Form2->fonction_avant)
+            $form = Form2::join('employeforms', 'employeform_id', '=', 'employeforms.id')
+            ->where('fonction_avant', '=', $Form2->fonction_avant)
             ->where('secteur', '=', $Form2->secteur)
             ->where('date_observ', '=', $Form2->date_observ)
             ->where('heure_observ', '=', $Form2->heure_observ)
@@ -62,6 +63,7 @@ class FormulaireSituationDangereusesController extends Controller
             ->where('description', '=', $Form2->description)
             ->where('proposition', '=', $Form2->proposition)
             ->where('temoin', '=', $Form2->temoin)
+            ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
 
             // envoi email
@@ -95,7 +97,7 @@ class FormulaireSituationDangereusesController extends Controller
             }
             else{
                 $Form2->save();
-                return redirect()->route('Menus.index')->with('success', true)->with('message','Le formulaire a été enregistré avec succès');
+                return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
             }
          
         }

@@ -14,12 +14,14 @@
     </div>
     <div class="d-grid gap-3 col-11 mx-auto p-2">
         @if (isset($zoomForm3s))
-
+        <h5>
+        Informations sur: formulaire d'audit SST
+      </h5>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</th>
+                    <td>Nom</td>
+                    <td>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</td>
                 </tr>
             </thead>
             <tbody>

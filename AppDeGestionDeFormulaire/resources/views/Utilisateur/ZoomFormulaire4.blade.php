@@ -14,12 +14,14 @@
   </div>
 <div class="d-grid gap-3 col-11 mx-auto p-2">
 @if (isset($zoomForm4s))
-
+<h5>
+        Informations sur: formulaire d'atelier mécanique
+      </h5>
   <table class="table table-striped">
 <thead>
   <tr>
-    <th>Numéro(s) d'unité(s) impliqué(s)</th>
-    <th>{{ $zoomForm4s->no_unite }}</th>
+    <td>Numéro(s) d'unité(s) impliqué(s)</td>
+    <td>{{ $zoomForm4s->no_unite }}</td>
   </tr>
 </thead>
 <tbody>
