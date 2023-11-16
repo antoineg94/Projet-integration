@@ -13,7 +13,7 @@
       </a>
   </div>
   <div class="d-grid gap-3 col-11 mx-auto p-2">
-  <h5> Liste des formulaires remplis</h5>
+  <h5 class="col-xl-2 offset-xl-2 col-12"> Liste des formulaires remplis</h5>
 
   <fieldset class="border p-1 d-grid gap-3 p-2 col-xl-2 offset-xl-2 col-12">
     <legend>Légende: </legend>
