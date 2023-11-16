@@ -12,8 +12,8 @@
   <table class="table table-striped">
     <thead>
         <tr>
-            <th>Nom</th>
-            <th>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</th>
+            <td>Nom</td>
+            <td>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</td>
         </tr>
     </thead>
     <tbody>

@@ -12,8 +12,8 @@
   <table class="table table-striped">
 <thead>
   <tr>
-    <th>Numéro(s) d'unité(s) impliqué(s)</th>
-    <th>{{ $zoomForm4s->no_unite }}</th>
+    <td>Numéro(s) d'unité(s) impliqué(s)</td>
+    <td>{{ $zoomForm4s->no_unite }}</td>
   </tr>
 </thead>
 <tbody>

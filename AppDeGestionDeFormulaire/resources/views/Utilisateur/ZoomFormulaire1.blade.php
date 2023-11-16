@@ -21,8 +21,8 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Nom de l'employé</th>
-              <th>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</th>
+              <td>Nom de l'employé</td>
+              <td>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</td>
             </tr>
           </thead>
           <tbody>

@@ -20,8 +20,8 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Nom</th>
-            <th>{{ $zoomForm2s->nom }}, {{ $zoomForm2s->prenom }}</th>
+            <td>Nom</td>
+            <td>{{ $zoomForm2s->nom }}, {{ $zoomForm2s->prenom }}</td>
           </tr>
         </thead>
         <tbody>
