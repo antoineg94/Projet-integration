@@ -3,20 +3,18 @@
 @section('title', 'Informations sur le signalement d\'une situation dangereuse, d\'un acte de violence ou d\'un «passé proche»')
 
 @section('middleContent')
-<section>
+<section class="col-10">
 <div class="d-grid gap-3 col-11 mx-auto p-2">
 @if (isset($zoomForm2s))
-      <h5>
+      <h3>
         Informations sur: signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»
-      </h5>     
-  <table class="table table-striped">
-<thead>
+      </h3>     
+  <table class="table table-striped table-hover">
+  <tbody>
   <tr>
     <td>Nom</td>
     <td>{{ $zoomForm2s->nom }}, {{ $zoomForm2s->prenom }}</td>
   </tr>
-</thead>
-<tbody>
   <tr>
     <td>Matricule</td>
     <td>{{ $zoomForm2s->matricule }}</td>
@@ -62,7 +60,7 @@
 
 @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm2s->employe_id && $zoomForm2s->statut != 'Valide')
     <div class="container">
-      <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm2s->employeform_id]) }}">
+      <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm2s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>
           @CSRF
             <p>

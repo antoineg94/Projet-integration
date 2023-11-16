@@ -4,20 +4,18 @@
 
 @section('middleContent')
 
-<section>
-  <div class="d-grid gap-3 col-xl-8 col-11 mx-auto p-2">
+<section class="col-10">
+  <div class="d-grid gap-3 col-11 mx-auto p-2">
     @if(isset($zoomForm1s))
-      <h5>
+      <h3>
         Informations sur: formulaire déclaration d'accident de travail
-      </h5>      
-        <table class="table table-striped">
-          <thead>
+      </h3>      
+        <table class="table table-striped table-hover">
+        <tbody>
             <tr>
               <td>Nom de l'employé</td>
               <td>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</td>
             </tr>
-          </thead>
-          <tbody>
             <tr>
               <td>Fonctions </td>
               <td>{{ $zoomForm1s->position }}</td>
@@ -82,14 +80,9 @@
           </tbody>
         </table>
 
-    @if (Session::get('superviseur') == true && Session::get('employe_id') != $zoomForm1s->employe_id && $zoomForm1s->statut != 'Valide')
-    <div class="container">
-    @if (Session::get('admin') == true)
-      <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
-    @else
-      <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
-    @endif
+
         <h3>Validation du formulaire:</h3>
+      <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm1s->employeform_id]) }}">
           @CSRF
             <p>
               En tant que superviseur de {{ $zoomForm1s->prenom }} {{ $zoomForm1s->nom }}, 
@@ -110,11 +103,11 @@
               <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
             </div>            
         </form>
-      </div>
-    @endif
+ 
+  
     @else
     <p>Une erreur s'est produite, veuillez réessayer plus tard</p>
     @endif
-  </div>
+    </div>
 </section>
 @endsection
