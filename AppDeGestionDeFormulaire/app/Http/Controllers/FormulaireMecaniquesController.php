@@ -9,6 +9,7 @@ use App\Http\Requests\EmployeformRequest;
 use App\Models\Form4;
 use App\Models\Employeform;
 use App\Models\Employe;
+use App\Models\Departement;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
 use Session;
@@ -20,8 +21,12 @@ class FormulaireMecaniquesController extends Controller
      */
     public function index()
     {
+
+        $departements = Departement::orderby('nom', 'ASC')
+        ->get();
+
         Session::put('form_id', 4);
-        return view('Formulaires.formulaireMecanique');
+        return view('Formulaires.formulaireMecanique', compact('departements'));
     }
 
     public function enregistrer(Form4Request $request)
