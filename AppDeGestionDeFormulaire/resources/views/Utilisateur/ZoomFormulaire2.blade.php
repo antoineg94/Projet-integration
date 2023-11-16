@@ -49,10 +49,17 @@
             <td>Lieu</td>
             <td>{{ $zoomForm2s->lieu }}</td>
           </tr>
-          <tr>
-            <td>Témoins</td>
-            <td>{{ $zoomForm2s->temoins }}</td>
-          </tr>
+          @if(isset($zoomForm1s->temoin))
+            <tr>
+              <td>Témoin(s)</td>
+              <td>{{ $zoomForm1s->temoin }}</td>
+            </tr>
+            @else
+            <tr>
+              <td>Témoin(s)</td>
+              <td>Aucun témoins</td>
+            </tr>
+            @endif
           <tr>
             <td>Description de la situation</td>
             <td class="overflow-auto">{{ $zoomForm2s->description }}</td>
