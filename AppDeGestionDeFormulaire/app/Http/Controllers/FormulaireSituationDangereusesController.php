@@ -73,6 +73,19 @@ class FormulaireSituationDangereusesController extends Controller
 
             Session::forget('form_id');
             Mail::to('someone@hotmail.com')->send(new contactMail($details));
+
+            # Courriel de l'admin
+            $admin = Employe::where('admin', 'oui')->get()->first();
+            $adminCourriel = $admin->courriel;
+
+            // envoi email
+            $details = [
+                'titre' => 'Vous avez reçu un nouveau formulaire de signalement d'une situation dangereuse d\'un employé',
+                'body' => 'Connectez vous pour le consulter.'
+            ];
+
+            Session::forget('form_id');
+            Mail::to($adminCourriel)->send(new contactMail($details));
             */
 
             if($form != null){
