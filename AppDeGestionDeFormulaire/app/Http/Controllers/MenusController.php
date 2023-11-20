@@ -317,7 +317,7 @@ class MenusController extends Controller
             ]);
             return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme étant en attente');   
         }
-        else
+        else if($request->statut == "Valide")
         {
             $employeform->update([
                 'statut' => "Valide"
@@ -344,6 +344,16 @@ class MenusController extends Controller
                 return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
           }
             
+        }
+        else
+        {
+            if(Session::get('admin') == true){
+                return redirect()->back()->with('message', true)->with('msg','Aucune option n\'a été sélectionnée');
+              }
+              else{
+                return redirect()->back()->with('message', true)->with('msg','Aucune option n\'a été sélectionnée');   
+              }
+          
         }
         
         
