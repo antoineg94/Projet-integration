@@ -27,6 +27,7 @@
                 
                 <form method="DELETE" action="{{ route('consulterProcedures.destroy', '[$procedure->id]') }}">
                 @CSRF
+                @method('DELETE')
                     <a role="button" class="btn btn-secondary" href="{{ route('consulterProcedures.index') }}">Non</a>
                     <button type="submit" class="btn btn-danger">Oui</button>
                 </form>
