@@ -60,7 +60,7 @@
         </div>
         <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
         </div>
-    </form>
+</form>
 <div class="mb-4 col-11 mx-auto">
 <h3>Liste des procédures actuelles:</h3>
 <!-- Tri par départment -->
@@ -72,20 +72,45 @@
     <div class="card" style="width: 18rem;">
         <div class="card-header">
            {{$procedure->titre}}
+
+           
+
+
+            <!-- Button trigger modal -->
+                <button type="submit" class="btn text-white" style="background-color: #63BC55;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                x
+                </button>
+
+
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item text-truncate">Departement: {{$procedure->nom}}</li>
             <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>
-            <li class="list-group-item" >
-            <form method="POST" action="{{route('consulterProcedures.destroy', [$procedure->id]) }}">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn text-white" style="background-color: #63BC55;">Supprimer</button>
-            </form>              
+            <li class="list-group-item" >          
             </li>
         </ul>
     </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Supression d'une procédure de travail</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Êtes vous sur de vouloir supprimer cette procédure? Cette action est irréversible.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+            <a role="button" class="btn btn-primary" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}" >Oui</a>
+        </div>
+        </div>
+        </div>
+    </div>
+    <!-- -->
     @endforeach
     @else
     <p>Aucune procédure disponible pour le moment..</p>

@@ -137,7 +137,7 @@ Route::get('/trierProcedure',
 [ConsulterProceduresController::class, 'trierProcedure'])->name('consulterProcedures.trierProcedure')->middleware('auth');
 
 //Delete procedure
-Route::delete('/procedures/{id}',
+Route::DELETE('/procedures/{id}',
 [ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
 
 
