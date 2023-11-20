@@ -70,7 +70,7 @@
     @foreach($procedures as $procedure)
     <div class="col-sm-3 p-2">
     <div class="card" style="width: 18rem;">
-        <div class="card-header position-relative">
+        <div class="card-header">
            {{$procedure->titre}}
 
            
@@ -85,7 +85,8 @@
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item text-truncate">Departement: {{$procedure->nom}}</li>
-            <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>     
+            <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>
+            <li class="list-group-item" >          
             </li>
         </ul>
     </div>
@@ -104,7 +105,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-            <a role="button" class="btn btn-danger" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}" >Oui</a>
+            <a role="button" class="btn btn-primary" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}" >Oui</a>
         </div>
         </div>
         </div>
