@@ -5,8 +5,6 @@
 @section('middleContent')
   <section>
     <div class="mb-4 col-11 mx-auto">
-      <h1>Bonjourfdgggggggggggggggggggggggggggggffffffffgggggggggg</h1>
-
       @foreach($errors->all() as $error)
         <div class="alert alert-danger" role="alert">
           {{ $error }}
