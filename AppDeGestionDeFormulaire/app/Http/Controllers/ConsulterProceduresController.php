@@ -68,8 +68,7 @@ class ConsulterProceduresController extends Controller
             Log::debug($e);
             return redirect()->route('consulterProcedures.index')->withErrors(['la suppression n\'a pas fonctionné']); 
         }
-        return redirect()->route('consulterProcedures.index');
-            
+     
     }
 
     public function listeProcedure()
