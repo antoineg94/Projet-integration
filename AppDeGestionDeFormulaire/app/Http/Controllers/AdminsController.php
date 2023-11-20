@@ -66,9 +66,11 @@ class AdminsController extends Controller
         }
 
         
+        $superieur_nom = Employe::where('id', '=', 2)
+        ->get()->first();
 
         
-        return view('SA.listeTousFormulaires', compact('listes'));
+        return view('SA.listeTousFormulaires', compact('listes', 'superieur_nom'));
     }
 
 

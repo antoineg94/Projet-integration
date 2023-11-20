@@ -54,6 +54,9 @@
                   <div class="card-text col">Consulté: <b>{{ $liste->consulte }}</b></div>
                   <div class="card-text col">Statut: <b>{{ $liste->statut }}</b></div>
                 </div>
+                <div class="row">
+                  <div class="card-text col">Supérieur: <b>{{ $superieur_nom->prenom }} {{ $superieur_nom->nom }}</b></div>
+                </div>
                   <div class=" d-flex justify-content-end col">
                     @if (Session::get('admin') == true || Session::get('superviseur') == true)
                       <a href=" {{route('SA.adminZoomFormulaire', [ $liste ]) }}" class="btn text-white px-5" style="background-color: #63BC55;" >Consulter</a>
