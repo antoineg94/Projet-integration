@@ -36,6 +36,7 @@
                   <option value="1">Date</option>
                   <option value="2">Employé</option>
                   <option value="3">Formulaire</option>
+                  <option value="4">Superviseur</option>
                 </select>
               </div>
               <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
