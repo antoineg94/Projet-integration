@@ -4,10 +4,10 @@
 
 @section('middleContent')
 <section class="col-10">
-@foreach($errors->all() as $error)
-    <div class="alert alert-danger" role="alert">
-      {{ $error }}
-    </div>
+    @foreach($errors->all() as $error)
+      <div class="alert alert-danger" role="alert">
+        {{ $error }}
+      </div>
     @endforeach
 
     @if(Session::has('success'))
@@ -34,6 +34,7 @@
             <option value="1">Date</option>
             <option value="2">Employé</option>
             <option value="3">Formulaire</option>
+            <option value="4">Superviseur</option>
           </select>
         </div>
         <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
@@ -51,6 +52,9 @@
           <div class="row">
             <div class="card-text col">Consulté: <b>{{ $liste->consulte }}</b></div>
             <div class="card-text col">Statut: <b>{{ $liste->statut }}</b></div>
+          </div>
+          <div class="row">
+            <div class="card-text col">Supérieur: <b>{{ $liste->superieur_id }}</b></div>
           </div>
             <div class=" d-flex justify-content-end col">
               @if (Session::get('admin') == true || Session::get('superviseur') == true)
