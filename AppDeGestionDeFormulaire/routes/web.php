@@ -138,8 +138,10 @@ Route::get('/trierProcedure',
 
 //Delete procedure
 Route::DELETE('/procedures/{id}',
-[ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
+[ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy')->middleware('auth');
 
+Route::get('/procedures/Zoom/{id}',
+[ConsulterProceduresController::class,'zoom'])->name('consulterProcedures.zoom')->middleware('auth');
 
 // mail
 Route::get('envoiCourriel', function () {
