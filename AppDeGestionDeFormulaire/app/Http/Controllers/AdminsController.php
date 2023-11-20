@@ -99,8 +99,19 @@ class AdminsController extends Controller
             ->select('form1s.*', 'employeforms.*', 'employes.*', 'employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
-    
 
+            $nomSuperieur = Employe::where('id', '=', $zoomForm1s->supId)
+                ->get()->first();
+    
+            if($zoomForm1s->consulte != "Consulté" && $zoomForm1s->superieur_id == Session::get('employe_id'))
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
 
             return view('SA.AdminZoomFormulaire1', compact('zoomForm1s'));
 
@@ -117,7 +128,18 @@ class AdminsController extends Controller
             ->get()->first();
     
 
+            $nomSuperieur = Employe::where('id', '=', $zoomForm2s->supId)
+                ->get()->first();
 
+            if($zoomForm2s->consulte != "Consulté" && $zoomForm2s->superieur_id == Session::get('employe_id'))
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
 
             return view('SA.AdminZoomFormulaire2', compact('zoomForm2s'));
 
@@ -130,7 +152,19 @@ class AdminsController extends Controller
             ->select('form3s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
+
+            $nomSuperieur = Employe::where('id', '=', $zoomForm3s->supId)
+                ->get()->first();
     
+            if($zoomForm3s->consulte != "Consulté" && $zoomForm3s->superieur_id == Session::get('employe_id'))
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
 
             return view('SA.AdminZoomFormulaire3', compact('zoomForm3s'));
 
@@ -144,7 +178,19 @@ class AdminsController extends Controller
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
 
-            
+            $nomSuperieur = Employe::where('id', '=', $zoomForm4s->supId)
+                ->get()->first();
+
+            if($zoomForm4s->consulte != "Consulté" && $zoomForm4s->superieur_id == Session::get('employe_id'))
+                {
+                    $employeform = Employeform::find($liste->id);
+                    $employeform->update([
+                    'consulte' => "Consulté",
+                    'consultant' => "$nomSuperieur->prenom $nomSuperieur->nom",
+                    'date_consulte' => date('Y-m-d')
+                    ]);
+                }
+
             return view('SA.AdminZoomFormulaire4', compact('zoomForm4s'));
 
         }
