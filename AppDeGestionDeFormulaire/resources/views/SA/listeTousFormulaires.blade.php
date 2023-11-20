@@ -3,8 +3,9 @@
 @section('title', 'Liste de tous les formulaires')
 
 @section('middleContent')
-  <section>
-    <div class="mb-4 col-11 mx-auto">
+  <section class="col-10">
+    <div class="mb-4 col-11">
+
       @foreach($errors->all() as $error)
         <div class="alert alert-danger" role="alert">
           {{ $error }}
@@ -29,7 +30,7 @@
           <form method="GET" class=" offset-10 " action="{{ route('Admins.trierFormulaire') }}">
             @CSRF
             <div class="input-group">
-              <div class="">
+              <div>
                 <select class="form-select" name="Trier" id="Trier">
                   <option selected>Trier par</option>
                   <option value="1">Date</option>
