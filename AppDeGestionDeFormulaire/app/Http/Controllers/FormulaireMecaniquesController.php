@@ -13,6 +13,7 @@ use App\Models\Departement;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
 use Session;
+use Illuminate\Support\Facades\Mail;
 
 class FormulaireMecaniquesController extends Controller
 {
