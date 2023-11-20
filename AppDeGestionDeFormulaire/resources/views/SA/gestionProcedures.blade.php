@@ -77,7 +77,7 @@
 
 
             <!-- Button trigger modal -->
-                <a type="submit" class="btn text-white position-absolute top-0 start-100 translate-middle" href="{{ route('consulterProcedures.zoom') }}">
+                <a type="submit" class="btn text-white position-absolute top-0 start-100 translate-middle" href="{{ route('consulterProcedures.zoom', [$procedure->id]) }}">
                 <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #63BC55;"></i>
 </a>
 

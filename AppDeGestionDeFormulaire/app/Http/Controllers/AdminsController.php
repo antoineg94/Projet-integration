@@ -86,7 +86,7 @@ class AdminsController extends Controller
         
     }
 
-    public function zoomProcedure(Request $request)
+    public function zoom(Request $request)
     {
         try{
             $procedure = Consulterprocedure::findOrFail($request->id);
