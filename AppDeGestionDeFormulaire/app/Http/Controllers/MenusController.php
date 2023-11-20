@@ -124,7 +124,8 @@ class MenusController extends Controller
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
             ->where('employeforms.superieur_id', '=', Session::get('employe_id'))
-            ->orderby('employeforms.employe_id', 'asc')
+            ->orderby('employes.prenom', 'asc')
+            ->orderby('employes.nom', 'asc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
