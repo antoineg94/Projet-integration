@@ -34,6 +34,7 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+
             ->orderby('employeforms.employe_id', 'asc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -43,6 +44,7 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+
             ->orderby('employeforms.formulaire_id', 'desc')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
@@ -51,17 +53,17 @@ class AdminsController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
-            ->orderby('employeforms.superieur_id', 'asc')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+
+
             ->get(); 
         }
         else
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->join('employes as sup', 'sup.id', '=', 'employeforms.superieur_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 
-                     'employes.prenom', 'employes.nom', 'sup.prenom as supPrenom', 'sup.nom as supNom')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
@@ -79,18 +81,6 @@ class AdminsController extends Controller
             Session::put('trier', $request->Trier);
 
             return redirect()->route('Admins.listeFormulaire'); 
-        }
-        catch(Exception $e){
-            return redirect()->back();
-        }
-        
-    }
-
-    public function zoomProcedure(Request $request)
-    {
-        try{
-            $procedure = Consulterprocedure::findOrFail($request->id);
-            return view('SA.ZoomgestionProcedures', compact('procedure'));
         }
         catch(Exception $e){
             return redirect()->back();
