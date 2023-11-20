@@ -99,6 +99,7 @@ class FormulaireAuditsController extends Controller
             }
             else{
             
+            /*
             // envoi email
             $details = [
                 'titre' => 'Vous avez reçu un nouveau formulaire d\'un audit de la SST d\'un employé',
@@ -122,7 +123,7 @@ class FormulaireAuditsController extends Controller
                 'body' => 'Connectez vous pour le consulter.'
             ];
             Mail::to($adminCourriel)->send(new contactMail($details));
-            
+            */
                 $Form3->save();
                 Session::forget('form_id');
                 return redirect()->route('Menus.index')->with('success', true)->with('bon','Le formulaire a été enregistré avec succès');
