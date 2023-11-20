@@ -70,15 +70,15 @@
     @foreach($procedures as $procedure)
     <div class="col-sm-3 p-2">
     <div class="card" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card-header position-relative">
            {{$procedure->titre}}
 
            
 
 
             <!-- Button trigger modal -->
-                <button type="submit" class="btn text-white" style="background-color: #63BC55;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                x
+                <button type="submit" class="btn text-white position-absolute top-0 start-100 translate-middle " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #63BC55;"></i>
                 </button>
 
 
@@ -105,7 +105,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-            <a role="button" class="btn btn-primary" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}" >Oui</a>
+            <a role="button" class="btn btn-danger" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}" >Oui</a>
         </div>
         </div>
         </div>
