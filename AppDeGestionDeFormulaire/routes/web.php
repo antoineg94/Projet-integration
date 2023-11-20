@@ -136,17 +136,23 @@ Route::get('/listeProcedure',
 Route::get('/trierProcedure',
 [ConsulterProceduresController::class, 'trierProcedure'])->name('consulterProcedures.trierProcedure')->middleware('auth');
 
+Route::get('/procedures/Zoom/{id}',
+[AdminsController::class,'zoom'])->name('consulterProcedures.zoom')->middleware('auth');
 //Delete procedure
 Route::DELETE('/procedures/{id}',
 [ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
 
+
+//Delete procedure
+Route::DELETE('/procedures/Zoom/destroy/{id}',
+[ConsulterProceduresController::class,'destroy'])->name('consulterProcedures.destroy');
 
 // mail
 Route::get('envoiCourriel', function () {
    
     $details = [
         'titre' => 'Vous avez reçu un nouveau formulaire d\'un employé',
-        'body' => 'Connecté vous pour le consulter.'
+        'body' => 'Connectez vous pour le consulter.'
     ];
 
     dd("Email is Sent.");
