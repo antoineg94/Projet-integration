@@ -17,8 +17,8 @@ class EmployesSeeder extends Seeder
             [
                 'matricule' => 2726920160,
                 'courriel' => 'patrice.anctil.01@edu.cegeptr.qc.ca',
-                'nom' => 'L\'Éponge',
-                'prenom' => 'Bob',
+                'nom' => 'L\'Admin',
+                'prenom' => 'Monsieur',
                 'position' => 'Directeur TP',
                 'superviseur' => 'oui',
                 'admin' => 'oui',

@@ -12,6 +12,7 @@ use App\Models\Employe;
 use Session;
 use Illuminate\Support\Facades\Log;
 use App\Mail\contactMail;
+use Illuminate\Support\Facades\Mail;
 
 
 class FormulaireAuditsController extends Controller
@@ -97,6 +98,7 @@ class FormulaireAuditsController extends Controller
                 return redirect()->back()->with('message', true)->with('msg','Informations déjà enregistrées');
             }
             else{
+            
             /*
             // envoi email
             $details = [
@@ -104,8 +106,12 @@ class FormulaireAuditsController extends Controller
                 'body' => 'Connectez vous pour le consulter.'
             ];
 
-   
-            Mail::to('someone@hotmail.com')->send(new contactMail($details));
+            $emailSup = Employe::where('id', '=', $employeform->superieur_id)
+            ->get()->first();
+
+            Mail::to($emailSup->courriel)->send(new contactMail($details));
+
+
 
                 # Courriel de l'admin
                 $admin = Employe::where('admin', 'oui')->get()->first();
@@ -116,8 +122,6 @@ class FormulaireAuditsController extends Controller
                 'titre' => 'Vous avez reçu un nouveau formulaire d\'un audit de la SST d\'un employé',
                 'body' => 'Connectez vous pour le consulter.'
             ];
-
-   
             Mail::to($adminCourriel)->send(new contactMail($details));
             */
                 $Form3->save();
