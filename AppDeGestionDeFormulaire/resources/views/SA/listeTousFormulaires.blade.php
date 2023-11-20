@@ -3,61 +3,42 @@
 @section('title', 'Liste de tous les formulaires admin')
 
 @section('middleContent')
-<section class="col-10">
-    @foreach($errors->all() as $error)
-      <div class="alert alert-danger" role="alert">
-        {{ $error }}
-      </div>
-    @endforeach
+  <section>
+    <div class="mb-4 col-11 mx-auto">
 
-    @if(Session::has('success'))
-    <div class="alert alert-success" role="alert">
-      {{ Session::get('message') }}
-    </div>
-    @endif
-  <div class="d-grid gap-3 col-11 mx-auto p-2">
-  <h3 class="offset-2"> Liste des formulaires remplis</h3>
-
-  <fieldset class="border p-1 w-25 offset-2">
-    <legend>Légende: </legend>
-    <p><span class="badge text-bg-success"> </span> Nouvelle demande</p>
-    <p><span class="badge text-bg-dark"> </span> Demande déja consulté</p>
-  </fieldset>
-
-    @if (count($listes))
-    <form method="GET" class="row" action="{{ route('Admins.trierFormulaire') }}">
-      @csrf
-      <div class="input-group col-4 offset-7">
-        <div class="">
-          <select class="form-select" name="Trier" id="Trier">
-            <option selected>Trier par</option>
-            <option value="1">Date</option>
-            <option value="2">Employé</option>
-            <option value="3">Formulaire</option>
-            <option value="4">Superviseur</option>
-          </select>
+      @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+          {{ $error }}
         </div>
       @endforeach
 
-    @foreach($listes as $liste) 
-      <div class="card mb-3 col-7 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-success border-3 @endif" >
-        <div class="card-header">{{ $liste->nom_formulaire }}</div>
-        <div class="card-body">
-          <div class="row">
-            <div class="card-text col">Nom: <b>{{ $liste->prenom }} {{ $liste->nom }} </b></div>
-            <div class="card-text col">Date: <b>{{ $liste->date_formulaire }} </b></div>
-          </div>
-          <div class="row">
-            <div class="card-text col">Consulté: <b>{{ $liste->consulte }}</b></div>
-            <div class="card-text col">Statut: <b>{{ $liste->statut }}</b></div>
-          </div>
-          <div class="row">
-            <div class="card-text col">Supérieur: <b>{{ $liste->superieur_id }}</b></div>
-          </div>
-            <div class=" d-flex justify-content-end col">
-              @if (Session::get('admin') == true || Session::get('superviseur') == true)
-                <a href=" {{route('SA.adminZoomFormulaire', [ $liste ]) }}" class="btn text-white px-5" style="background-color: #63BC55;" >Consulter</a>
-              @endif
+      @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+          {{ Session::get('message') }}
+        </div>
+      @endif
+      <div class="d-grid gap-3 col-12 p-2">
+        <h3 class="offset-2"> Liste des formulaires remplis</h3>
+
+        <fieldset class="border p-1 w-25 offset-2">
+          <legend>Légende: </legend>
+          <p><span class="badge text-bg-success"> </span> Nouvelle demande</p>
+          <p><span class="badge text-bg-dark"> </span> Demande déja consulté</p>
+        </fieldset>
+
+        @if (count($listes))
+          <form method="GET" class="row" action="{{ route('Admins.trierFormulaire') }}">
+            @CSRF
+            <div class="input-group col-4 offset-7">
+              <div class="">
+                <select class="form-select" name="Trier" id="Trier">
+                  <option selected>Trier par</option>
+                  <option value="1">Date</option>
+                  <option value="2">Employé</option>
+                  <option value="3">Formulaire</option>
+                </select>
+              </div>
+              <button type="submit" style="background-color: #63BC55; color:white;" class="btn">Trier</button>
             </div>
           </form>
 
