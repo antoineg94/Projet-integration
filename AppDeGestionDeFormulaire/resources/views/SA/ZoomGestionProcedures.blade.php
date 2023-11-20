@@ -7,8 +7,8 @@
 <h1>Gestion des procédures</h1>
 
 <div class="mb-4 col-11 mx-auto">
-    @if(count($procedures))
-    @foreach($procedures as $procedure)
+    @if(isset($procedure))
+
         <div class="container">
             <h1 >Supression d'une procédure de travail</h1>
             <div>
@@ -23,11 +23,16 @@
             </div>
            
             <div class="container">
-                <a role="button" class="btn btn-secondary" href="{{ route('consulterProcedures.index') }}">Non</a>
-                <a role="button" class="btn btn-danger" href="{{route('consulterProcedures.destroy', [$procedure->id]) }}">Oui</a>
+                
+                
+                <form action="DELETE" action="{{ route('consulterProcedures.destroy', '[$procedure->id]') }}">
+                @CSRF
+                    <a role="button" class="btn btn-secondary" href="{{ route('consulterProcedures.index') }}">Non</a>
+                    <button type="submit" class="btn btn-danger">Oui</button>
+                </form>
+                
             </div>
         </div>
-    @endforeach
     @else
     <p>Procédure non-disponible pour le moment..</p>
     @endif
