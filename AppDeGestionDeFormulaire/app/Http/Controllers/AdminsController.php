@@ -88,6 +88,18 @@ class AdminsController extends Controller
         
     }
 
+    public function zoom(Request $request)
+    {
+        try{
+            $procedure = Consulterprocedure::findOrFail($request->id);
+            return view('SA.ZoomgestionProcedures', compact('procedure'));
+        }
+        catch(Exception $e){
+            return redirect()->back();
+        }
+        
+    }
+
     public function adminZoomFormulaire(EmployeForm $liste)
     {
         if($liste->formulaire_id == 1)

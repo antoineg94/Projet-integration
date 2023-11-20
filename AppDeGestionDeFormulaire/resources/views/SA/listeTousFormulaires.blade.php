@@ -1,6 +1,6 @@
 @extends('layout/app2')
 
-@section('title', 'Liste de tous les formulaires admin')
+@section('title', 'Liste de tous les formulaires')
 
 @section('middleContent')
   <section>
