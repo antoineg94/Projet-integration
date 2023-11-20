@@ -5,13 +5,14 @@
 @section('middleContent')
   <section>
     <div class="mb-4 col-11 mx-auto">
+      <h1>Bonjourfdgggggggggggggggggggggggggggggffffffffgggggggggg</h1>
 
       @foreach($errors->all() as $error)
         <div class="alert alert-danger" role="alert">
           {{ $error }}
         </div>
       @endforeach
-
+ 
       @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
           {{ Session::get('message') }}
@@ -27,9 +28,9 @@
         </fieldset>
 
         @if (count($listes))
-          <form method="GET" class="row" action="{{ route('Admins.trierFormulaire') }}">
+          <form method="GET" class=" offset-10 " action="{{ route('Admins.trierFormulaire') }}">
             @CSRF
-            <div class="input-group col-4 offset-7">
+            <div class="input-group">
               <div class="">
                 <select class="form-select" name="Trier" id="Trier">
                   <option selected>Trier par</option>
@@ -42,8 +43,8 @@
             </div>
           </form>
 
-          @foreach($listes as $liste) 
-            <div class="card mb-3 col-7 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-success border-3 @endif" >
+           @foreach($listes as $liste) 
+            <div class="card mb-3 col-10 offset-2 px-0 @if($liste->consulte != 'Consulté') border border-success border-3 @endif" >
               <div class="card-header">{{ $liste->nom_formulaire }}</div>
               <div class="card-body">
                 <div class="row">
@@ -61,13 +62,13 @@
                   </div>
               </div>
             </div>
-          @endforeach 
-          
+          @endforeach  
+           
         @else
           <p>Vous n'avez aucun formulaire(s) jusqu'à présent.</p>
         @endif
 
-      </div>
+      </div> 
 </div>
   </section>
 @endsection
