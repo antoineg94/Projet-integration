@@ -60,7 +60,8 @@ class AdminsController extends Controller
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('employes as sup', 'sup.id', '=', 'employeforms.superieur_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as supPrenom', 'sup.nom as supNom')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 
+                     'employes.prenom', 'employes.nom', 'sup.prenom as supPrenom', 'sup.nom as supNom')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
