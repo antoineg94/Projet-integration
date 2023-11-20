@@ -4,7 +4,17 @@
 
 @section('middleContent')
 <section class="col-10">
-  
+@foreach($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+      {{ $error }}
+    </div>
+    @endforeach
+
+    @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+      {{ Session::get('message') }}
+    </div>
+    @endif
   <div class="d-grid gap-3 col-11 mx-auto p-2">
   <h3 class="offset-2"> Liste des formulaires remplis</h3>
 

@@ -65,7 +65,7 @@
 </tbody>
 </table>
 
-@if($zoomForm2s->supId ==  1)
+@if($zoomForm2s->supId ==  1 && $zoomForm2s->statut == "En attente")
     <div class="container">
       <form method="POST" action="{{ route('Menus.validerFormulaire', [$zoomForm2s->employeform_id]) }}">
         <h3>Validation du formulaire:</h3>
