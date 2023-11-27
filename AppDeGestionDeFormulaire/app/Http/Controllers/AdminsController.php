@@ -18,13 +18,6 @@ class AdminsController extends Controller
 {
     public function listeFormulaire()
     {
-        
-        // $superieur_noms = Employe::select('id', 'prenom', 'nom')
-        // ->orderby('prenom', 'asc')
-        // ->orderby('nom', 'asc')
-        // ->get();
-
-
         if(Session::get('trier') == 1)
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
@@ -71,8 +64,6 @@ class AdminsController extends Controller
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
             ->get(); 
         }
-
-        
         
         return view('SA.listeTousFormulaires', compact('listes'));
     }
