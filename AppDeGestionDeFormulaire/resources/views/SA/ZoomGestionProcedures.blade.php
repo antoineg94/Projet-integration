@@ -3,35 +3,36 @@
 @section('title', 'Zoom procédures')
 
 @section('middleContent')
-<section>
+<section class="col-10">
 <h1>Gestion des procédures</h1>
-
-<div class="mb-4 col-11 mx-auto">
+<div class="h-25"></div>
+<div class="mb-4 col-11">
     @if(isset($procedure))
 
-        <div class="container">
-            <h1 >Supression d'une procédure de travail</h1>
-            <div>
-            <p>Vous êtes sur le point de supprimer une procédure de travail.</p>
+        <div class="card offset-1">
+        <div class="card-body">
+            <h3 class="card-title">Supression d'une procédure de travail</h3>
+            <h5 class="card-subtitle mb-2 text-muted">Vous êtes sur le point de supprimer une procédure de travail.</h5>
             <ul>
-                <li class="list-group-item text-truncate"> {{$procedure->titre}}</li>
-                <li class="list-group-item text-truncate">Departement: {{$procedure->nom}}</li>
-                <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>   
+                <li class="list-group-item text-truncate card-text"> {{$procedure->titre}}</li>
+                <li class="list-group-item text-truncate card-text">Departement: {{$procedure->nom}}</li>
+                <li class="list-group-item text-truncate card-text">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>   
             </ul>
 
-             <p> Êtes vous sur de vouloir supprimer cette procédure? Cette action est irréversible. </p>
+             <p>Êtes vous sur de vouloir supprimer cette procédure? <b>Cette action est irréversible.</b> </p>
             </div>
            
-            <div class="container">
+            <div class="card-footer">
                 
                 
-                <form method="POST" action="{{ route('consulterProcedures.destroy', [$procedure->id]) }}">
+                <form method="POST" class="d-flex flex-row-reverse" action="{{ route('consulterProcedures.destroy', [$procedure->id]) }}">
                 @CSRF
                 @method('DELETE')
-                    <a role="button" class="btn btn-secondary" href="{{ route('consulterProcedures.index') }}">Non</a>
-                    <button type="submit" class="btn btn-danger">Oui</button>
+                    <button type="submit" class="btn btn-primary mx-2">Oui</button>
+                    <a role="button" class="btn btn-secondary mx-2" href="{{ route('consulterProcedures.index') }}">Non</a>
                 </form>
                 
+            </div>
             </div>
         </div>
     @else
