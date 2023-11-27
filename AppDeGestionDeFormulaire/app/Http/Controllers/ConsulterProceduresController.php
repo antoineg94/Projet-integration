@@ -104,7 +104,31 @@ class ConsulterProceduresController extends Controller
         try{
             Session::put('trierP', $request->Trier);
 
-            return redirect()->route('consulterProcedures.listeProcedure'); 
+            if(Session::get('trierP') == 1)
+            {
+                $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+                ->select('consulterprocedures.*', 'departements.nom')
+                ->orderby('created_at', 'desc')
+                ->get();
+
+            }
+            else if(Session::get('trierP') == 2)
+            {
+                $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+                ->select('consulterprocedures.*', 'departements.nom')
+                ->orderby('nom', 'asc')
+                ->get();
+            }
+            else
+            {
+                $procedures = ConsulterProcedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+                ->select('consulterprocedures.*', 'departements.nom')
+                ->get(); 
+            }
+
+            $departements = Departement::all();
+
+            return view('SA.gestionProcedures', compact('procedures', 'departements')); 
         }
         catch(Exception $e){
             return redirect()->back();

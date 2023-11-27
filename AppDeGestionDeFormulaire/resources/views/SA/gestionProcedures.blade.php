@@ -47,7 +47,7 @@
         <br>
         <hr class="col-9 mx-auto p-2">
         <br>
-        <form method="GET" class="grid" action="consulterProcedures.trierProcedure">
+        <form method="GET" class="grid" action="{{route('consulterProcedures.trierProcedure')}}">
             @csrf
             <div class="input-group d-flex justify-content-center">
                 <div class="w-25 ">
