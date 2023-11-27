@@ -12,6 +12,8 @@ class Form3 extends Model
     protected $fillable = [
         'employeform_id',  
         'lieu',
+        'date_form',
+        'heure_form',
         'epi',
         'tenue',
         'comportement',
