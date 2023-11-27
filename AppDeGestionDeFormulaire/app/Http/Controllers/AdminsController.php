@@ -19,6 +19,7 @@ class AdminsController extends Controller
     public function listeFormulaire()
     {
         
+        $superieur_noms = Employe::select('id', 'prenom', 'nom')->get();
 
 
         if(Session::get('trier') == 1)
@@ -52,7 +53,7 @@ class AdminsController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.prenom', 'employes.nom')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
             ->orderby('employeforms.superieur_id', 'asc')
             ->get(); 
         }
@@ -66,11 +67,8 @@ class AdminsController extends Controller
         }
 
         
-        $superieur_nom = Employe::where('id', '=', 2)
-        ->get()->first();
-
         
-        return view('SA.listeTousFormulaires', compact('listes', 'superieur_nom'));
+        return view('SA.listeTousFormulaires', compact('listes', 'superieur_noms'));
     }
 
 
