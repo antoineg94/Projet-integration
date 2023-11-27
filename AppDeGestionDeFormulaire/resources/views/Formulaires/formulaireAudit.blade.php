@@ -40,17 +40,17 @@
 
     <div class="row">
       <div class="form-outline mb-4 col-xl-6 col-12 mx-auto" >
-        <label class="form-label fw-bold" for="date_incident">Date</label>
-          <input type="date" id="date_incident" name="date_incident" class="form-control form-control-lg  @error('date_incident') is-invalid @enderror" value="{{ old('date_incident') }}" />
-          @error('date_incident')
+        <label class="form-label fw-bold" for="date_form">Date</label>
+          <input type="date" id="date_form" name="date_form" class="form-control form-control-lg  @error('date_form') is-invalid @enderror" value="{{ old('date_form') }}" />
+          @error('date_form')
             <small class="text-danger">{{ $message }} </small>
           @enderror
       </div>
 
       <div class="form-outline mb-4 col-xl-6 col-12 mx-auto" >
-        <label class="form-label fw-bold" for="heure_incident">Heure</label>
-          <input type="time" id="heure_incident" name="heure_incident" class="form-control form-control-lg  @error('heure_incident') is-invalid @enderror" value="{{ old('heure_incident') }}"/>
-          @error('heure_incident')
+        <label class="form-label fw-bold" for="heure_form">Heure</label>
+          <input type="time" id="heure_form" name="heure_form" class="form-control form-control-lg  @error('heure_form') is-invalid @enderror" value="{{ old('heure_form') }}"/>
+          @error('heure_form')
             <small class="text-danger">{{ $message }} </small>
           @enderror
       </div>

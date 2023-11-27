@@ -58,6 +58,8 @@ class FormulaireAuditsController extends Controller
             $Form3 = new Form3();
             $Form3->employeform_id = $employeform->id;
             $Form3->lieu = $request->lieu;
+            $Form3->date_form = $request->date_form;
+            $Form3->heure_form = $request->heure_form;
             $Form3->epi = $request->epi;
             $Form3->tenue = $request->tenue;
             $Form3->comportement = $request->comportement;
@@ -75,6 +77,8 @@ class FormulaireAuditsController extends Controller
             // on verifie si un formulaire identique existe déjà
             $form = Form3::join('employeforms', 'employeform_id', '=', 'employeforms.id')
             ->where('lieu', '=', $Form3->lieu)
+            ->where('date_form', '=', $Form3->date_form)
+            ->where('heure_form', '=', $Form3->heure_form)
             ->where('epi', '=', $Form3->epi)
             ->where('tenue', '=', $Form3->tenue)
             ->where('comportement', '=', $Form3->comportement)
