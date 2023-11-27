@@ -10,9 +10,11 @@
     @if(isset($procedure))
 
         <div class="card offset-1">
-        <div class="card-body">
+        <div class="card-header">
             <h3 class="card-title">Supression d'une procédure de travail</h3>
             <h5 class="card-subtitle mb-2 text-muted">Vous êtes sur le point de supprimer une procédure de travail.</h5>
+            </div>
+            <div class="card-body">
             <ul>
                 <li class="list-group-item text-truncate card-text"> {{$procedure->titre}}</li>
                 <li class="list-group-item text-truncate card-text">Departement: {{$procedure->nom}}</li>
