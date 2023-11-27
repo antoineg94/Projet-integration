@@ -41,7 +41,7 @@ class ConsulterProceduresController extends Controller
      */
     public function store(ConsulterProceduresRequest $request)
     {
-        log::debug($request);
+        
 
         $departement_id = Departement::where('nom', $request->departement)->first()->id;
 
@@ -55,8 +55,9 @@ class ConsulterProceduresController extends Controller
             return redirect()->route('consulterProcedures.index');
     }
 
-    public function destroy(string $id)
+    public function destroy($id)
     {
+        log::debug($id);
         try{
             $procedure = ConsulterProcedure::findOrFail($id);                 
                 

@@ -25,7 +25,7 @@
             <div class="container">
                 
                 
-                <form method="POST" action="{{ route('consulterProcedures.destroy', '[$procedure->id]') }}">
+                <form method="POST" action="{{ route('consulterProcedures.destroy', [$procedure->id]) }}">
                 @CSRF
                 @method('DELETE')
                     <a role="button" class="btn btn-secondary" href="{{ route('consulterProcedures.index') }}">Non</a>
