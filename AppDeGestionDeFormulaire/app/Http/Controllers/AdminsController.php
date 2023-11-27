@@ -43,7 +43,7 @@ class AdminsController extends Controller
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
             ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
-            ->orderby('employeforms.nom_formulaire', 'desc')
+            ->orderby('nom_formulaire', 'desc')
             ->get(); 
         }
         else if(Session::get('trier') == 4)
