@@ -18,15 +18,12 @@ class AdminsController extends Controller
 {
     public function listeFormulaire()
     {
-        
-        $superieur_noms = Employe::select('id', 'prenom', 'nom')->get();
-
-
         if(Session::get('trier') == 1)
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
             ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
@@ -34,41 +31,41 @@ class AdminsController extends Controller
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
+            ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
             ->orderby('employes.prenom', 'asc')
             ->orderby('employes.nom', 'asc')
-            ->orderby('employeforms.date_formulaire', 'desc')
             ->get(); 
         }
         else if(Session::get('trier') == 3)
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->orderby('employeforms.formulaire_id', 'desc')
-            ->orderby('employeforms.date_formulaire', 'desc')
+            ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
+            ->orderby('employeforms.nom_formulaire', 'desc')
             ->get(); 
         }
         else if(Session::get('trier') == 4)
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->orderby('employeforms.superieur_id', 'asc')
+            ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
+            ->orderby('sup_prenom', 'asc')
+            ->orderby('sup_nom', 'asc')
             ->get(); 
         }
         else
         {
             $listes = Employeform::join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->join('employes', 'employes.id', '=', 'employeforms.employe_id')
-            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom')
-            ->orderby('employeforms.date_formulaire', 'desc')
+            ->join('employes as sup', 'sup.id', '=', 'employes.superieur_id')
+            ->select('employeforms.*', 'formulaires.nom as nom_formulaire', 'employes.id as employe_id', 'employes.superieur_id', 'employes.prenom', 'employes.nom', 'sup.prenom as sup_prenom', 'sup.nom as sup_nom')
             ->get(); 
         }
-
         
-        
-        return view('SA.listeTousFormulaires', compact('listes', 'superieur_noms'));
+        return view('SA.listeTousFormulaires', compact('listes'));
     }
 
 
