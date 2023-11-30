@@ -27,8 +27,8 @@ class Form2Request extends FormRequest
             'date_observ' => 'required | before_or_equal:today',
             'heure_observ' => 'required',
             'lieu' => 'required',
-            'description' => 'required',
-            'proposition' => 'required'
+            'description' => 'required|max:255',
+            'proposition' => 'required|max:255'
         ];
     }
 
@@ -45,7 +45,9 @@ class Form2Request extends FormRequest
             'heure_observ.required' => 'Veuillez entrer l\'heure de l\'observation',
             'lieu.required' => 'Veuillez entrer le lieu de l\'observation',
             'description.required' => 'Veuillez entrer la description de l\'observation',
-            'proposition.required' => 'Veuillez entrer la proposition de l\'observation'
+            'description.max' => 'La description de l\'observation ne doit pas dépasser 255 caractères',
+            'proposition.required' => 'Veuillez entrer la proposition de l\'observation',
+            'proposition.max' => 'La proposition de l\'observation ne doit pas dépasser 255 caractères'
         ];
     }
 }

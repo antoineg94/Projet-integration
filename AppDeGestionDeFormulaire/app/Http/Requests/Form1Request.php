@@ -28,7 +28,7 @@ class Form1Request extends FormRequest
             'lieu' => 'required',
             'secteur' => 'required',
 
-            'description_tache' => 'required',
+            'description_tache' => 'required|max:255',
             'type_violence' => 'required',
             'type_absence' => 'required'
         ];
@@ -52,6 +52,7 @@ class Form1Request extends FormRequest
 
 
             'description_tache.required' => 'Veuillez entrer la description de la tâche',
+            'description_tache.max' => 'La description de la tâche ne doit pas dépasser 255 caractères',
           
             'type_violence.required' => 'Veuillez entrer le type de violence',
             'type_absence.required' => 'Veuillez entrer le type d\'absence'
