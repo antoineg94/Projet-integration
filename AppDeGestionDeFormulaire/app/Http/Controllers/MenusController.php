@@ -159,7 +159,8 @@ class MenusController extends Controller
         }
 
         
-
+        Session::put('mesForm', false);
+        Session::put('EmpForm', true);
         
         return view('Utilisateur.ListeFormulaire', compact('listes'));
     }
@@ -168,7 +169,6 @@ class MenusController extends Controller
 
         public function zoomFormulaire(EmployeForm $liste)
         {
-            
 
             if($liste->formulaire_id == 1)
             {
@@ -398,7 +398,8 @@ class MenusController extends Controller
         }
 
         
-
+        Session::put('mesForm', true);
+        Session::put('EmpForm', false);
         
         return view('Utilisateur.MesFormulaires', compact('listes'));
     }
@@ -418,6 +419,7 @@ class MenusController extends Controller
 
     public function zoomMesFormulaire(EmployeForm $liste)
     {
+
         if($liste->formulaire_id == 1)
         {
 
