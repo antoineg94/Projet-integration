@@ -92,7 +92,7 @@
             </tr>
             <tr>
               <td>Nom du superviseur</td>
-              <td>{{ $nomSuperieur->prenom }} {{ $nomSuperieur->nom }}</td>
+              <td>{{ $zoomForm1s->prenomSup }} {{ $zoomForm1s->nomSup }}</td>
             </tr>
           </tbody>
         </table>

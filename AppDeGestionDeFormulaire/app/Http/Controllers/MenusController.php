@@ -176,7 +176,8 @@ class MenusController extends Controller
                 $zoomForm1s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form1s', 'form1s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form1s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
+                ->join('employes as sup', 'sup.id', '=', 'employeforms.superieur_id')
+                ->select('form1s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*', 'sup.nom as nomSup', 'sup.prenom as prenomSup')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
                 
@@ -204,7 +205,8 @@ class MenusController extends Controller
                 $zoomForm2s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
                 ->join('form2s', 'form2s.employeform_id', '=', 'employeforms.id')
                 ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
-                ->select('form2s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*')
+                ->join('employes as sup', 'sup.id', '=', 'employeforms.superieur_id')
+                ->select('form2s.*', 'employeforms.*', 'employeforms.superieur_id as supId' , 'employes.*', 'sup.nom as nomSup', 'sup.prenom as prenomSup')
                 ->where('employeforms.id', '=', $liste->id)
                 ->get()->first();
         

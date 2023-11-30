@@ -82,7 +82,7 @@
             </tr>
             <tr>
               <td>Nom du superviseur</td>
-              <td>{{ $zoomForm1s->superviseur }}</td>
+              <td>{{ $zoomForm1s->sup_prenom }} {{$zoomForm1s->sup_nom}}</td>
             </tr>
           </tbody>
         </table>

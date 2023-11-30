@@ -73,8 +73,8 @@
             <td class="overflow-auto">{{ $zoomForm2s->proposition }}</td>
           </tr>
           <tr>
-            <td>nom superviseur</td>
-            <td>{{ $zoomForm2s->superviseur }}</td>
+            <td>Nom superviseur</td>
+            <td>{{$zoomForm2s->prenomSup}} {{ $zoomForm2s->nomSup }}</td>
           </tr>
         </tbody>
       </table>
