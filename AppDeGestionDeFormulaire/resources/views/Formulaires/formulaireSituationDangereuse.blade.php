@@ -98,7 +98,7 @@
             </div>
 
             <div class="form-outline mb-4 col-xl-6 col-12">
-                <label for="proposition" class="form-label fw-bold">Correction(s) ou amélioration(s) proposé(s):</label>
+                <label for="proposition" class="form-label fw-bold">Correction(s) ou amélioration(s) proposée(s):</label>
                 <textarea class="form-control @error('proposition') is-invalid @enderror" id="proposition" name="proposition" rows="3"></textarea>
                 @error('proposition')
                     <span class="text-danger">{{ $message }} </span>

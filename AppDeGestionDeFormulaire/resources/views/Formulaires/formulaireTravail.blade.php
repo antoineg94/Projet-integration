@@ -86,7 +86,7 @@
 
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
-                <label class="form-label fw-bold">Nature de la blessure <small>(Cochez s'il y a lieu, <u>coté droit</u> ou <u>coté gauche</u>)</small></label> 
+                <label class="form-label fw-bold">Nature de la blessure <small>(Cochez, s'il y a lieu, <u>côté droit</u> et/ou <u>gauche</u>)</small></label> 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Tête, visage, nez, yeux, oreille" name="nature_blessure1" id="nature_blessure1" >
                     <label class="form-check-label" for="nature_blessure1">Tête, visage, nez, yeux, oreille</label>
@@ -245,7 +245,7 @@
             </div>
 
             <div class="form-outline mb-4 col-xl-6 col-12">
-                <label class="form-label fw-bold" for="description_blessure" >Description de la blessure </label> 
+                <label class="form-label fw-bold" for="description_blessure" >Description de la blessure <small>(à cocher)</small></label> 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Brûlure, engelure" name="description_blessure1" id="description_blessure1">
                     <label class="form-check-label" for="description_blessure1">Brûlure, engelure</label>

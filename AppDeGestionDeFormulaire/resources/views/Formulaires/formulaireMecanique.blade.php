@@ -48,7 +48,7 @@
 
     <div class="row">
         <div class="form-outline mb-4 col-xl-6 col-12">
-            <label class="form-label fw-bold" for="no_unite">Numéro(s) d'unité(s) impliqué(s)</label>
+            <label class="form-label fw-bold" for="no_unite">Numéro d'unité impliquée</label>
             <input type="number" id="no_unite" name="no_unite" class="form-control form-control-lg  @error('no_unite') is-invalid @enderror" value="{{ old('no_unite') }}"/>
             @error('no_unite')
                 <span class="text-danger">{{ $message }} </span>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="form-outline mb-4 col-xl-6 col-12 ">
-            <label class="form-label fw-bold" for="vehicule_citoyen" >Autre véhicules impliqués(citoyen)</label>
+            <label class="form-label fw-bold" for="vehicule_citoyen" >Autre(s) véhicule(s) impliqué(s) (citoyen)</label>
             <select class="form-select  @error('vehicule_citoyen') is-invalid @enderror" id="vehicule_citoyen" name="vehicule_citoyen" aria-label="Default">
                 <option selected></option>
                 <option value="0">Non</option>
