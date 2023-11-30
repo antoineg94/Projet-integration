@@ -22,7 +22,7 @@ class Form4Request extends FormRequest
     public function rules(): array
     {
         return [
-            'no_unite' => 'required|numeric',
+            'no_unite' => 'required',
             'date' => 'required|before_or_equal:today',
             'heure' => 'required',
             'departement' => 'required|string|max:255',
@@ -34,7 +34,6 @@ class Form4Request extends FormRequest
     public function messages(){
         return [
             'no_unite.required' => 'Le numéro d\'unité est requis',
-            'no_unite.numeric' => 'Le numéro d\'unité doit être un nombre',
             'date.required' => 'La date est requise',
             'date.before_or_equal' => 'La date ne peut pas être dans le futur',
             'heure.required' => 'L\'heure est requise',

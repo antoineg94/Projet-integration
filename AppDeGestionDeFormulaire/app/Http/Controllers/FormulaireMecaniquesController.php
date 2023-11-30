@@ -33,7 +33,7 @@ class FormulaireMecaniquesController extends Controller
     public function enregistrer(Form4Request $request)
     {
         try{
- 
+           
 
             $date = date('Y-m-d');
             $employe = Employe::where('id', '=', Session::get('employe_id'))
@@ -85,7 +85,7 @@ class FormulaireMecaniquesController extends Controller
             ->where('employe_id', '=', Session::get('employe_id'))
             ->get()->first();
 
-            log::debug($form);
+           
             if ($form != null)
             {
                //redirect sur la même page avec message d'erreur
@@ -95,7 +95,9 @@ class FormulaireMecaniquesController extends Controller
             }
             else
             {
+                
                 $Form4->save();
+                
                 Session::forget('form_id');
                 /*
                     // envoi email
@@ -125,6 +127,7 @@ class FormulaireMecaniquesController extends Controller
         }
         catch(\Throwable $e)
         {
+            log::debug("Erreur formulaireMecaniquesController enregistrer : " . $e->getMessage());
                 $employeform2 = Employeform::where('id', $employeform->id)->get()->first();
                 $employeform2->delete();
                 return redirect()->route('formulaireMecaniques.index')->withErrors(['Informations invalide']);

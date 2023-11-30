@@ -33,7 +33,7 @@
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="fonction_avant">Fonctions au moment de l'évènement</label>
-                <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" />
+                <input type="text" id="fonction_avant" name="fonction_avant" class="form-control form-control-lg  @error('fonction_avant') is-invalid @enderror" value="{{ old('fonction_avant') }}"/>
                 @error('fonction_avant')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -42,7 +42,7 @@
 
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="secteur">Secteur d'activité</label>
-                <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror" />
+                <input type="text" id="secteur" name="secteur" class="form-control form-control-lg  @error('secteur') is-invalid @enderror" value="{{ old('secteur') }}"/>
                 @error('secteur')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -56,7 +56,7 @@
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="date_observ">Date de l'incident</label>
-                <input type="date" id="date_observ" name="date_observ" class="form-control form-control-lg  @error('date_observ') is-invalid @enderror" />
+                <input type="date" id="date_observ" name="date_observ" class="form-control form-control-lg  @error('date_observ') is-invalid @enderror" value="{{ old('date_observ') }}"/>
                 @error('date_observ')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -64,7 +64,7 @@
 
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="heure_observ">Heure de l'incident</label>
-                <input type="time" id="heure_observ" name="heure_observ" class="form-control form-control-lg  @error('heure_observ') is-invalid @enderror" />
+                <input type="time" id="heure_observ" name="heure_observ" class="form-control form-control-lg  @error('heure_observ') is-invalid @enderror" value="{{ old('heure_observ') }}"/>
                 @error('heure_observ')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label class="form-label fw-bold" for="lieu">Lieu</label>
-                <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" />
+                <input type="text" id="lieu" name="lieu" class="form-control form-control-lg  @error('lieu') is-invalid @enderror" value="{{ old('lieu') }}"/>
                 @error('lieu')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -91,7 +91,7 @@
         <div class="row">
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label for="description" class="form-label fw-bold">Décrivez la situation</label>
-                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3"></textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
                 @error('description')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
@@ -99,7 +99,7 @@
 
             <div class="form-outline mb-4 col-xl-6 col-12">
                 <label for="proposition" class="form-label fw-bold">Correction(s) ou amélioration(s) proposée(s):</label>
-                <textarea class="form-control @error('proposition') is-invalid @enderror" id="proposition" name="proposition" rows="3"></textarea>
+                <textarea class="form-control @error('proposition') is-invalid @enderror" id="proposition" name="proposition" rows="3">{{ old('proposition') }}</textarea>
                 @error('proposition')
                     <span class="text-danger">{{ $message }} </span>
                 @enderror

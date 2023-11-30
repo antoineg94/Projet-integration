@@ -316,7 +316,7 @@ class MenusController extends Controller
             $employeform->update([
             'statut' => "En attente"
             ]);
-            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme étant en attente');   
+            return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('bon', 'Le formulaire a bien été indiqué comme étant en attente');   
         }
         else if($request->statut == "Valide")
         {
@@ -325,7 +325,7 @@ class MenusController extends Controller
                 ]);
             
           if(Session::get('admin') == true){
-            return redirect()->route('Admins.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');
+            return redirect()->route('Admins.listeFormulaire')->with('success', true)->with('bon', 'Le formulaire a bien été indiqué comme valide');
           }
           else{
             
@@ -342,7 +342,7 @@ class MenusController extends Controller
                 Session::forget('form_id');
                 Mail::to($adminCourriel)->send(new contactMail($details));
                */
-                return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('message', 'Le formulaire a bien été indiqué comme valide');   
+                return redirect()->route('Menus.listeFormulaire')->with('success', true)->with('bon', 'Le formulaire a bien été indiqué comme valide');   
           }
             
         }
