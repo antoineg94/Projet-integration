@@ -87,10 +87,6 @@
               <td>{{ $zoomForm1s-> type_absence}}</td>
             </tr>
             <tr>
-              <td>Durée</td>
-              <td>{{ $zoomForm1s-> duree_absence}}</td>
-            </tr>
-            <tr>
               <td>Status de la demande</td>
               <td>{{ $zoomForm1s->statut }}</td>
             </tr>
