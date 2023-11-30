@@ -12,7 +12,7 @@
         Retour
     </a>
   </div>
-  <div class="d-grid gap-3 col-11 mx-auto p-2">
+  <div class="d-grid gap-3 col-xl-8 col-11 mx-auto p-2">
     @if (isset($zoomForm2s))
     <h5>
         Informations sur: signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»
