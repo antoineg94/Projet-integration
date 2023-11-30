@@ -82,7 +82,7 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item text-truncate">Departement: {{$procedure->nom}}</li>
-                                    <li class="list-group-item text-truncate">Lien <a href="{{$procedure->lien}}" style="text-decoration: none; color:black">{{$procedure->lien}}</a></li>
+                                    <li class="list-group-item text-truncate">Lien: <a href="{{$procedure->lien}}" style="text-decoration: none;">{{$procedure->lien}}</a></li>
                                 </ul>
                             </div>
                         </div>
