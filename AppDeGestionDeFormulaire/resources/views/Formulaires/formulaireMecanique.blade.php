@@ -73,7 +73,7 @@
             @if (count($departements))
                 <select class="form-select @error('departement') is-invalid @enderror" size="8" multiple aria-label="Multiple select example" id="departement" name="departement" value="{{ old('departement') }}">
                     @foreach($departements as $departement)
-                        <option value="{{$departement->nom}}">{{$departement->nom}}</option>
+                        <option value="{{$departement->nom}}" class="text-wrap">{{$departement->nom}}</option>
                         <hr class="p-0 m-3">
                     @endforeach
                 </select>
