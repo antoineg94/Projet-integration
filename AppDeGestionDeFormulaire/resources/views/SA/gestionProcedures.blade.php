@@ -4,28 +4,31 @@
 
 @section('middleContent')
     <section>
-        <h1>Gestion des procédures</h1>
-        <form method="POST" class="mb-4 col-11 mx-auto" action="{{ route('consulterProcedures.store') }}">
+        <h1 class="mx-5 mb-5">Gestion des procédures</h1>
+        <form method="POST" class="mb-4 col-9 mx-auto" action="{{ route('consulterProcedures.store') }}">
             @CSRF
             <h3>Ajout d'une procédure a consulter</h3>
 
-            <div class="form-outline mb-4">
-                <label class="form-label" for="titre">Titre</label>
-                <input type="text" id="titre" name="titre" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-                @error('titre')
-                    <span class="text-danger">{{ $message }} </span>
-                @enderror
-            </div>
+            <div class="row">
+                <div class="form-outline mb-4 col">
+                    <label class="form-label" for="titre">Titre</label>
+                    <input type="text" id="titre" name="titre" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+                    @error('titre')
+                        <span class="text-danger">{{ $message }} </span>
+                    @enderror
+                </div>
 
-            <div class="form-outline mb-4">
-                <label class="form-label" for="lien">Lien</label>
-                <input type="text" id="lien" name="lien" class="form-control form-control-lg  @error('') is-invalid @enderror" />
-                @error('lien')
-                    <span class="text-danger">{{ $message }} </span>
-                @enderror
+                <div class="form-outline mb-4 col">
+                    <label class="form-label" for="lien">Lien</label>
+                    <input type="text" id="lien" name="lien" class="form-control form-control-lg  @error('') is-invalid @enderror" />
+                    @error('lien')
+                        <span class="text-danger">{{ $message }} </span>
+                    @enderror
+                </div>
             </div>
-    
-            <div class="form-outline mb-4">
+            
+        
+            <div class="form-outline mb-4 col-6">
                 <label class="form-label" for="departement">Département</label>
                 <br>
                 <select class="form-select" name="departement" id="departement">
@@ -39,7 +42,7 @@
                 </select>
             </div>
 
-            <div class="col-11 mx-auto">
+            <div class="col-4 mx-auto">
                 <button class="btn d-grid text-white w-100" style="background-color: #63BC55;" type="submit">Ajouter</button>
             </div>                     
         </form>
