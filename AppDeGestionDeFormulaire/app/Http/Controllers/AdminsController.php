@@ -12,6 +12,8 @@ use App\Models\Form2;
 use App\Models\Form3;
 use App\Models\Form4;
 use App\Models\Consulterprocedure;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 use Session;
 class AdminsController extends Controller
@@ -154,13 +156,14 @@ class AdminsController extends Controller
         }
         else if($liste->formulaire_id == 3)
         {
+            
             $zoomForm3s = EmployeForm::join('employes', 'employes.id', '=', 'employeforms.employe_id')
             ->join('form3s', 'form3s.employeform_id', '=', 'employeforms.id')
             ->join('formulaires', 'formulaires.id', '=', 'employeforms.formulaire_id')
             ->select('form3s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
-
+            log::debug($zoomForm3s);
             $nomSuperieur = Employe::where('id', '=', $zoomForm3s->supId)
                 ->get()->first();
     
