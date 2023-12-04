@@ -35,7 +35,7 @@ class MenusController extends Controller
             $notification = 0;
 
             $nombre = DB::table('employeforms')
-            ->where('consulte', 'Non-consulté')
+            ->where('statut', 'En attente')
             ->where('superieur_id', '=', Session::get('employe_id'))
             ->count();
 
@@ -185,7 +185,7 @@ class MenusController extends Controller
                 ->get()->first();
           
              // update the employefrom table
-                if($zoomForm1s->consulte != "Consulté" && $zoomForm1s->superieur_id == Session::get('employe_id'))
+                if($zoomForm1s->consulte != "Consulté" && $zoomForm1s->supId == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -214,7 +214,7 @@ class MenusController extends Controller
                 ->get()->first();
 
                 // update the employefrom table
-                if($zoomForm2s->consulte != "Consulté" && $zoomForm2s->superieur_id == Session::get('employe_id'))
+                if($zoomForm2s->consulte != "Consulté" && $zoomForm2s->supId == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -240,7 +240,7 @@ class MenusController extends Controller
                 ->get()->first();
 
                 // update the employefrom table
-                if($zoomForm3s->consulte != "Consulté" && $zoomForm3s->superieur_id == Session::get('employe_id'))
+                if($zoomForm3s->consulte != "Consulté" && $zoomForm3s->supId == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
@@ -266,7 +266,7 @@ class MenusController extends Controller
                 ->get()->first();
 
                 // update the employefrom table
-                if($zoomForm4s->consulte != "Consulté" && $zoomForm4s->superieur_id == Session::get('employe_id'))
+                if($zoomForm4s->consulte != "Consulté" && $zoomForm4s->supId == Session::get('employe_id'))
                 {
                     $employeform = Employeform::find($liste->id);
                     $employeform->update([
