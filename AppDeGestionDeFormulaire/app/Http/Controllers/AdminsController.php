@@ -163,7 +163,7 @@ class AdminsController extends Controller
             ->select('form3s.*', 'employeforms.*', 'employes.*','employeforms.superieur_id as supId')
             ->where('employeforms.id', '=', $liste->id)
             ->get()->first();
-            log::debug($zoomForm3s);
+
             $nomSuperieur = Employe::where('id', '=', $zoomForm3s->supId)
                 ->get()->first();
     
