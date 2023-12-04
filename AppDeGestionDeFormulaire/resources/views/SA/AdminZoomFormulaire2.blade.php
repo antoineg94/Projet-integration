@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section class="col-10">
-<div class="d-grid gap-3 col-11 mx-auto p-2">
+<div class="d-grid gap-3 col-8 mx-auto p-2">
 @if (isset($zoomForm2s))
       <h3>
         Informations sur: signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»
@@ -12,7 +12,7 @@
   <table class="table table-striped table-hover">
   <tbody>
   <tr>
-    <td class="w-25">Nom</td>
+    <td>Nom</td>
     <td>{{ $zoomForm2s->nom }}, {{ $zoomForm2s->prenom }}</td>
   </tr>
   <tr>
@@ -85,7 +85,7 @@
             </div>
 
 
-            <div class="d-grid gap-3 col-11 mx-auto p-2">
+            <div class="d-grid gap-3 col-5 mx-auto p-2">
               <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
             </div>            
       </form>

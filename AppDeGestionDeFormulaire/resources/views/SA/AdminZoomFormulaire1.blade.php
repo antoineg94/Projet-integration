@@ -5,7 +5,7 @@
 @section('middleContent')
 
 <section class="col-10">
-  <div class="d-grid gap-3 col-11 mx-auto p-2">
+  <div class="d-grid gap-3 col-8 mx-auto p-2">
     @if(isset($zoomForm1s))
       <h3>
         Informations sur: formulaire déclaration d'accident de travail
@@ -13,7 +13,7 @@
         <table class="table table-striped table-hover">
         <tbody>
             <tr>
-              <td class="w-25">Nom de l'employé</td>
+              <td>Nom de l'employé</td>
               <td>{{ $zoomForm1s->nom }}, {{ $zoomForm1s->prenom }}</td>
             </tr>
             <tr>
@@ -71,10 +71,6 @@
             <tr>
               <td>Type d'absence</td>
               <td>{{ $zoomForm1s-> type_absence}}</td>
-            </tr>
-            <tr>
-              <td>Durée</td>
-              <td>{{ $zoomForm1s-> duree_absence}}</td>
             </tr>
             <tr>
               <td>Status de la demande</td>

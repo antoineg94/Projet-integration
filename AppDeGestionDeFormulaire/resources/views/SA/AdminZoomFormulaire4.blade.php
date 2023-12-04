@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section class="col-10">
-<div class="d-grid gap-3 col-11 mx-auto p-2">
+<div class="d-grid gap-3 col-8 mx-auto p-2">
 @if (isset($zoomForm4s))
 <div class="container">
   <div class="mb-4 col-11 mx-auto">
@@ -17,7 +17,7 @@
   <table class="table table-striped table-hover">
   <tbody>
   <tr>
-    <td class="w-25">Numéro(s) d'unité(s) impliqué(s)</td>
+    <td>Numéro(s) d'unité(s) impliqué(s)</td>
     <td>{{ $zoomForm4s->no_unite }}</td>
   </tr>
   <tr>
@@ -74,7 +74,7 @@
           </div>
 
 
-          <div class="d-grid gap-3 col-11 mx-auto p-2">
+          <div class="d-grid gap-3 col-5 mx-auto p-2">
             <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
           </div>            
     </form>

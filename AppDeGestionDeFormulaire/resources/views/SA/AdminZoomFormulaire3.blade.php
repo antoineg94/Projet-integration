@@ -4,7 +4,7 @@
 
 @section('middleContent')
 <section class="col-10">
-<div class="d-grid gap-3 col-11 mx-auto p-2">
+<div class="d-grid gap-3 col-8 mx-auto p-2">
 @if (isset($zoomForm3s))
     <h3>
         Informations sur: formulaire d'audit SST
@@ -12,7 +12,7 @@
   <table class="table table-striped table-hover">
   <tbody>
         <tr>
-            <td class="w-25">Nom</td>
+            <td>Nom</td>
             <td>{{ $zoomForm3s->nom }}, {{ $zoomForm3s->prenom }}</td>
         </tr>
         <tr>
@@ -21,11 +21,11 @@
         </tr>
         <tr>
             <td>Date</td>
-            <td>{{ $zoomForm3s->date_formulaire }}</td>
+            <td>{{ $zoomForm3s->date_form }}</td>
         </tr>
         <tr>
             <td>Heure</td>
-            <td>{{ $zoomForm3s->heure_formulaire }}</td>
+            <td>{{ $zoomForm3s->heure_form }}</td>
         </tr>
         <tr>
             <td>EPI</td>
@@ -68,11 +68,11 @@
 
         </tr>
         <tr>
-            <td>respect de la distanciation</td>
+            <td>Respect de la distanciation</td>
             <td>{{ $zoomForm3s->respect_distance }}</td>
         </tr>
         <tr>
-            <td>port des EPI (masque/visière)</td>
+            <td>Port des EPI (masque/visière)</td>
             <td>{{ $zoomForm3s->port_epi }}</td>
         </tr>
         <tr>
@@ -106,7 +106,7 @@
             </div>
 
 
-            <div class="d-grid gap-3 col-11 mx-auto p-2">
+            <div class="d-grid gap-3 col-5 mx-auto p-2">
               <button class="btn d-grid text-white" style="background-color: #63BC55;" type="submit" >Envoyer</button>
             </div>            
       </form>
