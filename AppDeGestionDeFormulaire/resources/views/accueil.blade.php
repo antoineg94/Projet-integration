@@ -9,20 +9,20 @@
     <div class="row">
       <div class="d-grid gap-3 p-2 col-xl-4 offset-xl-1 col-12">
         @if(Session::get('admin') == false)
-          <a class="btn text-white text-start"  style="background-color: #63BC55; height:100px; padding-top: 35px;" type="button" href="{{ route('formulairesTravails.index') }}">Formulaire de déclaration d'accidents de travail</a>
-          <a class="btn text-white text-start" style="background-color: #63BC55; height:100px; padding-top: 22px;" type="button" href="{{ route('formulaireSituationDangereuses.index') }}">Formulaire de signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</a>
+          <a class="btn text-white text-start py-3"  style="background-color: #63BC55; height:100px;" type="button" href="{{ route('formulairesTravails.index') }}">Formulaire de déclaration d'accidents de travail</a>
+          <a class="btn text-white text-start py-3" style="background-color: #63BC55; height:100px;" type="button" href="{{ route('formulaireSituationDangereuses.index') }}">Formulaire de signalement d'une situation dangereuse, d'un acte de violence ou d'un «passé proche»</a>
         @endif
 
         @if(Session::get('admin') == false && Session::get('superviseur') == true)
-          <a class="btn text-white text-start" type="button" style="background-color: #63BC55; height:100px; padding-top: 35px;" href="{{ route('formulaireAudits.index') }}">Audit SST - formulaire simplifié</a>
-          <a class="btn text-white text-start" type="button" style="background-color: #63BC55; height:100px; padding-top: 22px;" href="{{ route('formulaireMecaniques.index') }}">Formulaire Atelier mécanique - Rapport d'accident (véhicule)</a>
+          <a class="btn text-white text-start py-3" type="button" style="background-color: #63BC55; height:100px;" href="{{ route('formulaireAudits.index') }}">Audit SST - formulaire simplifié</a>
+          <a class="btn text-white text-start py-3" type="button" style="background-color: #63BC55; height:100px;" href="{{ route('formulaireMecaniques.index') }}">Formulaire Atelier mécanique - Rapport d'accident (véhicule)</a>
         @endif
 
-          <a class="btn text-white text-start" type="button" style="background-color: #0076D5; height:100px; padding-top: 35px;" href="{{ route('Menus.ListeMesFormulaires') }}">Liste de mes formulaires</a>
+          <a class="btn text-white text-start py-3" type="button" style="background-color: #0076D5; height:100px;" href="{{ route('Menus.ListeMesFormulaires') }}">Liste de mes formulaires</a>
 
         @if(Session::get('admin') == true || Session::get('superviseur') == true)
         
-          <a class="btn text-white position-relative" type="button" style="background-color: #0076D5; height:100px; padding-top: 25px;" href="{{ route('Menus.listeFormulaire') }}">
+          <a class="btn text-white position-relative" type="button" style="background-color: #0076D5; height:100px;" href="{{ route('Menus.listeFormulaire') }}">
             <div class="row">
               <div class="text-start pt-2 col-10">
                 <p>Liste de formulaires des employés</p>
