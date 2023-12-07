@@ -87,7 +87,11 @@ class AdminsController extends Controller
     public function zoom(Request $request)
     {
         try{
-            $procedure = Consulterprocedure::findOrFail($request->id);
+            //$procedure = Consulterprocedure::findOrFail($request->id);
+            $procedure = Consulterprocedure::join('departements', 'consulterprocedures.departement_id', '=', 'departements.id')
+            ->select('consulterprocedures.*', 'departements.nom')
+            ->where('consulterprocedures.id', '=', $request->id)
+            ->get()->first();
             return view('SA.ZoomgestionProcedures', compact('procedure'));
         }
         catch(Exception $e){
